@@ -2,11 +2,11 @@ function calc(action, a, b) {
     if (isNaN(a)||isNaN(b)){
         return "Вы вводите не число"
     }
-    if (action == "add"){
+    if (action === "add"){
         return a + b
-    } else if (action == "multi"){
+    } else if (action === "multi"){
         return a * b
-    } else if(action == "subtract"){
+    } else if(action === "subtract"){
         return a - b
     } else {
         return "Вы ввели неправильное значение"
