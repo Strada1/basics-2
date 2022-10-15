@@ -1,19 +1,22 @@
-// console.log("0" + 1 - 1 == 0 + 1 - "1")
-// console.log(null + 1 >= 0 + 1)
-// console.log(undefined !== NaN)
-// console.log(null >= ' ')
-// console.log("ABC" > "ABC ")
-// console.log(" " == "0")
-// console.log(" " >= null)
 
 
+function calc(action, a, b)
+{
+    switch (action)
+    {
+        case 'add':
+            return a + b;
+        case 'substract':
+            return a - b;
+        case 'multi':
+            return a * b;
+        default:
+            return NaN;
+    }
+}
 
-console.log(NaN != 0)
-console.log(NaN != 10000)
-console.log(NaN != 'арбуз')
-console.log(NaN != true)
-console.log(NaN != false)
-console.log(NaN != NaN)
-console.log(NaN != undefined)
-
-
+// test calc function
+console.log(calc('add', 3, 2));         // expect 5
+console.log(calc('substract', 3, 2));   // expect 1
+console.log(calc('multi', 3, 2));       // expect 6
+console.log(calc('not_action', 3, 2));  // expect NaN
