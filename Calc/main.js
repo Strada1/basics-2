@@ -1,4 +1,7 @@
-/*function calc(action, first, second) {
+// Simple calc with if
+// Просто мои начальные варианты калькуляторов, не обращай внимания
+
+function calc(action, first, second) {
     if (action == '+') {
         return +first + +second;
     } else if (action == '-') {
@@ -27,10 +30,7 @@ function calc(action, a, b) {
     }
     }
     
-    console.log(calc('/', 6, 0)); */
-
-// Верхние - просто начальные варианты калькуляторов, не обращай внимания
-
+    console.log(calc('/', 6, 0)); 
 
 
 //Калькулятор через if
@@ -78,13 +78,39 @@ function calc(operation, first, second) {
     case '*':
         return first * second
         break;
-    case '/':
-        if(second === 0) {
-            alert('На 0 делить нельзя');
-        }
-        return a / b
-        break;
     } 
 }
 
 alert(calc(operation, first, second));
+
+
+// Калькулятор через вынесения результата в переменную 
+
+function calc(option, a, b) {
+    let result;
+    a = Number(a);
+    b = Number(b);
+    if (isNaN(a) || isNaN(b)) {
+        result = 'Это не число';
+        } else switch(option) {
+        case '+':
+            result = a + b;
+            break;
+        case '-':
+            result = a - b;
+            break;
+        case '*':
+            result = a * b;
+            break;
+    }
+    result = 'Результат' + ' = ' + '' + result;
+    return result;
+}
+
+console.log(calc('+', 1, 2));
+console.log(calc('-', 1, 2));
+console.log(calc('*', 1, 2));
+
+
+
+
