@@ -10,8 +10,10 @@ if(result == "undefined operation") { //for beauty look :)
 }
 
 function calc(type, first, second) {
-    first = +first;
-    second = +second;
+    if(type != "add" && Number(first) != NaN && Number(second) !=NaN) { //for concat strings
+        first = +first;
+        second = +second;
+    }
     switch(type) {
         case "add":
             return first + second;
