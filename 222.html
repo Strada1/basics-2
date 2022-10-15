@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+        let number1 = +prompt(`first value`, `0`);
+        let number2 = +prompt(`second value`, `0`);
+        let actionUser = prompt(`choose action (+ - *)`, `+`);
+
+        function calc(actionUser, number1, number2) {
+            if (isNaN(number1) || isNaN(number2)) {
+            return `работаю только с числами`;
+            
+            } else switch (actionUser) {
+
+            case `+`:
+            return number1 + number2;
+
+            case `*`:
+            return number1 * number2;
+
+            case `-`:
+            return number1 - number2;
+
+            default:
+            return `oops, error`;
+                }
+        }
+
+        alert(calc(actionUser, number1, number2));
+    </script>
+  </head>
+</html>
