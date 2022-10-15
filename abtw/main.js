@@ -1,18 +1,16 @@
 function calc(operator, a, b) {
   switch (operator) {
-    case "+":
+    case "add":
       return a + b;
-      break;
-    case "-":
+    case "subtract":
       return a - b;
-      break;
-    case "*":
+    case "multi":
       return a * b;
-      break;
     default:
       break;
   }
-  console.log(calc("add", 1, 2));
-  console.log(calc("multi", 1, 2));
-  console.log(calc("subtract", 3, 2));
+  return;
 }
+console.log(calc("add", 1, 2));
+console.log(calc("multi", 1, 2));
+console.log(calc("subtract", 3, 2));
