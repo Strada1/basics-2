@@ -16,4 +16,6 @@ function calc(action, num1, num2) {
 }
 console.log("How much time i need to spend this?");
 
-console.log("Am I in the rught way?")
+console.log("Am I in the rught way?");
+
+console.log('Try to make commit with git bash');
