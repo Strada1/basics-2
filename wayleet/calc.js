@@ -19,11 +19,4 @@ function calc(operator, num1, num2) {
    return ans;
 }
 
-
-if (isNaN(result)) {
-   alert("Ты ввел что-то не так(");
-   alert("Перезапусти программу и попробуй еще");
-}
-else {
-   alert(result);
-}
+console.log(calc(sum, 4, 5));
