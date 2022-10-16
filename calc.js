@@ -2,7 +2,7 @@ function сalc (typeOfCalculation, a, b) {
     let result;
     if (typeof(a) != 'number' || typeof(b) != 'number') {
     result = 'Числа твои и не числа вовсе ученик'
-    } else if (typeOfCalculation != '' || typeOfCalculation != '' || typeOfCalculation != '') {
+    } else if (typeOfCalculation != 'add' || typeOfCalculation != 'multi' || typeOfCalculation != 'subtract') {
         result = 'Я таки вычислений и не умею вовсе'
     } else if (typeOfCalculation == 'add') {
         result = a + b
