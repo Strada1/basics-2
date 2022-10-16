@@ -39,4 +39,4 @@ function solve(a, b){
   
   }
   goCalc()
-  console.log('ggboyz')
+  console.log('ggboz')
