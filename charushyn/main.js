@@ -39,4 +39,4 @@ function solve(a, b){
   
   }
   goCalc()
-  console.log('ggbo14')
+  console.log('ggbo15')
