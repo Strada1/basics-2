@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <h1 class="title">Мы создали калькулятор на javascript. Ура!!!</h1>
+    <script>
+      //калькулятор
+      function calc(operator, x, y) {
+        if (operator === "add") {
+          return x + y;
+        } else if (operator === "multi") {
+          return x * y;
+        } else if (operator === "subtract") {
+          return x - y;
+        }
+      }
+
+      console.log(calc("add", 1, 2));
+      console.log(calc("multi", 1, 2));
+      console.log(calc("subtract", 3, 2));
+
+      //калькулятор со switch
+      function calc(operator, x, y) {
+        switch (operator) {
+          case "add":
+            return x + y;
+          case "multi":
+            return x * y;
+          case "subtract":
+            return x - y;
+        }
+      }
+
+      console.log(calc("add", 1, 2)); // 3
+      console.log(calc("multi", 1, 2)); // 2
+      console.log(calc("subtract", 3, 2)); // 1
+    </script>
+  </body>
+</html>
