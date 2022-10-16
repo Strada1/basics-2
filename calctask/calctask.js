@@ -8,12 +8,8 @@ function calc(Num1,Num2,operator){
 }
   switch(operator){
   case '+': return Num1 + Num2;
-    break;
   case '-': return Num1 - Num2;
-    break;
   case '*': return Num1*Num2;
-    break;
   default: return 'Введите верное значение(+,-,*)';
-    break;
                   }       
  }     
