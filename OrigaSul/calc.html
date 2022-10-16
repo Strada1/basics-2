@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+ let a = +prompt(`Введите первое число`, "0");
+ let b = +prompt(`Введите второе число`, "0");
+ let action = prompt(`Введите команду add - сложить числа, multi - умножить числа, subtract - вычeсть`, "add");
+ let result;
+ function calc(action, a, b) {
+    switch(action) {
+
+    case "add" :
+    return result = a+b;
+break
+    case  "multi" :
+    return result = a*b;
+break
+    case "subtract" : 
+    return result = a-b;
+    break
+}
+}
+calc(action, a, b);
+alert(result);
+    </script>
+</body>
+</html>
