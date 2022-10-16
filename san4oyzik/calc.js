@@ -5,13 +5,10 @@ function calc(operator, a, b) {
     switch(operator) {
         case 'add':
             return a + b;
-            break;
         case 'multi':
             return a * b;
-            break;
         case 'substract':
             return a - b;
-            break;
         default:
             return 'Неизвестная операция';
     }
