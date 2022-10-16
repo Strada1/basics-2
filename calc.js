@@ -2,7 +2,7 @@ function сalc (typeOfCalculation, a, b) {
     let result;
     if (typeof(a) != 'number' || typeof(b) != 'number') {
     result = 'Числа твои и не числа вовсе ученик'
-    } else if (typeOfCalculation != 'add' || typeOfCalculation != 'multi' || typeOfCalculation != 'subtract') {
+    } else if (typeOfCalculation != 'add' && typeOfCalculation != 'multi' && typeOfCalculation && 'subtract') {
         result = 'Я таки вычислений и не умею вовсе'
     } else if (typeOfCalculation == 'add') {
         result = a + b
@@ -15,4 +15,4 @@ function сalc (typeOfCalculation, a, b) {
     return result;
 };
 
-console.log(сalc('плюсуй', 8, 3));
+console.log(сalc('add', 8, 3));
