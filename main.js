@@ -6,16 +6,17 @@ function calc(action, num1, num2) {
     case 'multi':
       return num1 * num2;
       break;
-    case 'substruct':
+    case 'substract':
       return num1 - num2;
       break;
-    case 'correct':
+    case 'devide':
       return num1 / num2;
       break;
+    default:
+      return 'Action is not correct';
   }
 }
-console.log("How much time i need to spend this?");
-
-console.log("Am I in the rught way?");
-
-console.log('Try to make commit with git bash');
+console.log(calc('add', 1, 2));
+console.log(calc('multi', 1, 2));
+console.log(calc('substract', 5, 2));
+console.log(calc('sd', 1, 2));
