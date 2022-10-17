@@ -1,6 +1,7 @@
 const ADD = 'add';
 const MULTI = 'multi';
 const SUBSTRACT = 'subtract';
+const ERROR = 'Unknown operation';
 
 function calc(a, b, operation) {
   switch (operation) {
@@ -17,7 +18,7 @@ function calc(a, b, operation) {
 }
 
 function showError() {
-  console.log('Unknown operation')
+  console.log(ERROR)
 }
 
 console.log(calc(1, 2, 'add'));
