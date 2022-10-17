@@ -1,5 +1,9 @@
 function calc(ident, a, b) {
     
+  if (a !== Number(a) || b !== Number(b)) {
+    return 'Вы вводите строку, уважаемый'
+  }
+
   switch (ident) {
     case 'add':
       return a + b;
