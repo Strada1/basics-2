@@ -1,16 +1,22 @@
+const ADD = "add";
+const MULTI = "multi";
+const SUBT = "subtract";
+const enterNumber = "Please enter a number.";
+const useAction = "Please use the correct action!";
+
 function calc(action, a, b) {
   if (isNaN(a) || isNaN(b)) {
-    return "Please enter a number.";
+    return enterNumber;
   }
   switch (action) {
-    case "add":
+    case ADD:
       return a + b;
-    case "multi":
+    case MULTI:
       return a * b;
-    case "subtract":
+    case SUBT:
       return a - b;
     default:
-      return "Please use the correct action!";
+      return useAction;
   }
 }
 
