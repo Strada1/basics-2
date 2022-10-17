@@ -1,20 +1,27 @@
+const ADD = 'add';
+const MULTI = 'multi';
+const SUBTRACT = 'subtract';
+const UNK_OPER = 'unknown operation';
+
 function calc(operation, a, b) {
 
-    const isNotValid = typeof a !== 'number' || typeof b !== 'number';
+    const isNotValid = typeof a !== 'number' 
+                    || typeof b !== 'number';
+    
     if (isNotValid) { 
         return('Error');
     } else {
 
     switch(operation) {
         
-        case 'add':
+        case ADD:
             return a + b;
-        case 'multi':
+        case MULTI:
             return a * b;
-        case 'subtract':
+        case SUBTRACT:
             return a - b;
         default:
-            return('unknown operation');   
+            return(UNK_OPER);   
         }
     }
 }
