@@ -12,7 +12,6 @@ function calc(action, a, b) {
         return "Вы ввели неправильное значение"
     }
 }
-
 console.log(calc("add", 1, 2));
 console.log(calc("multi", 1, 2));
 console.log(calc("subtract", 3, 2));
@@ -33,7 +32,12 @@ function calc (action, a, b) {
             return "Вы ввели неправильное значение";
     }
 }
-
 console.log(calc("add", 1, 2));
 console.log(calc("multi", 1, 2));
 console.log(calc("subtract", 3, 2));
+
+
+
+for (let i = 1; i <=  19; i++){
+    console.log(i);
+}
