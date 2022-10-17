@@ -1,3 +1,7 @@
+for (let i = 1; i < 20; i += 1) {
+  console.log(i)
+}
+
 const calc = (action, a, b) => {
   let result;
   switch (action) {
@@ -15,8 +19,3 @@ const calc = (action, a, b) => {
   }
   return result;
 };
-
-console.log(calc('multi', 1, 2));
-console.log(calc('add', 1, 2));
-console.log(calc('substract', 1, 2));
-console.log(calc('test', 1, 2));
