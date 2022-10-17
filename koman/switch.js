@@ -20,9 +20,9 @@ function calc(action, a, b) {
   }
 }
 
-console.log(calc("add", 1, 2));
-console.log(calc("multi", 1, 2));
-console.log(calc("subtract", 3, 2));
+console.log(calc(ADD, 1, 2));
+console.log(calc(MULTI, 1, 2));
+console.log(calc(SUBT, 3, 2));
 
-console.log(calc("multi", "two", 2));
+console.log(calc(MULTI, "two", 2));
 console.log(calc("sub", 3, 2));
