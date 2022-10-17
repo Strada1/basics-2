@@ -1,10 +1,14 @@
+const ADD = 'add';
+const MULTI = 'multi';
+const SUBSTRACT = 'subtract';
+
 function calc(a, b, operation) {
   switch (operation) {
-    case 'add':
+    case ADD:
       return a + b;
-    case 'multi':
+    case MULTI:
       return a * b;
-    case 'subtract':
+    case SUBSTRACT:
       return a - b;
     default:
       showError();
