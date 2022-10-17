@@ -1,17 +1,17 @@
-const sum = "sum";
-const multi = "multi";
-const subtract = "subtract";
+const SUM = "sum";
+const MULTI = "multi";
+const SUBTRACT = "subtract";
 
 function calc(operator, num1, num2) {
    let ans = NaN;
    switch (operator) {
-      case sum:
+      case SUM:
          ans = num1 + num2;
          break;
-      case multi:
+      case MULTI:
          ans = num1 * num2;
          break;
-      case subtract: {
+      case SUBTRACT: {
          ans = num1 - num2;
          break;
       }
