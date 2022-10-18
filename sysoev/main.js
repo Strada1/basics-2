@@ -6,7 +6,7 @@ const operations = {
 }
 
 function calc(a, b, operation) {
-  switch (operations[operation]) {
+  switch (operation) {
     case operations.add:
       return a + b;
     case operations.multi:
@@ -23,7 +23,7 @@ function showError() {
   console.log(operations.error)
 }
 
-console.log(calc(1, 2, 'add'));
-console.log(calc(5, 5, 'multi'));
-console.log(calc(10, 2, 'sub'));
-console.log(calc(10, 2, 'minus'));
+console.log(calc(1, 2, operations.add));
+console.log(calc(5, 5, operations.multi));
+console.log(calc(10, 2, operations.sub));
+console.log(calc(10, 2, operations.blabla));
