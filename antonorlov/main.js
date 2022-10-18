@@ -1,6 +1,6 @@
 const ADD = 'add'
 const MULTI = 'multi'
-const SUBRTACT = 'subtract'
+const SUBTRACT = 'subtract'
 
 function calc(ident, a, b) {
     
@@ -13,7 +13,7 @@ function calc(ident, a, b) {
       return a + b;
     case MULTI:
       return a * b;
-    case SUBRTACT:
+    case SUBTRACT:
       return a - b;
   }
 };
