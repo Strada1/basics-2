@@ -1,17 +1,24 @@
+const operations = {
+    add: '+',
+    multi: '*',
+    sub: '-',
+    degree: '**',
+}
+
 'use strict';
 function calc(operator, a, b){
     let result;
     switch (operator) {
-        case 'add':
+        case operations.add:
             result = a + b;
             break;
-        case 'multi':
+        case operations.multi:
             result = a * b;
             break;
-        case 'subtract':
+        case operations.sub:
             result = a - b;
             break;
-        case 'degree':
+        case operations.degree:
             result = a ** b;
             break;
     
@@ -22,7 +29,12 @@ function calc(operator, a, b){
     return result;
 }
 
-console.log(calc('add', 1, 2));
-console.log(calc('multi', 1, 2));
-console.log(calc('subtract', 3, 2));
-console.log(calc('degree', 3, 2));
+console.log(calc('+', 1, 2));
+console.log(calc('*', 1, 2));
+console.log(calc('-', 3, 2));
+console.log(calc('**', 3, 2));
+
+//Задание 15. Циклы
+for (let i = 1; i < 20; i++){
+    console.log(i);
+}
