@@ -1,3 +1,9 @@
+const operations = {
+   ADD: 'add',
+   MULTI: 'multi',
+   SUBTRACT: 'subtract',
+}
+
 function calc(
    math, 
    numberOne = console.log("Значение 'numberOne' и 'numberTwo' не введено. Результат:"), 
@@ -7,13 +13,13 @@ function calc(
       return result = 'Необходимо вводить только числа';
    }
    switch (math) {
-      case 'add': 
+      case operations.ADD: 
          result = numberOne + numberTwo;
          break;
-      case 'multi':
+      case operations.MULTI:
          result = numberOne * numberTwo;
          break;
-      case 'subtract':
+      case operations.SUBTRACT:
          result = numberOne - numberTwo;
          break;
       default:
