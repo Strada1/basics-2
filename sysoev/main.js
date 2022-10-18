@@ -3,6 +3,12 @@ const MULTI = 'multi';
 const SUBSTRACT = 'subtract';
 const ERROR = 'Unknown operation';
 
+const operations = {
+  add: '+',
+  multi: '*',
+  sub: '-',
+}
+
 function calc(a, b, operation) {
   switch (operation) {
     case ADD:
