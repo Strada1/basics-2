@@ -1,13 +1,16 @@
 const calc = (operator,firstNum,secondNum)=>{
     let result
+    let operations = {
+        add:'add',multi:"multi",subtract:'subtract'
+    }
     switch (operator) {
-        case 'add':
+        case operations.add:
             result = firstNum+secondNum
             break;
-        case 'multi':
+        case operations.multi:
             result = firstNum*secondNum
             break
-        case 'subtract':
+        case operations.subtract:
             result = firstNum - secondNum
             break
         default:
@@ -16,4 +19,4 @@ const calc = (operator,firstNum,secondNum)=>{
     }
     return result
 }
-console.log(calc('sd',5,5))
+console.log(calc('add',5,5))
