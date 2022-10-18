@@ -1,14 +1,13 @@
 function calc(operator, a, b) {
-    switch (operator) {
-        case 'add': 
-            return  a + b
-        case 'multi': 
-            return a * b
-        case 'subtract': 
-            return  a - b
-    }
-}
-
-console.log(calc('add', 2, 3));
-console.log(calc('multi', 2, 3));
-console.log(calc('subtract', 10, 3));
+    const operations = {
+         add: a + b,
+         multi: a * b,
+         subtract: a - b,
+     }
+     if(operations[operator] !== undefined) 
+       return operations[operator];
+ }
+ 
+ console.log(calc("add", 1, 2));
+ console.log(calc("multi", 1, 2));
+ console.log(calc("subtract", 3, 2));
