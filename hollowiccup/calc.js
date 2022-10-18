@@ -1,9 +1,10 @@
+const operations = {
+  add: a + b,
+  multi: a * b,
+  subtract: a - b,
+}
+
 function calc(operator, a, b) {
-    const operations = {
-         add: a + b,
-         multi: a * b,
-         subtract: a - b,
-     }
      if(operations[operator] !== undefined) 
        return operations[operator];
  }
