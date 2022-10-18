@@ -1,21 +1,17 @@
-const ADD = 'add';
-const MULTI = 'multi';
-const SUBSTRACT = 'subtract';
-const ERROR = 'Unknown operation';
-
 const operations = {
   add: '+',
   multi: '*',
   sub: '-',
+  error: 'Unknown operation',
 }
 
 function calc(a, b, operation) {
-  switch (operation) {
-    case ADD:
+  switch (operations[operation]) {
+    case operations.add:
       return a + b;
-    case MULTI:
+    case operations.multi:
       return a * b;
-    case SUBSTRACT:
+    case operations.sub:
       return a - b;
     default:
       showError();
@@ -24,10 +20,10 @@ function calc(a, b, operation) {
 }
 
 function showError() {
-  console.log(ERROR)
+  console.log(operations.error)
 }
 
 console.log(calc(1, 2, 'add'));
-console.log(calc(5, 5, 'multi'));
-console.log(calc(10, 2, 'subtract'));
-console.log(calc(10, 2, 'minus'));
+// console.log(calc(5, 5, 'multi'));
+// console.log(calc(10, 2, 'sub'));
+// console.log(calc(10, 2, 'minus'));
