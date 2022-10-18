@@ -5,7 +5,9 @@ const operations = {
 };
 
 function calc(action, a, b) {
-  if (Number.isInteger(a, b)) {
+  if(isNaN(a) || isNaN(b)) {
+    return console.log('Не число');
+  }
     switch (action) {
       case operations.add:
         return console.log(a + b);
@@ -14,9 +16,6 @@ function calc(action, a, b) {
       case operations.subtract:
         return console.log(a - b);
     }
-  } else {
-    return console.log("Вы ввели не число");
-  }
 }
 
 calc(operations.subtract, 3, 2);
