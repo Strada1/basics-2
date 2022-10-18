@@ -1,13 +1,11 @@
-// let i = 1;
+const prompt = require("prompt-sync")();
 
-// while (i < 19) {
-//     console.log(i);
-//     ++i;
-// }
+let user = {
+    name: 'John',
+    age: 30
+};
 
-// console.log(i);
+let key = prompt('Что вы хотите знать о пользователе? ', 'name');
 
-for (; i < 20; i++) {
-    console.log(i);
-}
 
+console.log(user[key]);
