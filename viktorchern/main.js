@@ -114,17 +114,22 @@
 // }
 // console.log( calc('multi', 10, 30) );
 
-function calc2(operation, a, b){
-    switch(operation) {
-        case 'add':
-            return a + b;
-            break;
-        case 'multi':
-            return a * b;
-        case 'subtract':
-            return a - b;
-        default:
-            return 'Что-то пошло не так...';
-    }
+// function calc2(operation, a, b){
+//     switch(operation) {
+//         case 'add':
+//             return a + b;
+//             break;
+//         case 'multi':
+//             return a * b;
+//         case 'subtract':
+//             return a - b;
+//         default:
+//             return 'Что-то пошло не так...';
+//     }
+// }
+// console.log( calc2('subtract', 30, 10) );
+
+// Цыклы
+for (let i = 0; i <= 19; i++){
+    console.log(i);
 }
-console.log( calc2('subtract', 30, 10) );
