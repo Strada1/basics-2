@@ -1,26 +1,26 @@
 // Калькулятор с использованием Конструкции "switch"
 
-function calc(sign,a,b) {
+const operations = {
+	add: '+',
+	multi: '*',
+	subtract: '-'
+}
+
+function calc(sign, a, b) {
 	switch (sign) {
-		case 'add' :
-			return a + bч
-		case 'multi' :
+		case operations.add:
+			return a + b
+		case operations.multi:
 			return a * b
-		case 'subtract' :
+		case operations.subtract:
 			return a - b
-		default :
+		default:
 			return 'неизвестное значение'
 	}
 }
 
+console.log(calc(operations.add, 1, 2))
+console.log(calc(operations.multi, 1, 2))
+console.log(calc(operations.subtract, 3, 2))
 
-
-
-
-
-console.log(calc('add', 1,2))
-console.log(calc('multi', 1,2))
-console.log(calc('subtract', 3,2))
-
-
-console.log(calc('subtractc', 3,2))
+console.log(calc(operations.subtractd, 3, 2))
