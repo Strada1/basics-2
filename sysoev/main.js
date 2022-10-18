@@ -24,6 +24,6 @@ function showError() {
 }
 
 console.log(calc(1, 2, 'add'));
-// console.log(calc(5, 5, 'multi'));
-// console.log(calc(10, 2, 'sub'));
-// console.log(calc(10, 2, 'minus'));
+console.log(calc(5, 5, 'multi'));
+console.log(calc(10, 2, 'sub'));
+console.log(calc(10, 2, 'minus'));
