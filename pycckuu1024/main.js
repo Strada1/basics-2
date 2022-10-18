@@ -1,12 +1,18 @@
+'use strict'
+const operations = {
+    add : '+' ,
+    sub : '-' ,
+    multi : '*', 
+};
 function calc(oper,a,b) {
     switch (oper) {
-        case '+':
+        case operations.add:
             return (a + b);
             break;
-        case '-':
+        case operations.sub:
             return (a - b);
             break;
-        case '*' :
+        case operations.multi :
             return (a * b);   
         default: 
             break;
