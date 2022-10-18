@@ -1,3 +1,7 @@
+const ADD = 'add'
+const MULTI = 'multi'
+const SUBRTACT = 'subtract'
+
 function calc(ident, a, b) {
     
   if (a !== Number(a) || b !== Number(b)) {
@@ -5,11 +9,11 @@ function calc(ident, a, b) {
   }
 
   switch (ident) {
-    case 'add':
+    case ADD:
       return a + b;
-    case 'multi':
+    case MULTI:
       return a * b;
-    case 'subtract':
+    case SUBRTACT:
       return a - b;
   }
 };
