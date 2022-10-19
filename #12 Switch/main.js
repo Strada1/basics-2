@@ -1,13 +1,9 @@
 const USERERRORS = `ooops, ERROR`;
 
-const a = Number(prompt(`first value`, ``));
-const b = Number(prompt(`second value`, ``));
-const actionUser = prompt(`choose action (add subtract multi)`, `add`);
-
 const operations = {
-    add: "add",
-    multi: "multi",
-    subtract: "subtract"
+    add: "+",
+    multi: "*",
+    subtract: "-",
 }
 
 function calc(action, arg1, arg2) {
@@ -25,4 +21,7 @@ function calc(action, arg1, arg2) {
     }
 }
 
-alert(calc(actionUser, a, b));
+// test
+
+console.log(calc(`add`, 2, 2));
+console.log(calc(`+`, 2, 2));
