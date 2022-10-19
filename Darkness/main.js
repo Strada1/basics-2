@@ -1,7 +1,7 @@
 const calc = (operator,firstNum,secondNum)=>{
     let result
     let operations = {
-        add:'add',multi:"multi",subtract:'subtract'
+        add:'+',multi:"*",subtract:'-'
     }
     switch (operator) {
         case operations.add:
@@ -19,4 +19,4 @@ const calc = (operator,firstNum,secondNum)=>{
     }
     return result
 }
-console.log(calc('add',5,5))
+console.log(calc('*',5,5))
