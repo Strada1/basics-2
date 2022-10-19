@@ -1,18 +1,27 @@
-function calc (operation, num1, num2){
-    if (operation == "add"){
-        return num1 + num2;
-    }
-    else if (operation == "multi"){
-        return num1 * num2;
-    }
-    else if (operation == "subtract"){
-        return num1 - num2;
+function calc (opp, num1, num2){
+    const isValid = typeof num1 !== 'number' || typeof num2 !== 'number';
+    if (isValid){
+        alert('Error');
     }
     else{
-        return "Неизвестный оператор!"
+        switch (opp){
+            case operation.add:
+                return num1 + num2;
+                break;
+            case operation.multi:
+                return num1 * num2;
+                break;
+            case operation.substract:
+                return num1 - num2;
+                break;
+        }
     }
 }
-let num1 = +(prompt('Введите первое число: ',''));
-let num2 = +(prompt('Введите второе число: ',''));
-let operation = prompt('Введите оператор (add, multi или subtract','');
-alert(calc(operation, num1, num2))
+const operation = {
+    add: '+',
+    multi: '*',
+    substract: '-'
+};
+console.log(calc('+',1,2));
+console.log(calc('*',2,2));
+console.log(calc('-',4,2));
