@@ -1,7 +1,9 @@
-const ADD = 'add';
-const MULTI = 'multi';
-const SUBTRACT = 'subtract';
-const UNK_OPER = 'unknown operation';
+const operations = {
+    add: '+',
+    multi: '*',
+    subtract: '-',
+    'unknown operation': 'unknown operation',
+}
 
 function calc(operation, a, b) {
 
@@ -14,19 +16,19 @@ function calc(operation, a, b) {
 
     switch(operation) {
         
-        case ADD:
+        case operations.add:
             return a + b;
-        case MULTI:
+        case operations.multi:
             return a * b;
-        case SUBTRACT:
+        case operations.subtract:
             return a - b;
         default:
-            return(UNK_OPER);   
+            return(operations['unknown operation']);   
         }
     }
 }
 
-console.log(calc('add', 1, 2));
+console.log(calc('+', 1, 2));
 console.log(calc('multi', 86, 'g6f'));
-console.log(calc('subtract', -8, 7));
+console.log(calc('-', -8, 7));
 console.log(calc('a', 1, 2));
