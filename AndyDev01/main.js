@@ -2,19 +2,24 @@ function calc(operation, a, b){
   if (typeof(a || b) !== "number") {
     return "Неверный операнд";
   }
+  const operations = {
+    add: "+",
+    multi: "*",
+    substract: "-",
+  }
   switch (operation) {
-    case  "add":
+    case  operations.add:
       return a + b;
-    case "multi":
+    case operations.multi:
       return a * b;
-    case "substract":
+    case operations.substract:
       return a - b;
     default:
       return "Неверный оператор";
   }
 }
 
-console.log(calc("multi", 2, 4));
+console.log(calc("*", 2, 4));
 console.log(calc("strada", 2, 3));
-console.log(calc("add", "String", 3));
-console.log(calc("add", true, 3));
+console.log(calc("+", "String", 3));
+console.log(calc("-", true, 3));
