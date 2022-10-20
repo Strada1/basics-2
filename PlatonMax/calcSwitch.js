@@ -3,22 +3,27 @@ function isNumber(value) {
 }
 
 function calc(actionCalc, a,b) {
-// a = Number(a); // Наверное, так нагляднее.
-// b = Number(b);
-a = +a; // А так компактнее :)
-b = +b;
+a = Number(a); 
+b = Number(b);
 	
+const operations = {
+	add: 'add',
+	multi: 'multi',
+	sub: 'sub',
+};
+
+
 	let result;
 	if (isNumber(a) && isNumber(b) )
 	{
 	switch (actionCalc) {
-		case 'add':
+		case operations.add:
 			result = a + b;
 			break;
-		case 'multi':
+		case operations.multi:
 			result = a * b;
 			break;
-		case 'subtract':
+		case operations.sub:
 			result = a - b;
 			break;
 		default:
