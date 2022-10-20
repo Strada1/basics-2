@@ -1,17 +1,17 @@
-function calc (opp, num1, num2){
+function calc (action, num1, num2){
     const isValid = typeof num1 !== 'number' || typeof num2 !== 'number';
     if (isValid){
         alert('Error');
     }
     else{
-        switch (opp){
-            case operation.add:
+        switch (operation['action']){
+            case operation[action]:
                 return num1 + num2;
                 break;
-            case operation.multi:
+            case operation[action]:
                 return num1 * num2;
                 break;
-            case operation.substract:
+            case operation[action]:
                 return num1 - num2;
                 break;
         }
@@ -22,6 +22,7 @@ const operation = {
     multi: '*',
     substract: '-'
 };
-console.log(calc('+',1,2));
-console.log(calc('*',2,2));
-console.log(calc('-',4,2));
+let action = prompt('Выберите операцию над числами (+,-,*):')
+let num1 = +(prompt('Введите первое число: '))
+let num2 = +(prompt('Введите второе число: '))
+alert(calc(action,num1,num2))
