@@ -1,49 +1,57 @@
-const operations = {
-   ADD: 'add',
-   MULTI: 'multi',
-   SUBTRACT: 'subtract',
-}
+const status = {
+   TO_DO: 'to do',
+   IN_PROGRESS : 'in progress',
+   DONE : 'done',
+};
 
-function calc(
-   math, 
-   numberOne = console.log("Значение 'numberOne' и 'numberTwo' не введено. Результат:"), 
-   numberTwo = console.log("Значение 'numberTwo' не введено. Результат:")){
-   let result;
-   if (Number.isFinite(numberOne)  && Number.isFinite(numberTwo)){
-      switch (math) {
-         case operations.ADD: 
-            result = numberOne + numberTwo;
-            break;
-         case operations.MULTI:
-            result = numberOne * numberTwo;
-            break;
-         case operations.SUBTRACT:
-            result = numberOne - numberTwo;
-            break;
-         default:
-            result = 'Выберите "add" || "multi" || "subtract"'
-            break;
+const list = {
+   'To sleep' : 'to do',
+};
+
+function changeStatus(task, status) {
+   for(let key in list){
+      if(key === task){
+         return list[task] = status;
+      } else {
+         return console.log(`нет такой задачи "${task}"`);
       }
-   return result;
-   }
-return result = 'Необходимо вводить только числа';
+   };
 }
-console.log(calc('add', '4' ,3 ));
-console.log(calc('умножить', 2, 1));
-console.log(calc('subtract', 3, 2 ));
+
+function addTask(task){
+   for (let key in list){
+      if (key === task){
+         return console.log(`задача ${task} уже есть в списке. выберите другую`);
+      } else {
+         return list[task] = status.TO_DO;
+      }
+   }
+}
+
+function deleteTask(task){
+   for (let key in list){
+      console.log(key);
+      if(key === task){
+         return delete list[task];
+      } else {
+         return console.log(`задача ${task} отсутствует в списке. выберите другую`);
+      }
+   }
+}
+
+
+changeStatus('To sleeep', status.DONE);
+addTask('To eat');
+console.log(list);
+addTask('To eat'); // ПОЧЕМУ НЕ ПРОХОДИТ ПРОВЕРКУ? 
+deleteTask('To eat'); // ПОЧЕМУ НЕ ПРОХОДИТ ПРОВЕРКУ? 
+console.log(list);
 
 
 
-// function calc(operator, a, b) {
-//    const operations = {
-//         add: a + b,
-//         multi: a * b,
-//         subtract: a - b,
-//     }
-//     if(operations[operator] !== undefined) 
-//       return operations[operator];
-// }
 
-// console.log(calc("asd", 1, 2));
-// console.log(calc("multi", 1, 2));
-// console.log(calc("subtract", 3, 2));
+
+
+
+
+
