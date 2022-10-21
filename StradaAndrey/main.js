@@ -21,30 +21,35 @@ function changeStatus(task, status) {
 function addTask(task){
    for (let key in list){
       if (key === task){
-         return console.log(`задача ${task} уже есть в списке. выберите другую`);
+         console.log(`задача ${task} уже есть в списке. выберите другую`);
       } else {
-         return list[task] = status.TO_DO;
+         list[task] = status.TO_DO;
       }
    }
 }
 
 function deleteTask(task){
    for (let key in list){
-      console.log(key); //ПОКАЗЫВАЕТ , ЧТО KEY ЕСТЬ ТОЛЬКО TO SLEEP, ХОТЯ Я УЖЕ ДОБАВИЛ TO EAT И В КОНСОЛИ ОНО ЕСТЬ.
       if(key === task){
-         return delete list[task];
+         delete list[task]; 
+         break;
       } else {
-         return console.log(`задача ${task} отсутствует в списке. выберите другую`);
+         console.log(`задача ${task} отсутствует в списке. выберите другую`);
       }
    }
 }
 
+function showStatus() {
+
+}
 
 changeStatus('To sleeep', status.DONE);
 addTask('To eat');
+addTask('To eat');
+addTask('To work');
+addTask('To go for a walk');
 console.log(list);
-addTask('To eat'); // ПОЧЕМУ НЕ ПРОХОДИТ ПРОВЕРКУ? 
-deleteTask('To eat'); // ПОЧЕМУ НЕ ПРОХОДИТ ПРОВЕРКУ? 
+deleteTask('To eat'); 
 console.log(list);
 
 
