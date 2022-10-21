@@ -1,64 +1,56 @@
+const list = {
+	"create a new practice task": "In Progress",
+	"make a bed": "Done",
+	"write a post": "To Do",
+	"ask about home work": "Done",
+}
 
 
-/* function calc(from, a, b) {
-	let result;
-	if (isNaN(a) || isNaN(b)) {
-		alert("Введите корректные числа")
-	} else {
-		switch (from) {
-			case '+':
-			case 'add':
-				result = +a + +b;
-				alert('result of + is ' + result);
-				break;
-			case '*':
-			case 'multy':
-				result = a * b;
-				alert('result of * is ' + result);
-				break;
-			case '-':
-			case 'subtract':
-				result = a - b;
-				alert('result of - is ' + result);
-			default:
-				result = "Error";
-				alert(result)
+function addTask(item) {
+
+	list[item] = "To Do"
+}
+function deleteTask(item) {
+	delete list[item]
+}
+
+function changeStatus(item, action) {
+	list[item] = action;
+}
+
+function showList() {
+	console.log("To Do:")
+	for (let key in list) {
+		if (list[key] == "To Do") {
+			console.log(key)
 		}
 	}
-} */
-
-function calc(from, a, b) {
-	let operations = {
-		add: '+',
-		multy: '*',
-		subtract: '-',
-	}
-	if (((from == '+') || (from == '*') || (from == '-'))) {
-		switch (from) {
-			case operations.add:
-				result = +a + +b;
-				alert('result of + is ' + result);
-				break;
-			case operations.multy:
-				result = a * b;
-				alert('result of * is ' + result);
-				break;
-			case operations.subtract:
-				result = a - b;
-				alert('result of - is ' + result);
-				break;
+	console.log("In Progress:")
+	for (let key in list) {
+		if (list[key] == "In Progress") {
+			console.log(key)
 		}
-	} else {
-		alert('Введите корректную математическую операцию!')
+	}
+	console.log("Done:")
+	for (let key in list) {
+		if (list[key] == "Done") {
+			console.log(key)
+		}
 	}
 }
 
 
 
+addTask('have a walk')
+addTask('have a lunch')
+addTask('have a breakfast')
 
-let a = prompt("Введите значение a")
-let b = prompt("Введите значение b")
-let mathValue = prompt("Введите математическую операцию  :")
+deleteTask('have a breakfast')
 
-calc(mathValue, a, b);
+
+changeStatus("write a post", "Done")
+changeStatus("ask about home work", "To Do")
+changeStatus("have a lunch", "In Progress")
+
+showList()
 
