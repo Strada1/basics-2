@@ -30,7 +30,7 @@ function addTask(task){
 
 function deleteTask(task){
    for (let key in list){
-      console.log(key);
+      console.log(key); //ПОКАЗЫВАЕТ , ЧТО KEY ЕСТЬ ТОЛЬКО TO SLEEP, ХОТЯ Я УЖЕ ДОБАВИЛ TO EAT И В КОНСОЛИ ОНО ЕСТЬ.
       if(key === task){
          return delete list[task];
       } else {
