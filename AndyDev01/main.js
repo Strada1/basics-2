@@ -43,7 +43,7 @@ function showList(){
 }
 
 addTask("delete dota 2");
-addTask("learn in Strada");
+addTask("study in Strada");
 changeStatus("delete dota 2", INPROGRESS);
 changeStatus("delete dota 2", DONE);
 changeStatus("study in Strada", INPROGRESS);
