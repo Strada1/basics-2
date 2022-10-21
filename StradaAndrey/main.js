@@ -29,14 +29,11 @@ function addTask(task){
 }
 
 function deleteTask(task){
-   for (let key in list){
-      if(key === task){
+      if(task in list){
          delete list[task]; 
-         break;
       } else {
          console.log(`задача ${task} отсутствует в списке. выберите другую`);
       }
-   }
 }
 
 function showStatus() {
