@@ -2,13 +2,13 @@ const calc = (action, a, b) => {
   if (checkValidValue(a) === undefined || checkValidValue(b) === undefined)
     return "Введите валидное число.";
   if (!action) return "Необходимо ввести действие";
-  if (String(action).toLowerCase() === "sum") return +a + +b;
-  if (String(action).toLowerCase() === "subtract") return +a - +b;
-  if (String(action).toLowerCase() === "multi") return +a * +b;
+  if (String(action).toLowerCase() === operation.sum) return +a + +b;
+  if (String(action).toLowerCase() === operation.minus) return +a - +b;
+  if (String(action).toLowerCase() === operation.multi) return +a * +b;
   if (
-    String(action).toLowerCase() !== "sum" ||
-    String(action).toLowerCase() !== "subtract" ||
-    String(action).toLowerCase() !== "multi"
+    String(action).toLowerCase() !== operation.minus ||
+    String(action).toLowerCase() !== operation.sum ||
+    String(action).toLowerCase() !== operation.multi
   )
     return "Неизвестное действие";
 };
@@ -18,3 +18,7 @@ const checkValidValue = (value) => {
     return value;
   }
 };
+
+const operation = { sum:'sum', minus:'minus', multi:'multi' };
+
+console.log(calc('sum',2,1))
