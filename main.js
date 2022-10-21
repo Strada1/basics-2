@@ -5,6 +5,7 @@ const list = {
 }
 
 const DEFAULT_STATUS = "To Do";
+const TASK_ERROR = "Task not found";
 
 function addTask(taskName) {
 
@@ -15,7 +16,7 @@ function changeStatus(taskName, taskStatus) {
   if (isValid) {
     list[taskName] = taskStatus;
   } else {
-    return 'Task not found'
+    return TASK_ERROR;
   }
 }
 
@@ -24,7 +25,7 @@ function deleteTask(taskName) {
   if (isValid) {
     delete list[taskName]
   } else {
-    return 'Task not found'
+    return TASK_ERROR;
   }
 }
 
