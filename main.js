@@ -4,15 +4,15 @@ const list = {
   "write a post": "To Do",
 }
 
-const DEFAULT_STATUS = "To Do";
+const DEFAULT_STATUS = "In Progress";
 const TASK_ERROR = "Task not found";
 
 function addTask(taskName) {
-
+  list[taskName] = DEFAULT_STATUS;
 }
 
 function changeStatus(taskName, taskStatus) {
-  const isValid = list[taskName] != undefined;
+  const isValid = taskName in list;
   if (isValid) {
     list[taskName] = taskStatus;
   } else {
@@ -21,7 +21,7 @@ function changeStatus(taskName, taskStatus) {
 }
 
 function deleteTask(taskName) {
-  const isValid = list[taskName] != undefined;
+  const isValid = taskName in list;
   if (isValid) {
     delete list[taskName]
   } else {
