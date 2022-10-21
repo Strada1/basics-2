@@ -65,3 +65,9 @@ function showList() {
   console.log(`${TODO_STATUS.IN_PROGRESS}:\n${resultInProgress}`);
   console.log(`${TODO_STATUS.DONE}:\n${resultDone}`);
 }
+
+addTask('Learn JavaScript');
+addTask('Go to bed');
+changeStatus('Learn JavaScript', TODO_STATUS.TODO)
+deleteTask('make a bed');
+showList();
