@@ -10,7 +10,7 @@ const list = {
 
 function changeStatus(task, status) {
     if (task in list) {
-        return list[task] = status;
+        list[task] = status;
     } else console.log(`can't change "${task}" to "${status}" cause there's no such task`);
 }
 
@@ -32,20 +32,19 @@ function showList() {
 
 function showCategory(Category) {
     let str = "";
-    let counter = 0;
     console.log(`${Category}:`);
     for (let key in list) {
         if(list[key] === Category) {
             str+=`\t "${key}" \n`;
-            counter++;
         } 
-    }  if (counter === 0) {
+    }  if (!str) {
             console.log("\t-");
         } else {console.log(str)}
 }
 
 addTask("walk the dog");
 addTask("feed the cat");
-changeStatus("feed the cat",DONE)
+changeStatus("feed the cat", DONE)
 deleteTask("make a bed");
+deleteTask("feed the cat");
 showList();
