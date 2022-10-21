@@ -10,10 +10,14 @@ const tasks = {
     'write a post': status.TO_DO,
 }
 
+const errors = {
+    error: 'No such task',
+}
+
 function deleteTask(item) {
     if (item in tasks) {
         delete tasks[item];
-    }
+    } else return errors.error
 }
 
 function addTask(item) {
@@ -25,7 +29,7 @@ function addTask(item) {
 function changeStatus(item, changedStatus) {
     if(item in tasks) {
         tasks[item] = status[changedStatus];
-    }
+    } return errors.error
 }
 
 function showList() {
@@ -52,6 +56,7 @@ function showList() {
 
 addTask('Do the dishes');
 deleteTask('create a new practice task');
+console.log(deleteTask('walk'));
 changeStatus('make the bed', 'DONE');
 console.log(tasks);
 showList();
