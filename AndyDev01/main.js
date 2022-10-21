@@ -1,7 +1,7 @@
 const INPROGRESS = "In Progress";
 const DONE = "Done";
 const TODO = "To Do";
-const DEFOLT = TODO;
+const DEFAULT = TODO;
 
 const list = {
   "create a new practice task": INPROGRESS,
@@ -18,23 +18,23 @@ function deleteTask(task){
 }
 
 function addTask(nameTask){
-  list[nameTask] = DEFOLT;
+  list[nameTask] = DEFAULT;
 }
 
 function showList(){
-  console.log(TODO);
+  console.log(`${TODO}:`);
   for (let key in list) {
     if (list[key] == TODO){
       console.log(`   "${key}"`);
     }
   }
-  console.log(INPROGRESS)
+  console.log(`${INPROGRESS}:`)
   for (let key in list) {
     if (list[key] == INPROGRESS){
       console.log(`   "${key}"`);
     }
   }
-  console.log(DONE)
+  console.log(`${DONE}:`)
   for (let key in list) {
     if (list[key] == DONE){
       console.log(`   "${key}"`);
