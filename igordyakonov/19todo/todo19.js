@@ -21,6 +21,9 @@ function showLost (){
     for (let key in list){
         if (list[key] === "To Do"){
             console.log("\t" + key);
+        } else{
+            console.log("\t -");
+            break;
         }
         
     }
@@ -28,12 +31,18 @@ function showLost (){
     for (let key in list){
         if (list[key] === "In Progress"){
             console.log("\t" + key);
+        } else{
+            console.log("\t -");
+            break;
         }
     }
     console.log("\040\040\040Done:");
     for (let key in list){
         if (list[key] === "Done"){
             console.log("\t" + key);
+        } else{
+            console.log("\t -");
+            break;
         }
     }
 }
