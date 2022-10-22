@@ -9,7 +9,7 @@ function changeStatus(key, status) {
 }
 
 function addTask(key, status = 'To Do') {
-  list[key] = status; п;
+  list[key] = status;
 }
 
 function deleteTask(key) {
