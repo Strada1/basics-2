@@ -32,6 +32,43 @@ function changeStatus(item, changedStatus) {
     } return errors.error
 }
 
+function showList() {
+    let doneList = '';
+    let inProgressList = '';
+    let toDoList = '';
+        for(item in tasks) {
+            if(tasks[item] == 'Done') {
+                doneList += item + '\n';
+            }
+        };
+        for(item in tasks) {
+            if(tasks[item] == 'In Progress') {
+                inProgressList += item + '\n';
+            }   
+        };
+        for(item in tasks) {
+            if(tasks[item] == 'To do') {
+                toDoList += item + '\n';
+            } 
+        };
+        console.log('\n');
+
+if(doneList !== '') {
+    console.log(`Done:\n ` + doneList);
+} else {
+    console.log('Done:\n - \n');
+}
+if(inProgressList !== '') {
+    console.log(`In Progress:\n ` + inProgressList);
+} else {
+    console.log('In Progress:\n - \n');
+}
+if(toDoList !== '') {
+    console.log(`To Do:\n ` + toDoList);
+} else {
+    console.log('To Do:\n - \n');
+}
+};
 
 addTask('Do the dishes');
 deleteTask('create a new practice task');
