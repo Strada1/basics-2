@@ -1,4 +1,10 @@
 
+const status = {
+    ToDo: 'To Do',
+    InProgress: 'In Progress',
+    Done: 'Done',
+}
+
 // Объект тудушки, в которую записываются задания
 const list = {
     'task': 'In progress',
