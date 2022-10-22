@@ -28,7 +28,7 @@ function showList() {
             inprogress += "\n\t" + k;
         }
     } 
-        if (done == "") {
+    if (done == "") {
             done += "--";
         } else if (todo == "") {
             todo += "--";
