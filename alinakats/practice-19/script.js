@@ -7,10 +7,8 @@ const list = {
     'clean a house': 'to do',
     'make html practice': 'in progress',
 
-    
-
-
 }
+
 function changeStatus(task, status) {
     if (Object.keys(list).includes(task)) {
         return console.log(`Status for your task has change: ` + (list[task] = status));
@@ -33,7 +31,24 @@ function deleteTask(task) {
 }
 
 function showList() {
+    let toDoList = '',
+        inProgressList = '',
+        doneList = '';
 
+    for (let key in list) {
+        if (list[key] === 'to do') {
+            toDoList += `\t\t\t "${key}",\n`;
+            
+        } 
+        else if (list[key] === 'in progress') {
+            inProgressList += `\t\t\t "${key}",\n`;
+        }
+        else if (list[key] === 'done') {
+            doneList += `\t\t\t "${key}", \n`;
+        }
+    
+    }
+    return console.log(`To do: \n ${toDoList} In Progress: \n ${inProgressList} Done: \n ${doneList}`)
 }
 
 changeStatus('make a dinner', 'in progress');
@@ -41,3 +56,6 @@ addTask('read a book', 'to do');
 console.log(list);
 deleteTask('make html practice');
 console.log(list);
+changeStatus('read a new chapter in JS', 'done');
+changeStatus('make a dinner', 'done');
+showList();
