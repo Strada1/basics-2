@@ -75,12 +75,3 @@ list.deleteTask("write a post");
 
 console.log("---------------");
 list.showList();
-
-
-
-
-// list.changeStatus("create a new practice task", 'In Progress');
-// list.changeStatus("make a bed", "Done");
-// list.changeStatus("write a post", "To Do");
-
-// list.showList();
