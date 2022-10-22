@@ -1,21 +1,49 @@
-for (let i = 1; i < 20; i += 1) {
-  console.log(i)
+const list = {
+  'create a new practice task': 'In Progress',
+  'make a bed': 'Done',
+  'write a post': 'To Do',
+};
+
+function changeStatus(key, status) {
+  list[key] = status;
 }
 
-const calc = (action, a, b) => {
-  let result;
-  switch (action) {
-    case 'add':
-      result = a + b;
-      break;
-    case 'multi':
-      result = a * b;
-      break;
-    case 'substract':
-      result = a - b;
-      break;
-    default:
-      result = 'Error';
+function addTask(key, status = 'To Do') {
+  list[key] = status; п;
+}
+
+function deleteTask(key) {
+  delete list[key];
+}
+
+function searchInList(value) {
+  let result = '';
+  console.log(value);
+  for (const key in list) {
+    if (list[key] === value) {
+      result = `${result}\t${key}\n `;
+    }
   }
-  return result;
-};
+  if (result === '') {
+    result = '-';
+  }
+  console.log(result);
+}
+
+function showList() {
+  searchInList('To Do');
+  searchInList('In Progress');
+  searchInList('Done');
+  searchInList('Test');
+}
+
+addTask('new task');
+addTask('new task2');
+addTask('new task3');
+addTask('new task4');
+changeStatus('new task3', 'In Progress');
+changeStatus('new task4', 'Done');
+changeStatus('new task', 'Done');
+deleteTask('make a bed');
+
+showList();
