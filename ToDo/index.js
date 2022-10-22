@@ -33,6 +33,9 @@ function changeStatus(item, changedStatus) {
 }
 
 function showList() {
+    let doneList = '';
+    let inProgressList = '';
+    let toDoList = '';
     console.log('Done:');
         for(item in tasks) {
             if(tasks[item] == 'Done') {
@@ -43,14 +46,17 @@ function showList() {
         for(item in tasks) {
             if(tasks[item] == 'In Progress') {
                 console.log(item);
-            }
+            }   
         };
     console.log('To do:');
         for(item in tasks) {
             if(tasks[item] == 'To do') {
                 console.log(item);
-            }
+            } 
+            
         };
+
+        
 }
 
 
