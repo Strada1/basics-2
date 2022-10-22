@@ -13,7 +13,6 @@ function changeStatus(taskName, taskStatus) {
             }
         }
         console.log(`не возможно присвоить статус ${taskStatus} задаче ${taskName}`);
-        return;
     }
     console.log('нет такой задачи в списке дел');
     return;
@@ -26,7 +25,6 @@ function addTask(taskName) {
         return;
     }
     this[taskName] = null;
-    return;
 }
 list.addTask = addTask;
 
@@ -36,8 +34,7 @@ function deleteTask(taskName) {
         console.log(`задача ${taskName} удалена из списка дел`);
         return;
     }
-    console.log(`задачи ${taskName} нет в списке дел`);
-    return;  
+    console.log(`задачи ${taskName} нет в списке дел`); 
 }
 list.deleteTask = deleteTask;
 
