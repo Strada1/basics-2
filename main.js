@@ -18,7 +18,7 @@ function letsGo(task) {
 }
 
 function changeStatus(task) {
-        list[key] = "Done"
+        list[task] = "Done"
 }
 
 function showList() {
