@@ -43,9 +43,9 @@ function showList() {
 
 addTask('have a walk')
 addTask('have a lunch')
-addTask('have a breakfast')
+addTask('have a dinner')
 
-deleteTask('have a breakfast')
+deleteTask('have a dinner')
 
 
 changeStatus("write a post", "Done")
