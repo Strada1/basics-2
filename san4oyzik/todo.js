@@ -55,7 +55,6 @@ function showList() {
 addTask('New popular task');
 deleteTask('task');
 addTask('drink coffee');
-showList();
 changeStatus('drink coffee', 'In progress')
 changeStatus('first task', 'Done');
 showList();
