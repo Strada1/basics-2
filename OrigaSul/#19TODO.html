@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const list = {
+	"create a new practice task": "In Progress",
+	"make a bed": "Done",
+	"write a post": "To Do",
+    "make a bed222": "Done",
+	"write a post22": "To Do",
+    "write a post333": "To Do",
+}
+
+function addTask() {
+    plusNameTask = prompt("Add name of task","")
+    plusStatusTask = prompt("Add status of task","")
+list[plusNameTask] = plusStatusTask
+}
+
+function changeStatus(){
+    changedNameTask = prompt("Add name of changed task","")
+    changedStatusTask = prompt("Add new status of changed task","")
+    list[changedNameTask] = changedStatusTask
+}
+
+function deleteTask() {
+    deleteNameTask = prompt("Name of task you'll delete","")
+   delete list[deleteNameTask]
+}
+
+function showList() {
+    console.log('To Do')
+
+    for (let key in list){
+        if (list[key]==="To Do")
+        console.log(key)
+    }
+      
+console.log('In Progress')
+    for (let key2 in list){
+        if (list[key2]==="In Progress")
+        console.log(key2)}
+
+        console.log('Done')
+    for (let key3 in list){
+        if (list[key3]==="Done")
+        console.log(key3)
+    
+}
+}
+
+addTask()
+deleteTask()
+showList()
+console.log(list);
+    </script>
+</body>
+</html>
