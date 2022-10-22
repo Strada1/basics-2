@@ -48,5 +48,6 @@ const showList = () =>{
 
 showList()
 addTask('sleep')
+addTask('Eat')
 console.log(changeStatus('create a new practice task'))
 showList()
