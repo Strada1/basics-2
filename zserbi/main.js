@@ -1,4 +1,4 @@
-const list = { //Хранилищем будет объектов, а имена задач - ключами этого объекта
+const list = { //Хранилищем будет объект, а имена задач - ключами этого объекта
     "create a new practice task": "In Progress",
     "make a bed": "Done",
     "write a post": "To do",
