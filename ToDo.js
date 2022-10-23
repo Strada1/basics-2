@@ -6,8 +6,8 @@ const STATUS = {
   
   
   const taskList = {
-      'create a new practice task': 'IN_PROGRESS',
-      'clean' : 'TO_DO',
+    'create a new practice task': 'IN_PROGRESS',
+    'clean' : 'TO_DO',
     'study' : 'TO_DO',
     'drink' : 'IN_PROGRESS',
     'sleep' : 'IN_PROGRESS',
@@ -24,14 +24,14 @@ const STATUS = {
   function changeStatuses (task, status) {
     if (task in taskList) {
       let trueStatus;
-      for (let stat in STATUS) {
+        for (let stat in STATUS) {
           if (status == STATUS[stat]) {
               trueStatus = true;
           }
       }
-      if (trueStatus) {
+          if (trueStatus) {
         taskList[task] = status;
-      } else {
+      }   else {
           console.log('Status Invalid');
       }
   } else {
