@@ -52,7 +52,7 @@ function showList() {
   console.log("Done: ");
   for (let task in list) {
     if (list[task] === STATUS.DONE) {
-      console.log(`\t "${key}",`);
+      console.log(`\t "${task}",`);
       checkTask.doneCount++;
     }
   }
