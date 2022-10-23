@@ -1,6 +1,8 @@
-const TODO = "To Do";
-const INPROGRESS = "In Progress";
-const DONE = "Done";
+const STATUS = {
+    TODO: "To Do",
+    INPROGRESS: "In Progress",
+    DONE: "Done",
+}
 
 const list = {
     "create a new practice task": "In Progress",
@@ -15,7 +17,7 @@ function changeStatus(task, status) {
 }
 
 function addTask(newTask) {
-    list[newTask] = "To Do";
+    list[newTask] = STATUS.TODO;
 }
 
 function deleteTask(task) {
@@ -25,9 +27,9 @@ function deleteTask(task) {
 }
 
 function showList() {
-    showCategory(TODO);
-    showCategory(INPROGRESS);
-    showCategory(DONE);
+    showCategory(STATUS.TODO);
+    showCategory(STATUS.INPROGRESS);
+    showCategory(STATUS.DONE);
 }
 
 function showCategory(Category) {
@@ -44,7 +46,8 @@ function showCategory(Category) {
 
 addTask("walk the dog");
 addTask("feed the cat");
-changeStatus("feed the cat", DONE)
+console.log(list);
+changeStatus("feed the cat", STATUS.DONE)
 deleteTask("make a bed");
 deleteTask("feed the cat");
 showList();
