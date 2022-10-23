@@ -13,8 +13,10 @@ function calc(action, arg1, arg2) {
         case `-`:
             return arg1 - arg2;
         default:
-            return `oops, error`;
+            return `error`;
     }
 }
 
 alert(calc(actionNum, num1, num2));
+
+
