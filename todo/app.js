@@ -4,12 +4,18 @@ const list = {
   three: "To do",
 };
 
-function changeStatus(todo, status, obj) {
-  obj[todo] = status;
+const status_obj = {
+  TODO: "To do",
+  DONE: "Done",
+  "IN PROGRESS": "In progress",
+};
+
+function changeStatus(todo, obj) {
+  obj[todo] = status_obj["IN PROGRESS"];
 }
 
-function addTask(todo, status, obj) {
-  obj[todo] = status;
+function addTask(todo, obj) {
+  obj[todo] = status_obj["IN PROGRESS"];
 }
 
 function deleteTask(todo, obj) {
@@ -42,7 +48,7 @@ function showList(obj) {
   console.log("In Progress:");
   count3 = 0;
   for (let key in list) {
-    if (list[key] === "In Progress") {
+    if (list[key] === "In progress") {
       console.log(`\t${key}`);
       count3++;
     }
@@ -50,10 +56,16 @@ function showList(obj) {
   if (count3 == 0) {
     console.log(`\t${"-"}`);
   }
+  console.log("\n");
 }
 
+// До изменение
+showList();
+
 deleteTask("one", list);
-changeStatus("two", "In progress", list);
-addTask("six", "In Progress", list);
-addTask("four", "To do", list);
+changeStatus("two", list);
+addTask("six", list);
+addTask("four", list);
+
+// После изменение
 showList(list);
