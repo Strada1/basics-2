@@ -1,19 +1,32 @@
+const STATUS = {
+    TO_DO: "To Do",
+    IN_PROGRESS: "In Progress",
+    DONE: "Done",
+}
+
+const ERRORS = {
+    NAME_OF_TASK_NOT_FOUND: "Имя задачи не найдено!",
+    NAME_OF_TASK_IS_EMPTY: "Введите имя задачи!",
+    STATUS_OF_TASK: `Статус может быть только '${STATUS.TO_DO}', '${STATUS.IN_PROGRESS}' или '${STATUS.DONE}'`,
+    SAME_STATUS: `Задача имеет такой же статус. Введите другой`,
+}
+
 const list = {
-	"create a new practice task": "In Progress",
-	"make a bed": "Done",
-    "write a post": "To Do",
+	"create a new practice task": STATUS.IN_PROGRESS,
+	"make a bed": STATUS.DONE,
+    "write a post": STATUS.TO_DO,
 }
 
 function changeStatus(nameOfTask, status) {
-    if ((status !== 'To Do') && (status !== 'In Progress') && (status !== "Done")) {
-        console.log('Статус может быть "To Do", "In Progress" или "Done"')
+    if ((status !== STATUS.TO_DO) && (status !== STATUS.IN_PROGRESS) && (status !== STATUS.DONE)) {
+        console.log(ERRORS.STATUS_OF_TASK)
     } else {
         switch (list[nameOfTask]) {
             case undefined:
-                console.log('Имя задачи не найдено!')
+                console.log(ERRORS.NAME_OF_TASK_NOT_FOUND)
                 break;
             case status:
-                console.log(`Задача уже имеет статус "${status}"`)
+                console.log(ERRORS.SAME_STATUS)
                 break
             default:
                 return list[nameOfTask] = status
@@ -23,9 +36,9 @@ function changeStatus(nameOfTask, status) {
 
 function addTask(nameOfTask) {
     if (!nameOfTask) {
-        console.log('Введите имя задачи!')
+        console.log(ERRORS.NAME_OF_TASK_IS_EMPTY)
     } else {
-        return list[nameOfTask] = "To Do"
+        return list[nameOfTask] = STATUS.TO_DO
     }
 }
 
@@ -33,15 +46,15 @@ function deleteTask(nameOfTask) {
     if (nameOfTask in list) {
         delete list[nameOfTask] 
     } else {
-        console.log('Имя задачи для удаления НЕ НАЙДЕНО')
+        console.log(ERRORS.NAME_OF_TASK_NOT_FOUND)
     }
 }
 
 function showList() {
-    console.group('To Do:')
+    console.group(`${STATUS.TO_DO}:`)
     let check = 0
     for (key in list) {
-        if (list[key] === 'To Do') {
+        if (list[key] === STATUS.TO_DO) {
             check++
             console.log(key)
         } 
@@ -51,10 +64,10 @@ function showList() {
     }
     console.groupEnd()
 
-    console.group('In Progress:')
+    console.group(`${STATUS.IN_PROGRESS}:`)
     check = 0
     for (key in list) {
-        if (list[key] === 'In Progress') {
+        if (list[key] === STATUS.IN_PROGRESS) {
             check++
             console.log(key)
         } 
@@ -64,10 +77,10 @@ function showList() {
     }
     console.groupEnd()
 
-    console.group('Done:')
+    console.group(`${STATUS.DONE}:`)
     check = 0
     for (key in list) {
-        if (list[key] === 'Done') {
+        if (list[key] === STATUS.DONE) {
             check++
             console.log(key)
         } 
