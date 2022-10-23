@@ -8,6 +8,7 @@ const list = {
   "create a new practice task": "In Progress",
   // "make a bed": "Done",
   "write a post": "To Do",
+  "play on guitar": "To Do",
   "have a walk": "To Do",
   "to go to gym": "To Do",
   "boil the soup": "In Progress",
