@@ -7,11 +7,10 @@ const STATUS = {
 const CHECK = {
     CHANGE_STATUS: 'Статус изменен',
     ADD_TASK: 'Задача добавлена',
-    DELETE_TASK: 'Задача удалена'
-
+    DELETE_TASK: 'Задача удалена',
 }
 
-const ERORR = {
+const ERROR = {
     NO_TASK: 'Ошибка: Нет такой задачи',
     YES_TASK: 'Ошибка: Такая задача уже есть',
     NO_STATUS: 'Ошибка: Такой статус не доступен',
@@ -25,18 +24,18 @@ const list = {
 
 function changeStatus(nameTask, nameStatus) {
     if (nameStatus !== STATUS.IN_PROGRESS && nameStatus !== STATUS.DONE && nameStatus !== STATUS.TO_DO) {
-        console.log(ERORR.NO_STATUS);
+        console.log(ERROR.NO_STATUS);
     } else if (nameTask in list) {
         list[nameTask] = nameStatus;
         console.log(CHECK.CHANGE_STATUS);
     } else {
-        console.log(ERORR.NO_TASK);
+        console.log(ERROR.NO_TASK);
     }
 }
 
 function addTask(newTask) {
     if (newTask in list) {
-        console.log(ERORR.YES_TASK);
+        console.log(ERROR.YES_TASK);
     } else {
         list[newTask] = STATUS.IN_PROGRESS;
         console.log(CHECK.ADD_TASK);
@@ -48,7 +47,7 @@ function deleteTask(nameTask) {
         delete list[nameTask]
         console.log(CHECK.DELETE_TASK);
     } else {
-        console.log(ERORR.NO_TASK);
+        console.log(ERROR.NO_TASK);
     }
 }
 
