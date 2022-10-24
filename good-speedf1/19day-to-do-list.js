@@ -30,7 +30,7 @@ function addTask(list, task) {
 // удаление задачи
 function deleteTask(list, task) {
 	if (!(task in list)) {
-		return "task not at list"
+		return "task not exist at list"
 	} else {
 		return delete list[task]
 	}
