@@ -1,34 +1,52 @@
 const list = {
-    "make a bed": "Done",
-    "make a beds": "Done",
-    "make a bedf": "Done",
-    "make a bedg": "Done",
-    "make a bedh": "Done",
+    "make a bed": "ToDo",
+    "try to sleep": "ToDo",
+    "dance with mom": "ToDo",
+    "wake up": "ToDo",
+    "make memes": "ToDo",
 }
 
 function addTask(task_name) {
-    return list[task_name] = `ToDo`;
+    list[task_name] = `ToDo`;
 }
 
 function changeStatus(task, status) {
-    // return list[task] = status;
+    list[task] = status;
+}
+
+function deleteTask(task) {
+    delete list[task];
 }
 
 function showList(obj) {
-    const sort = {
+    const sortedList = {
+        ToDo: ``,
+        "In progres": ``,
         Done: ``,
-
-
     };
     for (let objKey in obj) {
         if (obj[objKey] === `Done`) {
-            sort.Done += `\t` + objKey + ` \n`;
+            sortedList.Done += `\t` + objKey + ` \n`;
+        } else if (obj[objKey] === `ToDo`) {
+            sortedList.ToDo += `\t` + objKey + ` \n`;
+        } else if (obj[objKey] === `In progres`) {
+            sortedList["In progres"] += `\t` + objKey + ` \n`;
         }
     }
-    return `Done:\n${sort.Done}`;
+
+    for (let a in sortedList) {
+        if (sortedList[a] === ``) {
+            sortedList[a] += `\t-\n`;
+        }
+    }
+
+    return `ToDo:\n${sortedList.ToDo} In progres:\n${sortedList["In progres"]} Done:\n${sortedList.Done}`;
 
 }
 
+
+
+//TEST
 addTask(`test`);
 addTask(`test2`);
 addTask(`test3`);
@@ -36,9 +54,10 @@ addTask(`test4`);
 console.log(showList(list));
 console.log();
 
-// console.log(changeStatus(`test2`, `Done`));
-// console.log(changeStatus(`test4`, `In progres`));
-// console.log(showList(list));
+changeStatus(`test2`, `Done`);
+console.log(showList(list));
+changeStatus(`test4`, `In progres`);
+console.log(showList(list));
 
-// console.log(deleteTask(`test`));
-// console.log(showList());
+deleteTask(`test`);
+console.log(showList(list));
