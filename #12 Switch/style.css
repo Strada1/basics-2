@@ -1,0 +1,16 @@
+body {
+    width: 70%;
+    margin: auto;
+    background-color: #242424;
+}
+
+p {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 1.5em auto auto;
+    text-align: center;
+    color: aliceblue;
+}
+
+a {
+    color: deepskyblue;
+}
