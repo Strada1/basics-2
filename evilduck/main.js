@@ -1,20 +1,51 @@
-function calc(action, a, b) {
-    action = prompt('Введите необходимое действие', '');
-    a = +prompt('Введите первое число', '');
-    b = +prompt('Введите второе число', '');
-    switch (action) {
-        case 'add':
-            alert(a + b);
-            break;
-        case 'multi':
-            alert(a * b);
-            break;
-        case 'subtract':
-            alert(a - b);
-            break;
-        default:
-            alert('Вы ввели неверные значения');   
-    }
+const inProgress = "In Progress";
+const done = "Done";
+const toDo = "To Do";
+
+const list = {
+    
+	"сделать задачу в Strada": inProgress,
+	"заправить кровать": done,
+	"написать пост в тг": toDo,
 }
 
-calc();
+function changeStatus(task, status) {
+    list[task] = status;
+}
+
+function deleteTask(task) {
+    delete list[task];
+}
+
+function addTask(task) {
+   list[task] = toDo;
+}
+
+function showList() {
+    console.log("TO DO:");
+    for (let key in list) {
+        if (list[key] === toDo) {
+            console.log("   ", key)
+        }
+    }
+    console.log("   ");
+    console.log("IN PROGRESS:");
+    for (let key in list) {
+        if (list[key] === inProgress) {
+            console.log("   ", key)
+        }
+    }
+    console.log("   ");
+    console.log("DONE:");
+    for (let key in list) {
+        if (list[key] === done) {
+            console.log("   ", key)
+        }
+    } 
+
+ }
+
+addTask("выгулять собаку");
+addTask("загрузить задачу в гит")
+changeStatus("сделать задачу в Strada", done);
+showList();
