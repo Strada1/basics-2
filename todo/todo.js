@@ -24,39 +24,39 @@ function deleteTask(task) {
 
 function showList() {
   let checkTask = {
-    toDoCount: 0,
-    inProgressCount: 0,
-    doneCount: 0,
+    toDoCount: false,
+    inProgressCount: false,
+    doneCount: false,
   };
 
   console.log("Todo: ");
   for (let task in list) {
     if (list[task] === STATUS.TODO) {
       console.log(`\t "${task}",`);
-      checkTask.toDoCount++;
+      checkTask.toDoCount = true;
     }
   }
-  if (checkTask.toDoCount == 0) {
+  if (checkTask.toDoCount == false) {
     console.log(`\t -`);
   }
   console.log("In Progress: ");
   for (let task in list) {
     if (list[task] === STATUS.IN_PROGRESS) {
       console.log(`\t "${task}",`);
-      checkTask.inProgressCount++;
+      checkTask.inProgressCount = true;
     }
   }
-  if (checkTask.inProgressCount == 0) {
+  if (checkTask.inProgressCount == false) {
     console.log(`\t -`);
   }
   console.log("Done: ");
   for (let task in list) {
     if (list[task] === STATUS.DONE) {
       console.log(`\t "${task}",`);
-      checkTask.doneCount++;
+      checkTask.doneCount = true;
     }
   }
-  if (checkTask.doneCount == 0) {
+  if (checkTask.doneCount == false) {
     console.log(`\t -`);
   }
 }
