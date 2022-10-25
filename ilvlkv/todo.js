@@ -1,4 +1,11 @@
 const list = {};
+const toDo = {};
+const done = {};
+const inProgress = {};
+
+let toDoList;
+let inProgressList;
+let doneList;
 
 function addTask(task) {
   return (list[task] = null);
@@ -12,25 +19,55 @@ function deleteTask(task) {
   delete list[task];
 }
 
-function showList() {
-  console.log("To do:");
+function sortByToDo() {
   for (let key in list) {
     if (list[key] == "To Do") {
-      console.log("     " + key);
+      return (toDo[key] = "toDo");
     }
   }
-  console.log("In Progress:");
-  for (key in list) {
+}
+
+function sortByInProgress() {
+  for (let key in list) {
     if (list[key] == "In Progress") {
-      console.log("     " + key);
+      return (inProgress[key] = "inProgress");
     }
   }
-  console.log("Done:");
-  for (key in list) {
+}
+
+function sortByDone() {
+  for (let key in list) {
     if (list[key] == "Done") {
-      console.log("     " + key);
+      return (done[key] = "done");
     }
   }
+}
+
+function getToDoList() {
+  for (let key in toDo) {
+    return (toDoList = `To Do:\n\t ${key}`);
+  }
+  return (toDoList = `To Do:\n\t -`);
+}
+
+function getInProgressList() {
+  for (let key in inProgress) {
+    return (inProgressList = `In Progress:\n\t ${key}`);
+  }
+  return (inProgressList = `In Progress:\n\t -`);
+}
+
+function getDoneList() {
+  for (let key in done) {
+    return (doneList = `Done:\n\t ${key}`);
+  }
+  return (doneList = `Done:\n\t -`);
+}
+
+function showList() {
+  console.log(toDoList);
+  console.log(inProgressList);
+  console.log(doneList);
 }
 
 addTask("create a new practice task");
@@ -41,10 +78,14 @@ changeStatus("create a new practice task", "In Progress");
 changeStatus("make a bed", "Done");
 changeStatus("write a post", "To Do");
 
-addTask("buy some food");
-changeStatus("buy some food", "Done");
-changeStatus("buy some food", "To Do");
+deleteTask("make a bed");
 
-deleteTask("buy some food");
+sortByToDo();
+sortByInProgress();
+sortByDone();
+
+getToDoList();
+getInProgressList();
+getDoneList();
 
 showList();
