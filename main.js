@@ -12,6 +12,7 @@ function showVerticalMessage(str) {
   for (let char of str) {
     verticalStr += char + '\n';
   }
+
   console.log(verticalStr);
 }
 
