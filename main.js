@@ -1,21 +1,17 @@
 function showVerticalMessage(str) {
-  let resultStr = '';
   let verticalStr = '';
 
-  if (str[0] == 's') {
-    resultStr = 'S' + str.slice(1)
-  } else {
-    resultStr = str;
+  if (str.startsWith('s')) {
+    str = 'S' + str.slice(1)
   }
 
-  if (resultStr.length > 7) {
-    resultStr = resultStr.slice(0, 7);
+  if (str.length > 7) {
+    str = str.slice(0, 7);
   }
 
-  for (let char of resultStr) {
+  for (let char of str) {
     verticalStr += char + '\n';
   }
-
   console.log(verticalStr);
 }
 
