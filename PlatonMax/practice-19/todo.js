@@ -23,7 +23,7 @@ const list = {
 
 	addTask(nameTask) {
 		if (!this[nameTask])
-			this[nameTask] = 'new task'
+			this[nameTask] = STATUS.TO_DO
 		else
 			console.log(ERRORS.TASK_ALREADY_EXIST)
 	},
