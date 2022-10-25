@@ -21,19 +21,19 @@ function deleteTask(task) {
 }
 
 function showList() {
-  console.log(`To Do:`);
+  console.log("To Do:");
   for (let key in list) {
     if (list[key] == "To Do") {
       console.log(`\t"${key}"`);
     }
   }
-  console.log(`Done:`);
+  console.log("Done:");
   for (let key in list) {
     if (list[key] == "Done") {
-      console.log(`\t"${key}"`);
+      console.log(`\t"${key}"`); //test
     }
   }
-  console.log(`In Progress:`);
+  console.log("In Progress:");
   for (let key in list) {
     if (list[key] == "In Progress") {
       console.log(`\t"${key}"`);
