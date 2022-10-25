@@ -1,35 +1,72 @@
-console.log('test')
-console.log('test1')
-
-
-function calc(action, a, b) {
-    if (action === 'plus') {
-        return a + b;
-    } else if (action === 'multi') {
-        return a * b;
-    } else if (action === 'subtract') {
-        return a - b;
-    }
+const dash = "-";
+const list = {
+    "create a new practice task": "In Progress",
+    "make a bed": "Done",
+    "write a post": "To Do",
 }
 
-console.log(calc('plus', 1, 2)) // 3
-console.log(calc('multi', 1, 2)) // 2
-console.log(calc('subtract', 3, 2)) // 1
-
-function calculator(action, number1, number2) {
-    switch (action) {
-        case 'plus':
-            return number1 + number2;
-        case 'multi':
-            return number1 * number2;
-        case 'subtract':
-            return number1 - number2;
+function changeStatus(task, status) {
+    if (list[task]) {
+        list[task] = status;
+    } else {
+        console.log('такой задачи нет');
     }
+};
+
+
+function addTask(task) {
+    if (task in list) {
+        console.log('такая задача есть');
+    } else {
+        list[task] = 'To Do'
+    }
+};
+
+function deleteTask(task) {
+    if (task in list) {
+        delete list[task];
+    } else {
+        console.log('это новая задача')
+    }
+};
+
+function showList() {
+    console.log(`To Do:`);
+    for (let key in list) {
+        if (list[key] == 'To Do') {
+            console.log(`\t'${key}'`)
+        }
+    }
+    for (let key in list) {
+        if (list[key] == 'Done') {
+            console.log(`\t'${key}'`)
+        }
+    }
+    console.log(`In Progress:`)
+    for (let key in list) {
+        if (list[key] == 'In Progress') {
+            console.log(`\t'${key}'`)
+        }
+    }
+    console.log(`Done:`)
+    console.log(`\t${dash}`)
 }
 
-console.log(calculator('plus', 1, 2)) // 3
-console.log(calculator('multi', 1, 2)) // 2
-console.log(calculator('subtract', 3, 2)) // 1
+
+changeStatus('make a bed', 'property')
+addTask('My Heart')
+addTask('San Frank')
+deleteTask('write a post')
+showList()
+console.log(list)
+
+
+
+
+
+
+
+
 
 
 
