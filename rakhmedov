@@ -1,0 +1,13 @@
+ function calc (action, a, b)    {
+  if (action==='sum') {
+    alert(+a + +b)
+  }
+  else if (action==='multi'){
+    alert(+a * +b)
+  }
+  else if (action==='subtract'){
+    alert(+a - +b)
+  }
+  }
+  
+  alert(calc('sum',2,3))
