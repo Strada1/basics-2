@@ -1,4 +1,4 @@
-// The second way
+// The second solution
 function showVerticalMessage(str) {
   let str2 = "";
   let char = "s";
