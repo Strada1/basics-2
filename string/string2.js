@@ -8,7 +8,6 @@ function showVerticalMessage(str) {
   } else {
     str = str.slice(0, 7);
   }
-
   for (let i of str) {
     str2 += i + "\n";
   }
