@@ -4,10 +4,11 @@ function showVerticalMessage(str) {
   let char = "s";
 
   if (str[0] === char) {
-    str = str[0].toUpperCase() + str.slice(1);
-  } else if (str.length > 7) {
+    str = str[0].toUpperCase() + str.slice(1, 7);
+  } else {
     str = str.slice(0, 7);
   }
+
   for (let i of str) {
     str2 += i + "\n";
   }
