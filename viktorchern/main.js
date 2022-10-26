@@ -51,6 +51,9 @@ function showVerticalMessage(str){
 	let strNew = str.trim();
 	let result = '';
 	if( strNew.length > 0 ){
+		if( strNew.length > 7 ){
+			strNew = strNew.slice(0, 7);
+		}
 		for( let i = 0; i < strNew.length; i++ ){
 			if( i == 0 ){
 				result += strNew[i].toUpperCase() + '\n';
