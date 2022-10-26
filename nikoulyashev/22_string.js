@@ -1,12 +1,10 @@
 function showVerticalMessage(anyWord) {
   let result = "";
   if (anyWord.startsWith("s")) {
-    anyWord = anyWord[0].toUpperCase() + anyWord.slice(1); // какой вариант лучше использовать?
-    // anyWord = "S" + anyWord.slice(1);
-  } else {
-    anyWord = anyWord.slice(0, 7);
+    anyWord = anyWord[0].toUpperCase() + anyWord.slice(1);
   }
-  for (let char of anyWord) {
+
+  for (let char of anyWord.slice(0, 7)) {
     result += char + "\n";
   }
   console.log(result);
@@ -14,3 +12,4 @@ function showVerticalMessage(anyWord) {
 
 showVerticalMessage("strada");
 showVerticalMessage("lorem ipsum");
+showVerticalMessage("загадочное слово");
