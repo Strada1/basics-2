@@ -24,22 +24,16 @@ function showVerticalMessage(inputValueVMessage) {
     if (propertyValue.LENGTH_TEXT > 7) {
         inputValueVMessage = propertyValue.BIG_FIRST + propertyValue.SLICE_TEXT_END;
         } else if (propertyValue.LENGTH_TEXT === 0) {
-        console.log(propertyValue.ERROR_MESSAGE);
+        console.log(ERROR_MESSAGE);
     } else {
         inputValueVMessage = propertyValue.BIG_FIRST + propertyValue.SLICE_TEXT_END;
     }
-    console.log(inputValueVMessage);
+
+    for (let char of inputValueVMessage) {
+        console.log(char);
+      }
 
  
 }
 
-
-showVerticalMessage('Stradaite');
 showVerticalMessage('strada');
-showVerticalMessage('Dantistsr23');
-showVerticalMessage('0');
-showVerticalMessage('');
-showVerticalMessage(' ');
-showVerticalMessage(12345678);
-showVerticalMessage();
-// Первая мысль. Циклом выводить каждую букву. Цикл проверяет наличие и выводит.
