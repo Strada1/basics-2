@@ -1,7 +1,8 @@
 
 function showVerticalMessage(str){
-    if (typeof str === 'string') {
-        console.log('Variable is a string');
+    if (typeof str != 'string') {
+        console.log('Variable is not a string');
+        return;
     }
     if (str[0]=='s'){
         console.log('S');
@@ -14,4 +15,4 @@ function showVerticalMessage(str){
 }
 
 
-showVerticalMessage('shello world');
+showVerticalMessage("sHello world");
