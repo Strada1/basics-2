@@ -56,7 +56,7 @@ function showList() {
 	let doneStatus = STATUS.DONE;
 	let inProgressStatus = STATUS.IN_PROGRESS;
 
-	for (let i = 0; i = list.length; i++) {
+	for (let i = 0; i < list.length; i++) {
 	 if (list[i].status === STATUS.TO_DO)	toDoStatus +=`\n   ${list[i].name}`;
 	 if (list[i].status === STATUS.DONE) doneStatus +=`\n   ${list[i].name}`;
 	 if (list[i].status === STATUS.IN_PROGRESS) inProgressStatus +=`\n   ${list[i].name}`;	
