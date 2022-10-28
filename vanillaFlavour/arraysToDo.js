@@ -25,6 +25,15 @@ function showTask(){
     console.log(list.filter(item => item.status == "done"));
 };
 
+function changeStatus(name, status, priority){
+    let taskIndex = list.findIndex(item => item.name == name);
+    list[taskIndex] = {
+        name,
+        status,
+        priority
+    };
+};
+
 addTask("go to eat", "done", "high");
 addTask("go to sleep", "done", "high");
 addTask("watch a movie", "in progress", "medium");
@@ -32,7 +41,10 @@ addTask("go to eat again", "in progress", "high");
 addTask("go to shower", "done", "low");
 addTask("go to study", "in progress", "low");
 
+changeStatus("go to eat", "in progress", "medium");
+
 deleteTask("go to eat");
 deleteTask("go to study");
 
 showTask();
+
