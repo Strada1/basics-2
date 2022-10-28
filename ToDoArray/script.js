@@ -46,13 +46,32 @@ function addPriority(task, priority){
     }
 }
 
+function showList(){
+    let toDo = STATUS.TODO+':';
+    let inProgress = STATUS.INPROGRESS+':';
+    let done = STATUS.DONE+':';
+    let finalStr = '';
+    for (let key of list) {
+        if (key.status === STATUS.TODO){
+            toDo += `\n\tTask: ${key.name}. Priority: ${key.priority}`;
+        }else if(key.status === STATUS.INPROGRESS){
+            inProgress += `\n\tTask: ${key.name}. Priority: ${key.priority}`;
+        }else if(key.status === STATUS.DONE){
+            done += `\n\tTask: ${key.name}. Priority: ${key.priority}`;
+        }
+    }
+    finalStr += toDo+'\n'+inProgress+'\n'+done;
+    console.log(finalStr);
+}
+
 console.log(list);
 addTask('new task');
 addStatus('new task', STATUS.TODO);
 addPriority('new task', PRIORITY.MEDIUM);
 addTask('your mori');
-deleteTask('test');
-deleteTask('qwerty');
+//deleteTask('test');
+//deleteTask('qwerty');
+addStatus('your mori', STATUS.DONE);
 console.log(list);
-
+showList();
 
