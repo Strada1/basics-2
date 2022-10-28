@@ -42,7 +42,6 @@ function changePriority(taskName, taskPriority) {
       item.priority = taskPriority;
     }
   })
-
 }
 
 function deleteTask(taskName) {
@@ -53,14 +52,5 @@ function deleteTask(taskName) {
   });
 }
 
-// deleteTask('test')
-// console.log(list);
-changePriority('test', TODO_PRIORITY.LOW);
-console.log(list);
-
 
 function showList() { }
-
-addTask('sleep', 'high');
-
-
