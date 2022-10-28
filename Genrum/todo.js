@@ -4,50 +4,63 @@ const STATUS = {
     DONE: "Done",
 }
 
-const list = {
-    "create a new practice task": "In Progress",
-    "make a bed": "Done",
-    "write a post":"To Do",
+const PRIORITY = {
+    HIGH: "high",
+    LOW: "low",
 }
 
-function changeStatus(task, status) {
-    if (task in list) {
-        list[task] = status;
-    } else console.log(`can't change "${task}" to "${status}" cause there's no such task`);
+const list = [
+    {name: "write a post", status: "In Progress", priority: "low",}, 
+    {name: "test", status: "Done", priority: "high",},
+]
+
+function changeStatus(task, newStatus) {
+   if (list.find(item => item.name == task) === undefined) {
+    console.log(`can't change "${task}" to "${newStatus}" cause there's no such task`);
+   } else {
+    list.find(item => item.name == task).status = newStatus;
+   }
 }
 
-function addTask(newTask) {
-    list[newTask] = STATUS.TODO;
+function addTask(name, priority) {
+    list.push({name, status: STATUS.TODO, priority});
 }
 
 function deleteTask(task) {
-    if (task in list) {
-        delete list[task];
-    } else console.log(`can't delete "${task}" cause it doesn't exist`)
+    let deleteIndex = list.findIndex(item => item.name == task);
+    if (deleteIndex < 0) {
+        console.log(`can't delete "${task}" cause it doesn't exist`)
+    } else {
+        list.splice(deleteIndex, 1)
+    }
 }
+
+
+function showCategory(cat) {
+    str="";
+    console.log(`${cat}:`);
+    list.forEach(function(item) {
+        if (item.status === cat){
+            str+="\t" + item.name +"\n";
+        }
+    }) 
+    if (!str) {
+        console.log("\t-");
+    } else {console.log(str)}
+}
+
 
 function showList() {
-    showCategory(STATUS.TODO);
-    showCategory(STATUS.INPROGRESS);
-    showCategory(STATUS.DONE);
+    showCategory(STATUS.TODO)
+    showCategory(STATUS.INPROGRESS)
+    showCategory(STATUS.DONE)
 }
 
-function showCategory(Category) {
-    let str = "";
-    console.log(`${Category}:`);
-    for (let key in list) {
-        if(list[key] === Category) {
-            str+=`\t "${key}" \n`;
-        } 
-    }  if (!str) {
-            console.log("\t-");
-        } else {console.log(str)}
-}
-
-addTask("walk the dog");
-addTask("feed the cat");
-console.log(list);
-changeStatus("feed the cat", STATUS.DONE)
+addTask("walk the dragon", "high");
+changeStatus("walk the dragon", STATUS.INPROGRESS);
+addTask("make pancakes", PRIORITY.LOW);
+addTask("feed the cat", PRIORITY.HIGH);
+changeStatus("feed the cat", STATUS.DONE);
 deleteTask("make a bed");
 deleteTask("feed the cat");
-showList();
+showList(); 
