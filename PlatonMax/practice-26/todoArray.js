@@ -75,7 +75,7 @@ function showList() {
 // addTask('go to walk');
 // console.log(findTask('go to walk').length);
 
-// console.log(list);
+console.log(list);
 // deleteTask('go to walk');
 
 console.log(showList());
