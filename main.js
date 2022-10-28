@@ -35,6 +35,16 @@ function changeStatus(taskName, taskStatus) {
   });
 }
 
+function changePriority(taskName, taskPriority) {
+  isValid = taskPriority == TODO_PRIORITY.LOW || taskPriority == TODO_PRIORITY.HIGHT;
+  list.find(item => {
+    if (item.name == taskName && isValid) {
+      item.priority = taskPriority;
+    }
+  })
+
+}
+
 function deleteTask(taskName) {
   list.find((item, index) => {
     if (item.name == taskName) {
@@ -45,7 +55,7 @@ function deleteTask(taskName) {
 
 // deleteTask('test')
 // console.log(list);
-changeStatus('test', TODO_STATUS.IN_PROGRESS);
+changePriority('test', TODO_PRIORITY.LOW);
 console.log(list);
 
 
