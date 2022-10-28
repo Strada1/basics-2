@@ -69,13 +69,17 @@ function showList() {
 	return `${doneStatus}\n${toDoStatus}\n${inProgressStatus}`;
 }
 
-// console.log(findTask('create a post'));
-
-// changeTask(list[findTask('create a post')[0]], STATUS.DONE, PRIORITY.MEDIUM);
-// addTask('go to walk');
-// console.log(findTask('go to walk').length);
-
-console.log(list);
-// deleteTask('go to walk');
-
 console.log(showList());
+console.log('-----------CHANGE TASK-------------------');
+
+changeTask(list[findAll('create a post')[0]], STATUS.DONE, PRIORITY.MEDIUM);
+console.log(showList());
+console.log('------------ADD TASK------------------');
+
+addTask('go to walk');
+console.log(showList());
+console.log('------------DELETE TASK------------------');
+
+deleteTask('go to walk');
+console.log(showList());
+console.log('------------------------------');
