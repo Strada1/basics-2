@@ -27,17 +27,25 @@ function addTask(taskName, taskPriority) {
   })
 }
 
-function changeStatus(taskName, taskStatus) { }
+function changeStatus(taskName, taskStatus) {
+  list.find(item => {
+    if (item.name == taskName) {
+      item.status = taskStatus;
+    }
+  });
+}
 
 function deleteTask(taskName) {
-  let task = list.find((item, index) => {
+  list.find((item, index) => {
     if (item.name == taskName) {
       list.splice(index, 1);
     }
   });
 }
 
-deleteTask('test')
+// deleteTask('test')
+// console.log(list);
+changeStatus('test', TODO_STATUS.IN_PROGRESS);
 console.log(list);
 
 
@@ -46,10 +54,3 @@ function showList() { }
 addTask('sleep', 'high');
 
 
-// console.log(list)
-
-
-function test(str) {
-  let newStr = ''
-  newStr.le
-}
