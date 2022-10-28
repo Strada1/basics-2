@@ -14,7 +14,8 @@ const TODO_PRIORITY = {
 }
 
 function addTask(taskName, taskPriority) {
-  if (taskPriority === TODO_PRIORITY.LOW || taskPriority === TODO_PRIORITY.HIGHT) {
+  const isValid = taskPriority === TODO_PRIORITY.LOW || taskPriority === TODO_PRIORITY.HIGHT;
+  if (isValid) {
     taskPriority = taskPriority;
   } else {
     taskPriority = TODO_PRIORITY.LOW;
@@ -28,9 +29,27 @@ function addTask(taskName, taskPriority) {
 
 function changeStatus(taskName, taskStatus) { }
 
-function deleteTask(taskName) { }
+function deleteTask(taskName) {
+  let task = list.find((item, index) => {
+    if (item.name == taskName) {
+      list.splice(index, 1);
+    }
+  });
+}
+
+deleteTask('test')
+console.log(list);
+
 
 function showList() { }
 
 addTask('sleep', 'high');
-console.log(list);
+
+
+// console.log(list)
+
+
+function test(str) {
+  let newStr = ''
+  newStr.le
+}
