@@ -64,7 +64,7 @@ const task_list = {
 };
 
 
-task_list.addTask("Заработать кучу денег");
+task_list.addTask("Заработать кучу денег", PRIORITY.HIGH);
 task_list.changeStatus('Заработать кучу денег', STATUS.IN_PROGRESS)
 task_list.addTask("Стать крутым разработчиком за 1 день");
 task_list.deleteTask("Стать крутым разработчиком за 1 день");
