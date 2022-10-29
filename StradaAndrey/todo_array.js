@@ -47,7 +47,7 @@ function deleteTask(task){
 
 function showList(){
    let checkToDo = false;
-   let checkInProgress = false; // ПОЧЕМУ, ЕСЛИ ЯВНО НЕ ПРИСВОИТЬ ПЕРЕМЕННОЙ ЗНАЧЕНИЕ FALSE, В 71 СТРОКЕ ПРОВЕРКА НА FALSE НЕ ПРОХОДИТ. ВЕДЬ ПУСТАЯ ПЕРЕМЕННАЯ В BOOLEAN - ЭТО FALSE
+   let checkInProgress; // ПОЧЕМУ, ЕСЛИ ЯВНО НЕ ПРИСВОИТЬ ПЕРЕМЕННОЙ ЗНАЧЕНИЕ FALSE, В 71 СТРОКЕ ПРОВЕРКА НА FALSE НЕ ПРОХОДИТ. ВЕДЬ ПУСТАЯ ПЕРЕМЕННАЯ В BOOLEAN - ЭТО FALSE
    let checkDone = false;
 
    console.log('ToDo:')
