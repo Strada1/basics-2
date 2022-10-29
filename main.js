@@ -10,25 +10,25 @@ const PRIORITY = {
     HIGH: 1,
 };
 
-const task_list = {
-    tasks: [],
+const tasks = {
+    task_list: [],
     addTask(task, priority=PRIORITY.MEDIUM){
         let new_task = {name: task,
                         status: STATUS.TODO,
                         priority: priority}
-        this.tasks.push(new_task);
+        this.task_list.push(new_task);
     },
     deleteTask(task_name){
-        this.tasks.forEach((task, index) => {
+        this.task_list.forEach((task, index) => {
             if (task.name == task_name){
-                this.tasks.splice(index, 1);
+                this.task_list.splice(index, 1);
             };
         });
     },
     changeStatus(task_name, status){
-        this.tasks.forEach((task, index) => {
+        this.task_list.forEach((task, index) => {
             if (task.name == task_name){
-                this.tasks[index].status = status;
+                this.task_list[index].status = status;
             };
         });
     },
@@ -38,8 +38,8 @@ const task_list = {
             done: "", 
             in_progress: ""
         };
-        this.tasks.sort((a, b) => a.priority < b.priority ? 1 : -1);
-        this.tasks.forEach((task) => {
+        this.task_list.sort((a, b) => a.priority < b.priority ? 1 : -1);
+        this.task_list.forEach((task) => {
             switch (task.status){
                 case STATUS.TODO:
                     output_list.todo += (`\n    "${task.name}",`);
@@ -65,11 +65,11 @@ const task_list = {
 };
 
 
-task_list.addTask("Заработать кучу денег");
-task_list.changeStatus('Заработать кучу денег', STATUS.IN_PROGRESS)
-task_list.addTask("Стать крутым разработчиком за 1 день");
-task_list.deleteTask("Стать крутым разработчиком за 1 день");
-task_list.addTask("Стать крутым разработчиком за год");
-task_list.addTask("Решить задачу на Strada", PRIORITY.HIGH);
+tasks.addTask("Заработать кучу денег");
+tasks.changeStatus('Заработать кучу денег', STATUS.IN_PROGRESS)
+tasks.addTask("Стать крутым разработчиком за 1 день");
+tasks.deleteTask("Стать крутым разработчиком за 1 день");
+tasks.addTask("Стать крутым разработчиком за год");
+tasks.addTask("Решить задачу на Strada", PRIORITY.HIGH);
 
-task_list.show();
+tasks.show();
