@@ -1,6 +1,9 @@
 const list = [{ name: 'create a post', status: 'In progress', priority: 'low' },
 { name: 'test', status: 'To Do', priority: 'high' },
 ]
+
+const EMPTY = '-'
+
 function addTask(name, status, priority) {
 
 	let object = {
@@ -33,28 +36,41 @@ function changeStatus(listName, action) {
 function showList() {
 	console.log("To Do :")
 	let toDo = list.filter(item => item.status == 'To Do');
-	console.log(toDo)
+	let emptyToDo = list.find(item => item.status == 'To Do');
+	if (emptyToDo == undefined) {
+		console.log(EMPTY)
+	} else {
+		console.log(toDo)
+	}
+
 	console.log("In Progress : ")
 	let inProgress = list.filter(item => item.status == 'In progress');
-	console.log(inProgress)
+	let emptyInProgress = list.find(item => item.status == 'In progress');
+	if (emptyInProgress == undefined) {
+		console.log(EMPTY)
+	} else {
+		console.log(inProgress)
+	}
+
 	console.log("Done : ")
 	let done = list.filter(item => item.status == 'Done');
-	console.log(done)
+	let emptyDone = list.find(item => item.status == 'Done');
+	if (emptyDone == undefined) {
+		console.log(EMPTY)
+	} else {
+		console.log(done)
+	}
 }
-
 addTask('have a walk', "To Do", "low")
-addTask('do homework', "To Do", "high")
-addTask('meet friends', "To Do", "low")
+
+
+changeStatus('have a walk', 'In progress')
+
 
 /* deleteTask('create a post')
- */
-changeStatus('have a walk', 'Done')
-changeStatus('meet friends', 'Done')
-changeStatus('do homework', 'In progress')
+deleteTask('do homework') */
 
 showList()
-
-
 
 
 
