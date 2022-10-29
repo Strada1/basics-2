@@ -50,11 +50,8 @@ function changePriority(taskName, taskPriority) {
 }
 
 function deleteTask(taskName) {
-  let taskIndex;
-  list.findIndex(function (item, index, array) {
-    if (item.name == taskName) {
-      taskIndex = index;
-    }
+  let taskIndex = list.findIndex(function (item, index, array) {
+    return item == taskName;
   })
   list.splice(taskIndex, 1)
 }
