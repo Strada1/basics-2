@@ -1,4 +1,8 @@
-const list = [{ name: 'Comeback', status: 'Done', priority: 'high' }, { name: 'create a post', status: 'In Progress', priority: 'low' }, { name: 'test', status: 'Done', priority: 'high' }];
+const list = [
+  { name: 'Comeback', status: 'Done', priority: 'high' },
+  { name: 'create a post', status: 'In Progress', priority: 'low' },
+  { name: 'test', status: 'Done', priority: 'high' }
+];
 
 const TODO_STATUS = {
   TODO: "To Do",
