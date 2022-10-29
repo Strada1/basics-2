@@ -71,21 +71,14 @@ function showList() {
     }
   });
   if (checkTask.taskCountDone == false) {
-    console.log(`\t -`);
+    console.log(`\t ${DASH}`);
   }
 }
 
-// changeStatus("create a new practice task", STATUS.DONE);
 addTask("create todo list");
-// changeStatus("write a post", STATUS.IN_PROGRESS);
 deleteTask("create todo list");
 addTask("create a branch on Github");
 changeStatus("create a branch on Github", STATUS.IN_PROGRESS, PRIORITY.HIGH);
-
-// deleteTask("make a bed");
-// changeStatus("type hello", STATUS.IN_PROGRESS);
 changeStatus("write a post", STATUS.IN_PROGRESS, PRIORITY.LOW);
-
-// console.log(list);
 
 showList();
