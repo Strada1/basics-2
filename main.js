@@ -5,9 +5,9 @@ const STATUS = {
 };
 
 const PRIORITY = {
-    LOW: "low",
-    MEDIUM: "medium",
-    HIGH: "high",
+    LOW: -1,
+    MEDIUM: 0,
+    HIGH: 1,
 };
 
 const task_list = {
@@ -38,6 +38,7 @@ const task_list = {
             done: "", 
             in_progress: ""
         };
+        this.tasks.sort((a, b) => a.priority < b.priority ? 1 : -1);
         this.tasks.forEach((task) => {
             switch (task.status){
                 case STATUS.TODO:
@@ -64,11 +65,11 @@ const task_list = {
 };
 
 
-task_list.addTask("Заработать кучу денег", PRIORITY.HIGH);
+task_list.addTask("Заработать кучу денег");
 task_list.changeStatus('Заработать кучу денег', STATUS.IN_PROGRESS)
 task_list.addTask("Стать крутым разработчиком за 1 день");
 task_list.deleteTask("Стать крутым разработчиком за 1 день");
 task_list.addTask("Стать крутым разработчиком за год");
-task_list.addTask("Решить задачу на Strada");
+task_list.addTask("Решить задачу на Strada", PRIORITY.HIGH);
 
 task_list.show();
