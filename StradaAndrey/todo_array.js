@@ -57,7 +57,7 @@ function showList(){
          console.log(`\t${object.name} , ${object.priority}`);
       }
    })
-   if(checkToDo === false){
+   if(checkToDo == false){
       console.log('\t-');
    }
 
@@ -68,7 +68,7 @@ function showList(){
          console.log(`\t${object.name} , ${object.priority}`)
       }
    })
-   if(checkInProgress === false){
+   if(checkInProgress == false){
       console.log('\t-');
    }
 
@@ -79,7 +79,7 @@ function showList(){
          console.log(`\t${object.name}`);
       }
    })
-   if(checkDone === false){
+   if(checkDone == false){
       console.log('\t-')
    }
    //--------------------------------------------------------------------------ВТОРОЙ ВАРИАНТ ЛУЧШЕ НЕ ИСПОЛЬЗОВАТЬ
