@@ -20,7 +20,6 @@ const changeStatus = (task, status, priority = priorities.LOW) => {
     myTask.name = task;
     myTask.status = status;
     myTask.priority = priority;
-    return list;
   } else {
     return "error,there is no this task";
   }
@@ -35,7 +34,6 @@ const addTask = (
   if (myTask) return "error,we already have this task";
   else {
     list.push({ name: task, status: status, priority: priority });
-    return list;
   }
 };
 
@@ -44,7 +42,6 @@ const deleteTask = (task) => {
   if (myTaskIndex === -1) return "error,we have no this task";
   else {
     list.splice(myTaskIndex, 1);
-    return list;
   }
 };
 
@@ -53,13 +50,17 @@ const showList = () => {
     const filtredArr = list.filter((a) => a.status === statuses[key]);
     console.log(`${statuses[key]}:`);
     if (filtredArr.length > 0) {
-      for (let i = 0; i < filtredArr.length; i++) {
-        console.log(`    ${filtredArr[i].name}`);
-      }
+      filtredArr.forEach((element) => {
+        console.log(`\t${element.name}`);
+      });
     } else {
-      console.log("    -");
+      console.log("\t-");
     }
   }
-  return "";
 };
-console.log(showList());
+
+addTask("Go for a walk");
+changeStatus("test", statuses.INPROGRESS, priorities.LOW);
+addTask("sleeping");
+deleteTask("create a post");
+showList();
