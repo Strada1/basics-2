@@ -46,9 +46,9 @@ function deleteTask(task){
 }
 
 function showList(){
-   let checkToDo = false;
-   let checkInProgress; // ПОЧЕМУ, ЕСЛИ ЯВНО НЕ ПРИСВОИТЬ ПЕРЕМЕННОЙ ЗНАЧЕНИЕ FALSE, В 71 СТРОКЕ ПРОВЕРКА НА FALSE НЕ ПРОХОДИТ. ВЕДЬ ПУСТАЯ ПЕРЕМЕННАЯ В BOOLEAN - ЭТО FALSE
-   let checkDone = false;
+   let checkToDo;
+   let checkInProgress;
+   let checkDone;
 
    console.log('ToDo:')
    list.forEach(function(object){
@@ -57,7 +57,7 @@ function showList(){
          console.log(`\t${object.name} , ${object.priority}`);
       }
    })
-   if(checkToDo == false){
+   if(!checkToDo){
       console.log('\t-');
    }
 
@@ -68,7 +68,7 @@ function showList(){
          console.log(`\t${object.name} , ${object.priority}`)
       }
    })
-   if(checkInProgress == false){
+   if(!checkInProgress){
       console.log('\t-');
    }
 
@@ -79,7 +79,7 @@ function showList(){
          console.log(`\t${object.name}`);
       }
    })
-   if(checkDone == false){
+   if(!checkDone){
       console.log('\t-')
    }
    //--------------------------------------------------------------------------ВТОРОЙ ВАРИАНТ ЛУЧШЕ НЕ ИСПОЛЬЗОВАТЬ
