@@ -48,7 +48,7 @@ function sortByStatus() {
       toDoList.push(task);
     }
   }
-  for (task of tasks) {
+  for (let task of tasks) {
     if (task.status == "InProgress") {
       inProgressList.push(task);
     }
