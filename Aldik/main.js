@@ -35,30 +35,27 @@ function changeStatus(listName, action) {
 
 function showList() {
 	console.log("To Do :")
-	let toDo = list.filter(item => item.status == 'To Do');
-	let emptyToDo = list.find(item => item.status == 'To Do');
-	if (emptyToDo == undefined) {
+	let toDo = list.find(item => item.status == 'To Do');
+	if (toDo == undefined) {
 		console.log(EMPTY)
 	} else {
-		console.log(toDo)
+		console.log(toDo.name + ", priority:" + toDo.priority)
 	}
 
 	console.log("In Progress : ")
-	let inProgress = list.filter(item => item.status == 'In progress');
-	let emptyInProgress = list.find(item => item.status == 'In progress');
-	if (emptyInProgress == undefined) {
+	let inProgress = list.find(item => item.status == 'In progress');
+	if (inProgress == undefined) {
 		console.log(EMPTY)
 	} else {
-		console.log(inProgress)
+		console.log(inProgress.name + ", priority:" + inProgress.priority)
 	}
 
 	console.log("Done : ")
-	let done = list.filter(item => item.status == 'Done');
-	let emptyDone = list.find(item => item.status == 'Done');
-	if (emptyDone == undefined) {
+	let done = list.find(item => item.status == 'Done');
+	if (done == undefined) {
 		console.log(EMPTY)
 	} else {
-		console.log(done)
+		console.log(done.name + ", priority:" + done.priority)
 	}
 }
 addTask('have a walk', "To Do", "low")
