@@ -9,39 +9,37 @@ const list = [
 ];
 
 function changeStatus(task, newStatus) {
-  if (list.find((item) => item.name === task)) {
+  if (list.filter((item) => item.name === task)) {
     let index = list.indexOf(list.find((item) => item.name === task));
-    list[index].status = newStatus;
+    let newlist = (list[index].status = newStatus);
   }
 }
 
 function changePriority(task, priorityVar) {
   if (list.find((item) => item.name === task)) {
     let index = list.indexOf(list.find((item) => item.name === task));
-    list[index].priority = priorityVar;
+    newlist = list[index].priority = priorityVar;
   }
 }
 
 function addTask(task, newStatus, priorityVar) {
-  list.push({ name: task, status: newStatus, priority: priorityVar });
+  newlist = list.push({ name: task, status: newStatus, priority: priorityVar });
 }
 
 function deleteTask(task) {
-  if (list.find((item) => item.name === task)) {
-    let index = list.indexOf(list.find((item) => item.name === task));
-    list.splice(index, 1);
-  }
+  newlist = list.filter((item) => item.name !== task);
+  return newlist;
 }
 
 function showList() {
   console.log("To Do: ");
-  let taskToDo = list.filter((item) => item.status == "To Do");
+  let taskToDo = newlist.filter((item) => item.status == "To Do");
   console.log(taskToDo);
   console.log("Done: ");
-  let taskDone = list.filter((item) => item.status == "Done");
+  let taskDone = newlist.filter((item) => item.status == "Done");
   console.log(taskDone);
   console.log("In Progress:");
-  let taskInProgress = list.filter((item) => item.status == "In Progress");
+  let taskInProgress = newlist.filter((item) => item.status == "In Progress");
   console.log(taskInProgress);
 }
 
