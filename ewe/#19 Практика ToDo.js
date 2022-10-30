@@ -1,13 +1,54 @@
-const list = {
-	"create a new practice task": "In Progress",
-	"make a bed": "Done",
-	"write a post": "To Do",
-};
 const errorLog = {
   messageUndefined: 'Ошибка в вводе задачи или такая задача отсутствует',
   messageDefined: 'Такая задача уже существует',
   messageNofined: 'Ошибка в статусе задачи',
 };
+
+const list = [ { name: 'create a post', status: 'In progress', priority: 'low'  }, 
+  { name: 'test', status: 'Done', priority: 'high'  }, 
+
+];
+
+const sfasf = {
+	"create a new practice task": "In Progress",
+	"make a bed": "Done",
+	"write a post": "To Do",
+};
+
+
+function changeStatus(param1, param2) {
+
+
+}
+function changePriority(param1, param3) {
+
+
+}
+
+function addTask(param1, param2, param3) {
+
+}
+
+
+function deleteTask(param1) {
+
+}
+
+function showList()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function changeStatus(param1, param2) {
   if (list[param1] === undefined) {
