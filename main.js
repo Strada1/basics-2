@@ -1,1 +1,1 @@
-123
+console.log('JavaScript !');
