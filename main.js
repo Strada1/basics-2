@@ -1,4 +1,4 @@
-const list = [
+let list = [
   { name: 'Comeback', status: 'Done', priority: 'high' },
   { name: 'create a post', status: 'In Progress', priority: 'low' },
   { name: 'test', status: 'Done', priority: 'high' }
@@ -50,12 +50,10 @@ function changePriority(taskName, taskPriority) {
 }
 
 function deleteTask(taskName) {
-  let taskIndex = list.findIndex(function (item, index, array) {
-    return item == taskName;
+  list = list.filter(function (item) {
+    return item.name != taskName;
   })
-  list.splice(taskIndex, 1)
 }
-
 
 function showList() {
   let strTodo = `Todo:\n`;
@@ -91,5 +89,5 @@ function showList() {
 addTask('sleep', TODO_PRIORITY.LOW);
 changeStatus('sleep', TODO_STATUS.DONE);
 changePriority('sleep', TODO_PRIORITY.HIGHT);
-deleteTask('sleep')
+deleteTask('test')
 showList();
