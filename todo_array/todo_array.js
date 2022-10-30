@@ -12,91 +12,84 @@ const PRIORITY = {
 const list = [];
 
 function addTask(taskName) {
-    for (let taskIndex = 0; taskIndex < list.length; taskIndex++) {
-        if (list[taskIndex].name === taskName) {
-            console.log(`Task "${taskName}" already exists into list!`);
-            return;
-        }
+    if (list.find(item => item.name === taskName)) {
+        console.log(`Задача "${taskName}" уже есть в списке дел!`);
+        return;
     }
-    list.push({name: taskName, status: STATUS.TO_DO, priority: PRIORITY.LOW});
-    console.log(`Task "${taskName}" added into list!`);   
+    if (taskName.trim().length === 0) {
+        console.log(`Имя задачи не может быть пустым!`);
+        return;
+    }
+    list.push( {name: taskName, status: STATUS.TO_DO, priority: PRIORITY.LOW} );
+    console.log(`Задача "${taskName}" добавлена в список дел!`);
 }
 
 function deleteTask(taskName) {
-    for (let taskIndex = 0; taskIndex < list.length; taskIndex++) {
-        if (list[taskIndex].name === taskName) {
-            list.splice(taskIndex, 1);
-            console.log(`Task "${taskName}" deleted`);
-            return;
-        }
+    const index = list.findIndex(item => item.name === taskName)
+    if (index === -1) {
+        console.log(`Задачи "${taskName}" нет в списке дел!`);
+        return;
     }
-    console.log(`Task "${taskName}" not exist in list`); 
+    list.splice(index, 1);
+    console.log(`Задача "${taskName}" удалена!`);
 }
 
+
 function changeStatus(taskName, taskStatus) {
-    if (STATUS.IN_PROGRESS !== taskStatus && STATUS.DONE !== taskStatus && STATUS.TO_DO !== taskStatus) {
-        console.log(`Wrong status of task "${taskName}"!`);
+    const index = list.findIndex(item => item.name === taskName)
+    if (index === -1) {
+        console.log(`Задачи "${taskName}" нет в списке дел!`);
         return;
-    } 
-    let isNoTaskName = true;
-    for (let taskIndex = 0; taskIndex < list.length; taskIndex++) {        
-        if (list[taskIndex].name === taskName) {
-            isNoTaskName = false;
-            list[taskIndex].status = taskStatus;
-            console.log(`For task "${taskName}" status successfully changed to "${taskStatus}!"`);
-        }
     }
-    if (isNoTaskName) console.log(`Task's name "${taskName}" not contains in list!`);
+    for (let key in STATUS) {
+        if (STATUS[key] === taskStatus) {
+            list[index].status = taskStatus;
+            console.log(`Задаче "${taskName}" задан статус "${taskStatus}"!`);
+            return;
+        }    
+    }
+    console.log(`Не допустимый статус "${taskStatus}"!`);
 }
 
 function changePriority(taskName, taskPriority) {
-    if (PRIORITY.LOW !== taskPriority && PRIORITY.HIGH !== taskPriority) {
-        console.log(`Wrong priority of task "${taskName}"!`);
+    const index = list.findIndex(item => item.name === taskName)
+    if (index === -1) {
+        console.log(`Задачи "${taskName}" нет в списке дел!`);
         return;
-    } 
-    let isNoTaskName = true;
-    for (let taskIndex = 0; taskIndex < list.length; taskIndex++) {        
-        if (list[taskIndex].name === taskName) {
-            isNoTaskName = false;
-            list[taskIndex].priority = taskPriority;
-            console.log(`For task "${taskName}" priority successfully changed to "${taskPriority}!"`);
-        }
     }
-    if (isNoTaskName) console.log(`Task's name "${taskName}" not contains in list!`);
+    for (let key in PRIORITY) {
+        if (PRIORITY[key] === taskPriority) {
+            list[index].priority = taskPriority;
+            console.log(`Задаче "${taskName}" задан приотритет "${taskPriority}"!`);
+            return;
+        }    
+    }
+    console.log(`Не допустимый проиритет "${taskPriority}" задачи "${taskName}"!`);
 }
 
 function showList() {
     for (let st in STATUS) {
         console.log(STATUS[st] + ":")
-        let emptyTasks = true;
-        for (let taskIndex = 0; taskIndex < list.length; taskIndex++) {
-            if (STATUS[st] === list[taskIndex].status) {
-                emptyTasks = false;
-                console.log(`\t"${list[taskIndex].name}" \tPriority: ${list[taskIndex].priority}`);
+        let isEmptyTasks = true;
+        for (task of list) {
+            if (STATUS[st] === task.status) {
+                isEmptyTasks = false;
+                console.log(`\t"${task.name}" \tPriority: ${task.priority}`);
             }
         }
-        if (emptyTasks) console.log("\t-");
+        if (isEmptyTasks) console.log("\t-");
     }
 }
 
 //---------------------------------------------
-console.log("---------------");
-addTask("create a new practice task");
-addTask("make a bad");
-addTask("write a post");
-addTask('have a walk')
-changeStatus('have a walk', "Done");
-changeStatus('have a walk', "sdfsdff");
-changePriority("make a bad", 'high');
-changePriority("make a bad", 'hisdfsdfgh');
-console.log("---------------");
+addTask("new 1");
+addTask("new 1");
+addTask("new 2");
 showList();
-console.log("---------------");
-deleteTask('create a new practice task');
-changeStatus("create a new practice task", "In Progress");
-changeStatus("make a bad", "Done");
-changeStatus("write a post", "To Do");
-//console.log(list);
-console.log("---------------");
+deleteTask("new 2");
+deleteTask("new 2");
+changeStatus('new 1', 'Done');
 showList();
-console.log("---------------");
+addTask('new 3');
+changePriority('new 3', 'high');
+showList();
