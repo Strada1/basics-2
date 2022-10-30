@@ -36,7 +36,7 @@ function deleteTask (delTask) {
                 console.log('    ' + key + ',');
             }}
         if (checkValue == 0) {
-            console.log("    -");
+            console.log("   -");
         }
         
 
