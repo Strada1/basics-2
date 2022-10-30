@@ -1,9 +1,9 @@
-const list = [
+let list = [
     { name: 'create a post', status: 'In progress', priority: 'low'  }, 
     { name: 'test', status: 'Done', priority: 'high'  } ] 
 
 const STATUS = {
-    TO_DO: "To do",
+    TO_DO: "Todo",
     IN_PROGRESS: "In progress",
     DONE: "Done",
 }
@@ -23,113 +23,95 @@ const ERRORS = {
     SAME_PRIORITY: "Данная задача имеет такой же приоритет. Введите другой",
 }
 
-function addTaskAndPriority(nameOfTask, nameOfPriority) {
-      if (!nameOfTask) {
-        console.log(ERRORS.NAME_OF_TASK_IS_EMPTY)
-    } else if (nameOfPriority !== PRIORITY.LOW 
-            && nameOfPriority !== PRIORITY.MEDIUM
-            && nameOfPriority !== PRIORITY.HIGH) {
-        console.log(ERRORS.NAME_OF_PRIORITY_IS_EMPTY_OR_WRONG)
-    } else {
-        return list.push({name: nameOfTask, status: STATUS.TO_DO, priority: nameOfPriority})
+function addTaskAndPriority(nameOfTask, nameOfPriority) { 
+    if (!nameOfTask) {
+        return console.log(ERRORS.NAME_OF_TASK_IS_EMPTY)
     }
+    if (!PRIORITY[nameOfPriority.toUpperCase()]) {
+        return console.log(ERRORS.NAME_OF_PRIORITY_IS_EMPTY_OR_WRONG)
+    }
+    return list = list.concat({name: nameOfTask, status: STATUS.TO_DO, priority: nameOfPriority})
+    
 }
 
 function deleteTask(nameOfTask) {
-    let check = list.findIndex(function(item) {
-        return item.name == nameOfTask
-    })
-
-    if (check == -1) {
-        console.log(ERRORS.NAME_OF_TASK_NOT_FOUND)
+    if (list.every((item) => item.name !== nameOfTask)) {
+        return console.log(ERRORS.NAME_OF_TASK_NOT_FOUND)
     } else {
-        list.splice(check,1)
+        return list = list.filter((item) => item.name !== nameOfTask)
     }
 }
 
 function changeStatus(nameOfTask, nameOfStatus) {
-    if (nameOfStatus !== STATUS.TO_DO 
-     && nameOfStatus !== STATUS.IN_PROGRESS 
-     && nameOfStatus !== STATUS.DONE) {
-        console.log(ERRORS.NAME_OF_STATUS)
-    } else {
-        let check = list.findIndex(function(item) {
-            return item.name == nameOfTask
-        })
-        
-        if (check == -1) {
-            console.log(ERRORS.NAME_OF_TASK_NOT_FOUND)
-        } else if (list[check].status == nameOfStatus){
-            console.log(ERRORS.SAME_STATUS)
-        } else {
-            list[check].status = nameOfStatus
-        }
+    if (list.every((item) => item.name !== nameOfTask)) {
+        return console.log(ERRORS.NAME_OF_TASK_NOT_FOUND)
     }
+    if (Object.values(STATUS).every((item) => item !== nameOfStatus)) {
+        return console.log(ERRORS.NAME_OF_STATUS)
+    }
+
+    list = list.map((item) => {
+        if (item.name == nameOfTask) {
+            if (item.status == nameOfStatus) {
+                console.log(ERRORS.SAME_STATUS)
+            }
+            item.status = nameOfStatus
+        } 
+            return item  
+    })
 }
 
 function changePriority(nameOfTask, nameOfPriority) {
-    if (nameOfPriority !== PRIORITY.LOW 
-     && nameOfPriority !== PRIORITY.MEDIUM 
-     && nameOfPriority !== PRIORITY.HIGH) {
-        console.log(ERRORS.NAME_OF_PRIORITY_IS_EMPTY_OR_WRONG)
-    } else {
-        let check = list.findIndex(function(item) {
-            return item.name == nameOfTask
-        })
-
-        if (check == -1) {
-            console.log(ERRORS.NAME_OF_TASK_NOT_FOUND)
-        } else if (list[check].priority == nameOfPriority){
-            console.log(ERRORS.SAME_PRIORITY)
-        } else {
-            list[check].priority = nameOfPriority
-        }
+    if (list.every((item) => item.name !== nameOfTask)) {
+        return console.log(ERRORS.NAME_OF_TASK_NOT_FOUND)
     }
+    if (Object.values(PRIORITY).every((item) => item !== nameOfPriority)) {
+        return console.log(ERRORS.NAME_OF_PRIORITY_IS_EMPTY_OR_WRONG)
+    }
+
+    list = list.map((item) => {
+        if (item.name == nameOfTask) {
+            if (item.priority == nameOfPriority) {
+                console.log(ERRORS.SAME_PRIORITY)
+            }
+            item.priority = nameOfPriority
+        } 
+            return item  
+    })
 }
 
 function showList() {
+    let checkList = []
+    
     console.group(`${STATUS.TO_DO}:`)
-    let check = 0
-    for (let i = 0; i < list.length; i++) {
-        if (list[i].status == STATUS.TO_DO) {
-            console.log(`${list[i].name} (${list[i].priority})`)
-            check++
-        }
-    }
-    if (check == 0) {
+    checkList = list.filter((item) => item.status == STATUS.TO_DO)
+    if (checkList.length !== 0) {
+        checkList.forEach((item) => console.log(`${item.name} (${item.priority})`))
+    } else {
         console.log('---')
     }
     console.groupEnd()
 
     console.group(`${STATUS.IN_PROGRESS}:`)
-    check = 0
-    for (let i = 0; i < list.length; i++) {
-        if (list[i].status == STATUS.IN_PROGRESS) {
-            console.log(`${list[i].name} (${list[i].priority})`)
-            check++
-        }
-    }
-    if (check == 0) {
+    checkList = list.filter((item) => item.status == STATUS.IN_PROGRESS)
+    if (checkList.length !== 0) {
+        checkList.forEach((item) => console.log(`${item.name} (${item.priority})`))
+    } else {
         console.log('---')
     }
     console.groupEnd()
 
     console.group(`${STATUS.DONE}:`)
-    check = 0
-    for (let i = 0; i < list.length; i++) {
-        if (list[i].status == STATUS.DONE) {
-            console.log(`${list[i].name} (${list[i].priority})`)
-            check++
-        }
-    }
-    if (check == 0) {
+    checkList = list.filter((item) => item.status == STATUS.DONE)
+    if (checkList.length !== 0) {
+        checkList.forEach((item) => console.log(`${item.name} (${item.priority})`))
+    } else {
         console.log('---')
     }
     console.groupEnd()
 }
 
-// console.log(list)
-// showList()
+showList()
 addTaskAndPriority('Take a break', 'high')
 addTaskAndPriority('Make a cake', 'low')
 addTaskAndPriority('Make a call', 'medium')
@@ -138,5 +120,3 @@ changeStatus('Make a cake', 'Done')
 changePriority('Make a cake', 'high')
 deleteTask('Take a break')
 showList()
-// console.log(list)
-
