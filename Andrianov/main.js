@@ -14,7 +14,7 @@ const list = [ { name: 'create a new practice task', status: STATUS.IN_PROGRESS,
                  { name: 'make a bed', status: STATUS.DONE, priority: PRIORITY.MAXI  },
                 { name: 'write a post', status:STATUS.TODO, priority: PRIORITY.MINI}, ];
 
-
+showList();
  function addTask(task) {
     list.push({name:task,status:STATUS.TODO,priority:PRIORITY.MAXI});
  }
