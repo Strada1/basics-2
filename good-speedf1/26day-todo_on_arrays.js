@@ -35,7 +35,7 @@
 // console.log(getMaxSubSum([-1, 2, 3, -9]));
 // console.log(getMaxSubSum([-1, 2, 3, -9, 11]));
 
-const list = [
+let list = [
   { name: "create a post", status: "In progress", priority: "low" },
   { name: "test", status: "Done", priority: "high" },
 ];
@@ -72,18 +72,18 @@ function addTask(list, nameTask, priorityTask) {
 
 }
 
-function deleteTask(list, nameTask) {
-  let indexDeleteTask = list.findIndex(el => el.name === nameTask)
+function deleteTask(nameTask) {
+  // let indexDeleteTask = list.findIndex(el => el.name === nameTask)
 
-  // const newList = list.filter((el) => el.name == nameTask);
+  list = list.filter(el => el.name !== nameTask);
   // console.log(list = newList);
 
-  if (indexDeleteTask < 0) {
-  	console.log("task not exist at list");
-  } else {
-  	list.splice(indexDeleteTask, 1)
-		console.log(`task "${nameTask}" success deleted`);
-  }
+  // if (indexDeleteTask < 0) {
+  // 	console.log("task not exist at list");
+  // } else {
+  // 	list.splice(indexDeleteTask, 1)
+	// 	console.log(`task "${nameTask}" success deleted`);
+  // }
 }
 
 function changeStatus(list, nameTask, statusTask) {
@@ -127,9 +127,9 @@ function showList() {
 
 showList(list);
 deleteTask(list, 'test')
-addTask(list, "test1", "HIGH1");
-addTask(list, "nametask", "HIGH");
+// addTask(list, "test1", "HIGH1");
+// addTask(list, "nametask", "HIGH");
 showList(list);
-changeStatus(list, 'create a post', 'Done')
-changeStatus(list, 'nowayman', 'Done')
-showList(list)
+// changeStatus(list, 'create a post', 'Done')
+// changeStatus(list, 'nowayman', 'Done')
+// showList(list)
