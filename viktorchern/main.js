@@ -1,65 +1,94 @@
-const list = {
-	"write a post": "To Do",
-	"make a bed": "Done",
-	"create a new practice task": "In Progress",
+const list = [ 
+  { 
+    name: 'create a post', 
+    status: 'In progress', 
+    priority: 'low',
+  }, 
+  {
+    name: 'test', 
+    status: 'Done', 
+    priority: 'high',
+  },
+];
+
+const STATUS = {
+  TODO: 'To do',
+  IN_PROGRES: 'In progres',
+  DONE: 'Done',
 };
 
-function changeStatus(task, status) {
-	if ( task in list ) {
-		list[task] = status;
-	}
+const PRIORITY = {
+  LOW: 'low',
+  HIGH: 'high',
+};
+
+const ERRORS = {
+  TASK_EXISTS: 'Такой таск уже есть',
+  TASK_NO: 'Такого таска нету',
 }
 
-function addTask(newTask) {
-	if ( newTask in list == false ) {
-		list[newTask] = "To Do"
-	}
+// Add task
+function addTask(name, status = STATUS.TODO, priority = PRIORITY.LOW) {
+  let taskIndex = list.findIndex(function(item){
+    return item.name.toLowerCase() == name.toLowerCase();
+  });
+
+  if( taskIndex == -1 ){
+    list.push({ name, status, priority });
+  } else {
+    console.log(ERRORS.TASK_EXISTS);
+  }
 }
 
-function deleteTask(task) {
-	if (task in list) {
-		delete list[task];
-	}
+//Change task
+function changeStatus(name, status) {
+  let taskIndex = list.findIndex(function(item){
+    return item.name.toLowerCase() == name.toLowerCase();
+  });
+  if( taskIndex != -1 ){
+    list[taskIndex].status = status;
+  } else {
+    console.log(ERRORS.TASK_NO);
+  }
 }
 
+//Delete task
+function deleteTask(name) {
+  let taskIndex = list.findIndex(function(item){
+    return item.name.toLowerCase() == name.toLowerCase();
+  });
+  if( taskIndex != -1 ){
+    list.splice(taskIndex, 1);
+  } else {
+    console.log(ERRORS.TASK_NO);
+  }
+}
+
+// Show task
 function showList() {
-	console.log(`ToDo:`)
-	let countToDo = 0;
-	for (let task in list) {
-		if (list[task] === "To Do") {
-			console.log(`\t${task}`);
-			countToDo++;
-		}
-	}
-	if (countToDo == 0) {
-		console.log('-');
-	}
-	console.log(`In Progress:`)
-	let countProgress = 0;
-	for (let task in list) {
-		if (list[task] === "In Progress") {
-			console.log(`\t${task}`);
-			countProgress++;
-		}
-	}
-	if (countProgress == 0) {
-		console.log('-');
-	}
-	console.log(`Done:`)
-	let countDone = 0;
-	for (let task in list) {
-		if (list[task] === "Done") {
-			console.log(`\t${task}`);
-			countDone++;
-		}
-	}
-	if (countDone == 0) {
-		console.log('-');
-	}
+  for(let index in STATUS ){
+    console.log(`${STATUS[index]} :`);
+    let statusName = '';
+    for( let i = 0; i < list.length; i++ ){
+      if( list[i].status == STATUS[index] ){
+        statusName += `  ${list[i].name}\n`;
+      }
+    }
+    if( statusName != '' ){
+      console.log(`${statusName}`);
+    } else {
+      console.log('  -');
+    }
+  }
+
 }
-changeStatus("create a new practice task", 'Done');
-addTask("buy an elephant");
-addTask("buy an elephant");
-deleteTask("make a bed");
+
+
+addTask('create a new post', STATUS.DONE, PRIORITY.HIGH);
+addTask('task 1', STATUS.IN_PROGRES, PRIORITY.HIGH);
+addTask('task 2', STATUS.IN_PROGRES, PRIORITY.LOW);
+addTask('task 3', STATUS.TODO, PRIORITY.LOW);
+changeStatus('Create a post', STATUS.DONE);
+deleteTask('Create a post');
 
 showList();
