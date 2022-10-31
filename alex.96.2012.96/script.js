@@ -1,65 +1,56 @@
-
-
-function calc(operators,a,b){
-  let res=0
-let object={
-  add:'+',
-  multi:'*',
-  subtract:'-'
+const prioritys={
+  LOW:'low',
+  HIGHT:'hight'
 }
-
-  switch(object[operators]){
-    case'+':
-    res= a+b
-    break;
-    case'*':
-    res= a*b
-    break;
-    case'-':
-    res=a-b
-    break;
+const statuse={
+  IN_PROGRES:'In progress',
+  DONE:'Done',
+  TODO:'To Do'
+}
+let list = [
+ {name:'create a post' , status: 'In progress', priority: 'low'  },
+ { name: 'test', status: 'Done', priority: 'high'  },
+ {name:"write a post",status: "To Do",priority:'norm'}]
+function changeStatus(name,status,priority=prioritys.LOW){
+  const myTodo=list.find(item=>item.name===name)
+  if(!myTodo)
+  {
+    return 'error'
   }
 
-  return res
-}
-// console.log(calc('add', 1, 2))
-// console.log(calc('multi', 1, 2))
-// console.log(calc('subtract', 3, 2))
-const list = {
-	"create a new practice task": "In Progress",
-	"make a bed": "Done",
-	"write a post": "To Do",
-}
-function changeStatus(name,status){
-  list[name]=status
+  myTodo.name=name
+  myTodo.status=status
+  myTodo.priority=priority
 
 }
-function addTask(name){
-  list[name]='In Progress'
+function addTask(name,status=statuse.TODO,priority=prioritys.LOW){
+ list.push({'name':name,'status':status,'priority':priority})
+
 }
 function deleteTask(name){
-  delete list[name]
+ let deleteTod=list.find(item=>item.name===name)
+list =list.filter(item=>item!=deleteTod)
+return list
 }
 
 function showList(){
-  const todo=[]
-  const progress=[]
-  const done=[]
-  for ( key in list){
-    
-      if(list[key]==='In Progress'){
-        progress.push(key)
+  for(let key in statuse){
+    let filterArr=list.filter(e=>e.status===statuse[key])
+    console.log(statuse[key])
+      if(filterArr){
+        filterArr.forEach(el=>{
+          console.log(el)
+        })
       }
- 
-      if(list[key]==='Done'){
-        done.push(key)
-      } if(list[key]==='To Do'){
-        todo.push(key)
-      }
-    
   }
-  return {progress,todo,done}
+  
 }
 
+changeStatus("write a post", "To Do")
 
-console.log(showList())
+addTask('have a walk')
+
+
+
+console.log(list)
+showList()
