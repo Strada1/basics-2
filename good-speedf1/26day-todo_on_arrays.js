@@ -1,6 +1,6 @@
 // function sumInput() {
 // 	let numbers = [];
-	
+
 // 	while (true) {
 // 		let value = prompt('введите число', 0)
 // 		if (value === '' || value === null || !isFinite(value)) {
@@ -35,95 +35,101 @@
 // console.log(getMaxSubSum([-1, 2, 3, -9]));
 // console.log(getMaxSubSum([-1, 2, 3, -9, 11]));
 
-const list = [ 
-	{ name: 'create a post', status: 'In progress', priority: 'low'}, 
-	{ name: 'test', status: 'Done', priority: 'high'}, 
-] 
+const list = [
+  { name: "create a post", status: "In progress", priority: "low" },
+  { name: "test", status: "Done", priority: "high" },
+];
 
 const STATUS = {
-	TO_DO: 'To Do',
-	DONE: 'Done',
-	IN_PROGRESS: 'In progress',
-}
+  TO_DO: "To Do",
+  DONE: "Done",
+  IN_PROGRESS: "In progress",
+};
 
 const PRIORITY = {
-	LOW: 'low',
-	MEDIUM: 'medium',
-	HIGH: 'high',
+  LOW: "low",
+  MEDIUM: "medium",
+  HIGH: "high",
+};
+
+const ERRORS = {
+	NAME_OF_TASK_NOT_EXIST: "name of task not exist",
+	NAME_OF_TASK_EMPTY: "name is task is empty",
+	NAME_OF_PRIORITY_WRONG: 'name of priority task is wrong',
+	NAME_OF_STATUS: `status must be ${STATUS.TO_DO}, ${STATUS.IN_PROGRESS}, ${STATUS.DONE}`,
 }
 
 function addTask(list, nameTask, priorityTask) {
+  // let nameAddTask = list.findIndex(el => el.name !== nameTask)
 
-	let nameAddTask = list.findIndex(el => el.name !== nameTask)
 
-	// for(key in PRIORITY) {
-	// 	if(PRIORITY[key].indexOf(priorityTask) == -1) {
-	// 		console.log('error');
-	// 		break;
-	// 	}
-	// }
+  if (!PRIORITY[priorityTask]) {
+    console.log(ERRORS.NAME_OF_PRIORITY_WRONG);
+  } else {
+    list.push({ name: nameTask, status: STATUS.TO_DO, priority: priorityTask });
+		console.log(`task ${nameTask} has been added`);
+  }
 
-	if (nameAddTask < 0) {
-		console.log('error you write wrong task');
-	} else {
-		list.push({name: nameTask, status: STATUS.TO_DO, priority: priorityTask})
-	}
 }
 
 function deleteTask(list, nameTask) {
-	let indexDeleteTask = list.findIndex(el => el.name === nameTask)
-	if (indexDeleteTask < 0) {
-		console.log("task not exist at list"); 
-	} else {
-		list.splice(indexDeleteTask, 1)
-	}
+  let indexDeleteTask = list.findIndex(el => el.name === nameTask)
+
+  // const newList = list.filter((el) => el.name == nameTask);
+  // console.log(list = newList);
+
+  if (indexDeleteTask < 0) {
+  	console.log("task not exist at list");
+  } else {
+  	list.splice(indexDeleteTask, 1)
+		console.log(`task "${nameTask}" success deleted`);
+  }
 }
 
 function changeStatus(list, nameTask, statusTask) {
-	let nameChangeTask = list.findIndex(task => task.name == nameTask);
-	if (nameChangeTask < 0) {
-		 console.log(`«${nameTask}» no exist in list`);
-	}
-	else {
-		 list[nameChangeTask].status = statusTask;
-		 console.log(`status task «${nameTask}» will be changed`);
-	}
+
+	
+  let nameChangeTask = list.findIndex((task) => task.name == nameTask);
+  if (nameChangeTask < 0) {
+    console.log(`«${nameTask}» ` + ERRORS.NAME_OF_TASK_NOT_EXIST);
+  } else {
+    list[nameChangeTask].status = statusTask;
+    console.log(`status task «${nameTask}» will be changed`);
+  }
 }
 
-function showList()
-{
-    console.log("To_Do:");
-    let findItem = list.filter(item => item.status == STATUS.TO_DO);    
-		if (findItem.length > 0) {
-			findItem.forEach(item => console.log("\t", item.name));
-		} else {
-			console.log('\t - ');
-		}
+function showList() {
+  console.log("To_Do:");
+  let findItem = list.filter((item) => item.status == STATUS.TO_DO);
+  if (findItem.length > 0) {
+    findItem.forEach((item) => console.log("\t", item.name));
+  } else {
+    console.log("\t - ");
+  }
 
-    console.log("In_Progress: ");
-    findItem = list.filter(item => item.status == STATUS.IN_PROGRESS);
-		if (findItem.length > 0) {
-			findItem.forEach(item => console.log("\t", item.name));
-		} else {
-			console.log('\t - ');
-		}
+  console.log("In_Progress: ");
+  findItem = list.filter((item) => item.status == STATUS.IN_PROGRESS);
+  if (findItem.length > 0) {
+    findItem.forEach((item) => console.log("\t", item.name));
+  } else {
+    console.log("\t - ");
+  }
 
+  console.log("Done: ");
 
-    console.log("Done: ");
-
-    findItem = list.filter(item => item.status == STATUS.DONE);
-    if (findItem.length > 0) {
-			findItem.forEach(item => console.log("\t", item.name));
-		} else {
-			console.log('\t - ');
-		}
+  findItem = list.filter((item) => item.status == STATUS.DONE);
+  if (findItem.length > 0) {
+    findItem.forEach((item) => console.log("\t", item.name));
+  } else {
+    console.log("\t - ");
+  }
 }
 
-// deleteTask(list, 'test')
-// addTask(list, 'test1', 'high')
-// addTask(list, 'nametask', 'high')
-// showList()
-// changeStatus(list, 'create a post', 'Done')
-// showList()
-
-
+showList(list);
+deleteTask(list, 'test')
+addTask(list, "test1", "HIGH1");
+addTask(list, "nametask", "HIGH");
+showList(list);
+changeStatus(list, 'create a post', 'Done')
+changeStatus(list, 'nowayman', 'Done')
+showList(list)
