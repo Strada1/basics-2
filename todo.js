@@ -1,51 +1,63 @@
-const todo = {
-    list: {},
-    status: [
+function Todo(){
+    this.list =  [];
+    this.status = [
         'Todo',
         'In Progress',
         'Done',
-    ],
-    changeStatus(key, status){
-        this.list[key] = status;
-    },
-    addTask(key){
-        this.list[key] = 'Todo';
-    },
-    deleteTask(key){
-        delete this.list[key]
+    ];
+    this.priority = [
+        'Low',
+        'Normal',
+        'Hight',
+    ];
 
-    },
-    print(){
+    this.change = (key, status = null, priority = null) => {
+        this.list = this.list.map(a => {
+            if(a.title === key) {
+                a.status = status ? status : a.status;
+                a.priority = priority ? priority : a.priority;
+            }
+            return a;
+        });
+    };
 
-      for( let s in this.status ){
-          let count = 0;
-          console.log(this.status[s] + ':');
-          for(let l in this.list){
-              if(this.list[l] == this.status[s]) {
-                  console.log(`    -> "${l}",`);
-                  count++;
-              }
+    this.addTask = (title, status = 'Todo', priority = 'Low') => {
+        this.list.push({
+           'title': title,
+           'priority': priority,
+           'status': status
+        });
+    };
 
-          }
-          if(!count) console.log(`    --,`);
-      }
-        console.log('----------------------------')
+    this.deleteTask = (key) => {
+        this.list = this.list.filter(a => a.title != key);
+
+    };
+    this.log = () => {
+        console.log(this.list);
+    };
+    this.print = () => {
+
+      return this.status.reduce((acc, status) => {
+            acc += status + ':\r\n';
+            let tasks = this.list.filter(task => task.status == status);
+            let format = tasks.reduce((acc, item) => acc + `\t"${item.title}; priority:${item.priority}"${tasks.length>1 ? ',' : ''}\n`, '');
+            return acc + (format ? format : '\t-\n');
+      }, '');
     }
 }
+
+let todo = new Todo();
 
 todo.addTask('Test0');
 todo.addTask('Test1');
 todo.addTask('Test2');
-todo.changeStatus('Test0', 'In Progress');
-todo.changeStatus('Test1', 'Done');
-todo.print();
-todo.deleteTask('Test2');
-todo.addTask('Test3');
-todo.addTask('Test4');
-todo.addTask('Test5');
-todo.addTask('Test6');
-todo.print();
-todo.deleteTask('Test1');
-todo.print();
 
 
+todo.change('Test0', 'In Progress', 'Hight');
+todo.change('Test1', 'Done');
+todo.change('Test0', 'Done');
+
+console.log(todo.print())
+todo.deleteTask('Test2')
+console.log(todo.print())
