@@ -1,62 +1,93 @@
-const dash = "-";
-const list = {
-    "create a new practice task": "In Progress",
-    "make a bed": "Done",
-    "write a post": "To Do",
+const PRIORITY = {
+    LOW: 'low',
+    HIGH: 'high',
+}
+const STATUS = {
+    IN_PROGRESS: 'In Progress',
+    DONE: 'Done',
 }
 
-function changeStatus(task, status) {
-    if (list[task]) {
-        list[task] = status;
-    } else {
-        console.log('такой задачи нет');
-    }
-};
+const POST = {
+    CREAT_A_POST: 'Creat a post',
+    TEST: 'test',
+}
 
+let list = [
+    { name: 'create a post', status: 'In progress', priority: 'low'  },
+    { name: 'test', status: 'Done', priority: 'high'  }
+];
 
-function addTask(task) {
-    if (task in list) {
-        console.log('такая задача есть');
+function changeStatus (task, newStatus) {
+    let element = list.find(object => object.name === task);
+
+    if (element === undefined) {
+        console.log(`задача ${task} отсутствует в списке`)
     } else {
-        list[task] = 'To Do'
+        element.status = newStatus;
     }
-};
+}
 
 function deleteTask(task) {
-    if (task in list) {
-        delete list[task];
+    let element = list.find(object => object.name === task);
+    if (!element) {
+        console.log(`Задача ${task} отсутствует в списке`)
     } else {
-        console.log('это новая задача')
+        list = list.filter(task => task.name !== element.name);
     }
-};
-
-function showList() {
-    console.log(`To Do:`);
-    for (let key in list) {
-        if (list[key] == 'To Do') {
-            console.log(`\t'${key}'`)
-        }
-    }
-    for (let key in list) {
-        if (list[key] == 'Done') {
-            console.log(`\t'${key}'`)
-        }
-    }
-    console.log(`In Progress:`)
-    for (let key in list) {
-        if (list[key] == 'In Progress') {
-            console.log(`\t'${key}'`)
-        }
-    }
-    console.log(`Done:`)
-    console.log(`\t${dash}`)
 }
 
+function addTask(task, priority) {
+    let element = list.find(object => object.name === task)
+    if (!element) {
+        list.push({name: task, status: STATUS.IN_PROGRESS, priority:priority})
+    } else {
+        console.log(`Такая задача ${task} существует`)
+    }
+}
 
-changeStatus('make a bed', 'property')
-addTask('My Heart')
-addTask('San Frank')
-deleteTask('write a post')
+function showList() {
+    let checkToDo;
+    let checkInProgress;
+    let checkDone;
+
+    console.log('ToDo:')
+    list.forEach(function (object) {
+    if (object.status === STATUS.IN_PROGRESS) {
+       checkToDo = true;
+       console.log(`\t${object.name} , ${object.priority}`);
+    }
+    })
+    if (!checkToDo) {
+        console.log('\t-');
+    }
+
+    console.log('In Progress:')
+    list.forEach(function(object) {
+    if(object.status === STATUS.IN_PROGRESS) {
+        checkInProgress = true;
+        console.log(`\t${object.name} , ${object.priority}`)
+    }
+    })
+    if (!checkInProgress) {
+        console.log('\t-');
+}
+    console.log('Done:')
+    list.forEach(function(object) {
+    if(object.status === STATUS.DONE) {
+        checkDone = true;
+        console.log(`\t${object.name}`);
+    }
+    })
+     if (!checkDone) {
+        console.log('\t-')
+}
+}
+
+changeStatus(POST.TEST, 'old');
+deleteTask('create a post');
+addTask('sleep', PRIORITY.HIGH)
+addTask('no sleep', PRIORITY.LOW)
+addTask('complete', PRIORITY.HIGH)
 showList()
 console.log(list)
 
