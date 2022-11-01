@@ -1,5 +1,5 @@
 const list = [
-    { name:"create a post", status:"In progress", priority: "low" },
+    { name:"create a post", status:"In Progress", priority: "low" },
     { name:"test", status:"Done", priority:"high" },
 ];
 
@@ -21,7 +21,7 @@ if (!statusExist(taskStatus)) {
     console.log("Такой задачи не существует");
 } else {
     let foundedTask = list.filter(item => item.name === taskName);
-    return foundedTask.status = taskStatus;
+    foundedTask.status = taskStatus;
 }
 }
 
@@ -41,7 +41,7 @@ addTask("relax", "high");
 addTask("running","high");
 addTask("wash a car", "low");
 addTask("sleeping", "low");
-console.log(list);
+addTask("go to work", "high");
 
 function deleteTask(taskName) {
 
@@ -55,6 +55,7 @@ function deleteTask(taskName) {
 
 deleteTask("play football");
 deleteTask("fly to the moon");
+changeStatus("go to work", "In Progress");
 console.log(list);
 
 function priorityExist(taskPriority){
@@ -73,15 +74,19 @@ function taskExist(taskName) {
 
     function showCategory(taskCategory) {
         console.log(`${taskCategory}:`);
-        list.forEach(item => {
-            if (item.status === taskCategory) {
-                list.sort(taskPriority => {
-                    if (taskPriority === PRIORITY.HIGH) return 1;
-                    if (taskPriority === PRIORITY.LOW) return -1;
-                });
-                console.log(`\t${item.name}\n`);
-            }
-        });
+        if (!list.some(item => item.status === taskCategory)) {
+            console.log("-");
+        } else {
+            list.forEach(item => {
+                if (item.status === taskCategory) {
+                    list.sort(taskPriority => {
+                        if (taskPriority === PRIORITY.HIGH) return 1;
+                        if (taskPriority === PRIORITY.LOW) return -1;
+                    });
+                    console.log(`\t${item.name}(${item.priority})`);
+                }
+            });
+        }
     }
 
 function showList() {
