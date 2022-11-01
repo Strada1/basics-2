@@ -5,7 +5,6 @@ const STATUS = {
 }
 
 const PRIORITY = {
-    NO: 'no',
     LOW: 'low',
     HIGH: 'high',
     MEDIUM: 'medium',
@@ -19,86 +18,67 @@ const ERROR = {
     REPEAT_PRIORITY: 'This priority has already been assigned',
 }
 
-const list = [ 
-    { 
-        name: 'create a post', 
-        status: STATUS.IN_PROGRESS, 
-        priority: PRIORITY.LOW,  
-    }, 
-    { 
-        name: 'test', 
-        status: STATUS.DONE, 
-        priority: PRIORITY.HIGH,
-    },
-    { 
-        name: 'test3', 
-        status: STATUS.IN_PROGRESS, 
-        priority: PRIORITY.HIGH,
-    }
+let list = [ 
+    {name: 'create a post', status: STATUS.IN_PROGRESS, priority: PRIORITY.LOW,}, 
+    {name: 'test', status: STATUS.DONE, priority: PRIORITY.HIGH,},
+    {name: 'test2', status: STATUS.IN_PROGRESS, priority: PRIORITY.HIGH,},
 ]
-
-function checkIndexTask(task) {
-    let index = list.findIndex(function searchIndex(el) {
-        return el.name === task
-    });
-    return index;
-}
-
-function changeStatusAndPriority(task, status, priority) {
-    if (!task || !status) return task + console.log(ERROR.EMPTY);
-    if (checkIndexTask(task) === -1) {
-        return console.log(ERROR.NOT_FOUND)
-    }
-    list.forEach(function changeStatus(el) {
-        if (el.name === task && el.status !== status) {
-            return el.status = status;
-        } else if (el.name === task && el.status === status) {
-            console.log(ERROR.REPEAT_STATUS)
-        }
-    }) 
-
-    list.forEach(function changePriority(el) {
-        if (el.name === task && el.priority !== priority) {
-            return el.priority = priority;
-        } else if (el.name === task && el.priority === priority) {
-            console.log(ERROR.REPEAT_PRIORITY)
-        }
-    }) 
-}
-
-changeStatusAndPriority('test', STATUS.IN_PROGRESS, PRIORITY.MEDIUM);
-
+// -------------------------------------------------------------------------
 function addTask(task) {
-    if (!task) return task + console.log(ERROR.EMPTY);
-    if (checkIndexTask(task) === -1) {
-        list.push({
+    if (CHECK.EMPTY_TASK(task) || CHECK.REPEAT_TASK(task)) {
+        return list;
+    } 
+    else {
+        list = list.concat({
             name: task,
             status: STATUS.TO_DO,
-            priority: PRIORITY.NO,
-        })
-    } else {
-        console.log(ERROR.REPEAT_TASK);
+            priority: PRIORITY.LOW,
+        }) 
     }
 }
-
-addTask('test2');
-addTask('test');
-addTask('adding task');
-addTask('');
-
 
 function deleteTask(task) {
-    if (!task) return task + console.log(ERROR.EMPTY);
-    if (checkIndexTask(task) !== -1) {
-        let indexTask = checkIndexTask(task);
-        list.splice(indexTask, 1);
-    } else {
-        console.log(ERROR.NOT_FOUND);
+    if (CHECK.EMPTY_TASK(task) || CHECK.NOT_FOUND_TASK(task)) {
+        return list;
+    } 
+    else {
+        list = list.filter(function(el){
+            return el.name !== task;
+        });
     }
 }
 
-deleteTask('test2');
+function changeStatus(task, status) {
+    if (CHECK.EMPTY_TASK(task) || CHECK.NOT_FOUND_TASK(task) || CHECK.REPEAT_STATUS(task, status)) {
+        return list;
+    } 
+    else {
+        list = list.map(function(el, id) {
+            if (id === CHECK.INDEX_TASK(task)) {
+                return {...el, status: status};
+            } 
+            else {
+                return {...el, status: el.status};
+            }
+        });
+    }
+}
 
+function changePriority(task, priority) {
+    if (CHECK.EMPTY_TASK(task) || CHECK.NOT_FOUND_TASK(task) || CHECK.REPEAT_PRIORITY(task, priority)) {
+        return list;
+    } 
+    else {
+        list = list.map(function(el, id) {
+            if (id === CHECK.INDEX_TASK(task)) {
+                return {...el, priority: priority};
+            } 
+            else {
+                return {...el, priority: el.priority};
+            }
+        });
+    }
+}
 
 function showList() {
     recapTasksByStatus(STATUS.TO_DO);
@@ -108,15 +88,72 @@ function showList() {
 
 function recapTasksByStatus(status) {
     let recap = `${status}:`;
-    list.forEach(function showStatus(el) {
+    list.filter(function(el) {
     if (el.status === status) {
-        recap += `\n\t'${el.name}' (priority: ${el.priority})`;
+        recap += `\n\t'${el.name}'`;
         }
     }) 
-    if (recap.indexOf(' ') === -1) {
+    if (recap.indexOf('\n') === -1) {
         recap += `\n\t-`;
     }
     return console.log(recap);
 }
+// -------------------------------------------------------------------------
+const CHECK = {
+    EMPTY_TASK(task) {
+        if (!task) {
+            return task + console.log(ERROR.EMPTY);
+        }
+    },
+    INDEX_TASK(task) {
+        const index = list.findIndex(function(el) {
+            return el.name === task;
+        });
+        return index;
+    },
+    NOT_FOUND_TASK(task) {
+        if (!list.some(function(el){
+            return el.name === task;
+        })) {
+            return task + console.log(ERROR.NOT_FOUND);
+        }
+    },
+    REPEAT_TASK(task) {
+        if (list.some(function(el){
+            return el.name === task;
+        })) {
+            return task + console.log(ERROR.REPEAT_TASK)
+        }
+    },
+    REPEAT_STATUS(task, status) {
+        if (list.some(function(el, id){
+            return el.status === status && id === CHECK.INDEX_TASK(task);
+        })) {
+            return task + console.log(ERROR.REPEAT_STATUS);
+        }
+    },
+    REPEAT_PRIORITY(task, priority) {
+        if (list.some(function(el, id){
+            return el.priority === priority && id === CHECK.INDEX_TASK(task);
+        })) {
+            return priority + console.log(ERROR.REPEAT_PRIORITY);
+        }
+    },
+}
+// -------------------------------------------------------------------------
+changeStatus('test2', STATUS.TO_DO);
+changeStatus('create a post', STATUS.DONE);
+changeStatus('create a post', STATUS.DONE);
+changePriority('test', PRIORITY.MEDIUM);
 
-showList(); 
+addTask('test3');
+addTask('test');
+addTask('adding task');
+addTask('');
+
+deleteTask('test3');
+deleteTask('test');
+deleteTask('x');
+deleteTask('');
+
+showList();
