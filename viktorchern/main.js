@@ -1,22 +1,26 @@
-// Напишите функцию printNumbers(from, to), которая выводит число каждую секунду, начиная от from и заканчивая to.
+function buildFun(n){
 
-// Сделайте два варианта решения.
+	var res = [];
 
-// Используя setInterval.
-// Используя рекурсивный setTimeout.
-
-function printNumbers(from, to){
-  let minNum = Number(from);
-  let maxNum = Number(to);
-  
-  let timerId = setTimeout(function tick() {
-    if( minNum <= maxNum ){
-      console.log(minNum);
-      minNum++;
-      timerId = setTimeout(tick, 1000);
-    } else {
-      clearTimeout(timerId);
-    }
-  }, 1000);
+	for ( var i = 0; i < n; i++ ){
+		let k = i;
+		res.push(function(){
+			return k;
+		});
+	}
+	return res;
 }
-printNumbers(3, 10);
+console.log(buildFun(10)[1]());
+
+// Конец учебного года, судьбоносный момент твоего школьного отчета. Средние значения должны быть рассчитаны. Все ученики подходят к вам и умоляют вас подсчитать для них их средний балл. Легкий! Вам просто нужно написать сценарий.
+// Возвращает среднее значение данного массива, округленное до ближайшего целого числа.
+// Массив никогда не будет пустым.
+
+function getAverage(marks){
+	let sum = 0;
+	for( value of marks ){
+		sum += value;
+	}
+	return Math.floor(sum / marks.length);
+}
+console.log( getAverage([1,5,87,45,8,8]) );
