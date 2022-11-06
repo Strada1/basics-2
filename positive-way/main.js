@@ -1,16 +1,43 @@
-function calc(id, num1, num2){
-    switch (id) {
-    case "add":
-        return +num1 + +num2;
-    case "multi":
-        return ((num1 > num2) ? num1 : num2);
-    case "subtract":
-        return +num1 - +num2;
-    default:
-        alert( "Ошибка");
+const list = {
+    "create a new practice task": "In Progress",
+    "make a bed": "Done",
+    "write a post": "To Do",
+    changeStatus(task, status){
+        this[task] = status;
+    },
+    addTask(task){
+        this[task] = "To Do";
+    },
+    deleteTask(task){
+        delete this[task];
+    },
+    showList(){
+        let toDoStr = "";
+        let progressStr = "";
+        let doneStr = "";
+        for (let key in this) {
+            switch (this[key]) {
+                case "To Do":
+                    toDoStr = ((toDoStr !== "") ? (toDoStr + ", ") : toDoStr) + key;
+                    break;
+                case "In Progress":
+                    progressStr = ((progressStr !== "") ? (progressStr + ", ") : progressStr) + key;
+                    break;
+                case "Done":
+                    doneStr = ((doneStr !== "") ? (doneStr + ", ") : doneStr) + key;
+                    break;
+            }
+        }
+        console.log(`
+        To Do: ${(toDoStr !== "") ? toDoStr : "-"}
+        In Progress: ${(progressStr !== "") ? progressStr : "-"}
+        Done: ${(doneStr !== "") ? doneStr : "-"}
+        `);
     }
 }
-
-console.log(calc("add", 5, 2));
-console.log(calc("multi", 5, 2));
-console.log(calc("subtract", 5, 2));
+list.showList();
+list.changeStatus("write a post", "Done");
+list.addTask('have a walk');
+list.showList();
+list.deleteTask('have a walk');
+list.showList();
