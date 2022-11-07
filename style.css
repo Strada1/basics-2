@@ -1,11 +1,27 @@
 body {
     padding: 250px;
+    justify-content: center;
+}
+form {
+    display: flex;
 }
 .calculator {
-    width: 400px;
-    height: 100px;
+    width: 450px;
+    height: 50px;
     margin: auto;
     background-color: beige;
-    padding: 50px;
+    padding: 50px 10px 50px 10px;
     border: 2px solid black;
+}
+.num1, .num2 {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.calc-btn {
+    margin-left: 5px;
+}
+.result {
+    width: 50px;
+    margin-left: 10px;
 }

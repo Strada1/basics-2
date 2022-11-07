@@ -10,15 +10,16 @@
 <body>
     <div class="calculator">
         <form action="calc">
-            <input type="text">
-            <select name="do" id="do-calc">
-                <option value="+">+</option>
-                <option value="-">-</option>
-                <option value="*">*</option>
-                <option value="/">/</option>
+            <input class="num1" type="number">
+            <select name="select-calc" id="select-calc">
+                <option value="sum">+</option>
+                <option value="sub">-</option>
+                <option value="multi">*</option>
+                <option value="division">/</option>
             </select>
-            <input type="text">
-            <button>=</button>
+            <input class="num2" type="number">
+            <button class="calc-btn">=</button>
+            <div class="result">10</div>
         </form>
     </div>
 </body>
