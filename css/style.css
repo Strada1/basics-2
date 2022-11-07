@@ -1,0 +1,46 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+}
+
+.calc {
+  display: flex;
+}
+
+.calc__number {
+  width: 95px;
+  height: 33px;
+  border: 1px solid #000000;
+  font-size: 20px;
+  padding-left: 10px;
+  margin-right: 8px;
+}
+
+.calc__operation {
+  font-size: 20px;
+  margin-right: 8px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+}
+
+.calc__btn-result {
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.calc__result {
+  line-height: 33px;
+  align-self: center;
+}

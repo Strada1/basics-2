@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Calculator</title>
+</head>
+
+<body>
+  <div class="calc">
+    <input class="calc__number calc__number--1" placeholder="5" type="number">
+    <select class="calc__operation" name="operation">
+      <option value="add" selected>+</option>
+      <option value="sub">-</option>
+      <option value="multi">*</option>
+      <option value="div">/</option>
+    </select>
+    <input class="calc__number calc__number--1" placeholder="5" type="number">
+    <button class="calc__btn-result">=</button>
+    <output class="calc__result" name="calc-output">0</output>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>
