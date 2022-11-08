@@ -45,6 +45,7 @@ body {
   color: #000000;
   border-radius: 4px;
   margin-right: 8px;
+  cursor: pointer;
 }
 
 .calc__output {
