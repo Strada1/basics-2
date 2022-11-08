@@ -1,0 +1,5 @@
+input[type="text"] {
+    width: 95px;
+    height: 33px;
+    box-sizing: border-box;
+}
