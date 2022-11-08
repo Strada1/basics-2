@@ -15,32 +15,39 @@ body {
 
 .calc {
   display: flex;
+  height: 33px;
+
 }
 
 .calc__number {
   width: 95px;
-  height: 33px;
-  border: 1px solid #000000;
-  font-size: 20px;
-  padding-left: 10px;
   margin-right: 8px;
+  padding-left: 10px;
+  font-size: 20px;
+  line-height: 24px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
 }
 
 .calc__operation {
-  font-size: 20px;
+  width: 35px;
   margin-right: 8px;
-  border: 1px solid #000000;
+  font-size: 20px;
   background-color: #ffffff;
+  border: 1px solid #000000;
 }
 
-.calc__btn-result {
-  border: 1px solid #000000;
+.calc__btn-submit {
   background-color: #ffffff;
+  border: 1px solid #000000;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
   border-radius: 4px;
   margin-right: 8px;
 }
 
-.calc__result {
+.calc__output {
   line-height: 33px;
-  align-self: center;
+  font-size: 20px;
 }

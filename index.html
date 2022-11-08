@@ -13,18 +13,18 @@
 </head>
 
 <body>
-  <div class="calc">
-    <input class="calc__number calc__number--1" placeholder="5" type="number">
+  <form class="calc" action="#" method="get">
+    <input class="calc__number calc__number--one" type="number">
     <select class="calc__operation" name="operation">
       <option value="add" selected>+</option>
       <option value="sub">-</option>
       <option value="multi">*</option>
       <option value="div">/</option>
     </select>
-    <input class="calc__number calc__number--1" placeholder="5" type="number">
-    <button class="calc__btn-result">=</button>
-    <output class="calc__result" name="calc-output">0</output>
-  </div>
+    <input class="calc__number calc__number--two" type="number">
+    <button class="calc__btn-submit" type="submit">=</button>
+    <output class="calc__output">0</output>
+  </form>
   <script src="main.js"></script>
 </body>
 
