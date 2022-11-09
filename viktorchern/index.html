@@ -5,9 +5,55 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .container {
+      max-width: 992px;
+      margin: 0 auto;
+    }
+    .calc_mt {
+      margin-top: 50px;
+    }
+    .calc__row {
+      display: flex;
+      margin: 0 10px;
+      justify-content: center;
+    }
+    .calc__col {
+      padding: 0 10px;
+    }
+    .button {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  
+  <div class="container">
+    <div class="calc calc_mt">
+      <div class="calc__row">
+        <div class="calc__col">
+          <input id="num-1" type="number" placeholder="Введите число 1">
+        </div>
+        <div class="calc__col">
+          <select id="operation" name="#">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+          </select>
+        </div>
+        <div class="calc__col">
+          <input id="num-2" type="number" placeholder="Введите число 2">
+        </div>
+        <div class="calc__col">
+          <button id="button" class="button">=</button>
+        </div>
+        <div class="calc__col">
+          <div id="result"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="main.js"></script>
 </body>
 </html>
