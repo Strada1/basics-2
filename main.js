@@ -9,19 +9,30 @@ const UI_ELEMENTS = {
 
 const OPERATIONS = {
   ADD: '+',
-  MULTI: '*',
   SUB: '-',
+  MULTI: '*',
+  DIV: '/',
 }
 
-function calc(a, b, operation) {
+function calc(num1, num2, operation) {
   switch (operation) {
     case OPERATIONS.ADD:
-      return a + b;
+      return num1 + num2;
     case OPERATIONS.MULTI:
-      return a * b;
+      return num1 * num2;
     case OPERATIONS.SUB:
-      return a - b;
+      return num1 - num2;
+    case OPERATIONS.DIV:
+      return num1 / num2;
     default:
       break;
   }
 }
+
+function showCalcResult() {
+  event.preventDefault();
+  const result = calc(+UI_ELEMENTS.NUMBER_1.value, +UI_ELEMENTS.NUMBER_2.value, UI_ELEMENTS.OPERATION.value)
+  UI_ELEMENTS.OUTPUT.textContent = result;
+}
+
+UI_ELEMENTS.FORM.addEventListener('submit', showCalcResult);
