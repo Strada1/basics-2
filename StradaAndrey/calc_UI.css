@@ -1,0 +1,51 @@
+*,
+*::after,
+*::before {
+   box-sizing: border-box;
+}
+body,div,input,select,button {
+   margin: 0;
+   padding: 0;
+}
+.wrapper {
+   background-color: #1E1E1E;
+   height: 100vh;
+   padding-top: 100px;
+}
+.container {
+   background-color: #FFFFFF;
+   width: 1143px;
+   height: 1000px;
+   border-radius: 103px;
+   margin: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.calc-box {
+   display: flex;
+   height: 33px;
+   font-size: 20px;
+}
+input[type='number']{
+   width: 95px;
+   margin-right: 8px;
+   font-size: inherit;
+   line-height: 24px;
+
+}
+.equal-button , .math-list{
+   width: 39px;
+   margin-right: 8px;
+   font-size: inherit;
+   line-height: 24px;
+}
+.math-list{
+   background-color: #1E1E1E;
+   color: #FFFFFF;
+}
+.result {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
