@@ -6,3 +6,22 @@ const UI_ELEMENTS = {
   BUTTON_SUBMIT: document.querySelector('.calc__btn-submit'),
   OUTPUT: document.querySelector('.calc__output')
 }
+
+const OPERATIONS = {
+  ADD: '+',
+  MULTI: '*',
+  SUB: '-',
+}
+
+function calc(a, b, operation) {
+  switch (operation) {
+    case OPERATIONS.ADD:
+      return a + b;
+    case OPERATIONS.MULTI:
+      return a * b;
+    case OPERATIONS.SUB:
+      return a - b;
+    default:
+      break;
+  }
+}
