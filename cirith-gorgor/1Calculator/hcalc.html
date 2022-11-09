@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="csscalc.css" />
+  </head>
+  <body>
+    <div class="main-div">
+      <input
+        id="firstValue"
+        class="first-value"
+        type="number"
+        placeholder="0"
+      />
+      <select class="select-section" name="do" id="kindOfAction">
+        <option value="+" selected>+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <input
+        id="secondValue"
+        class="second-value"
+        type="number"
+        placeholder="0"
+      />
+      <button id="equalButton" class="ravno">=</button>
+      <div id="result" class="result">0</div>
+    </div>
+
+    <script src="jscalc.js"></script>
+  </body>
+</html>
