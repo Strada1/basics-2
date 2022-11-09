@@ -16,7 +16,8 @@ body {
 .calc {
   display: flex;
   height: 33px;
-
+  margin-top: 30px;
+  margin-left: 50px;
 }
 
 .calc__number {
