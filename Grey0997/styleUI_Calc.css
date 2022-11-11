@@ -1,0 +1,39 @@
+body{
+    background: url(img/car.jpg)
+   
+}
+
+.calc { 
+    display: flex;  
+    
+    justify-content: space-around; 
+    width: 200px; 
+    margin-top: 250px; 
+    margin-left: 350px;
+}
+
+.firstInput, .secondInput, .total, .return{
+    width: 100px ;
+    height:27px;
+    color: rgb(15, 14, 16);
+    border-radius:10px ;
+    border: none;
+    background-color: rgb(32, 190, 188);
+    text-align: center;
+
+}
+
+.total {
+    width: 100px;
+    padding-top: 7px ;
+    
+}
+.return{
+margin-left: 425px;
+
+}
+
+.selectCalc, .result{
+    background-color: rgb(221, 76, 204);
+
+}
