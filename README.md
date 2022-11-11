@@ -1,2 +1,2 @@
-# basics-2
-Репозиторий для второго потока "Основы"
+# practice-40
+Результат - https://codepen.io/xeleron88/pen/wvXJVbJ
