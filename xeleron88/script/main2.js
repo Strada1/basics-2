@@ -84,6 +84,7 @@ const equals = () => {
     tempData.result = Number(tempData.firstNumber) / Number(tempData.secondNumber);
     break;
   default:
+    tempData.result = out.textContent;
     break;
   }
 
@@ -154,7 +155,6 @@ const calculator = () => {
     if (button.ac.includes(targetButton)) {
       allClear();
     }
-    // console.log(`firstNumber "${tempData.firstNumber}", sign "${tempData.sign}", secondNumber "${tempData.secondNumber}"`);
   });
 };
 
