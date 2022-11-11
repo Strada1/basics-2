@@ -1,8 +1,8 @@
-const operation = {
-  add: "+",
-  subtract: "-",
-  multi: "*",
-  division: "/",
+const OPERATION = {
+  ADD: "+",
+  SUBSTRACT: "-",
+  MULTI: "*",
+  DIVISION: "/",
 };
 
 document.querySelector(".btn").addEventListener("click", function () {
@@ -13,16 +13,16 @@ document.querySelector(".btn").addEventListener("click", function () {
 
   if (number1 !== "" && number2 !== "") {
     switch (operator) {
-      case operation.add:
+      case OPERATION.ADD:
         result.textContent = +number1 + +number2;
         break;
-      case operation.subtract:
+      case OPERATION.SUBSTRACT:
         result.textContent = +number1 - +number2;
         break;
-      case operation.multi:
+      case OPERATION.MULTI:
         result.textContent = +number1 * +number2;
         break;
-      case operation.division:
+      case OPERATION.DIVISION:
         if (number2 !== "0") {
           result.textContent = +number1 / +number2;
         } else {
