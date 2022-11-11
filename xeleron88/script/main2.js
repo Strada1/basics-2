@@ -39,8 +39,14 @@ document.querySelector('.lastResults').addEventListener('click', (e) => {
   const targetResult = e.target;
   if (targetResult.className === 'results__result') {
     targetResult.remove();
-    lastResultsVisible();
   }
+  if (targetResult.className === 'lastResults__AC') {
+    const allTargets = document.querySelectorAll('.results__result');
+    for (const item of allTargets) {
+      item.remove();
+    }
+  }
+  lastResultsVisible();
 });
 
 // AC button

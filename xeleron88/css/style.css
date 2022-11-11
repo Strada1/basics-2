@@ -64,6 +64,7 @@ body {
 
 .lastResults {
     display: grid;
+    position: relative;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
     grid-auto-columns: 100px;
@@ -74,6 +75,24 @@ body {
     animation: leftToRight 1.7s ease 0s;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+}
+
+.lastResults__AC {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: hsl(357, 100%, 72%);
+    border: none;
+    border-radius: 40px;
+}
+
+.lastResults__AC:focus {
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3) inset;
+    outline: none;
+}
+.lastResults__AC:hover {
+    transform: translateY(-1px);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 .results__result {
