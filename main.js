@@ -4,7 +4,8 @@ const UI_ELEMENTS = {
   NUMBER_2: document.querySelector('.calc__number--two'),
   OPERATION: document.querySelector('.calc__operation'),
   BUTTON_SUBMIT: document.querySelector('.calc__btn-submit'),
-  OUTPUT: document.querySelector('.calc__output')
+  OUTPUT: document.querySelector('.calc__output'),
+  HISTORY_BOX: document.querySelector('.history'),
 }
 
 const OPERATIONS = {
@@ -33,6 +34,17 @@ function showCalcResult() {
   event.preventDefault();
   const result = calc(+UI_ELEMENTS.NUMBER_1.value, +UI_ELEMENTS.NUMBER_2.value, UI_ELEMENTS.OPERATION.value)
   UI_ELEMENTS.OUTPUT.textContent = result;
+  createHistoryCalc(result);
+}
+
+function createHistoryCalc(value) {
+  let div = document.createElement('div');
+  div.classList.add('history-block');
+  div.textContent = value;
+  UI_ELEMENTS.HISTORY_BOX.prepend(div);
+  div.addEventListener('click', () => {
+    div.remove()
+  })
 }
 
 UI_ELEMENTS.FORM.addEventListener('submit', showCalcResult);

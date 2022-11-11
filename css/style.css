@@ -11,13 +11,15 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   font-size: 20px;
+  padding-top: 30px;
+  padding-left: 50px;
 }
 
 .calc {
   display: flex;
   height: 33px;
-  margin-top: 30px;
-  margin-left: 50px;
+  margin-bottom: 20px;
+
 }
 
 .calc__number {
@@ -52,4 +54,34 @@ body {
 .calc__output {
   line-height: 33px;
   font-size: 20px;
+}
+
+.history {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.history-block {
+  width: 200px;
+  position: relative;
+  display: inline-block;
+  padding: 5px 15px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.history-block:hover::before {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  content: 'Delete';
+  color: #ffffff;
+  text-align: center;
+}
+
+.history-block:hover {
+  cursor: pointer;
+  background-color: rgba(139, 0, 0, 0.692);
 }
