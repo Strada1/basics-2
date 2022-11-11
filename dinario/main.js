@@ -33,3 +33,4 @@ function calcSum() {
   
   const button = document.querySelector(".equals");
   button.addEventListener("click", calcSum);
+  
