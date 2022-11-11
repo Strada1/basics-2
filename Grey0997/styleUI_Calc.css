@@ -4,7 +4,8 @@ body{
 }
 
 .calc { 
-    display: flex; 
+    display: flex;  
+    
     justify-content: space-around; 
     width: 200px; 
     margin-top: 250px; 
