@@ -37,8 +37,10 @@ const addResult = (result) => {
 
 document.querySelector('.lastResults').addEventListener('click', (e) => {
   const targetResult = e.target;
-  targetResult.remove();
-  lastResultsVisible();
+  if (targetResult.className === 'results__result') {
+    targetResult.remove();
+    lastResultsVisible();
+  }
 });
 
 // AC button
