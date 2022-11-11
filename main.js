@@ -42,9 +42,11 @@ function createHistoryCalc(value) {
   div.classList.add('history-block');
   div.textContent = value;
   UI_ELEMENTS.HISTORY_BOX.prepend(div);
-  div.addEventListener('click', () => {
-    div.remove()
-  })
+  div.addEventListener('click', deleteHistoryCalc)
+}
+
+function deleteHistoryCalc() {
+  this.remove();
 }
 
 UI_ELEMENTS.FORM.addEventListener('submit', showCalcResult);
