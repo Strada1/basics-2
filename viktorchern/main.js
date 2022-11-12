@@ -1,24 +1,38 @@
 function calc(e){
-    let a = Number( document.querySelector('#num-1').value );
-    let b = Number( document.querySelector('#num-2').value );
-    let operation = document.querySelector('#operation').value;
+  const A = Number( document.querySelector('#num-1').value );
+  const B = Number( document.querySelector('#num-2').value );
+  const OPERATION = document.querySelector('#operation').value.toUpperCase();
+  
 
-    const operations = {
-      add: a + b,
-      multi: a * b,
-      subtract: a - b,
-      divide: a / b,
-    }
+  const OPERATIONS = {
+    ADD: A + B,
+    MULTI: A * B,
+    SUBTRACT: A - B,
+    DIVIDE: A / B,
+  }
 
-    if( a != '' && b != '' ){
-      document.querySelector('#result').textContent = operations[operation];
-    } else {
-      if( a == '' ){
-        alert('Введите значение №1');
-      }
-      if( b == '' ){
-        alert('Введите значение №2');
-      }
+  if( A != '' && B != '' ){
+    const RESULT_VALUE = OPERATIONS[OPERATION]
+    const RESULT_ITEM = document.createElement('div');
+
+    RESULT_ITEM.className = 'calc__result-item';
+    RESULT_ITEM.textContent = RESULT_VALUE;
+    document.querySelector('#result').textContent = RESULT_VALUE;
+    document.querySelector('#calc__result-wrap').append(RESULT_ITEM);
+  } else {
+    if( A == '' ){
+      alert('Введите значение №1');
     }
+    if( B == '' ){
+      alert('Введите значение №2');
+    }
+  }
+
+  const RESULT_ITEMS = document.querySelectorAll('.calc__result-item');
+  RESULT_ITEMS.forEach(function(elem) {
+    elem.addEventListener('click', function(){
+      this.remove();
+    });
+  });
 }
 document.querySelector('#button').addEventListener('click', calc);
