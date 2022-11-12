@@ -1,0 +1,39 @@
+
+.container{
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+.calc{
+    margin: auto;
+}
+input:hover{
+    background-color: #D3D3D3;
+}
+input{
+    width: 95px;
+    height: 31px;
+    border: 1px solid #000;
+}
+
+.resListContainer{
+    display: flex;
+}
+.resList{
+    margin: auto;
+}
+.operators:hover{
+    background-color: #D3D3D3;
+}
+
+.equal:hover{
+    background-color: #D3D3D3;
+}
+.equal{
+    width: 39px;
+    height: 35px;
+};
+
+
+
+
