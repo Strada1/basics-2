@@ -1,57 +1,12 @@
-const tempData = {
-  firstNumber: '',
-  secondNumber: '',
-  thirdNumber: '',
-  result: '',
-  sign: '',
-  trigger: true,
+import { tempData, button, out } from './modules/dataObject.js';
+import { addResult, addEventListener } from './modules/lastResults.js';
 
-};
-const button = {
-  sign: ['+', '-', '×', '÷'],
-  number: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-  ac: ['AC'],
-  point: ['.'],
-  equals: ['='],
-};
-
+// Default hide lastResult
 document.querySelector('.lastResults').style.display = 'none';
-const out = document.querySelector('.calculator__output');
 
-const lastResultsVisible = () => {
-  const countOfLastResults = document.querySelectorAll('.results__result').length;
-  if (countOfLastResults > 0) {
-    document.querySelector('.lastResults').style.display = '';
-  } else {
-    document.querySelector('.lastResults').style.display = 'none';
-  }
-};
+// Last result module
+addEventListener();
 
-const addResult = (result) => {
-  // const div = document.createElement('div');
-  // div.className = 'results__result';
-  // div.innerHTML = result;
-  // document.querySelector('.lastResults').append(div);
-
-  document.querySelector('.lastResults').insertAdjacentHTML('beforeend', `<div class="results__result">${result}</div>`);
-  lastResultsVisible();
-};
-
-document.querySelector('.lastResults').addEventListener('click', (e) => {
-  const targetResult = e.target;
-  if (targetResult.className === 'results__result') {
-    targetResult.remove();
-  }
-  if (targetResult.className === 'lastResults__AC') {
-    const allTargets = document.querySelectorAll('.results__result');
-    for (const item of allTargets) {
-      item.remove();
-    }
-  }
-  lastResultsVisible();
-});
-
-// AC button
 const allClear = () => {
   tempData.firstNumber = '';
   tempData.secondNumber = '';
