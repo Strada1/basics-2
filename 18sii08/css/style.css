@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+li{
+    list-style-type: none;
+}
+
+.allresult{
+    margin-left: 100px;
+}  
