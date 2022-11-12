@@ -1,0 +1,105 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  padding-top: 30px;
+  padding-left: 50px;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.calc {
+  display: flex;
+  height: 33px;
+  margin-bottom: 20px;
+
+}
+
+.calc__number {
+  width: 95px;
+  margin-right: 8px;
+  padding-left: 10px;
+  font-size: 20px;
+  line-height: 24px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+}
+
+.calc__operation {
+  width: 50px;
+  margin-right: 8px;
+  font-size: 20px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+}
+
+.calc__btn-submit {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  border-radius: 4px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.calc__output {
+  line-height: 33px;
+  font-size: 20px;
+}
+
+.history {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.history-block {
+  width: 200px;
+  position: relative;
+  display: inline-block;
+  padding: 5px 15px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.history-block:hover::before {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  content: 'Delete';
+  color: #ffffff;
+  text-align: center;
+}
+
+.history-block:hover {
+  cursor: pointer;
+  background-color: #e73c7e;
+}
