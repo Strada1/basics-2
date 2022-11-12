@@ -5,7 +5,7 @@ function getCalcResult() {
   event.preventDefault();
   let result = calc(+UI_ELEMENTS.NUMBER_1.value, +UI_ELEMENTS.NUMBER_2.value, UI_ELEMENTS.OPERATION.value);
   if (result === Infinity) {
-    result = 0
+    result = 0;
   }
   UI_ELEMENTS.OUTPUT.textContent = result;
   createCalcLog(result);
