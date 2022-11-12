@@ -24,12 +24,20 @@ function buttonClick() {
 			case OPERATIONS.SUBTRACT:
 				return value1 - value2;
 			case OPERATIONS.DIVIDE:
-				return value1 / value2;
-
+				switch (value2) {
+					case 0:
+						return "Ошибка"
+					default:
+						return value1 / value2;
+				}
 		}
 	}
+	let reply = calc(operator, value1, value2);
 
-	return result.innerHTML = calc(operator, value1, value2)
+	return result.innerHTML = reply;
+
+
+	//return result.innerHTML = calc(operator, value1, value2)
 }
 
 let valueIs = document.querySelector('button');
