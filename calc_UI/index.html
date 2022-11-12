@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <input type="number" name="num1" id="num1" placeholder="0" />
+      <select name="operator" id="operator">
+        <option value="add">+</option>
+        <option value="subtract">-</option>
+        <option value="multi">*</option>
+        <option value="divide">/</option>
+      </select>
+      <input type="number" name="num2" id="num2" placeholder="0" />
+      <button id="equal">=</button>
+      <div id="results">
+        <div class="result"></div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
