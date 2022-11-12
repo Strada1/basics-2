@@ -16,4 +16,9 @@ function calculate() {
         default:
             result.textContent = num1 / num2;
     }
+    // Вывод последнего результата вычислений
+    let lastResult = document.createElement('div');
+    lastResult.innerHTML = result.textContent;
+    document.body.append(lastResult);
+    lastResult.addEventListener('click', () => lastResult.remove());
 }
