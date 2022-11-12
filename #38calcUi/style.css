@@ -1,0 +1,55 @@
+.calc {
+  display: flex;
+  margin: 50px;
+  justify-content: center;
+}
+
+.select {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.btn {
+  margin-left: 5px;
+}
+
+.equal p {
+  display: flex;
+  margin-top: 2px;
+  margin-left: 5px;
+  color: aliceblue;
+  background-color: brown;
+}
+
+.numone form input {
+  box-sizing: border-box;
+  width: 95px;
+}
+.calc-screen {
+  display: flex;
+}
+
+.oper {
+  background-color: aqua;
+}
+
+body {
+  height: 100vh;
+
+  background: linear-gradient(to top left, rgb(0, 155, 175), rgb(66, 175, 130));
+}
+
+.numeone {
+  display: flex;
+  justify-content: center;
+}
+
+.showresult {
+  color: aliceblue;
+  cursor: pointer;
+  width: 100px;
+  background-color: rgb(67, 80, 92);
+  margin-bottom: 5px;
+  display: flex;
+  margin-left: 40%;
+}
