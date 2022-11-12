@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calc UI</title>
+</head>
+<body>
+    <div class="container">
+        <div class="section-calc">
+            <input id="numA" class="number1" type="number" value="10" tabindex="1">
+            <select name="select1" id="calcAction" tabindex="2">
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multi">*</option>
+                <option value="division">/</option>
+                <option value="power">**</option>
+            </select>
+            <input id="numB" class="number2" type="number" value="3" tabindex="3">
+            <input id="submitBtn" class="button" type="button" value="=" tabindex="4">
+            <div id="printResult" class="result">13</div>
+        </div>
+        <div class="section-list-of-result">
+            <div class="container-for-results">       
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+    <!-- <script type="module" src="/module.js"></script> -->
+</body>
+</html>
