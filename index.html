@@ -10,17 +10,20 @@
 <body>
     <div class="calculator">
         <form action="calc">
-            <input class="num1" type="number">
-            <select name="select-calc" id="select-calc">
-                <option value="sum">+</option>
-                <option value="sub">-</option>
-                <option value="multi">*</option>
-                <option value="division">/</option>
+            <input id="num1" class="num1" type="number">
+            <select name="" id="oper">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
             </select>
-            <input class="num2" type="number">
-            <button class="calc-btn">=</button>
-            <div class="result">10</div>
+            <input id="num2" class="num2" type="number">
         </form>
+        <button id="res" class="res">=</button>
+        <div class="result">
+            <p></p>
+        </div>
     </div>
+    <script src="main.js"></script>
 </body>
 </html>

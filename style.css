@@ -3,7 +3,7 @@ body {
     justify-content: center;
 }
 form {
-    display: flex;
+    display: contents;
 }
 .calculator {
     width: 450px;
@@ -18,10 +18,15 @@ form {
     margin-left: 5px;
 }
 
-.calc-btn {
+.res {
     margin-left: 5px;
 }
 .result {
-    width: 50px;
+    display: inline-block;
+    width: 10px;
     margin-left: 10px;
+}
+
+.result p {
+    height: 5px;
 }
