@@ -1,0 +1,21 @@
+body {
+    border-radius: 10px;
+}
+
+.formDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 200px;
+    border: 50px;
+    border-width: 5px;
+    border-style: solid;
+    background-color: blueviolet;
+    margin: 110px auto;
+    /* background-color: blue; */
+}
+
+#result {
+    background-color: white;
+}
