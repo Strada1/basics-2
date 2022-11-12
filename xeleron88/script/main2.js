@@ -28,10 +28,12 @@ const lastResultsVisible = () => {
 };
 
 const addResult = (result) => {
-  const div = document.createElement('div');
-  div.className = 'results__result';
-  div.innerHTML = result;
-  document.querySelector('.lastResults').append(div);
+  // const div = document.createElement('div');
+  // div.className = 'results__result';
+  // div.innerHTML = result;
+  // document.querySelector('.lastResults').append(div);
+
+  document.querySelector('.lastResults').insertAdjacentHTML('beforeend', `<div class="results__result">${result}</div>`);
   lastResultsVisible();
 };
 
@@ -74,22 +76,25 @@ const getPoint = () => {
 
 // Calc logic
 const equals = () => {
+  const firstNumber = Number(tempData.firstNumber);
+  const secondNumber = Number(tempData.secondNumber);
+
   switch (tempData.sign) {
   case '+':
-    tempData.result = Number(tempData.firstNumber) + Number(tempData.secondNumber);
+    tempData.result = firstNumber + secondNumber;
     break;
   case '-':
-    tempData.result = Number(tempData.firstNumber) - Number(tempData.secondNumber);
+    tempData.result = firstNumber - secondNumber;
     break;
   case '×':
-    tempData.result = Number(tempData.firstNumber) * Number(tempData.secondNumber);
+    tempData.result = firstNumber * secondNumber;
     break;
   case '÷':
-    if (Number(tempData.secondNumber) === 0) {
+    if (secondNumber === 0) {
       out.textContent = 'Error';
       return;
     }
-    tempData.result = Number(tempData.firstNumber) / Number(tempData.secondNumber);
+    tempData.result = firstNumber / secondNumber;
     break;
   default:
     tempData.result = out.textContent;
