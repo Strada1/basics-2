@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#38 Калькулятор</title>
+    <!--<link rel="stylesheet" href="./style.css">-->
+    <style>
+        .calc {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -51%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="calc">
+        <form action="" class="calculator">
+            <input type="text" id="firstNumber" value="0">
+            <select name="" id="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+            </select>
+            <input type="text" id="secondNumber" value="0">
+            <button id="buttonResult">=</button>
+            <span class="result" id="result"></span>
+        </form>
+    </div>    
+    <script src="./main.js"></script>
+</body>
+</html>
