@@ -11,19 +11,23 @@
    <div class="wrapper">
       <div class="container">
          <div class="calc-box">
-            <input type="text" id="first">
-            <select name="" id="math" class="math-list">
+            <input type="number" id="first">
+            <select id="math" class="math-list">
                <option value="+">+</option>
                <option value="-">-</option>
                <option value="*">*</option>
                <option value="/">/</option>
+               <option value="%">%</option>
+               <option value="**">^</option>
             </select>
-            <input type="text" id="second">
+            <input type="number" id="second">
             <button id='button' class="equal-button">=</button>
-            <div class="result" id="result"></div>
+            <div class="result-box">
+
+            </div>
          </div>
       </div>
    </div>
-   <script src="calc_UI.js"></script>
+   <script type="module" src="calc_UI.js"></script>
 </body>
 </html>
