@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="main.js"></script>
 </head>
 <body>
     <div class="calc">
         <input type="text" name="summand1" id="firstNum">
             <select  id="select">
-                <option class="Add">+</option>
+                <option id="Add">+</option>
                 <option id="Subtraction">-</option>
-                <option id="Multi" selected="selected">*</option>
+                <option id="Multi">*</option>
                 <option id="Division">/</option>
             </select>
         <input type="text" name="summand2"  id="doubleNum">
         <button  id="Calculate_button">=</button>
-        <p  id="out"></p>
+        <div>
+            <p  id="out"></p>
+        </div>
+
   </div>
+    <script src="main.js"></script>
 </body>
 </html>
