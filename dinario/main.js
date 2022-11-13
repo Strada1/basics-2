@@ -1,36 +1,40 @@
-function calcSum() {
-    const OPERATION = {
-      add: "+",
-      subtract: "-",
-      multi: "*",
-      devide: "/",
-    }
-    const firstNum = Number(document.querySelector(".first-number").value);
-    const secondNum = Number(document.querySelector(".second-number").value);
-    const operator = document.querySelector("#calc__select").value;
-    const result = document.querySelector(".result");
-  
-    if (operator === OPERATION.add) {
-      result.insertAdjacentHTML("afterbegin", `<div>${+(firstNum + secondNum).toFixed(16)}</div>`);
-    } else if (operator === OPERATION.subtract) {
-      result.insertAdjacentHTML("afterbegin", `<div>${+(firstNum - secondNum).toFixed(16)}</div>`);
-    } else if (operator === OPERATION.multi) {
-      result.insertAdjacentHTML("afterbegin", `<div>${+(firstNum * secondNum).toFixed(16)}</div>`);
-    } else if (operator === OPERATION.devide) {
+const operations = {
+  add: "+",
+  subtract: "-",
+  multi: "*",
+  devide: "/",
+}
+const operator = document.querySelector("#calc__select");
+const result = document.querySelector(".result");
+let total;
+
+document.querySelector(".equals").addEventListener("click",function calcSum() {
+  const firstNum = Number(document.querySelector(".first-number").value);
+  const secondNum = Number(document.querySelector(".second-number").value);
+
+  switch (operator.value) {
+    case operations.add:
+      total = firstNum + secondNum;
+      break;
+    case operations.subtract:
+      total = firstNum - secondNum;
+      break;
+    case operations.multi:
+      total = firstNum * secondNum;
+      break;
+    case operations.devide:
       if (secondNum === 0) {
-        result.insertAdjacentHTML("afterbegin",`<div>error</div>`)
+        total = "error";
       } else {
-        result.insertAdjacentHTML("afterbegin", `<div>${+(firstNum / secondNum).toFixed(16)}</div>`);
+        total = firstNum / secondNum;
+      break;
       }
-    }
-    const history = document.querySelectorAll(".result div");
-    history.forEach(press => {
-      press.addEventListener("click", function () {
-        this.remove();
-      })
-    });
   }
-  
-  const button = document.querySelector(".equals");
-  button.addEventListener("click", calcSum);
-  
+  const newElem = document.createElement("div");
+  newElem.textContent = +total.toFixed(16);
+  result.prepend(newElem);
+
+  newElem.addEventListener("click", function () {
+    this.remove();
+  })
+})
