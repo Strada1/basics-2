@@ -1,0 +1,82 @@
+body {
+    background-color: black;
+}
+
+
+.page {
+    max-width: 1143px;
+    margin: 0 auto;
+    
+}
+
+.calc-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 400px;
+    padding-right: 401px;
+    padding-bottom:  440px;
+    padding-left: 401px;
+    border-radius: 103px;
+    background-color: white;
+    /* vertical-align: baseline; */
+    
+}
+
+.number1 {
+    width: 95px;
+    height: 33px;
+    margin-right: 8px;
+    border: 1px solid #000000;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.number2 {
+    width: 95px;
+    height: 33px;
+    margin-right: 8px;
+    border: 1px solid #000000;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.select-container {
+    width: 67px;
+    height: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.equals-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 39px;
+    height: 33px;
+    margin-right: 8px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    
+}
+
+.result {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
