@@ -11,7 +11,6 @@ let value2;
 let action;
 
 let choiceMain = document.getElementById('select');
-let choiceSubtraction = document.getElementById('Subtraction');
 let firstNum = document.getElementById('firstNum');
 let doubleNum = document.getElementById('doubleNum');
 let out = document.getElementById('out')
@@ -20,7 +19,7 @@ let calculate_button = document.getElementById('Calculate_button');
 firstNum.addEventListener('change',ReadFirstNum);
 doubleNum.addEventListener('change', ReadDoubleNum);
 calculate_button.addEventListener('click', Calc);
-choiceSubtraction.addEventListener('change', ActionSelect);
+choiceMain.addEventListener('change', ActionSelect);
 
 function ReadFirstNum()
 {
@@ -44,10 +43,11 @@ function Calc()
 {
     switch (action)
     {
-        case Operations.Add:
-            result = value1 + value2;
+        case '+':
+            result = Number(value1) + Number(value2);
             out.innerText = result;
             console.log(result);
             alert(result)
+            return result;
     }
 }
