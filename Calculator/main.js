@@ -21,7 +21,7 @@ firstNum.addEventListener('change',ReadFirstNum);
 doubleNum.addEventListener('change', ReadDoubleNum);
 choiceMain.addEventListener('change', ActionSelect);
 calculate_button.addEventListener('click', Calc);
-calculate_button.addEventListener('click', SaveResult);
+calculate_button.addEventListener('click', ResultProcessing);
 
 function ReadFirstNum()
 {
@@ -49,30 +49,37 @@ function Calc()
             result = Number(value1) + Number(value2);
             out.innerText = result;
             return result;
-            SaveResult();
+            ResultProcessing();
             break;
         case Operations.Subtraction:
             result = value1 - value2;
             out.innerText = result;
             return result;
-            SaveResult();
+            ResultProcessing();
             break;
         case Operations.Multi:
             result = value1 * value2;
             out.innerText = result;
             return result;
+            ResultProcessing();
             break;
         case Operations.Division:
             result = Number(value1) / Number(value2);
             out.innerText = result;
             return result;
+            ResultProcessing();
             break;
     }
 }
 
-function SaveResult()
+function ResultProcessing()
 {
     let div = document.createElement('div');
     div.innerHTML = result;
     document.body.append(div);
+    div.addEventListener('click', function ()
+    {
+        div.remove();
+    });
 }
+
