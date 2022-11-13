@@ -4,17 +4,18 @@ const operations = {
   multi: "*",
   devide: "/",
 }
+
 const operator = document.querySelector("#calc__select");
 const result = document.querySelector(".result");
 let total;
 
-document.querySelector(".equals").addEventListener("click",function calcSum() {
+document.querySelector(".equals").addEventListener("click", function calcSum() {
   const firstNum = Number(document.querySelector(".first-number").value);
   const secondNum = Number(document.querySelector(".second-number").value);
 
   switch (operator.value) {
     case operations.add:
-      total = firstNum + secondNum;
+      total = +(firstNum + secondNum).toFixed(16);
       break;
     case operations.subtract:
       total = firstNum - secondNum;
@@ -25,13 +26,15 @@ document.querySelector(".equals").addEventListener("click",function calcSum() {
     case operations.devide:
       if (secondNum === 0) {
         total = "error";
+        break;
       } else {
         total = firstNum / secondNum;
-      break;
+        break;
       }
   }
+
   const newElem = document.createElement("div");
-  newElem.textContent = +total.toFixed(16);
+  newElem.textContent = total;
   result.prepend(newElem);
 
   newElem.addEventListener("click", function () {
