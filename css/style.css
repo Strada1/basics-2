@@ -7,3 +7,36 @@ html {
 *:after {
   box-sizing: inherit;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.todo {
+  width: 460px;
+}
+
+.todo__title {
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+}
+
+.todo__input {
+  width: 100%;
+  padding-left: 12px;
+  height: 45px;
+  font-size: 18px;
+  line-height: 21px;
+  color: #BBBBBB;
+}
+
+.todo__item {
+  display: flex;
+  align-items: flex-start;
+  background: #FFFFFF;
+  border: 1px solid #989898;
+  border-radius: 6px;
+}
