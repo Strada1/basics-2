@@ -1,0 +1,18 @@
+.content{
+    margin-top: 100px;
+    margin-left: 475px;
+    border: 1px solid black;
+    background-color:#80b7b3;
+    width: 450px;
+    height: 600px;
+    padding: 30px;
+}
+.content-HIGH_title
+{
+    text-align: center;
+}
+.content-HIGH_list{
+    padding: 3px;
+
+    background-color: red;
+}
