@@ -32,4 +32,15 @@ document.querySelector(".btn").addEventListener("click", function () {
   } else {
     alert("Введите значение!");
   }
+
+  // Создание нового дива =====================================
+  const container = document.querySelector(".container")
+  let newDiv = document.createElement('div');
+  newDiv.className = "historyResult";
+  newDiv.textContent = result.textContent;
+  container.append(newDiv);
+
+  newDiv.addEventListener('click', function() {
+    newDiv.remove();
+  })
 });
