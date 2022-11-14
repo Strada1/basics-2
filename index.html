@@ -16,23 +16,57 @@
   <div class="todo">
     <div class="todo__high-box">
       <h2 class="todo__title">High</h2>
-      <input class="todo__input todo__input--high" type="text" name="high-task" placeholder="Добавить важных дел">
+      <div class="todo__input-box">
+        <input class="todo__input todo__input--high" type="text" name="high-task" placeholder="Добавить важных дел">
+        <button class="todo__add-btn todo__high-add" type="button">Добавить задачу</button>
+      </div>
       <div class="todo__high-list">
         <div class="todo__item">
-          <input class="todo__checkbox" type="checkbox" name="todo__high-item--checked">
+          <label class="todo__item-label">
+            <input class="todo__item-checkbox checkb" type="checkbox" checked>
+            <span class="todo__item-checkbox--style checkb__style"></span>
+          </label>
           <p class="todo__item-text">Вот вам и супер интересная тема.
             Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи
             куда-то за пределы основной программы.</p>
-          <button class="todo__item-delete">X</button>
+          <button class="todo__item-delete"></button>
+        </div>
+        <div class="todo__item">
+          <label class="todo__item-label">
+            <input class="todo__item-checkbox checkb" type="checkbox">
+            <span class="todo__item-checkbox--style checkb__style"></span>
+          </label>
+          <p class="todo__item-text">Сверстать этот TODO list</p>
+          <button class="todo__item-delete"></button>
+        </div>
+        <div class="todo__item todo__item--checked">
+          <label class="todo__item-label">
+            <input class="todo__item-checkbox checkb" type="checkbox" checked>
+            <span class="todo__item-checkbox--style checkb__style"></span>
+          </label>
+          <p class="todo__item-text">Начать делать задачу</p>
+          <button class="todo__item-delete"></button>
+        </div>
+      </div>
+      <div class="todo__low-box">
+        <h2 class="todo__title">Low</h2>
+        <div class="todo__input-box">
+          <input class="todo__input todo__input--low" type="text" name="low-task" placeholder="Добавить">
+          <button class="todo__add-btn todo__low-add" type="button">Добавить задачу</button>
+        </div>
+
+        <div class="todo__low-list">
+          <div class="todo__item">
+            <label class="todo__item-label">
+              <input class="todo__item-checkbox checkb" type="checkbox">
+              <span class="todo__item-checkbox--style checkb__style"></span>
+            </label>
+            <p class="todo__item-text">Посмотреть ютубчик</p>
+            <button class="todo__item-delete"></button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="todo__low-box">
-      <h2 class="todo__title">Low</h2>
-      <input class="todo__input todo__input--low" type="text" name="low-task" placeholder="Добавить">
-      <div class="todo__low-list"></div>
-    </div>
-  </div>
 </body>
 
 </html>
