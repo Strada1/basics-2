@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+
+	<style>
+		.calculator {
+			text-align: center;
+			line-height: 20px;
+
+		}
+
+		.lastResult {
+			background-color: green;
+			margin-top: 30px;
+		}
+
+		.history {
+			margin-left: 300px;
+			margin-top: 50px;
+			text-align: left;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="calculator" id="calculator">
+		<input type="text" id="firstNumber" value="4">
+
+		<select id="mathActions">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+		</select>
+
+
+		<input type="text" id="secondNumber" value="5">
+
+		<button id="button">=</button>
+		<span id="result"></span>
+		<div class="history"></div>
+	</div>
+	<script type="module" src="main.js"></script>
+</body>
+
+</html>
