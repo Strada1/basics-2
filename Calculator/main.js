@@ -48,27 +48,26 @@ function Calc()
         case Operations.Add:
             result = Number(value1) + Number(value2);
             out.innerText = result;
-            return result;
-            ResultProcessing();
-            break;
+            return ResultProcessing(result);
+            ResultProcessing(result);
+
         case Operations.Subtraction:
             result = value1 - value2;
             out.innerText = result;
             return result;
-            ResultProcessing();
-            break;
+            ResultProcessing(result);
+
         case Operations.Multi:
             result = value1 * value2;
             out.innerText = result;
-            return result;
-            ResultProcessing();
-            break;
+            return ResultProcessing(result);
+            ResultProcessing(result);
+
         case Operations.Division:
             result = Number(value1) / Number(value2);
             out.innerText = result;
-            return result;
-            ResultProcessing();
-            break;
+            return ResultProcessing(result);
+            ResultProcessing(result);
     }
 }
 

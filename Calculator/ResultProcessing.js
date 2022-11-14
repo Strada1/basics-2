@@ -1,5 +1,4 @@
-export function ResultProcessing() {
-    let result;
+export function ResultProcessing(result) {
     let div = document.createElement('div');
     div.innerHTML = result;
     document.body.append(div);
