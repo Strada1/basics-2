@@ -1,3 +1,4 @@
+import {ResultProcessing} from './ResultProcessing.js';
 const Operations = {
     Add: '+',
     Subtraction: '-',
@@ -15,7 +16,6 @@ let firstNum = document.getElementById('firstNum');
 let doubleNum = document.getElementById('doubleNum');
 let out = document.getElementById('out')
 let calculate_button = document.getElementById('Calculate_button');
-let calc_div = document.getElementById('calc');
 
 firstNum.addEventListener('change',ReadFirstNum);
 doubleNum.addEventListener('change', ReadDoubleNum);
@@ -72,15 +72,14 @@ function Calc()
     }
 }
 
-import {ResultProcessing} from './calc.js';
 
-// function ResultProcessing()
-// {
+
+// function ResultProcessing() {
 //     let div = document.createElement('div');
 //     div.innerHTML = result;
 //     document.body.append(div);
-//     div.addEventListener('click', function ()
-//     {
+//     div.addEventListener('click', function () {
 //         div.remove();
 //     });
+// }
 
