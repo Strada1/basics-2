@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Calculate</title>
+</head>
+<body>
+	<main class="main">
+		<div class="calc">
+			<input placeholder="5" type="number" class="calc-operand calc-number1">
+			<select name="operation" id="calc-operation" class="calc-operation">
+				<option value="sum" selected>+</option>
+				<option value="minus">-</option>
+				<option value="multiply">*</option>
+				<option value="divide">/</option>
+			</select>
+			<input placeholder="5" type="number" class="calc-operand calc-number2">
+			<button class="calc-result__btn btn">=</button>
+			<p class="calc-solution"></p>
+		</div>
+	</main>
+
+	<script src="main.js"></script>
+</body>
+</html>
