@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/main.css" rel="stylesheet" href="text/css">
+	<title>#43 TODO UI</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="containerTodo">
+		<div class="containerSheet">
+			<div class="containerHight">
+
+				<div class="highTasks">
+					<form class="toDoForm">
+						<h2 id="name">HIGH</h2>
+
+						<div class="addTask">
+							<input type="text" class="inputAddTask" placeholder="Добавить важных дел">
+							<button class="btnAdd" type="submit">+</button>
+						</div>
+
+						<div class="tasks">
+
+							<div class="task">
+								<input id="chekboxTask" class="squareCheckbox" type="checkbox">
+								<label for="checkboxTask">Вот вам и супер интересная тема.
+									Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести
+									некоторые
+									вещи куда-то за пределы основной программы.</label>
+								<button class="closeTask" type="submit">+</button>
+							</div>
+
+							<div class="task">
+								<input id="chekboxTask" class="squareCheckbox" type="checkbox">
+								<label for="checkboxTask">Сверстать этот TODO list</label>
+								<button class="closeTask" type="submit">+</button>
+							</div>
+
+							<div class="task">
+								<input id="chekboxTask" class="squareCheckbox" type="checkbox">
+								<label for="checkboxTask">Начать делать задачу</label>
+								<button class="closeTask" type="submit">+</button>
+							</div>
+
+						</div>
+
+						<div class="lowTasks">
+							<h2 id="name">LOW</h2>
+
+							<div class="addTask">
+								<input type="text" class="inputAddTask" placeholder="Добавить важных дел">
+								<button class="btnAdd" type="submit">+</button>
+							</div>
+							<div class="tasks">
+								<div class="task">
+									<input id="chekboxTask" class="squareCheckbox" type="checkbox">
+									<label for="checkboxTask">Посмотреть ютубчик</label>
+									<button class="closeTask" type="submit">+</button>
+								</div>
+							</div>
+						</div>
+
+					</form>
+
+
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
