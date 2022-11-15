@@ -1,4 +1,4 @@
-import {ResultProcessing} from './ResultProcessing.js';
+//import {ResultProcessing} from './ResultProcessing.js';
 const Operations = {
     Add: '+',
     Subtraction: '-',
@@ -48,8 +48,10 @@ function Calc()
         case Operations.Add:
             result = Number(value1) + Number(value2);
             out.innerText = result;
-            return ResultProcessing(result);
-            ResultProcessing(result);
+            return result;
+            ResultProcessing();
+            // return ResultProcessing();
+            //ResultProcessing(result);
 
         case Operations.Subtraction:
             result = value1 - value2;
@@ -73,12 +75,12 @@ function Calc()
 
 
 
-// function ResultProcessing() {
-//     let div = document.createElement('div');
-//     div.innerHTML = result;
-//     document.body.append(div);
-//     div.addEventListener('click', function () {
-//         div.remove();
-//     });
-// }
+function ResultProcessing() {
+    let div = document.createElement('div');
+    div.innerHTML = result;
+    document.body.append(div);
+    div.addEventListener('click', function () {
+        div.remove();
+    });
+}
 
