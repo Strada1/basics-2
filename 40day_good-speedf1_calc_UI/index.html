@@ -9,20 +9,22 @@
 </head>
 <body>
 	<main class="main">
-		<div class="calc">
-			<input placeholder="5" type="number" class="calc-operand calc-number1">
-			<select name="operation" id="calc-operation" class="calc-operation">
-				<option value="sum" selected>+</option>
-				<option value="minus">-</option>
-				<option value="multiply">*</option>
-				<option value="divide">/</option>
+		<form action="#" class="calc" method="get">
+			<input type="number" value="5" class="calc__number calc__number--one">
+			<select name="operation" class="calc__operation">
+				<option value="-" selected>-</option>
+				<option value="+">+</option>
+				<option value="*">*</option>
+				<option value="/">/</option>
 			</select>
-			<input placeholder="5" type="number" class="calc-operand calc-number2">
-			<button class="calc-result__btn btn">=</button>
-			<p class="calc-solution"></p>
+			<input type="number" value="5" class="calc__number calc__number--two">
+			<button class="calc__btn-submit" type="submit">=</button>
+			<output class="result">10</output>
+		</form>
+		<div class="history-result"></div>
 		</div>
 	</main>
 
-	<script src="main.js"></script>
+	<script type="module" src="js/main.js"></script>
 </body>
 </html>
