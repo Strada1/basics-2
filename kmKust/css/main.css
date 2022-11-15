@@ -1,0 +1,78 @@
+.page{
+	max-width: 1920px;
+	display: flex;
+	justify-content: center;   
+	align-items: center;
+}
+
+.calc-container{
+	width: 500px;
+	height: 90px;
+	margin: 50px auto;
+}
+
+.inputContact1{
+	position: absolute;
+	padding: 7px 10px 10px 7px;
+	margin: 21px 0 0 107px;
+	box-sizing: border-box;
+	width: 95px;
+	height: 33px;
+	background: #FFFFFF;
+	border: 1px solid #000000;
+}
+
+.inputContact2{
+	padding: 7px 10px 10px 7px;
+	position: absolute;
+	margin: 21px 0 0 277px;
+	box-sizing: border-box;
+	width: 95px;
+	height: 33px;
+	background: #FFFFFF;
+	border: 1px solid #000000;
+}
+
+.button{	
+	position: absolute;
+	margin: 21px 0 0 380px;
+	box-sizing: border-box;
+	width: 39px;
+	height: 33px;
+	background: #FFFFFF;
+	border: 1px solid #000000;
+	border-radius: 4px;
+
+}
+.button:hover {
+	background: #e7e7e7;
+ }
+ 
+
+ .button:active {
+	background-color: #333;
+	border-color: #333;
+	color: #eee;
+ }
+
+.select{
+	padding: 7px 10px 10px 7px;
+	margin: 21px 0 0 206px;
+	box-sizing: border-box;
+	position: absolute;
+	width: 67px;
+	height: 33px;	
+}
+
+.result{
+	padding: 25px 10px 11px 430px;
+	
+	width: 22px;
+	height: 24px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+	color: #000000;
+}
