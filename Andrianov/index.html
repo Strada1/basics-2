@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <title>ToDo</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="todo_contener">
+            <form action="#" class="todo_high">
+                <p class="high_title title">HIGH</p>
+                <div class="high_task task">
+                    <p><input type="text" class="task_list list" placeholder="Добавить важных дел"></p>
+                    <p><button class="task_add btn">+</button></p>
+                </div>
+                <div class="high_task task">
+                    <p><input type="radio" name="list" class="task_list list"></p>
+                    <p class="text">Вот вам и супер интересная тема. 
+                        Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, 
+                        что хочется вынести некоторые вещи куда-то за пределы основной программы.</p>
+                    <p><button class="task_del btn">+</button></p>
+                </div>
+                <div class="high_task task">
+                    <p><input type="radio" name="list" class="task_list list"></p>
+                    <p class="text">Сверстать этот TODO list</p>
+                    <p><button class="task_del btn">+</button></p>
+                </div>
+                <div class="high_task task">
+                    <p><input type="radio" name="list" class="task_list list"></p>
+                    <p class="text">Начать делать задачу</p>
+                    <p><button class="task_del btn">+</button></p>
+                </div>
+            </form>
+            <form action="#" class="low_high">
+                <p class="low_title title">LOW</p>
+                <div class="low_task task">
+                    <p><input type="text" class="task_list list" placeholder="Добавить"></p>
+                    <p><button class="task_add btn">+</button></p>
+                </div>
+                <div class="low_task task">
+                    <p><input type="radio" name="list" class="task_list list"></p>
+                    <p class="text">Посмотреть ютубчик</p>
+                    <p><button class="task_del btn">+</button></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

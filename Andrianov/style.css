@@ -1,0 +1,57 @@
+.wrapper {
+    overflow: hidden;
+    background: #E5E5E5;
+    height: 100vh;
+    
+}
+.todo_contener {
+    max-width: 476px;
+    height: 688px;
+    margin:100px auto;
+    background: #FFFFFF;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin: 25px 0px;
+}
+
+.task {
+    width: 460px;
+    min-height: 45px;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 8px 8px;
+}
+.text{
+    max-width: 370px;
+    font-size:20px ;
+}
+.task_del{
+    transform: rotate(45deg);
+}
+
+.list {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 21px;
+    color: #BBBBBB;
+}
+
+.btn {
+    background-color: white;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 21px;
+    color: #BBBBBB;
+}
