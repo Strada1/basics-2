@@ -1,4 +1,4 @@
-export let divRes = document.querySelector('.listResult');
+/*export let divRes = document.querySelector('.listResult');
 export let result = document.querySelector('.res');
 
 
@@ -15,6 +15,3 @@ function del() {
         el.target.remove();
         // this.remove();
     } */
-}
-};
-
