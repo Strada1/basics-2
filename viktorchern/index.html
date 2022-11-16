@@ -5,59 +5,89 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Калькулятор</title>
-  <style>
-    .container {
-      max-width: 992px;
-      margin: 0 auto;
-    }
-    .calc_mt {
-      margin-top: 50px;
-    }
-    .calc__row {
-      display: flex;
-      margin: 0 10px;
-      justify-content: center;
-    }
-    .calc__col {
-      padding: 0 10px;
-    }
-    .button {
-      cursor: pointer;
-    }
-    .calc__result-item {
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <div class="calc calc_mt">
-      <div class="calc__row">
-        <div class="calc__col">
-          <input id="num-1" type="number" placeholder="Введите число 1">
-        </div>
-        <div class="calc__col">
-          <select id="operation" name="#">
-            <option value="add">+</option>
-            <option value="subtract">-</option>
-            <option value="multi">*</option>
-            <option value="divide">/</option>
-          </select>
-        </div>
-        <div class="calc__col">
-          <input id="num-2" type="number" placeholder="Введите число 2">
-        </div>
-        <div class="calc__col">
-          <button id="button" class="button">=</button>
-        </div>
-        <div class="calc__col">
-          <div id="result"></div>
-        </div>
+    <div class="todo-wrap">
+      <div class="todo">
+        <form action="#" class="todo__form">
+          <div class="todo__title">High</div>
+          <div class="todo__add">
+            <input type="text" class="todo__input todo-item" placeholder="Добавить важных дел">
+            <button class="todo__button todo__button_add"></button>
+          </div>
+          <ul class="todo__list">
+            <li class="todo__item todo-item">
+              <div class="todo__row">
+                <div class="todo__col">
+                  <input type="checkbox">
+                </div>
+                <div class="todo__col">
+                  <div class="todo__cnt">Вот вам и супер интересная тема. 
+                    Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи куда-то за пределы основной программы.</div>
+                </div>
+                <div class="todo__col">
+                  <div class="todo__button todo__button_delete"></div>
+                </div>
+              </div>
+            </li>
+            <li class="todo__item todo-item">
+              <div class="todo__row">
+                <div class="todo__col">
+                  <input type="checkbox">
+                </div>
+                <div class="todo__col">
+                  <div class="todo__cnt">Сверстать этот TODO list</div>
+                </div>
+                <div class="todo__col">
+                  <div class="todo__button todo__button_delete"></div>
+                </div>
+              </div>
+            </li>
+            <li class="todo__item todo-item">
+              <div class="todo__row">
+                <div class="todo__col">
+                  <input type="checkbox">
+                </div>
+                <div class="todo__col">
+                  <div class="todo__cnt">Начать делать задачу</div>
+                </div>
+                <div class="todo__col">
+                  <div class="todo__button todo__button_delete"></div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </form>
       </div>
-      <div id="calc__result-wrap" class="calc__result-wrap"></div>
+      <div class="todo">
+        <form action="#" class="todo__form">
+          <div class="todo__title todo__title_mt">Low</div>
+          <div class="todo__add">
+            <input type="text" class="todo__input todo-item" placeholder="Добавить важных дел">
+            <button class="todo__button todo__button_add"></button>
+          </div>
+          <ul class="todo__list">
+            <li class="todo__item todo-item">
+              <div class="todo__row">
+                <div class="todo__col">
+                  <input type="checkbox" class="todo__input">
+                </div>
+                <div class="todo__col">
+                  <div class="todo__cnt">Посмотреть ютубчик</div>
+                </div>
+                <div class="todo__col">
+                  <div class="todo__button todo__button_delete"></div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </form>
+      </div>
     </div>
   </div>
 
-  <script type="module" src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
