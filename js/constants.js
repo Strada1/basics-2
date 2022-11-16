@@ -9,10 +9,7 @@ export const UI_ELEMENTS = {
 
 export const TODO_STATUS = {
   TODO: "To Do",
-  IN_PROGRESS: "In Progress",
   DONE: "Done",
-  DEFAULT_STATUS: "In Progress",
-  UNKNOW_TASK_STATUS: "Task or status not found",
 }
 
 export const TODO_PRIORITY = {

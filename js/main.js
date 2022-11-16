@@ -8,8 +8,6 @@ let list = [
   { name: 'create a post', status: 'To Do', priority: 'low' },
 ];
 
-
-
 UI_ELEMENTS.HIGH_FORM.addEventListener('submit', (event) => {
   event.preventDefault();
   const name = UI_ELEMENTS.INPUT_HIGH.value;
@@ -20,7 +18,7 @@ UI_ELEMENTS.HIGH_FORM.addEventListener('submit', (event) => {
   });
   renderDocument()
   event.target.reset();
-})
+});
 
 UI_ELEMENTS.LOW_FORM.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -32,7 +30,7 @@ UI_ELEMENTS.LOW_FORM.addEventListener('submit', (event) => {
   });
   renderDocument()
   event.target.reset();
-})
+});
 
 
 
@@ -54,7 +52,8 @@ function createTaskDom(taskName) {
   label.prepend(input);
   label.append(span);
   label.append(taskName);
-  button.addEventListener('click', deleteItem)
+  button.addEventListener('click', deleteItem);
+  span.addEventListener('click', changeStatus)
   return item;
 }
 
@@ -66,13 +65,18 @@ function createItemInLow(item) {
   UI_ELEMENTS.LOW_LIST.append(item);
 }
 
+function changeStatus() {
+  const item = this.parentNode.parentNode;
+  item.classList.toggle("item-checked")
+  console.log(this.previousElementSibling.textContent);
+}
+
 function deleteItem() {
   const taskName = this.previousElementSibling.textContent;
   this.parentNode.remove();
-  alert(taskName);
   list = list.filter((item) => {
     return item.name != taskName;
-  })
+  });
 }
 
 function renderDocument() {

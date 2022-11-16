@@ -70,6 +70,10 @@ body {
   margin-bottom: 8px;
 }
 
+.todo__item.item-checked {
+  background-color: #F4F4F4;
+}
+
 .todo__item--checked {
   background-color: #F4F4F4;
 }
