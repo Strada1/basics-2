@@ -1,11 +1,12 @@
 import { UI_ELEMENTS, TODO_STATUS, TODO_PRIORITY } from "./constants.js";
+import { createTaskDom, createItemInLow, createItemInHigh } from "./create.js"
 
 let list = [
   { name: 'Посмотреть ютубчик', status: 'To Do', priority: 'low' },
   { name: 'Вот вам и супер интересная тема. Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи куда-то за пределы основной программы.', status: 'To Do', priority: 'high' },
   { name: 'Сверстать этот TODO list', status: 'To Do', priority: 'high' },
-  { name: 'Начать делать задачу', status: 'To Do', priority: 'high' },
-  { name: 'create a post', status: 'To Do', priority: 'low' },
+  { name: 'Начать делать задачу', status: 'Done', priority: 'high' },
+  { name: 'create a post', status: 'Done', priority: 'low' },
 ];
 
 UI_ELEMENTS.HIGH_FORM.addEventListener('submit', (event) => {
@@ -32,46 +33,13 @@ UI_ELEMENTS.LOW_FORM.addEventListener('submit', (event) => {
   event.target.reset();
 });
 
-
-
-function createTaskDom(taskName) {
-  const item = document.createElement('div');
-  const label = document.createElement('label');
-  const input = document.createElement('input');
-  const span = document.createElement('span');
-  const button = document.createElement('button')
-  item.classList.add('todo__item');
-  label.classList.add('todo__item-label');
-  input.classList.add('todo__item-checkbox');
-  span.classList.add('todo__item-checkbox--style');
-  button.classList.add('todo__item-delete-btn')
-  input.setAttribute('type', 'checkbox');
-  button.setAttribute('type', 'button');
-  item.prepend(label);
-  item.append(button);
-  label.prepend(input);
-  label.append(span);
-  label.append(taskName);
-  button.addEventListener('click', deleteItem);
-  span.addEventListener('click', changeStatus)
-  return item;
-}
-
-function createItemInHigh(item) {
-  UI_ELEMENTS.HIGH_LIST.append(item);
-}
-
-function createItemInLow(item) {
-  UI_ELEMENTS.LOW_LIST.append(item);
-}
-
-function changeStatus() {
+export function changeStatus() {
   const item = this.parentNode.parentNode;
   item.classList.toggle("item-checked")
   console.log(this.previousElementSibling.textContent);
 }
 
-function deleteItem() {
+export function deleteItem() {
   const taskName = this.previousElementSibling.textContent;
   this.parentNode.remove();
   list = list.filter((item) => {
@@ -84,10 +52,10 @@ function renderDocument() {
   UI_ELEMENTS.LOW_LIST.textContent = '';
   list.forEach((item) => {
     if (item.priority === TODO_PRIORITY.HIGHT) {
-      const taskHigh = createTaskDom(item.name);
+      const taskHigh = createTaskDom(item.name, item.status);
       createItemInHigh(taskHigh);
     } else {
-      const taskLow = createTaskDom(item.name);
+      const taskLow = createTaskDom(item.name, item.status);
       createItemInLow(taskLow);
     }
   })
