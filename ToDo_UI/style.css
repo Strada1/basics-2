@@ -15,23 +15,34 @@
 }
 
 .content_input{
-    display: flex;
+    /*display: flex;*/
     width: 430px;
     border-radius: 15px;
-    padding: 10px 5px 10px 10px;
+    /*padding: 10px 5px 10px 10px;*/
 }
 
+.content_container-Input{
+    display: flex;
+    border-radius: 15px;
+    /*width: 430px;*/
+    outline: 1px solid #000;
+    margin-top: 15px;
+    padding: 5px 5px 10px 10px;
+    background-color: blue;
+}
 .list_point{
     display: flex;
     border-radius: 15px;
     outline: 1px solid #000;
     margin-top: 15px;
+    background-color: blue;
 }
 
 .text_point{
     display: flex;
     margin: 2px 5px 5px -10px;
     max-width: 320px;
+    background-color: red;
 }
 
 .input_checkbox{
@@ -54,13 +65,13 @@
 
 .button_add{
     display: flex;
-    position: relative;
-    left: 418px;
+    /*position: relative;*/
+    left: 335px;
     font-size: 20px;
     cursor: pointer;
     background-color: white;
     border-style: none;
-    margin-top: -32px;
+    margin-top: -5px;
 
 }
 
