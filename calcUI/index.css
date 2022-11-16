@@ -1,0 +1,20 @@
+body{
+    background-color: black;
+}
+.main {
+    margin: 0px auto;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.wrapper{
+    border: 1px black solid;
+    padding: 250px;
+    border-radius: 30px;
+    background-color: lightcoral;
+}
