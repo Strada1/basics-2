@@ -1,0 +1,103 @@
+.wrapper {
+    overflow: hidden;
+    background: #E5E5E5;
+    height: 100vh;
+    
+    
+}
+.todo_contener {
+    max-width: 476px;
+    height: 688px;
+    margin:100px auto;
+    background: #FFFFFF;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin: 25px 0px;
+}
+
+.highBlock{
+    width: 460px;
+    min-height: 45px;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    padding: 0 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+.highTask {
+    width: 430px;
+    margin-right: 10px;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 21px;
+}
+.highBtn {
+    background-color: white;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 21px;
+    color: #BBBBBB;
+}
+
+.delBtn {
+    transform: rotate(45deg);
+    background-color: white;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 21px;
+    color: #BBBBBB;
+}
+.lab{
+    max-width: 430px;
+    display: flex;
+    align-items: center;
+}
+.lowBlock{
+    width: 460px;
+    min-height: 45px;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    padding: 0 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+.lowTask{
+    width: 430px;
+    margin-right: 10px;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 21px;
+}
+.lowBtn{
+    background-color: white;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 21px;
+    color: #BBBBBB;
+}
+.block{
+    width: 460px;
+    min-height: 45px;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    padding: 0 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.task{
+    margin-right: 10px;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 21px;
+}
