@@ -16,7 +16,7 @@
 
 .content_input{
     /*display: flex;*/
-    width: 430px;
+    width: 440px;
     border-radius: 15px;
     /*padding: 10px 5px 10px 10px;*/
 }
@@ -25,10 +25,10 @@
     display: flex;
     border-radius: 15px;
     /*width: 430px;*/
-    outline: 1px solid #000;
+    /*outline: 1px solid #000;*/
     margin-top: 15px;
-    padding: 5px 5px 10px 10px;
-    background-color: blue;
+    padding: 5px 5px 10px 0px;
+    /*background-color: blue;*/
 }
 .list_point{
     display: flex;
@@ -64,9 +64,10 @@
 }
 
 .button_add{
-    display: flex;
-    /*position: relative;*/
-    left: 335px;
+    /*display: flex;*/
+    position: relative;
+    left: 5%;
+    /*left: 50px;*/
     font-size: 20px;
     cursor: pointer;
     background-color: white;

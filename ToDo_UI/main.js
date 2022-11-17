@@ -2,8 +2,9 @@ let inputTask;
 
 let textInput = document.querySelector(".content_input");
 let addButton = document.querySelector('.button_add');
-let placeText = document.querySelector('.content_list')
-let placeContainer = document.querySelector('.list_point')
+let placeText = document.querySelector('.list_point')
+// let placeContainer = document.querySelector('.content_list')
+
 addButton.addEventListener('click',AddNewTask);
 textInput.addEventListener('change', ReadTextInput);
 
@@ -19,7 +20,11 @@ function AddNewTask (){
     let divText = document.createElement('div');
     divText.className = "text_point";
     let p = document.createElement('p');
-    divText.innerHTML = inputTask;
-    placeText.insertAdjacentElement("afterend",divContainer);
+    p.innerHTML = inputTask;
+    placeText.insertAdjacentElement("beforebegin", divContainer);
+    divContainer.insertAdjacentElement("beforebegin",divText);
+    divText.insertAdjacentElement("beforebegin", p);
+
+
 
 }
