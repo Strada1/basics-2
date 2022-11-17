@@ -4,6 +4,7 @@ import { list } from "./list.js";
 import { checkBoxHandle } from "./formHandler.js";
 import { STATUS } from "./list.js";
 import { removeHandler } from "./formHandler.js";
+import { formHandler } from "./formHandler.js";
 
 export const render = () => {
   const mainTodo = document.querySelector(".todo-main");
@@ -26,6 +27,7 @@ export const render = () => {
       "form",
       "todo-main-elements-input"
     );
+    todoMainElements.addEventListener("submit", formHandler);
     todoMainElements.append(taskAddForm);
     const addTaskInput = createElementWithClass(
       "input",
@@ -62,6 +64,7 @@ const checkBoxRender = (mainEl, task) => {
     "div",
     "todo-main_elements-checkbox"
   );
+  checkboxMainDiv.dataset.id = task.id;
   mainEl.append(checkboxMainDiv);
 
   const checkBoxCheckButton = createElementWithClass(
