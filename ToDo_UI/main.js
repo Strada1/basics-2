@@ -2,8 +2,7 @@ let inputTask;
 
 let textInput = document.querySelector(".content_input");
 let addButton = document.querySelector('.button_add');
-let placeText = document.querySelector('.list_point')
-// let placeContainer = document.querySelector('.content_list')
+let placeContainer = document.querySelector('.content_list')
 
 addButton.addEventListener('click',AddNewTask);
 textInput.addEventListener('change', ReadTextInput);
@@ -21,10 +20,20 @@ function AddNewTask (){
     divText.className = "text_point";
     let p = document.createElement('p');
     p.innerHTML = inputTask;
-    placeText.insertAdjacentElement("beforebegin", divContainer);
-    divContainer.insertAdjacentElement("beforebegin",divText);
-    divText.insertAdjacentElement("beforebegin", p);
-
-
-
+    let divCheckBox = document.createElement('div');
+    let checkBox = document.createElement('input');
+    checkBox.className = "input_checkbox";
+    checkBox.type = 'checkbox';
+    let divButtonRemove = document.createElement('div');
+    let buttonRemove = document.createElement('button');
+    buttonRemove.className = 'button_remove';
+    buttonRemove.textContent = 'X';
+    placeContainer.insertAdjacentElement("afterbegin", divContainer);
+    divContainer.insertAdjacentElement("beforeend",divText);
+    divText.insertAdjacentElement("afterbegin", p)
+    divContainer.insertAdjacentElement("beforeend", divCheckBox);
+    divCheckBox.insertAdjacentElement('afterbegin', checkBox);
+    divContainer.insertAdjacentElement("beforeend", divButtonRemove);
+    divButtonRemove.insertAdjacentElement('afterbegin', buttonRemove);
 }
+
