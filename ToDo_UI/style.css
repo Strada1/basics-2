@@ -6,7 +6,7 @@
     padding: 30px;
     font-family: Arial;
     font-size: 16px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .content_title
@@ -15,6 +15,13 @@
 }
 
 .content_input-High{
+    /*display: flex;*/
+    width: 440px;
+    border-radius: 15px;
+    /*padding: 10px 5px 10px 10px;*/
+}
+
+.content_input-Low{
     /*display: flex;*/
     width: 440px;
     border-radius: 15px;
@@ -60,7 +67,7 @@
     background-color: white;
 }
 
-.button_add{
+.button_add-High{
     /*display: flex;*/
     position: relative;
     left: 5%;
@@ -71,6 +78,18 @@
     border-style: none;
     margin-top: -5px;
 
+}
+
+.button_add-Low{
+    /*display: flex;*/
+    position: relative;
+    left: 5%;
+    /*left: 50px;*/
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white;
+    border-style: none;
+    margin-top: -5px;
 }
 
 .button_add:hover{
