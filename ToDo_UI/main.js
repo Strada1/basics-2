@@ -5,11 +5,13 @@ let addButtonHighTask = document.querySelector('.button_add-High');
 let placeContainerHigh = document.querySelector('.content_list-High')
 
 addButtonHighTask.addEventListener('click',AddNewTaskHigh);
+addButtonHighTask.addEventListener('submit',AddNewTaskHigh);
 textHighInput.addEventListener('change', ReadTaskHighInput);
 
 let textLowInput = document.querySelector('.content_input-Low');
 let addButtonLowTask = document.querySelector('.button_add-Low');
 let placeContainerLow = document.querySelector('.content_list-Low');
+
 addButtonLowTask.addEventListener('click', AddNewTaskLow);
 textLowInput.addEventListener('change', ReadTaskLowInput);
 

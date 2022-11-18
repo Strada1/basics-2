@@ -17,6 +17,7 @@
 .content_input-High{
     /*display: flex;*/
     width: 440px;
+    height: 30px;
     border-radius: 15px;
     /*padding: 10px 5px 10px 10px;*/
 }
@@ -24,6 +25,7 @@
 .content_input-Low{
     /*display: flex;*/
     width: 440px;
+    height: 30px;
     border-radius: 15px;
     /*padding: 10px 5px 10px 10px;*/
 }
@@ -68,28 +70,25 @@
 }
 
 .button_add-High{
-    /*display: flex;*/
+    display: flex;
     position: relative;
-    left: 5%;
-    /*left: 50px;*/
+    left: 418px;
     font-size: 20px;
     cursor: pointer;
     background-color: white;
     border-style: none;
-    margin-top: -5px;
-
+    margin-top: -31px;
 }
 
 .button_add-Low{
-    /*display: flex;*/
+    display: flex;
     position: relative;
-    left: 5%;
-    /*left: 50px;*/
+    left: 418px;
     font-size: 20px;
     cursor: pointer;
     background-color: white;
     border-style: none;
-    margin-top: -5px;
+    margin-top: -31px;
 }
 
 .button_add:hover{
