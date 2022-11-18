@@ -61,6 +61,7 @@ p {
     margin-left: 45px;
     margin-bottom: 12px;
     margin-top: 12px;
+    word-wrap: break-word;
 }
 
 input[type="checkbox"] {

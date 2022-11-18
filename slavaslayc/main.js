@@ -1,6 +1,5 @@
 const formHighTask = document.querySelector('#frmHighTask')
 const formLowTask = document.querySelector('#frmLowTask')
-const buttonLowTask = document.querySelector('#lowTask')
 const highTasks = document.querySelector('.highTaskList')
 const lowTasks = document.querySelector('.lowTaskList')
 
