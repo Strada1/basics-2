@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>TODO_UI</title>
+</head>
+<body class="body">
+   <div class="wrapper">
+      <section class="section-one">
+         <h1>HIGH</h1>
+         <form>
+            <div class="input-box">
+               <input type="text" placeholder="Добавить важных дел" class="add-task high" >
+               <button class="btn" id="add_task_high">╂</button>
+            </div>
+         </form>
+         <div class="text-box">
+            <input type="checkbox" class="checkbox">
+            <p>Начать делать задачу</p>
+            <button class="btn delete-btn">╂</button>
+         </div>
+      </section>
+      <section class="section-two">
+         <h1>LOW</h1>
+         <form>
+            <div class="input-box">
+               <input type="text" placeholder="Добавить" class="add-task low">
+               <button class="btn" id="add_task_low">╂</button>
+            </div>
+         </form>
+         <div class="text-box">
+            <input type="checkbox" class="checkbox">
+            <p>Начать делать задачу</p>
+            <button class="btn delete-btn">╂</button>
+         </div>
+      </section>
+   </div>
+   <script src="main.js"></script>
+</body>
+</html>

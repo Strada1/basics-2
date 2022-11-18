@@ -1,0 +1,92 @@
+
+*,
+*::after,
+*::before {
+   box-sizing: border-box;
+}
+body,h1,section,p,div,form,input,button {
+   margin: 0;
+   padding: 0;
+}
+.body {
+   background:url(../StradaAndrey/noutbuk_klavishi_gradient_167934_1920x1080.jpg)center center/cover no-repeat;
+   min-height: 1080px;
+   color: rgb(207, 196, 180);
+   font-family: 'Bahnschrift';
+}
+.wrapper {
+   background-color: rgba(143, 142, 142, 0.28);
+   width: 476px;
+   margin: 200px auto 50px;
+   padding: 25px 8px;
+   box-shadow: 0px 0px 20px 3px rgba(223, 215, 215, 0.7); 
+}
+h1 {
+   font-size: 27px;
+   text-align: center;
+   margin-bottom: 12px;
+}
+.add-task {
+   font-size: 21px;
+   border-style: none;
+   height: 21px;
+   width: 411px;
+   outline: none;
+   vertical-align: middle;
+   background: none;
+   transition: 0.2s;
+   padding-left: 2px;
+}
+.add-task:hover{
+   background-color: rgba(143, 142, 142, 0.28);
+   transition: 0.2s;
+}
+.input-box {
+   padding: 12px;
+   border-radius: 6px;
+   border: 1px solid #989898;
+   margin-bottom: 8px;
+   width: 460px;
+   height: 45px;
+}
+.btn {
+   border: none;
+   vertical-align: middle;
+   color: rgb(207, 196, 180);
+   width: 18px;
+   height: 18px;
+   background: none;
+}
+.delete-btn {
+   transform: rotate(45deg);
+   position: absolute;
+   top: 12px;
+   right: 12px;
+}
+.btn:hover {
+   color: rgb(223, 214, 201);
+   transition: 0.3s linear;
+   transform: rotateY(360deg);
+}
+.btn:active {
+   color: rgb(223, 214, 201);
+   transition: 0.2s linear;
+   transform: scale(0.5);
+}
+form > div:last-child {
+   margin-bottom: 12px;
+}
+.text-box{
+   padding: 12px 45px;
+   font-size: 18px;
+   border: 1px solid #989898;
+   border-radius: 6px;
+   margin-bottom: 8px;
+   color: inherit;
+   position: relative;
+}
+.checkbox {
+   position: absolute;
+   left: 12px;
+   top: 14px;
+}
