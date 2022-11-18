@@ -1,6 +1,6 @@
 let inputTask;
 
-let textInput = document.querySelector(".content_input");
+let textInput = document.querySelector(".content_input-High");
 let addButton = document.querySelector('.button_add');
 let placeContainer = document.querySelector('.content_list')
 
@@ -29,11 +29,11 @@ function AddNewTask (){
     buttonRemove.className = 'button_remove';
     buttonRemove.textContent = 'X';
     placeContainer.insertAdjacentElement("afterbegin", divContainer);
-    divContainer.insertAdjacentElement("beforeend",divText);
-    divText.insertAdjacentElement("afterbegin", p)
     divContainer.insertAdjacentElement("beforeend", divCheckBox);
     divCheckBox.insertAdjacentElement('afterbegin', checkBox);
     divContainer.insertAdjacentElement("beforeend", divButtonRemove);
     divButtonRemove.insertAdjacentElement('afterbegin', buttonRemove);
+    divContainer.insertAdjacentElement("beforeend",divText);
+    divText.insertAdjacentElement("afterbegin", p)
 }
 
