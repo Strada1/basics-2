@@ -53,6 +53,6 @@ export const removeTask = (taskId) => {
   list = list.filter((el) => !(el.id === taskId));
 };
 
-export const sortByStatus = () => {
+export const sortedListByStatus = () => {
   return [...list].sort((a, b) => (a.status > b.status ? -1 : 1));
 };

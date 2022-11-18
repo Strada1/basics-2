@@ -1,8 +1,8 @@
-import { PRIORITY } from "./list.js";
-import { checkBoxHandle } from "./formHandler.js";
-import { STATUS } from "./list.js";
-import { removeHandler } from "./formHandler.js";
-import { formHandler } from "./formHandler.js";
+import { PRIORITY } from "../MODEL/list.js";
+import { checkBoxHandle } from "../CONTROLLER/formHandler.js";
+import { STATUS } from "../MODEL/list.js";
+import { removeHandler } from "../CONTROLLER/formHandler.js";
+import { formHandler } from "../CONTROLLER/formHandler.js";
 
 const createElementWithClass = (element, className) => {
   const el = document.createElement(element);

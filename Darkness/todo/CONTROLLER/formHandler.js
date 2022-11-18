@@ -1,10 +1,10 @@
-import { addTask } from "./list.js";
-import { STATUS } from "./list.js";
-import { list } from "./list.js";
-import { render } from "./render.js";
-import { changeStatus } from "./list.js";
-import { removeTask } from "./list.js";
-import { sortByStatus } from "./list.js";
+import { addTask } from "../MODEL/list.js";
+import { STATUS } from "../MODEL/list.js";
+import { list } from "../MODEL/list.js";
+import { render } from "../VIEW/render.js";
+import { changeStatus } from "../MODEL/list.js";
+import { removeTask } from "../MODEL/list.js";
+import { sortedListByStatus } from "../MODEL/list.js";
 
 export const formHandler = (event) => {
   event.preventDefault();
@@ -24,7 +24,7 @@ export const formHandler = (event) => {
     id: listId,
   });
   console.log(list);
-  render(sortByStatus());
+  render(sortedListByStatus());
 };
 
 export const checkBoxHandle = (event) => {
@@ -33,12 +33,12 @@ export const checkBoxHandle = (event) => {
   event.target.parentElement.classList.toggle("checked");
   const checkBoxId = +event.target.parentElement.dataset.id;
   changeStatus(checkBoxId);
-  render(sortByStatus());
+  render(sortedListByStatus());
 };
 
 export const removeHandler = (event) => {
   const deleteButton = event.target;
   const taskId = +deleteButton.parentElement.dataset.id;
   removeTask(taskId);
-  render(list);
+  render(sortedListByStatus());
 };
