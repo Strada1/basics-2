@@ -1,0 +1,23 @@
+body {
+    background-color: black;
+}
+
+.container {
+    width: 1143px;
+    height: 1000px;
+    background-color: white;
+    border-radius: 103px;
+}
+
+.calculator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+input[type='text'] {
+    width: 95px;
+    height: 33px;
+    box-sizing: border-box;
+}
