@@ -15,10 +15,11 @@ export function createTaskDom(taskName, taskStatus) {
   input.setAttribute('type', 'checkbox');
   button.setAttribute('type', 'button');
   item.prepend(label);
+  item.append(taskName);
   item.append(button);
   label.prepend(input);
   label.append(span);
-  label.append(taskName);
+
   if (taskStatus === TODO_STATUS.DONE) {
     item.classList.add('item-checked');
     input.setAttribute('checked', 'true')
