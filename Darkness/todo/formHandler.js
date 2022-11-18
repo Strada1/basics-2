@@ -4,7 +4,7 @@ import { list } from "./list.js";
 import { render } from "./render.js";
 import { changeStatus } from "./list.js";
 import { removeTask } from "./list.js";
-import { sortList } from "./list.js";
+import { sortByStatus } from "./list.js";
 
 export const formHandler = (event) => {
   event.preventDefault();
@@ -16,15 +16,15 @@ export const formHandler = (event) => {
     return null;
   }
 
-  const listId = list.length > 0 ? sortList("id") + 1 : 1;
+  const listId = list.length > 0 ? list[list.length - 1].id + 1 : 1;
   addTask({
     name: inputValue,
     priority: inputName,
     status: STATUS.IN_PROGRESS,
     id: listId,
   });
-  sortList("status");
-  render();
+  console.log(list);
+  render(sortByStatus());
 };
 
 export const checkBoxHandle = (event) => {
@@ -33,13 +33,12 @@ export const checkBoxHandle = (event) => {
   event.target.parentElement.classList.toggle("checked");
   const checkBoxId = +event.target.parentElement.dataset.id;
   changeStatus(checkBoxId);
-  sortList("status");
-  render();
+  render(sortByStatus());
 };
 
 export const removeHandler = (event) => {
   const deleteButton = event.target;
   const taskId = +deleteButton.parentElement.dataset.id;
   removeTask(taskId);
-  render();
+  render(list);
 };

@@ -12,7 +12,7 @@ export let list = [
     name: `Вот вам и супер интересная тема.Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи куда-то за пределы основной программы.`,
     priority: PRIORITY.HIGH,
     status: STATUS.IN_PROGRESS,
-    id: 2,
+    id: 0,
   },
   {
     name: "Сверстать этот TODO list",
@@ -24,7 +24,7 @@ export let list = [
     name: "Начать делать задачу",
     priority: PRIORITY.HIGH,
     status: STATUS.DONE,
-    id: 4,
+    id: 2,
   },
   {
     name: "Посмотреть ютубчик",
@@ -36,28 +36,23 @@ export let list = [
 
 export const addTask = (task) => {
   list = [...list, task];
+  console.log(list);
 };
 
 export const changeStatus = (taskId) => {
-  const result = list.filter((task) => task.id === taskId);
-  for (let task of result) {
-    task.status =
-      task.status === STATUS.IN_PROGRESS
-        ? STATUS.DONE
-        : task.status === STATUS.DONE
-        ? STATUS.IN_PROGRESS
-        : null;
-  }
+  const result = list.find((task) => task.id === taskId);
+  result.status =
+    result.status === STATUS.IN_PROGRESS
+      ? STATUS.DONE
+      : result.status === STATUS.DONE
+      ? STATUS.IN_PROGRESS
+      : null;
 };
 
 export const removeTask = (taskId) => {
   list = list.filter((el) => !(el.id === taskId));
 };
 
-export const sortList = (category) => {
-  if (category === "status") {
-    list = [...list.sort((a, b) => (a.status > b.status ? -1 : 1))];
-  } else if (category === "id") {
-    return [...list.sort((a, b) => a.id - b.id)][list.length - 1].id;
-  }
+export const sortByStatus = () => {
+  return [...list].sort((a, b) => (a.status > b.status ? -1 : 1));
 };

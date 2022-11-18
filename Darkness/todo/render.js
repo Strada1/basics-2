@@ -1,12 +1,16 @@
-import { createElementWithClass } from "./createEl.js";
 import { PRIORITY } from "./list.js";
-import { list } from "./list.js";
 import { checkBoxHandle } from "./formHandler.js";
 import { STATUS } from "./list.js";
 import { removeHandler } from "./formHandler.js";
 import { formHandler } from "./formHandler.js";
 
-export const render = () => {
+const createElementWithClass = (element, className) => {
+  const el = document.createElement(element);
+  el.classList.add(className);
+  return el;
+};
+
+export const render = (taskList) => {
   const mainTodo = document.querySelector(".todo-main");
   while (mainTodo.firstChild) {
     mainTodo.removeChild(mainTodo.firstChild);
@@ -51,7 +55,7 @@ export const render = () => {
     );
     addTaskButton.setAttribute("type", "submit");
     taskAddForm.append(addTaskButton);
-    for (let task of list) {
+    for (let task of taskList) {
       if (PRIORITY[priority] === task.priority) {
         checkBoxRender(todoMainElements, task);
       }
