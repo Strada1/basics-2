@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="wrapper">
+		<!-- <header class="header"></header> -->
+		<main class="page">
+			<div class="page__todo todo">
+				<div class="todo__container">
+					<div class="todo__block">
+						<div class="todo__error">error</div>
+						<div class="todo__priority" data-priority = "high">
+							<div class="todo__title">
+								High
+							</div>
+							<div class="todo__tasks">
+								<form class="todo__addtask">
+									<input type="text" placeholder="Добавить важных дел" class="todo__add">
+									<button type="submit" class="todo__plus">
+										<span class="packman">
+											<span class="packman__block">
+												<span class="packman__side packman__side_top"></span>
+												<span class="packman__side packman__side_bottom"></span>
+											</span>
+										</span>
+									</button>
+								</form>
+								<div class="todo__list">
+								</div>
+							</div>
+						</div>
+						<div class="todo__priority" data-priority = "low">
+							<div class="todo__title">
+								Low
+							</div>
+							<div class="todo__tasks">
+								<form class="todo__addtask">
+									<input type="text" placeholder="Добавить" class="todo__add">
+									<button type="submit" class="todo__plus">
+										<span class="packman">
+											<span class="packman__block">
+												<span class="packman__side packman__side_top"></span>
+												<span class="packman__side packman__side_bottom"></span>
+											</span>
+										</span>
+									</button>
+								</form>
+								<div class="todo__list">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="input">
+						<input type="checkbox" id="input" class="input__in">
+						<label for="input" class="input__label">casafcdas</label>
+					</div>
+				</div>
+			</div>
+		</main>
+		<!-- <footer class="footer"></footer> -->
+	</div>
+	<script type="module" src="main.js"></script>
+</body>
+</html>
