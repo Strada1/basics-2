@@ -1,0 +1,73 @@
+h3 {
+    text-align: center;
+}
+.container {
+    width: 460px;
+    margin: 0 auto;
+}
+
+form {
+    border: 1px solid #989898;
+    border-radius: 6px;
+    width: 460px;
+    height: 45px;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    font-size: 21px;
+    text-indent: 12px;
+    border: none;
+    outline: none;
+    width: 425px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+input::placeholder {
+    color: #BBBBBB;
+}
+
+ #btnLowTask, #btnHighTask {
+    background: url("img/close-icon-2.png") no-repeat;
+    border: none;
+    width: 20px;
+    height: 20px;
+}
+
+.deleteButton {
+    position: absolute;
+    background: url("img/close-icon.png") no-repeat;
+    border: none;
+    width: 20px;
+    top: 8px;
+    right: 8px;
+}
+
+.task {
+    position: relative;
+    border: 1px solid #989898;
+    font-size: 21px;
+    border-radius: 6px;
+    width: 460px;
+    min-height: 45px;
+    box-sizing: border-box;
+    margin-top: 8px;
+}
+
+p {
+    width: 370px;
+    margin-left: 45px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 21px;
+    height: 21px;
+}
+
