@@ -2,26 +2,7 @@
 
 let listOfTasks
 
-// let listOfTasks = [
-//   { name: 'Сделать кофе', status: 'Todo', priority: 'high', numberId: '1668761297128' },
-//   { name: 'Помыть посуду', status: 'Todo', priority: 'low', numberId: '1668761297129' }, 
-//   { name: 'Сварить суп', status: 'Done', priority: 'high', numberId: '1668761297130' },
-//   { name: 'Сделать задание', status: 'Done', priority: 'low', numberId: '1668761297131' }, 
-// ]
-// localStorage.setItem('list', JSON.stringify(listOfTasks)); // =====
-
-// listOfTasks = JSON.parse(localStorage.getItem('list')) //===============
-// let listInStorage = JSON.stringify(listOfTasks)
-// console.log(listInStorage)
-
-// localStorage.setItem('list', listInStorage);
-
-// console.log(localStorage.getItem('list'))
-
-
 listOfTasks = JSON.parse(localStorage.getItem('list')) //===>><<===
-
-console.log(listOfTasks)
 
 const STATUS = {
   TO_DO: "Todo",
@@ -143,8 +124,6 @@ function render(priorityForRender) {
   
   removeItemsFromListWithPriorityWeNeed(priorityForRender)
 
-  console.log(listOfTasks)
-
   if (listOfTasks !== null) { 
 
 
@@ -196,7 +175,7 @@ function render(priorityForRender) {
       }
     })
     localStorage.setItem('list', JSON.stringify(listOfTasks)); // <<======>>
-    console.log(listOfTasks)
+
     showArrayInConsole()
    }
 }
