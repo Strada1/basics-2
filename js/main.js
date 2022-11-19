@@ -1,5 +1,5 @@
 import { UI_ELEMENTS, TODO_STATUS, TODO_PRIORITY } from "./constants.js";
-import { createTaskDom, createItemInLow, createItemInHigh } from "./create.js"
+import { createTaskDom, createItemInLow, createItemInHigh } from "./create.js";
 
 let list = [
   { name: 'Посмотреть ютубчик', status: 'To Do', priority: 'low' },
@@ -15,9 +15,10 @@ UI_ELEMENTS.HIGH_FORM.addEventListener('submit', (event) => {
   list.push({
     name,
     status: TODO_STATUS.TODO,
-    priority: TODO_PRIORITY.HIGHT
+    priority: TODO_PRIORITY.HIGHT,
   });
-  renderDocument()
+  createStorageList();
+  renderDocument();
   event.target.reset();
 });
 
@@ -27,16 +28,29 @@ UI_ELEMENTS.LOW_FORM.addEventListener('submit', (event) => {
   list.push({
     name,
     status: TODO_STATUS.TODO,
-    priority: TODO_PRIORITY.LOW
+    priority: TODO_PRIORITY.LOW,
   });
-  renderDocument()
+  createStorageList();
+  renderDocument();
   event.target.reset();
 });
 
 export function changeStatus() {
+  const taskName = this.parentNode.nextSibling.textContent;
+  list.map((item) => {
+    console.log(item);
+    if (item.name === taskName) {
+      if (item.status === TODO_STATUS.TODO) {
+        item.status = TODO_STATUS.DONE;
+        console.log(item);
+      } else {
+        item.status = TODO_STATUS.TODO;
+      }
+    }
+  })
   const item = this.parentNode.parentNode;
-  item.classList.toggle("item-checked")
-  console.log(this.previousElementSibling.textContent);
+  item.classList.toggle("item-checked");
+  createStorageList();
 }
 
 export function deleteItem() {
@@ -45,9 +59,11 @@ export function deleteItem() {
   list = list.filter((item) => {
     return item.name != taskName;
   });
+  createStorageList();
 }
 
 function renderDocument() {
+  list = getStorageList();
   UI_ELEMENTS.HIGH_LIST.textContent = '';
   UI_ELEMENTS.LOW_LIST.textContent = '';
   list.forEach((item) => {
@@ -59,6 +75,20 @@ function renderDocument() {
       createItemInLow(taskLow);
     }
   })
+}
+
+function createStorageList() {
+  const storageList = JSON.stringify(list);
+  localStorage.setItem('list', storageList);
+}
+
+function getStorageList() {
+  const storageList = localStorage.getItem('list');
+  if (storageList) {
+    return JSON.parse(storageList);
+  } else {
+    return list;
+  }
 }
 
 renderDocument();

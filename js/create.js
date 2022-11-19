@@ -6,12 +6,12 @@ export function createTaskDom(taskName, taskStatus) {
   const label = document.createElement('label');
   const input = document.createElement('input');
   const span = document.createElement('span');
-  const button = document.createElement('button')
+  const button = document.createElement('button');
   item.classList.add('todo__item');
   label.classList.add('todo__item-label');
   input.classList.add('todo__item-checkbox');
   span.classList.add('todo__item-checkbox--style');
-  button.classList.add('todo__item-delete-btn')
+  button.classList.add('todo__item-delete-btn');
   input.setAttribute('type', 'checkbox');
   button.setAttribute('type', 'button');
   item.prepend(label);
@@ -22,10 +22,10 @@ export function createTaskDom(taskName, taskStatus) {
 
   if (taskStatus === TODO_STATUS.DONE) {
     item.classList.add('item-checked');
-    input.setAttribute('checked', 'true')
+    input.setAttribute('checked', 'true');
   }
   button.addEventListener('click', deleteItem);
-  span.addEventListener('click', changeStatus)
+  span.addEventListener('click', changeStatus);
   return item;
 }
 

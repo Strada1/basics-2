@@ -4,7 +4,7 @@ export const UI_ELEMENTS = {
   INPUT_HIGH: document.querySelector('.todo__form-input--high'),
   INPUT_LOW: document.querySelector('.todo__form-input--low'),
   HIGH_LIST: document.querySelector('.todo__list--high'),
-  LOW_LIST: document.querySelector('.todo__list--low')
+  LOW_LIST: document.querySelector('.todo__list--low'),
 }
 
 export const TODO_STATUS = {
