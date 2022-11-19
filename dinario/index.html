@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="todo">
+        <div class="container">
+            <div class="high">
+                <h2 class="todo__high-title">High</h2>
+                <form class="todo__create-task" action="#">
+                    <input type="text" class="high__input" name="task-name" placeholder="Добавить важных дел">
+                    <button class="create-task-button" type="submit">+</button>
+                </form>
+                <ul class="high__task-list">                   
+                </ul>
+            </div>
+            <div class="low">
+                <h2 class="todo__low-title">Low</h2>
+                <form class="todo__create-task" action="#">
+                    <input type="text" class="low__input" placeholder="Добавить важных дел">
+                    <button class="create-task-button" type="submit">+</button>
+                </form>
+                <ul class="low__task-list">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./const.js"></script>
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
