@@ -9,6 +9,7 @@ let list = [
   { name: 'create a post', status: 'Done', priority: 'low' },
 ];
 
+
 UI_ELEMENTS.HIGH_FORM.addEventListener('submit', (event) => {
   event.preventDefault();
   const name = UI_ELEMENTS.INPUT_HIGH.value;
@@ -38,11 +39,9 @@ UI_ELEMENTS.LOW_FORM.addEventListener('submit', (event) => {
 export function changeStatus() {
   const taskName = this.parentNode.nextSibling.textContent;
   list.map((item) => {
-    console.log(item);
     if (item.name === taskName) {
       if (item.status === TODO_STATUS.TODO) {
         item.status = TODO_STATUS.DONE;
-        console.log(item);
       } else {
         item.status = TODO_STATUS.TODO;
       }
@@ -54,7 +53,7 @@ export function changeStatus() {
 }
 
 export function deleteItem() {
-  const taskName = this.previousElementSibling.textContent;
+  const taskName = this.parentNode.textContent;
   this.parentNode.remove();
   list = list.filter((item) => {
     return item.name != taskName;
