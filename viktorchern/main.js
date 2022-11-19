@@ -38,7 +38,6 @@ const PRIORITY = {
 
 const ERRORS = {
   TASK_EXISTS: 'Такой таск уже есть',
-  TASK_NO: 'Такого таска нету',
   TASK_EMPTY: 'Вы ничего не добавили',
 }
 
@@ -48,12 +47,15 @@ function addTask(name, status = STATUS.TODO, priority = PRIORITY.LOW) {
     return item.name.toLowerCase() == name.toLowerCase();
   });
 
-  if( taskIndex === -1 && name != '' ){
+  try {
+    if( taskIndex !== -1 ){
+      throw new SyntaxError(ERRORS.TASK_EXISTS);
+    } else if( name === '' ) {
+      throw new SyntaxError(ERRORS.TASK_EMPTY);
+    }
     list.push({ name, status, priority });
-  } else if( name === '' ){
-    alert(ERRORS.TASK_EMPTY);
-  } else {
-    alert(ERRORS.TASK_EXISTS);
+  } catch(err) {
+    alert(err.message);
   }
 }
 
@@ -61,6 +63,7 @@ function addTask(name, status = STATUS.TODO, priority = PRIORITY.LOW) {
 function changeStatus(name, status) {
   const TODO__ID = Number(this.closest('.todo__item').dataset.id);
   const TODO__STATUS = this.checked;
+
   if( TODO__STATUS === true ){
     list[TODO__ID].status = STATUS.DONE;
   } else {
@@ -148,7 +151,5 @@ function render(){
       TODO_LIST_HIGH.prepend(createToDoItem(item.name, item.status, index));
     }
   });
-
-  console.log(list);
 }
 render();
