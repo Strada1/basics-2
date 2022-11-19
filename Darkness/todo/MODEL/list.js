@@ -36,7 +36,6 @@ export let list = [
 
 export const addTask = (task) => {
   list = [...list, task];
-  console.log(list);
 };
 
 export const changeStatus = (taskId) => {

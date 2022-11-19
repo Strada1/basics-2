@@ -23,7 +23,6 @@ export const formHandler = (event) => {
     status: STATUS.IN_PROGRESS,
     id: listId,
   });
-  console.log(list);
   render(sortedListByStatus());
 };
 
