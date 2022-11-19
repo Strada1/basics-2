@@ -12,8 +12,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-
-
 .todo {
   width: 460px;
 }
@@ -114,7 +112,6 @@ body {
   background-color: #C4C4C4;
   border-radius: 50%;
 }
-
 
 .todo__item-delete-btn {
   position: absolute;
