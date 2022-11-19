@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.todo {
+    margin: 20px auto;
+    width: 400px;
+    height: 600px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 15px;
+   
+}
+h2 {
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+input{
+    box-sizing: border-box;
+    outline: none;
+    border: 2px solid #aaa;
+    border-radius: 5px;
+}
+
+.tasks {
+    position: relative;    
+    border: 2px solid #aaa;
+    margin-bottom: 8px;
+    border-radius: 5px;
+   height: calc(line);
+   background-color: white;
+   width: 95%;
+   margin: 2%;
+   
+   
+    
+ }
+
+.addTask {
+    margin: 20px auto;
+    position: relative;
+    font-size: 30px;
+    
+}
+.addTask input {
+    width: 95%;
+    padding: 10px;
+    margin: 2.5%;
+    justify-content: center;
+    box-sizing: border-box;
+    outline: none;
+    border: 2px solid #aaa;
+}
+.addTask button[type="submit"] {
+    position: absolute;
+    top: 12px;
+    bottom: 13px;
+    right: 18px;
+    color: #666;
+    border: 0;
+    padding: 0 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    outline: none;
+}
+
+.addTask input:valid ~ button[type="submit"] {
+    display: block;
+}  
+
+
+
+
+.rtg {
+    display: none;
+    background-color: white;
+  }
+  
+  .check {
+    position: relative;
+    display: inline-block;
+    vertical-align:bottom;
+    margin-right: 12px;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #999;
+    border-radius: 12px;
+    background-color: white;
+  }
+  
+  .check:before {
+    display: none;
+    position: absolute;
+    background-color: #666;
+  }
+  
+  .rtg:checked ~ .check {
+    background-color: #999;
+  }
+  
+
+  .pop_up_close{
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #999;
+    background-color: white;
+    
+}
+
+.tasks span {
+    margin-top: 3px;
+}
+
+.text{
+    display: flex;
+    background-color: white;
+}
+body{
+    background-color:peru;
+}
+input{
+    background-color: white;
+}
