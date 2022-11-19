@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(209, 209, 209);
+}
+
+.container {
+  background-color: white;
+  margin: 30vh auto;
+  width: 30vw;
+  max-width: 1000px;
+  border: 1px solid black;
+}
+
+.my_todo {
+  margin: 15px 10px;
+}
+
+.my_todo .header {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.my_todo .todo_add,
+.my_todo .checkboxes_high,
+.my_todo .checkboxes_low {
+  width: 100%;
+  min-height: 20px;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.my_todo .todo_add .todo_add_form_high,
+.my_todo .todo_add .todo_add_form_low,
+.my_todo .checkboxes_high .checkbox_box,
+.my_todo .checkboxes_low .checkbox_box {
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.my_todo .todo_add_input_high,
+.my_todo .todo_add_input_low {
+  width: 90%;
+  padding: 5px;
+  border: none;
+}
+
+/*---------УБРАТЬ ГРАНИЦЫ ДЛЯ ТЕКСТОВЫХ ПОЛЕЙ---------*/
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+}
+/*-------------------------------------*/
+
+/*--------------------КНОПКА-------------------*/
+.my_todo .submit_button {
+  width: 9%;
+  font-size: 38px;
+  border: none;
+  background: none;
+  vertical-align: middle;
+}
+
+.close {
+  transform: rotate(45deg);
+}
+/*-----------------КОНЕЦ КНОПКИ------------------*/
+.my_todo .checkboxes_low,
+.my_todo .checkboxes_high {
+  width: 100%;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.my_todo .checkboxes_high > div,
+.my_todo .checkboxes_low > div {
+  margin-top: 5px;
+  padding: 5px 15px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.my_todo .checkbox_box {
+  display: flex;
+  align-items: flex-start;
+}
+
+.todo_checkbox {
+  margin: 2px;
+}
+
+label {
+  width: 90%;
+}
