@@ -1,0 +1,72 @@
+.todo{
+    margin-left: 35%;
+}
+.container{
+    padding: 25px 8px;
+    width: 476px;
+}
+h2{
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 400;
+    text-align: center;
+}
+.high__input,
+.low__input{
+   min-width: 87.5%;
+   margin-bottom: 8px;
+   border: 1px solid #989898;
+   border-radius: 6px;
+   padding: 12px 45px 12px 12px;
+   font-size: 18px;
+   line-height: 21px;
+}
+.todo__create-task{
+    position: relative;
+}
+.create-task-button{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    position: absolute;
+    top: 0px;
+    right: 13px;
+    background-color: transparent;
+    border: 0;
+    font-weight: 200;
+}
+.create-task-button:hover{
+    transition: all 1s ease 0s;
+    color: green;
+    transform: scale(-1,1);
+}
+ul{
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+}
+li{
+    margin-bottom: 8px;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    padding: 12px 37px 12px 10px;
+    position: relative;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+}
+.task-name-button{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    position: absolute;
+    right: 11px;
+    top: 0;
+    rotate: 45deg;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+}
+.task-name-button:hover{
+    transition: all 1s ease 0s;
+    color: red;
+    transform: scale(-1,1);
+}
