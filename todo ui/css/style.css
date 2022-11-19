@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --color-white: rgb(255, 255, 255);
+  --color-black: rgb(0, 0, 0);
+  --color-red: rgb(189, 0, 0);
+  --color-grey: rgb(128, 128, 128);
+  --color-green: rgb(0, 191, 114);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  height: 100vh;
+  background-image: linear-gradient(
+    to right top,
+    rgb(5, 25, 55),
+    rgb(0, 77, 122),
+    rgb(0, 135, 147),
+    rgb(0, 191, 114),
+    rgb(168, 235, 18)
+  );
+}
+
+.header {
+  color: var(--color-white);
+  text-align: center;
+  padding: 30px 0;
+  text-shadow: 5px 4px 1px rgba(0, 0, 0, 0.6);
+}
+
+.container {
+  width: 480px;
+  margin: auto;
+  background-color: var(--color-white);
+  border-radius: 25px;
+}
+
+.form_to-do {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0px 25px 0px;
+}
+
+.priority-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 8px;
+}
+
+.priority-header {
+  display: inline-block;
+  padding-bottom: 12px;
+  font-size: 20px;
+}
+
+.high > .priority-header {
+  text-shadow: 2px 2px 6px rgba(0, 191, 114, 0.6);
+}
+
+.low > .priority-header {
+  text-shadow: 2px 2px 6px rgba(0, 77, 122, 0.6);
+}
+
+.task,
+.new-task {
+  padding: 12px 45px 12px 45px;
+  width: 460px;
+  border: 2px solid var(--color-grey);
+  border-radius: 5px;
+}
+
+.new-task {
+  height: 45px;
+}
+
+.task {
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: middle;
+  text-align: left;
+  min-height: 45px;
+  background: var(--color-white);
+}
+
+.label-add,
+.label-check,
+.task-container {
+  position: relative;
+  display: flex;
+}
+
+.label-check {
+  margin: 15px 0 0 -442px;
+}
+
+.check,
+.btn {
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.btn {
+  margin: 10px 0 0 430px;
+  color: var(--color-grey);
+  font-size: 25px;
+}
+
+.btn-del {
+  transform: rotate(45deg);
+}
+
+.btn-add:hover,
+.btn-add:focus {
+  color: var(--color-green);
+}
+
+.btn-del:hover,
+.btn-del:focus {
+  color: var(--color-red);
+}
+
+/* .new-task:hover,
+.new-task:focus {
+  border: 2px solid #008793;
+  box-shadow: inset 0 0 0 1px #008793;
+  outline: 0;
+} */

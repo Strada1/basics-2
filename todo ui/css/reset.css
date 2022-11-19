@@ -1,0 +1,38 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body,
+h1 {
+  margin: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  min-width: 0;
+}
+
+button {
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+input {
+  margin: 0;
+}
