@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="my_todo">
+            <div class="header">
+                <h4>HIGH</h4>
+            </div>
+            <div class="todo_add">
+                <form class="todo_add_form_high">
+                    <input class="todo_add_input_high" type="text" placeholder="Добавить основную задачу">
+                    <button type="submit" class="submit_button">+</button>
+                </form>
+            </div>
+            <div class="checkboxes_high"></div>
+                <div class="header">
+                    <h4>LOW</h4>
+                </div>
+                <div class="todo_add">
+                    <form class="todo_add_form_low">
+                        <input class="todo_add_input_low" type="text" placeholder="Добавить второстепенную задачу">
+                        <button type="submit" class="submit_button">+</button>
+                    </form>
+                </div>
+                <div class="checkboxes_low">
+                </div>
+        </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/create_element.js"></script>
+    <script type="module" src="/get_task.js"></script>
+</body>
+</html>
