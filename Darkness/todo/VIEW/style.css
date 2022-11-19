@@ -1,0 +1,112 @@
+.todo-main{
+    width: 476px;
+    margin:0 auto;
+    background: #FFFFFF;
+}
+.todo-main-elements-input{
+    position: relative;
+}
+.todo-main_elements-input-text{
+    margin-top: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    background: #FFFFFF;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    width:460px;
+    box-sizing:border-box;
+}
+.todo-main_elements-add{
+    background:url('./images/add-task.svg') no-repeat;
+    width: 20px;
+    height: 20px;
+    border:0;
+    cursor: pointer;
+    position:absolute;
+    top:23px ;
+    right:8px ;
+}
+.todo-main_elements-add:hover{
+    background:url('./images/add-task-hover.svg') no-repeat;
+    transform: scale(1.2);
+}
+.todo-main_elements-checkbox{
+    display:flex;
+ background: #FFFFFF;
+border: 1px solid #989898;
+border-radius: 6px;
+box-sizing: border-box;
+margin-top: 8px;
+}
+.todo-main_elements{
+    width: 460px;
+    margin: 12px auto;
+}
+.todo-main_elements-priority{
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+/* identical to box height */
+text-transform: uppercase;
+text-align: center;
+
+margin-top: 12px;
+color: #000000;
+box-sizing:border-box;
+}
+.todo-main_elements-checkbox_title{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #202020;
+    text-align: left;
+    width: 370px;
+    margin-left: 12px;
+    padding-top:12px;
+    padding-bottom: 12px;
+    
+}
+.todo-main_elements-checkbox_button{
+    width: 21px;
+    height: 21px;
+    margin-left: 12px;
+    margin-top: 14px;
+    border: 1px solid #998899;
+    border-radius:50%;
+    box-sizing: border-box;
+    background-color: #fff;
+    display: block;
+    cursor: pointer;
+}
+.todo-main_elements-checkbox_button:hover{
+    background-image:url('./images/ellipse.svg');
+    background-repeat: no-repeat;
+    background-position: 2px;
+}
+.checked-button{
+    background-image:url('./images/ellipse.svg');
+    background-repeat: no-repeat;
+    background-position: 2px;
+}
+.todo-main_elements-checkbox_delete{
+    width: 17px;
+    height: 16px;
+    margin-top: 12px;
+    margin-left: 18.57px;
+    background-image: url('./images/close-icon.svg');
+    border:0;
+    background-color:inherit;
+}
+.todo-main_elements-checkbox_delete:hover{
+    background-image: url('./images/close-hover.svg');
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.checked{
+    background-color: #F4F4F4;
+}
