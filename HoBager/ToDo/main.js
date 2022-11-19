@@ -85,7 +85,7 @@ function changeStatus(){
         }
         return task
     });
-    console.log(toDo)
+    
     render();
 }
 
