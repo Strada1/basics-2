@@ -69,7 +69,6 @@ function render() {
         const lowPlace = document.querySelector(".low__task-list");
         if (elem.priority === PRIORITY.HIGH) {
             highPlace.prepend(newUl)
-            console.log(list)
         } else if (elem.priority === PRIORITY.LOW) {
             lowPlace.prepend(newUl)
         }
