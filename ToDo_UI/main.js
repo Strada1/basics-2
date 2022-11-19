@@ -1,3 +1,40 @@
+const Status = {
+    ToDo: 'To Do',
+    InProgress: 'In Progress',
+    Done: 'Done',
+}
+
+const Priority = {
+    Low: 'Low',
+    Middle: 'Middle',
+    High: 'High',
+}
+
+function CreateElementForArray(task,status,priority)
+{
+    return {
+        task: task,
+        status: status,
+        priority: priority,
+    }
+}
+
+function AddElementArray(task, status,priority)
+{
+    myArray.push(CreateElementForArray(task, status, priority));
+}
+
+function DeleteElementArray(currentTask)
+{
+    for (let i = 0; i < myArray.length; i++)
+    {
+        if(myArray[i].task === currentTask)
+        {
+            myArray.splice(i,1);
+        }
+    }
+}
+
 let inputTask;
 
 let textHighInput = document.querySelector(".content_input-High");
@@ -28,8 +65,8 @@ function ReadTaskLowInput()
 }
 
 function AddNewTaskHigh (){
-    let divContainer = document.createElement('div');
-    divContainer.className = "list_point";
+    let divContainerHigh = document.createElement('div');
+    divContainerHigh.className = "list_point";
     let divText = document.createElement('div');
     divText.className = "text_point";
     let p = document.createElement('p');
@@ -42,18 +79,25 @@ function AddNewTaskHigh (){
     let buttonRemove = document.createElement('button');
     buttonRemove.className = 'button_remove';
     buttonRemove.textContent = 'X';
-    placeContainerHigh.insertAdjacentElement("afterbegin", divContainer);
-    divContainer.insertAdjacentElement("beforeend", divCheckBox);
+    placeContainerHigh.insertAdjacentElement("afterbegin", divContainerHigh);
+    divContainerHigh.insertAdjacentElement("beforeend", divCheckBox);
     divCheckBox.insertAdjacentElement('afterbegin', checkBox);
-    divContainer.insertAdjacentElement("beforeend", divButtonRemove);
+    divContainerHigh.insertAdjacentElement("beforeend", divButtonRemove);
     divButtonRemove.insertAdjacentElement('afterbegin', buttonRemove);
-    divContainer.insertAdjacentElement("beforeend",divText);
+    divContainerHigh.insertAdjacentElement("beforeend",divText);
     divText.insertAdjacentElement("afterbegin", p)
+
+    divButtonRemove.addEventListener('click', function (){
+        divContainerHigh.remove();
+        DeleteElementArray(p.innerHTML)
+    })
+
+    AddElementArray(p.innerHTML = inputTask,Status.ToDo, Priority.High);
 }
 
 function AddNewTaskLow (){
-    let divContainer = document.createElement('div');
-    divContainer.className = "list_point";
+    let divContainerLow = document.createElement('div');
+    divContainerLow.className = "list_point";
     let divText = document.createElement('div');
     divText.className = "text_point";
     let p = document.createElement('p');
@@ -66,11 +110,21 @@ function AddNewTaskLow (){
     let buttonRemove = document.createElement('button');
     buttonRemove.className = 'button_remove';
     buttonRemove.textContent = 'X';
-    placeContainerLow.insertAdjacentElement("afterbegin", divContainer);
-    divContainer.insertAdjacentElement("beforeend", divCheckBox);
+    placeContainerLow.insertAdjacentElement("afterbegin", divContainerLow);
+    divContainerLow.insertAdjacentElement("beforeend", divCheckBox);
     divCheckBox.insertAdjacentElement('afterbegin', checkBox);
-    divContainer.insertAdjacentElement("beforeend", divButtonRemove);
+    divContainerLow.insertAdjacentElement("beforeend", divButtonRemove);
     divButtonRemove.insertAdjacentElement('afterbegin', buttonRemove);
-    divContainer.insertAdjacentElement("beforeend",divText);
-    divText.insertAdjacentElement("afterbegin", p)
+    divContainerLow.insertAdjacentElement("beforeend",divText);
+    divText.insertAdjacentElement("afterbegin", p);
+
+    divButtonRemove.addEventListener('click', function (){
+        divContainerLow.remove();
+        DeleteElementArray(p.innerHTML = inputTask)
+    })
+
+    AddElementArray(p.innerHTML = inputTask,Status.ToDo, Priority.Low);
 }
+
+let myArray = [];
+console.log(myArray);
