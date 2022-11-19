@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="Todo">
+            <div class="highPriority">
+                <h2 class="title">HIGH</h2>
+                <form class="highPriority__add add">
+                    <input class="highPriority__input input-add" type="text" placeholder="Добавить важных дел">
+                    <input type="submit" class="newTask" value="+">
+                </form>
+                <div class="highPriority__tasks tasks">
+                    
+                </div>
+            </div>
+            <div class="lowPriority">
+                <h2 class="title">LOW</h2>
+                <form class="lowPriority__add add">
+                    <input class="lowPriority__input input-add" type="text" placeholder="Добавить">
+                    <input type="submit" class="newTask" value="+">
+                </form>
+                <div class="lowPriority__tasks tasks">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
