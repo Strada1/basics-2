@@ -35,11 +35,36 @@ function DeleteElementArray(currentTask)
     }
 }
 
+function ChangeStatus(currentTask, newStatus)
+{
+    for (let i = 0; i < myArray.length; i++)
+    {
+        if(myArray[i].task === currentTask)
+        {
+            switch (newStatus)
+            {
+                case Status.Done:
+                    myArray[i].status = Status.Done;
+                    break;
+                case Status.InProgress:
+                    myArray[i].status = Status.InProgress;
+                    break;
+                case Status.ToDo:
+                    myArray[i].status = Status.ToDo;
+                    break;
+                default:
+                    console.log('Такого статуса нет!');
+            }
+        }
+    }
+}
+
 let inputTask;
 
 let textHighInput = document.querySelector(".content_input-High");
 let addButtonHighTask = document.querySelector('.button_add-High');
 let placeContainerHigh = document.querySelector('.content_list-High')
+let statusCheckBox = document.querySelector('.input_checkbox')
 
 addButtonHighTask.addEventListener('click',AddNewTaskHigh);
 addButtonHighTask.addEventListener('submit',AddNewTaskHigh);
@@ -75,6 +100,7 @@ function AddNewTaskHigh (){
     let checkBox = document.createElement('input');
     checkBox.className = "input_checkbox";
     checkBox.type = 'checkbox';
+    // checkBox.checked;
     let divButtonRemove = document.createElement('div');
     let buttonRemove = document.createElement('button');
     buttonRemove.className = 'button_remove';
@@ -89,10 +115,23 @@ function AddNewTaskHigh (){
 
     divButtonRemove.addEventListener('click', function (){
         divContainerHigh.remove();
-        DeleteElementArray(p.innerHTML)
+        DeleteElementArray(p.innerHTML=inputTask)
     })
 
     AddElementArray(p.innerHTML = inputTask,Status.ToDo, Priority.High);
+
+   if(checkBox.checked === false)
+   {
+       ChangeStatus(p.innerHTML=inputTask, 'ToDo')
+       checkBox.checked = true;
+       console.log(myArray)
+   }
+   else
+   {
+       ChangeStatus(p.innerHTML=inputTask, 'Done')
+       checkBox.checked = false;
+       console.log(myArray)
+   }
 }
 
 function AddNewTaskLow (){
