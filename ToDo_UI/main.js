@@ -112,23 +112,23 @@ function AddNewTaskHigh (){
     divButtonRemove.insertAdjacentElement('afterbegin', buttonRemove);
     divContainerHigh.insertAdjacentElement("beforeend",divText);
     divText.insertAdjacentElement("afterbegin", p)
-
     divButtonRemove.addEventListener('click', function (){
         divContainerHigh.remove();
         DeleteElementArray(p.innerHTML=inputTask)
     })
 
     AddElementArray(p.innerHTML = inputTask,Status.ToDo, Priority.High);
-
+    checkBox.addEventListener('change',ChangeStatus(p.innerHTML=inputTask, 'ToDo'))
+    checkBox.addEventListener('change',ChangeStatus(p.innerHTML=inputTask, 'ToDo'))
    if(checkBox.checked === false)
    {
-       ChangeStatus(p.innerHTML=inputTask, 'ToDo')
+       // ChangeStatus(p.innerHTML=inputTask, 'ToDo')
        checkBox.checked = true;
        console.log(myArray)
    }
    else
    {
-       ChangeStatus(p.innerHTML=inputTask, 'Done')
+       // ChangeStatus(p.innerHTML=inputTask, 'Done')
        checkBox.checked = false;
        console.log(myArray)
    }
