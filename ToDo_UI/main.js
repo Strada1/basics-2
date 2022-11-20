@@ -3,7 +3,6 @@ let inputTask;
 let textHighInput = document.querySelector(".content_input-High");
 let addButtonHighTask = document.querySelector('.button_add-High');
 let placeContainerHigh = document.querySelector('.content_list-High')
-let statusCheckBox = document.querySelector('.input_checkbox')
 
 addButtonHighTask.addEventListener('click',AddNewTaskHigh);
 addButtonHighTask.addEventListener('submit',AddNewTaskHigh);
@@ -120,19 +119,24 @@ function AddNewTaskHigh (event){
 
     AddElementArray(p.innerHTML = inputTask,Status.ToDo, Priority.High);
 
-   if(checkBox.checked)
-   {
-       checkBox.addEventListener('change',ChangeStatus(p.innerHTML=inputTask, 'ToDo'))
-       ChangeStatus(p.innerHTML, 'ToDo')
-       ChangeStatus(p.innerHTML=inputTask,'ToDo')
-       console.log(myArray)
-   }
-   else
-   {
-       checkBox.addEventListener('change',ChangeStatus(p.innerHTML=inputTask, 'Done'))
-       ChangeStatus(p.innerText, 'Done')
-       console.log(myArray)
-   }
+    checkBox.addEventListener('change', CheckStatusCheckBox)
+    function CheckStatusCheckBox(event)
+    {
+        for(let i = 0; i < myArray.length; i++)
+        {
+            if (myArray[i].task === p.innerHTML)
+            {
+                if(event.target.checked)
+                {
+                    event.target.checked = false;
+                }
+                else
+                {
+                    event.target.checked = true;
+                }
+            }
+        }
+    }
 }
 
 function AddNewTaskLow (){
