@@ -1,0 +1,184 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+.ToDo {
+	height: 688px;
+	margin-left: 500px;
+	max-width: 476px;
+	background-color: whitesmoke;
+	min-height: 100%;
+	width: 100%;
+	position: relative;
+}
+.toDo__content {
+padding: 5px;	
+}
+.toDo__highPriorety {
+	width: 460px;
+
+}
+.high, .low {
+	text-align: center;
+}
+.todo__add , .todo__add2{
+	flex: 1 1 auto;
+	margin: 0px 10px 0px 0px;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 21px;
+}
+.todo__add-low {
+	flex: 1 1 auto;
+	margin: 0px 10px 0px 0px;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 21px;
+}
+.todo__addTask, .todo__addTask-low {
+	display: flex;
+	border: 1px solid #989898;
+	border-radius: 6px;
+	padding: 12px;
+	margin: 0px 0px 8px 0px;
+}
+.todo__list,.todo__listLow {
+}
+.todo__list2{
+	
+}
+
+.toDo__lowhPriorety {
+	width: 460px;
+
+}
+
+.todo__add {
+	flex: 1 1 auto;
+	margin: 0px 10px 0px 0px;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 21px;
+}
+
+.todo__add::placeholder{
+	
+	color: #BBBBBB;
+}
+
+.todo__add:focus{
+	outline: 1px solid #989898;
+}
+
+.todo__plus , .todo__plus2 {
+	flex: 0 0 18px;
+	display: block;
+	height: 18px;
+	position: relative;
+	cursor: pointer;
+	font-size: 30px;
+
+}
+
+
+.checkbox{
+	width: 20px;
+    height: 20px;
+    background-color: darkcyan;
+    border-radius: 90%;
+    vertical-align: middle;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+	margin: 10px 25px 8px 8px;
+	
+}
+.checkbox:checked {
+    background-color: #173B13;
+    transition: 0.3s;
+}
+
+.cross{
+	color: gray;
+	width: 30px;
+	height: 30px;
+	margin-top: 3px ;
+	margin-left: 10px;
+	outline: none; /* Для синий ободки */
+	background: transparent;
+	font-weight: 15;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.cross:hover {
+	color: crimson;
+}
+.divForBtn{
+	width: 30px;
+	height: 30px;
+}
+
+.label{
+	font-size: 16px;
+    width: 435px;
+    font-family: 'Poppins', sans-serif;
+	margin-top: 10px;
+}
+
+
+
+
+
+.item{
+	display: flex;
+	border: solid black 1px;
+	margin: 10px 0px;
+	border-radius: 10px;
+	text-align: left;
+}
+
+
+.doneTask{
+	display: flex;	
+	border: solid black 1px;
+	margin: 10px 0px;
+	border-radius: 10px;
+	text-align: left;
+	font-size: green;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
