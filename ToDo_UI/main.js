@@ -125,14 +125,12 @@ function AddNewTaskHigh (event){
        checkBox.addEventListener('change',ChangeStatus(p.innerHTML=inputTask, 'ToDo'))
        ChangeStatus(p.innerHTML, 'ToDo')
        ChangeStatus(p.innerHTML=inputTask,'ToDo')
-       // checkBox.checked = true;
        console.log(myArray)
    }
    else
    {
        checkBox.addEventListener('change',ChangeStatus(p.innerHTML=inputTask, 'Done'))
        ChangeStatus(p.innerText, 'Done')
-       // checkBox.checked = false;
        console.log(myArray)
    }
 }
