@@ -3,6 +3,7 @@ const formLowTask = document.querySelector('#formLowTask');
 const highTasks = document.querySelector('.highTaskList')
 const lowTasks = document.querySelector('.lowTaskList')
 
+
 const STATUS = {
     IN_PROGRESS: 'In Progress',
     DONE: 'Done',
@@ -15,8 +16,10 @@ const PRIORITY = {
 
 let list = []
 
-function changeStatus () {
-
+function changeStatus (event) {
+    const taskChangeStatus = event.target.nextElementSibling.textContent;
+    const isChecked = event.target.checked;
+    list.forEach(task => (task.name === taskChangeStatus && isChecked) ? task.status = STATUS.DONE : task.status = STATUS.IN_PROGRESS);
 }
 
 function addTaskList(event) {
@@ -27,8 +30,8 @@ function addTaskList(event) {
 
 function deleteTaskList (event) {
     event.preventDefault();
-    const textDeleteTask = event.target.previousElementSibling.textContent
-    list = list.filter(task => task.name !== textDeleteTask)
+    const textDeleteTask = event.target.previousElementSibling.textContent;
+    list = list.filter(task => task.name !== textDeleteTask);
     render()
 }
 
@@ -45,9 +48,9 @@ function render () {
         const inputValue = item.name;
         const divElement = document.createElement('div');
         const paragraphElement = document.createElement('p');
-        const textElement = document.createTextNode(inputValue)
-        const checkBox = document.createElement('input')
-        const deleteButton = document.createElement('input')
+        const textElement = document.createTextNode(inputValue);
+        const checkBox = document.createElement('input');
+        const deleteButton = document.createElement('input');
         checkBox.type = 'checkbox';
         deleteButton.type = 'submit';
         deleteButton.value = '';
@@ -62,9 +65,11 @@ function render () {
         } else if (item.priority === PRIORITY.LOW) {
             lowTasks.append(divElement);
         }
-        deleteButton.addEventListener('click', deleteTaskList)
+
+        deleteButton.addEventListener('click', deleteTaskList);
+        checkBox.addEventListener('change', changeStatus);
     });
 }
 
-formHighTask.addEventListener('submit', addTaskList)
-formLowTask.addEventListener('submit', addTaskList)
+formHighTask.addEventListener('submit', addTaskList);
+formLowTask.addEventListener('submit', addTaskList);
