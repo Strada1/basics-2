@@ -123,16 +123,16 @@ function AddNewTaskLow (){
     let p = document.createElement('p');
     p.innerHTML = inputTask;
     let divCheckBox = document.createElement('div');
-    let checkBox = document.createElement('input');
-    checkBox.className = "input_checkbox";
-    checkBox.type = 'checkbox';
+    let checkBoxLow = document.createElement('input');
+    checkBoxLow.className = "input_checkbox";
+    checkBoxLow.type = 'checkbox';
     let divButtonRemove = document.createElement('div');
     let buttonRemove = document.createElement('button');
     buttonRemove.className = 'button_remove';
     buttonRemove.textContent = 'X';
     placeContainerLow.insertAdjacentElement("afterbegin", divContainerLow);
     divContainerLow.insertAdjacentElement("beforeend", divCheckBox);
-    divCheckBox.insertAdjacentElement('afterbegin', checkBox);
+    divCheckBox.insertAdjacentElement('afterbegin', checkBoxLow);
     divContainerLow.insertAdjacentElement("beforeend", divButtonRemove);
     divButtonRemove.insertAdjacentElement('afterbegin', buttonRemove);
     divContainerLow.insertAdjacentElement("beforeend",divText);
@@ -145,7 +145,7 @@ function AddNewTaskLow (){
 
     AddElementArray(p.innerHTML = inputTask,Status.ToDo, Priority.Low);
 
-    checkBox.addEventListener('change', CheckStatusCheckBox)
+    checkBoxLow.addEventListener('change', CheckStatusCheckBox)
     function CheckStatusCheckBox(event)
     {
         for(let i = 0; i < myArray.length; i++)
@@ -166,3 +166,4 @@ function AddNewTaskLow (){
 }
 
 let myArray = [];
+console.log(myArray)
