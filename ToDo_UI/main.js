@@ -52,30 +52,6 @@ function DeleteElementArray(currentTask)
     }
 }
 
-function ChangeStatus(currentTask, newStatus)
-{
-    for (let i = 0; i < myArray.length; i++)
-    {
-        if(myArray[i].task === currentTask)
-        {
-            switch (newStatus)
-            {
-                case Status.Done:
-                    myArray[i].status = Status.Done;
-                    break;
-                case Status.InProgress:
-                    myArray[i].status = Status.InProgress;
-                    break;
-                case Status.ToDo:
-                    myArray[i].status = Status.ToDo;
-                    break;
-                default:
-                    console.log('Такого статуса нет!');
-            }
-        }
-    }
-}
-
 function ReadTaskHighInput()
 {
     inputTask = textHighInput.value;
@@ -129,12 +105,10 @@ function AddNewTaskHigh (event){
                 if(event.target.checked)
                 {
                     myArray[i].status = Status.Done
-                    console.log(myArray);
                 }
                 else
                 {
                     myArray[i].status = Status.ToDo
-                    console.log(myArray);
                 }
             }
         }
@@ -170,7 +144,25 @@ function AddNewTaskLow (){
     })
 
     AddElementArray(p.innerHTML = inputTask,Status.ToDo, Priority.Low);
+
+    checkBox.addEventListener('change', CheckStatusCheckBox)
+    function CheckStatusCheckBox(event)
+    {
+        for(let i = 0; i < myArray.length; i++)
+        {
+            if (myArray[i].task === p.innerHTML)
+            {
+                if(event.target.checked)
+                {
+                    myArray[i].status = Status.Done;
+                }
+                else
+                {
+                    myArray[i].status = Status.ToDo
+                }
+            }
+        }
+    }
 }
 
 let myArray = [];
-console.log(myArray);
