@@ -19,7 +19,14 @@ let list = []
 function changeStatus (event) {
     const taskChangeStatus = event.target.nextElementSibling.textContent;
     const isChecked = event.target.checked;
-    list.forEach(task => (task.name === taskChangeStatus && isChecked) ? task.status = STATUS.DONE : task.status = STATUS.IN_PROGRESS);
+    // list.forEach(task => (task.name === taskChangeStatus && isChecked) ? task.status = STATUS.DONE : task.status = STATUS.IN_PROGRESS);
+    list.forEach(task => {
+        if (task.name === taskChangeStatus && isChecked) {
+            task.status = STATUS.DONE;
+        } else if (task.name === taskChangeStatus && !isChecked) {
+            task.status = STATUS.IN_PROGRESS;
+        }
+    });
 }
 
 function addTaskList(event) {
