@@ -18,7 +18,7 @@ const UI_ELEMENTS = {
    TASKS_LOW: document.querySelector(".tasks-low"),
 };
 
-const list = [];
+let list = [];
 
 function ShowTaskInHtml(inputValue, inputStatus, whereShow) {
 
