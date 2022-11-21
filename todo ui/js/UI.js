@@ -2,65 +2,70 @@ import { PRIORITY, STATUS, deleteTask, changeStatus } from "./main.js";
 
 const UI_ELEMENT = {
   FORM: document.querySelectorAll("form"),
-  TASK_SPAN: document.querySelectorAll("span"),
-  TASK_CONTAINER_LIST: document.querySelectorAll(".task-container"),
   BTN_ADD_TASK_HIGH: document.querySelector(".high .btn-add"),
   BTN_ADD_TASK_LOW: document.querySelector(".low .btn-add"),
+  NEW_TASK: document.querySelectorAll(".new-task"),
   NEW_TASK_HIGH: document.querySelector(".high .new-task"),
   NEW_TASK_LOW: document.querySelector(".low .new-task"),
-  BTN_DEL_TASK: document.querySelectorAll(".btn-del"),
-  CHECKBOX: document.querySelectorAll(".check"),
-  PRIORITY_CONTAINER_HIGH: document.querySelector(".high"),
-  PRIORITY_CONTAINER_LOW: document.querySelector(".low"),
+  TASKS_WRAPPER_HIGH: document.querySelector(".high .tasks_wrapper"),
+  TASKS_WRAPPER_LOW: document.querySelector(".low .tasks_wrapper"),
+  TASKS_WRAPPER: document.querySelectorAll(".tasks_wrapper"),
 };
 
-function CreateTaskInUI(task, priority) {
-  let taskWrapper = document.createElement("span");
+function createTaskInUI(task, priority, status) {
+  const taskContainer = document.createElement("div");
+  taskContainer.className = "task-container";
+
+  const taskWrapper = document.createElement("span");
   taskWrapper.textContent = task;
   taskWrapper.className = "task";
 
-  let labelCheck = document.createElement("label");
+  const labelCheck = document.createElement("label");
   labelCheck.className = "label-check";
 
-  let checkbox = document.createElement("input");
+  const checkbox = document.createElement("input");
   checkbox.className = "check";
   checkbox.type = "checkbox";
 
-  let btnDel = document.createElement("button");
+  const btnDel = document.createElement("button");
   btnDel.textContent = "+";
   btnDel.className = "btn btn-del";
   btnDel.type = "submit";
-
-  let taskContainer = document.createElement("div");
-  taskContainer.className = "task-container";
 
   taskContainer.append(taskWrapper);
   taskContainer.append(labelCheck);
   labelCheck.append(checkbox);
   taskContainer.append(btnDel);
 
-  switch (priority) {
-    case PRIORITY.HIGH:
-      UI_ELEMENT.PRIORITY_CONTAINER_HIGH.append(taskContainer);
-      break;
-    case PRIORITY.LOW:
-      UI_ELEMENT.PRIORITY_CONTAINER_LOW.append(taskContainer);
-      break;
-  }
+  checkbox.addEventListener("click", (event) => changeStatus(event, task));
+  btnDel.addEventListener("click", () => deleteTask(task));
 
-  btnDel.addEventListener("click", () => {
-    deleteTask(task);
-  });
-
-  checkbox.addEventListener("click", () => {
-    if (checkbox.checked) {
-      changeStatus(task, STATUS.DONE);
-      taskContainer.style.opacity = 0.5;
-    } else {
-      changeStatus(task, STATUS.TO_DO);
-      taskContainer.style.opacity = 1;
-    }
-  });
+  addTaskToThePriorityBlock(priority, taskContainer);
+  changeStatusInUI(status, taskContainer, checkbox);
 }
 
-export { UI_ELEMENT, CreateTaskInUI };
+function addTaskToThePriorityBlock(priority, element) {
+  switch (priority) {
+    case PRIORITY.HIGH:
+      UI_ELEMENT.TASKS_WRAPPER_HIGH.append(element);
+      break;
+    case PRIORITY.LOW:
+      UI_ELEMENT.TASKS_WRAPPER_LOW.append(element);
+      break;
+  }
+}
+
+function changeStatusInUI(status, element, checkbox) {
+  switch (status) {
+    case STATUS.DONE:
+      element.style.opacity = 0.5;
+      checkbox.checked = 1;
+      break;
+    case STATUS.TO_DO:
+      element.style.opacity = 1;
+      checkbox.checked = 0;
+      break;
+  }
+}
+
+export { UI_ELEMENT, createTaskInUI };

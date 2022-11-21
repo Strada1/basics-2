@@ -1,22 +1,10 @@
-import { CreateTaskInUI } from "./UI.js";
-import { PRIORITY, list } from "./main.js";
+import { createTaskInUI, UI_ELEMENT } from "./UI.js";
+import { list } from "./main.js";
 
 function render() {
-  const taskContainer = document.querySelectorAll(".task-container");
-  taskContainer.forEach((el) => {
-    el.remove();
-  });
+  UI_ELEMENT.TASKS_WRAPPER.forEach((element) => element.replaceChildren());
 
-  list.forEach((el) => {
-    switch (el.priority) {
-      case PRIORITY.HIGH:
-        CreateTaskInUI(el.name, el.priority);
-        break;
-      case PRIORITY.LOW:
-        CreateTaskInUI(el.name, el.priority);
-        break;
-    }
-  });
+  list.forEach((element) => createTaskInUI(element.name, element.priority, element.status));
 }
 
 export { render };
