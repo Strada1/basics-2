@@ -128,11 +128,13 @@ function AddNewTaskHigh (event){
             {
                 if(event.target.checked)
                 {
-                    event.target.checked = false;
+                    myArray[i].status = Status.Done
+                    console.log(myArray);
                 }
                 else
                 {
-                    event.target.checked = true;
+                    myArray[i].status = Status.ToDo
+                    console.log(myArray);
                 }
             }
         }
