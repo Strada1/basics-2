@@ -29,7 +29,8 @@ body {
 	height: 688px;
 }
 
-.form__add {
+.form__add-high,
+.form__add-low {
 	position: relative;
 }
 
@@ -37,7 +38,8 @@ body {
 	text-align: center;
 }
 
-.form__add-input {
+.form__add-input--high,
+.form__add-input--low {
 	margin: 0 0 0 8px;
 	padding: 8px;
 	width: 460px;
