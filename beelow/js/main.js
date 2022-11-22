@@ -1,107 +1,146 @@
-/*
+const UI_ELEMENTS = {
+    ADD_TASK_HIGHT: document.querySelector('.button_add_task_hight'),
+    ADD_TASK_LOW: document.querySelector('.button_add_task_low'),
+    INPUT_TEXT_HIGHT: document.querySelector('.input_task_hight'),
+    INPUT_TEXT_LOW: document.querySelector('.input_task_low'),
+    INPUT_FORM_HIGHT: document.querySelector('.input_form_hight'),
+    INPUT_FORM_LOW: document.querySelector('.input_form_low'),
+    PUSH_PRIORITY_HIGHT: document.querySelector('.hight_task_container'),
+    PUSH_PRIORITY_LOW: document.querySelector('.low_task_container'),
+};
 
-Практика: 
+const ERROR = {
+    NOT_TASK: "Ошибка: Нет такой задачи",
+    YES_TASK: "Ошибка: Такая задача уже есть",
+    NOT_STATUS: "Ошибка: Такой статус не доступен",
+    NOT_PRIORITY: "Ошибка: Такой приоритет не доступен",
+    STATUS_NAME: "Ошибка: Недопустимое название задачи",
+};
 
-В вашей только что написанной программе “Калькулятор” добавьте сохранение всех результатов: после каждого расчёта (клика по кнопке “=” ) добавляйте новый div под строкой калькулятора и записывайте в него результат вычислений. После нескольких расчетов у вас получится что-то похожее на:
+const CHECK = {
+    CHANGE_DONE: "Задача выполнена",
+    CHANGE_DEFAULT: "Задача не выполнена",
+    CHANGE_PRIORITY: "Приоритет изминен",
+    ADD_TASK_MASSIVE: "[MASSIVE] - Добавлена новая задача",
+    DELETE_TASK_MASSIVE: "[MASSIVE] - Задача уадалена",
+    IS_RENDER: '[RENDER] - Complete'
+};
 
-12
-32
-43
-545
-12
+const PRIORITY = {
+    HIGHT: 'Hight',
+    LOW: 'Low',
+};
 
-По клику на каждое из этих чисел - удаляйте его див из разметки. 
-У вас будет 2 операции из новой темы: добавление узла в DOM и удаление узла. А еще вам нужно будет “вешать” события на только что созданные “дивы”. Это не самая простая задача, но разве вас уже можно хоть чем-то напугать
+const STATUS = {
+    DONE: "Done",
+    TO_DO: "To Do",
+};
 
-*/
+const taskList = [];
 
-
-const sumResult = document.querySelector('.sum_result')
-const clickResult = document.querySelector('.calc_result')
-const containerCalc = document.querySelector('.container_calc')
-
-clickResult.addEventListener("click", function () {
-    let firstNumber = document.querySelector('.first_number').value;
-    let secondNumber = document.querySelector('.second_number').value;
-    let operator = document.querySelector('.operator').value;
-    if (secondNumber == 0 && operator == '/') {
-        sumResult.textContent = 'Нельзя делить на ноль';
-        return;
-    }
-    switch (operator) {
-        case '+':
-            sumResult.textContent = +((+firstNumber + +secondNumber).toFixed(5));
-            break;
-        case '-':
-            sumResult.textContent = (Math.floor((firstNumber - secondNumber) * 100) / 100);
-            break;
-        case 'x':
-            sumResult.textContent = +((firstNumber * secondNumber).toFixed(5));
-            break;
-        case '/':
-            sumResult.textContent = (Math.floor((firstNumber / secondNumber) * 100) / 100);
-            break;
-    }
-});
+const DEFAULT_STATUS = STATUS.TO_DO;
 
 
-// clickResult.addEventListener("click", function () {
-// containerCalc.insertAdjacentHTML('beforeend', `<div class="result_history"> <strong>${sumResult.textContent}</strong></div>`)
-// });
-
-clickResult.addEventListener("click", function () {
-    let div = document.createElement('div');
-    div.className = 'result_history';
-    div.innerHTML = `<strong>${sumResult.textContent}</strong>`;
-    containerCalc.append(div)
-    div.addEventListener("click", function () {
-        div.remove();
+function addTask(newTask, priorityTask) {
+    let findName = taskList.findIndex(function (findName) {
+        return findName.name === newTask;
     });
-});
-
-
-
-// setTimeout(() => div.remove(), 1000);
-// console.log(`${STATUS.TO_DO}:${todo}`)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-const sumResult = document.querySelector('.sum_result')
-const clickResult = document.querySelector('.calc_result')
-
-clickResult.addEventListener("click", function () {
-    let firstNumber = document.querySelector('.first_number').value;
-    let secondNumber = document.querySelector('.second_number').value;
-    let operator = document.querySelector('.operator').value;
-    if (secondNumber == 0 && operator == '/') {
-        sumResult.textContent = 'Нельзя делить на ноль';
+    if (findName >= 0) {
+        console.log(ERROR.YES_TASK);
         return;
+    } else if (newTask === "") {
+        console.log(ERROR.STATUS_NAME);
+    } else {
+        taskList.push({
+            name: newTask,
+            status: DEFAULT_STATUS,
+            priority: priorityTask,
+        });
+        console.log(CHECK.ADD_TASK_MASSIVE);
+        console.log(taskList);
     }
-    switch (operator) {
-        case '+':
-            sumResult.textContent = +((+firstNumber + +secondNumber).toFixed(5));
-            break;
-        case '-':
-            sumResult.textContent = (Math.floor((firstNumber - secondNumber) * 100) / 100);
-            break;
-        case 'x':
-            sumResult.textContent = +((firstNumber * secondNumber).toFixed(5));
-            break;
-        case '/':
-            sumResult.textContent = (Math.floor((firstNumber / secondNumber) * 100) / 100);
-            break;
+    render()
+}
+
+
+function deleteTask(idTask) {
+    taskList.splice(idTask, 1);
+    console.log(CHECK.DELETE_TASK_MASSIVE);
+    render()
+}
+
+
+function changeStatus(idTask) {
+    if (taskList[idTask].status == STATUS.TO_DO) {
+        return taskList[idTask].status = STATUS.DONE
     }
+    else if (taskList[idTask].status == STATUS.DONE) {
+        return taskList[idTask].status = STATUS.TO_DO
+    }
+    console.log(CHECK.CHANGE_DONE);
+    render()
+}
+
+
+function pushTaskUi(task, index, taskRender) {
+    let divTask = document.createElement('div');
+    let nameTask = document.createElement('label');
+    let checkStatus = document.createElement('input');
+    let deleteButton = document.createElement('div');
+
+    divTask.className = 'task';
+    divTask.id = index;
+    checkStatus.className = 'checkbox';
+    checkStatus.type = 'checkbox';
+    deleteButton.className = 'button_delete_task'
+    deleteButton.textContent = '×'
+
+    divTask.append(nameTask);
+    nameTask.append(checkStatus);
+    nameTask.append(task.name);
+    divTask.append(deleteButton);
+    taskRender.append(divTask);
+
+    deleteButton.addEventListener("click", function () {
+        deleteTask(divTask.id);
+    });
+
+    checkStatus.addEventListener("change", function () {
+        changeStatus(divTask.id)
+    });
+
+    if (task.status == STATUS.DONE) {
+        checkStatus.setAttribute("checked", true)
+    };
+}
+
+
+function render() {
+    UI_ELEMENTS.PUSH_PRIORITY_HIGHT.innerHTML = "";
+    UI_ELEMENTS.PUSH_PRIORITY_LOW.innerHTML = "";
+
+    taskList.forEach(function (task, index) {
+        if (task.priority === PRIORITY.HIGHT) {
+            const taskRender = UI_ELEMENTS.PUSH_PRIORITY_HIGHT;
+            pushTaskUi(task, index, taskRender);
+            UI_ELEMENTS.INPUT_FORM_HIGHT.reset();
+        }
+        else if (task.priority === PRIORITY.LOW) {
+            const taskRender = UI_ELEMENTS.PUSH_PRIORITY_LOW;
+            pushTaskUi(task, index, taskRender);
+            UI_ELEMENTS.INPUT_FORM_LOW.reset();
+        }
+    })
+}
+
+
+UI_ELEMENTS.INPUT_FORM_HIGHT.addEventListener("submit", function (event) {
+    event.preventDefault();
+    addTask(UI_ELEMENTS.INPUT_TEXT_HIGHT.value, PRIORITY.HIGHT);
 });
-*/
+
+UI_ELEMENTS.INPUT_FORM_LOW.addEventListener("submit", function (event) {
+    event.preventDefault();
+    addTask(UI_ELEMENTS.INPUT_TEXT_LOW.value, PRIORITY.LOW);
+});
+
