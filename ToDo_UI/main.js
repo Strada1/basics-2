@@ -88,10 +88,17 @@ function AddNewTaskHigh (event){
     divButtonRemove.insertAdjacentElement('afterbegin', buttonRemove);
     divContainerHigh.insertAdjacentElement("beforeend",divText);
     divText.insertAdjacentElement("afterbegin", p)
-    divButtonRemove.addEventListener('click', function (){
-        divContainerHigh.remove();
-        DeleteElementArray(p.innerHTML=inputTask)
-    })
+    try
+    {
+        divButtonRemove.addEventListener('click', function (){
+            divContainerHigh.remove();
+            DeleteElementArray(p.innerHTML=inputTask)
+        })
+    }
+    catch (e)
+    {
+        alert('Такого задания нет в массиве!');
+    }
 
     AddElementArray(p.innerHTML = inputTask,Status.ToDo, Priority.High);
 
@@ -115,7 +122,8 @@ function AddNewTaskHigh (event){
     }
 }
 
-function AddNewTaskLow (){
+function AddNewTaskLow (event){
+    event.preventDefault()
     let divContainerLow = document.createElement('div');
     divContainerLow.className = "list_point";
     let divText = document.createElement('div');
@@ -123,29 +131,41 @@ function AddNewTaskLow (){
     let p = document.createElement('p');
     p.innerHTML = inputTask;
     let divCheckBox = document.createElement('div');
-    let checkBoxLow = document.createElement('input');
-    checkBoxLow.className = "input_checkbox";
-    checkBoxLow.type = 'checkbox';
+    let checkBox = document.createElement('input');
+    checkBox.className = "input_checkbox";
+    checkBox.type = 'checkbox';
     let divButtonRemove = document.createElement('div');
     let buttonRemove = document.createElement('button');
     buttonRemove.className = 'button_remove';
     buttonRemove.textContent = 'X';
     placeContainerLow.insertAdjacentElement("afterbegin", divContainerLow);
     divContainerLow.insertAdjacentElement("beforeend", divCheckBox);
-    divCheckBox.insertAdjacentElement('afterbegin', checkBoxLow);
+    placeContainerLow.insertAdjacentElement("afterbegin", divContainerLow);
+    divContainerLow.insertAdjacentElement("beforeend", divCheckBox);
+    divCheckBox.insertAdjacentElement('afterbegin', checkBox);
+    divContainerLow.insertAdjacentElement("beforeend", divButtonRemove);
     divContainerLow.insertAdjacentElement("beforeend", divButtonRemove);
     divButtonRemove.insertAdjacentElement('afterbegin', buttonRemove);
     divContainerLow.insertAdjacentElement("beforeend",divText);
+    divText.insertAdjacentElement("afterbegin", p)
+    divContainerLow.insertAdjacentElement("beforeend",divText);
     divText.insertAdjacentElement("afterbegin", p);
-
-    divButtonRemove.addEventListener('click', function (){
-        divContainerLow.remove();
-        DeleteElementArray(p.innerHTML = inputTask)
-    })
 
     AddElementArray(p.innerHTML = inputTask,Status.ToDo, Priority.Low);
 
-    checkBoxLow.addEventListener('change', CheckStatusCheckBox)
+    try
+    {
+        divButtonRemove.addEventListener('click', function (){
+            divContainerLow.remove();
+            DeleteElementArray(p.innerHTML=inputTask)
+        })
+    }
+    catch (e)
+    {
+        alert('Такого задания нет в массиве!');
+    }
+
+    checkBox.addEventListener('change', CheckStatusCheckBox)
     function CheckStatusCheckBox(event)
     {
         for(let i = 0; i < myArray.length; i++)
@@ -154,7 +174,7 @@ function AddNewTaskLow (){
             {
                 if(event.target.checked)
                 {
-                    myArray[i].status = Status.Done;
+                    myArray[i].status = Status.Done
                 }
                 else
                 {
