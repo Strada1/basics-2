@@ -42,11 +42,18 @@ body {
   color: #fff;
   border: none;
   border-radius: 3px;
-  background: rgb(48, 44, 126);
-  background: linear-gradient(90deg, rgba(117, 113, 199, 1) 0%, rgb(0, 132, 255) 0%, rgb(12, 113, 133) 100%);
+  background-color: #363370;
   cursor: pointer;
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+
+.form__btn:hover {
+  opacity: 0.8;
 }
 
 .app__output {
   text-align: center;
+  font-size: 30px;
+  line-height: 36px;
 }

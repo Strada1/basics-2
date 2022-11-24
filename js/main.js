@@ -4,12 +4,13 @@ const serverUrl = 'https://api.genderize.io';
 
 UI_ELEMENTS.FORM.addEventListener('submit', (event) => {
   event.preventDefault();
-  getGender(UI_ELEMENTS.INPUT.value);
+  const firstName = UI_ELEMENTS.INPUT.value;
+  getGender(firstName);
   event.target.reset();
 });
 
-async function getGender(name) {
-  const url = `${serverUrl}?name=${name}`;
+async function getGender(firstName) {
+  const url = `${serverUrl}?name=${firstName}`;
   const promise = await fetch(url);
   const gender = await promise.json();
   showGender(gender);
