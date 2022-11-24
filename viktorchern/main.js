@@ -47,6 +47,7 @@ function addTask(name, status = STATUS.TODO, priority = PRIORITY.LOW) {
     return item.name.toLowerCase() == name.toLowerCase();
   });
 
+
   try {
     if( taskIndex !== -1 ){
       throw new SyntaxError(ERRORS.TASK_EXISTS);
@@ -64,7 +65,7 @@ function changeStatus(name, status) {
   const TODO__ID = Number(this.closest('.todo__item').dataset.id);
   const TODO__STATUS = this.checked;
 
-  if( TODO__STATUS === true ){
+  if( TODO__STATUS ){
     list[TODO__ID].status = STATUS.DONE;
   } else {
     list[TODO__ID].status = STATUS.TODO;
@@ -79,34 +80,39 @@ function deleteTask(name) {
   render();
 }
 
+//Create tags
+function createTag(tagName, tagclass, tagdata, tagDataId, tagType){
+  let NEW_ELEMENT = document.createElement(tagName);
+  if( tagclass ){
+    NEW_ELEMENT.className = tagclass;
+  }
+  if( tagdata ){
+    NEW_ELEMENT.setAttribute('data-id', tagDataId);
+  }
+  if( tagType ){
+    NEW_ELEMENT.type = tagType;
+  }
+  return NEW_ELEMENT;
+}
+
 //Create to do item
 function createToDoItem(content, status, id){
-  const TODO__ITEM = document.createElement('li');
-  TODO__ITEM.className = 'todo__item todo-item';
-  TODO__ITEM.setAttribute('data-id', id);
-
-  const TODO__ROW = document.createElement('div');
-  TODO__ROW.className = 'todo__row';
-
-  const TODO__COL_1 = document.createElement('div');
-  TODO__COL_1.className = 'todo__col';
+  const TODO__ITEM = createTag('li', 'todo__item todo-item', 'data-id', id);
+  const TODO__ROW = createTag('div', 'todo__row');
+  const TODO__COL_1 = createTag('div', 'todo__col');
   const TODO__COL_2 = TODO__COL_1.cloneNode(true);
   const TODO__COL_3 = TODO__COL_1.cloneNode(true);
+  const TODO__INPUT = createTag('input', 'todo__input', '', '', 'checkbox');
 
-  const TODO__INPUT = document.createElement('input');
-  TODO__INPUT.className = 'todo__input';
-  TODO__INPUT.type = 'checkbox';
   if( status === STATUS.DONE ){
     TODO__INPUT.checked = 'checked';
   }
   TODO__INPUT.addEventListener('change', changeStatus);
   
-  const TODO__CNT = document.createElement('div');
-  TODO__CNT.className = 'todo__cnt';
+  const TODO__CNT = createTag('div', 'todo__cnt');
   TODO__CNT.textContent = content;
 
-  const TODO__BUTTON_DELETE = document.createElement('div');
-  TODO__BUTTON_DELETE.className = 'todo__button todo__button_delete';
+  const TODO__BUTTON_DELETE = createTag('div', 'todo__button todo__button_delete');
   TODO__BUTTON_DELETE.addEventListener('click', deleteTask);
 
   TODO__COL_1.append(TODO__INPUT);
