@@ -1,0 +1,59 @@
+body {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+  background: rgb(117, 113, 199);
+  background: linear-gradient(90deg, rgba(117, 113, 199, 1) 0%, rgba(31, 128, 79, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+.app {
+  text-align: center;
+}
+
+.form {
+  width: 450px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form__label {
+  margin-bottom: 15px;
+}
+
+.form__input {
+  padding: 5px 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  color: rgba(56, 56, 56, 0.9);
+}
+
+.form__btn {
+  font-size: 18px;
+  padding: 3px 5px;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  background-color: rgba(54, 51, 112, 0.8);
+  cursor: pointer;
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+
+.form__btn:hover {
+  opacity: 0.8;
+}
+
+.app__output {
+  text-align: center;
+  font-size: 30px;
+  line-height: 36px;
+}
