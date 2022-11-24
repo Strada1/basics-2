@@ -17,5 +17,9 @@ async function getGender(firstName) {
 }
 
 function showGender(gender) {
+  if (gender.gender === null) {
+    UI_ELEMENTS.OUTPUT.textContent = 'Enter Latin name!';
+    return;
+  }
   UI_ELEMENTS.OUTPUT.textContent = `${gender.name} is ${gender.gender}`;
 }

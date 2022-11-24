@@ -33,7 +33,7 @@ body {
   border-radius: 5px;
   outline: none;
   border: none;
-  color: rgb(49, 49, 49);
+  color: rgba(56, 56, 56, 0.9);
 }
 
 .form__btn {
@@ -42,7 +42,7 @@ body {
   color: #fff;
   border: none;
   border-radius: 3px;
-  background-color: #363370;
+  background-color: rgba(54, 51, 112, 0.8);
   cursor: pointer;
   transition: opacity 0.3s;
   opacity: 1;
