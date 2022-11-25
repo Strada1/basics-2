@@ -88,3 +88,8 @@ body {
 	rotate: -45deg;
 	border: none;
 }
+
+.task-title--done {
+  text-decoration: line-through;
+  color: #CDCDCD;
+}
