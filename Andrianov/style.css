@@ -1,0 +1,36 @@
+
+.fetch {
+    background: #d8d2d2;
+    border-radius: 103px;
+    max-width:1143px ;
+    height: 950px;
+    margin: 0px auto;
+    font-size: 25px;
+}
+.history{
+    text-align: center;
+}
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 400px 0 20px 0;
+}
+
+.input{
+  width: 95px;
+  height: 33px;
+  margin-right: 8px;
+  border: 1px solid black;
+  font-size: 23px;
+}
+
+.button{
+    width: 39px;
+    height: 33px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    margin-right: 8px;
+    color: #000000;
+    font-size: 23px;
+}
