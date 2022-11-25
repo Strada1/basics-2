@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: inherit;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: linear-gradient(
+    to right top,
+    #321f2a,
+    #41253b,
+    #4e2b4f,
+    #583466,
+    #5c3e80,
+    #534f97,
+    #3f60ad,
+    #0071c1,
+    #0087c9,
+    #009bc7,
+    #00acbf,
+    #24bcb3
+  );
+}
+
+.header {
+  text-align: center;
+  font-size: 3.25em;
+  line-height: 1.2;
+  margin: 35px auto;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 40px auto;
+  gap: 20px;
+}
+
+.btn,
+.input-name {
+  height: 50px;
+  color: #fff;
+  background-color: rgba(5, 25, 55, 0.4);
+  font-size: 0.97em;
+  cursor: pointer;
+  box-shadow: 10px 10px 14px 1px rgb(0 0 0 / 20%);
+  text-align: center;
+  margin: 0 auto;
+}
+
+.btn {
+  border-radius: 50px;
+  width: 180px;
+  text-transform: uppercase;
+}
+
+.input-name {
+  border-radius: 5px;
+  width: 280px;
+  letter-spacing: 0.094em;
+}
+
+input::placeholder {
+  color: #fff;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+input:focus {
+  outline: 0;
+}
+
+input:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.block-result {
+  display: flex;
+  flex-direction: column-reverse;
+  line-height: 1.4;
+  border-left: 3px solid #fff;
+  border-right: 3px solid #fff;
+  background-color: rgba(5, 25, 55, 0.1);
+  box-shadow: 10px 10px 14px 1px rgb(0 0 0 / 20%);
+  padding: 17px 8px 10px 8px;
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: 35px;
+  width: 25%;
+}
+
+.result {
+  text-align: center;
+  letter-spacing: 0.063em;
+  font-size: 1.35em;
+  overflow: hidden;
+  margin-bottom: 7px;
+  border-radius: 5px;
+}
+
+.header-result {
+  letter-spacing: 0.063em;
+  font-size: 1.85em;
+  margin: 25px auto;
+  text-align: center;
+}
+
+@media (max-width: 550px) {
+  .form {
+    width: auto;
+  }
+
+  .header-result,
+  .block-result {
+    min-width: 50%;
+  }
+}
