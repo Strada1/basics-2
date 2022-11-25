@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="header">TODO List</h1>
+    </header>
+    <main>
+      <article class="container">
+        <form name="to-do-high" class="form_to-do">
+          <fieldset class="priority-container high">
+            <legend class="priority-header">HIGH</legend>
+            <label class="label-add">
+              <input
+                type="text"
+                class="new-task"
+                placeholder="Добавить важную задачу" />
+              <button type="submit" class="btn btn-add">+</button>
+            </label>
+            <div class="tasks_wrapper"></div>
+          </fieldset>
+        </form>
+        <form name="to-do-low" class="form_to-do">
+          <fieldset class="priority-container low">
+            <legend class="priority-header">LOW</legend>
+            <label class="label-add">
+              <input
+                type="text"
+                class="new-task"
+                placeholder="Добавить задачу" />
+              <button type="submit" class="btn btn-add">+</button>
+            </label>
+            <div class="tasks_wrapper"></div>
+          </fieldset>
+        </form>
+      </article>
+    </main>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
