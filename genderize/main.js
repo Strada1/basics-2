@@ -36,9 +36,8 @@ function showResult(name, gender) {
 }
 
 UI_ELEMENT.FORM.addEventListener("submit", (event) => {
-  if (UI_ELEMENT.FIRST_NAME.value !== "") {
-    findGenderByName(UI_ELEMENT.FIRST_NAME.value);
-  }
+  const firstName = UI_ELEMENT.FIRST_NAME.value;
+  firstName === "" || findGenderByName(firstName);
   event.preventDefault();
   event.target.reset();
 });
