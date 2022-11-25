@@ -4,7 +4,6 @@ const UI_ELEMENT = {
   FORM: document.querySelectorAll("form"),
   BTN_ADD_TASK_HIGH: document.querySelector(".high .btn-add"),
   BTN_ADD_TASK_LOW: document.querySelector(".low .btn-add"),
-  NEW_TASK: document.querySelectorAll(".new-task"),
   NEW_TASK_HIGH: document.querySelector(".high .new-task"),
   NEW_TASK_LOW: document.querySelector(".low .new-task"),
   TASKS_WRAPPER_HIGH: document.querySelector(".high .tasks_wrapper"),

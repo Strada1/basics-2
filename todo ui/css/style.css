@@ -95,7 +95,7 @@ body {
 }
 
 .label-check {
-  margin: 15px 0 0 -442px;
+  margin: 15px 0 0 -95%;
 }
 
 .check,
@@ -106,7 +106,7 @@ body {
 }
 
 .btn {
-  margin: 10px 0 0 430px;
+  margin: 10px 0 0 93%;
   color: var(--color-grey);
   font-size: 25px;
 }
@@ -130,4 +130,23 @@ body {
   flex-direction: column;
   text-align: center;
   gap: 8px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    max-width: 80%;
+  }
+
+  .priority-container {
+    width: 95%;
+  }
+
+  .task,
+  .new-task {
+    width: 100%;
+  }
+
+  body {
+    height: 100%;
+  }
 }

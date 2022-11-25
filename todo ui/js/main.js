@@ -19,7 +19,10 @@ const ERROR = {
 let list = [];
 
 for (let form of UI_ELEMENT.FORM) {
-  form.addEventListener("submit", (event) => event.preventDefault());
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    event.target.reset();
+  });
 }
 
 function deleteTask(task) {
@@ -53,8 +56,6 @@ function addTask(task, priority) {
     });
     render();
   }
-
-  UI_ELEMENT.NEW_TASK.forEach((element) => (element.value = ""));
 }
 
 UI_ELEMENT.BTN_ADD_TASK_HIGH.addEventListener("click", () =>
