@@ -2,60 +2,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ToDo UI</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" />
+    <title>Genderize</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="circles">
-            <div class="circle circle-1"></div>
-            <div class="circle circle-2"></div>
-        </div>
-        <h1 class="title">
-            TODO List
-        </h1>
-        <div class="todo">
-            <div class="high">
-                <p class="priority">HIGH</p>
-
-                <form class=input_form_hight>
-                <div class="input_task">
-
-                        <label for="task">
-                            <input class='input_task_hight' type='text' value ='' placeholder="Добавить важных дел" />
-                        </label>
-                        <div class="button_add_task_hight" type='sumbit' >+</div>
-                        
-                </div>
-            </form>
-
-                <div class="hight_task_container">
-
-                </div>
 
 
-                <div class="low">
-                    <p class="priority">LOW</p>
-                    <form class=input_form_low>
-
-                        <div class="input_task">
-                            <label for="task">
-                                <input class='input_task_low' type='text' value ='' placeholder="Добавить важных дел"  />
-                            </label>
-                            <div class="button_add_task_low" type='submit'>+</div>
-                            
-                    </form>
-                    </div>
-                    <div class="low_task_container">
+<div class="container">
+    <form class="enter_form">
+        <input type="text" class="input_text">
+        <button class="button_send">Отправить</button>
+    </form>
+</div>
 
 
-                        
-                    </div>
-                </div>
-            </div>
-            <script type="module" src="./js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
+</html>
