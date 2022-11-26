@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="main.js"></script>
+    <title>TODO</title>
+</head>
+<body>
+    <div class="container">
+        <div class="block">
+            <div class="block__high">
+                <h2 class="block__high title">HIGH</h2>
+                <form class="block__high form" name="high">
+                    <input name="in" type="text" class="block__high input" placeholder="Добавить важных дел">
+                    <button class="block__high addbutton">+</button>
+                </form>
+                <div class="block__high case open">
+
+                    <label class="high-lable">
+                        <input type="checkbox" class="case-checkbox" id="todo-high" name="todo-high">
+                        <span class="checker"></span>
+                    </label>
+                    
+                    <p class="block__high text">
+                        Вот вам и супер интересная тема. 
+                        Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, 
+                        что хочется вынести некоторые вещи куда-то за пределы основной программы.
+                    </p>
+                    <button class="block__high closebutton"><p class="close">+</p></button>
+                </div>
+                <div class="block__high case open">
+                    <label class="high-lable">
+                        <input type="checkbox" class="case-checkbox" id="todo-high" name="todo-high">
+                        <span class="checker"></span>
+                    </label>
+                    <p class="block__high text">
+                        Сверстать этот TODO list
+                    </p>
+                    <button class="block__high closebutton"><p class="close">+</p></button>
+                </div>
+                <div class="block__high case open">
+                    <label class="high-lable">
+                        <input type="checkbox" class="case-checkbox" id="todo-high" name="todo-high">
+                        <span class="checker"></span>
+                    </label>
+                    <p class="block__high text">
+                        Начать делать задачу
+                    </p>
+                    <button class="block__high closebutton"><p class="close">+</p></button>
+                </div>
+            </div>
+            <div class="block__low">
+                <h2 class="block__low title">LOW</h2>
+                <form action="" class="block__low  form">
+                    <input type="text" class="block__low  input" placeholder="Добавить">
+                    <button class="block__low addbutton">+</button>
+                </form>
+                <div class="block__low case open">
+                    <label class="high-lable">
+                        <input type="checkbox" class="case-checkbox" id="todo-high" name="todo-high">
+                        <span class="checker"></span>
+                    </label>
+                    <p class="block__low text">
+                        Посмотреть ютубчик
+                    </p>
+                    <button class="block__low closebutton"><p class="close">+</p></button>
+                </div>                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
