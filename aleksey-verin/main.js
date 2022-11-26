@@ -63,11 +63,15 @@ function showResult(nameFromInput, gender, probability) {
 
   switch (gender) {
     case 'male':
-      ELEMENTS_FROM_UI.RESULT_MAIN.innerHTML = `<span>${nameForScreen}</span> - <span>мужчина</span>`
+      ELEMENTS_FROM_UI.RESULT_MAIN.firstElementChild.textContent = nameForScreen
+      document.querySelector('.text_result').firstElementChild.nextElementSibling.textContent = ' - '
+      ELEMENTS_FROM_UI.RESULT_MAIN.lastElementChild.textContent = 'мужчина'
       ELEMENTS_FROM_UI.RESULT_PROBABILITY.textContent = `С вероятностью: ${probabilityForScreen}%`
       break;
     case 'female':
-      ELEMENTS_FROM_UI.RESULT_MAIN.innerHTML = `<span>${nameForScreen}</span> - <span>женщина</span>`
+      ELEMENTS_FROM_UI.RESULT_MAIN.firstElementChild.textContent = nameForScreen
+      document.querySelector('.text_result').firstElementChild.nextElementSibling.textContent = ' - '
+      ELEMENTS_FROM_UI.RESULT_MAIN.lastElementChild.textContent = 'женщина'
       ELEMENTS_FROM_UI.RESULT_PROBABILITY.textContent = `С вероятностью: ${probabilityForScreen}%`
       break;
     default:
