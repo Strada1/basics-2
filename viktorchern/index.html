@@ -4,30 +4,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ToDo</title>
+  <title>Genderize</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <div class="todo-wrap">
       <div id="todo-high" class="todo">
-        <form action="#" class="todo__form">
-          <div class="todo__title">High</div>
+        <form id="form" action="#" class="todo__form">
+          <div class="todo__title">Genderize</div>
           <div class="todo__add">
-            <input type="text" class="todo__input todo-item" placeholder="Добавить важных дел">
-            <button class="todo__button todo__button_add"></button>
+            <input type="text" id="user-name" class="todo__input todo-item" placeholder="Введите имя и узнайте пол">
+            <button type="submit" id="submit-button" class="todo__button todo__button_add"></button>
           </div>
-          <ul class="todo__list"></ul>
-        </form>
-      </div>
-      <div id="todo-low" class="todo">
-        <form action="#" class="todo__form">
-          <div class="todo__title todo__title_mt">Low</div>
-          <div class="todo__add">
-            <input type="text" class="todo__input todo-item" placeholder="Добавить важных дел">
-            <button class="todo__button todo__button_add"></button>
-          </div>
-          <ul class="todo__list"></ul>
         </form>
       </div>
     </div>
