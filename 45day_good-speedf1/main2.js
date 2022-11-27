@@ -17,7 +17,6 @@ function addTask(event) {
 		done: false,
 	};
 	tasks.push(newTask)
-	console.log(tasks);
 // формируем CSS класс
 	const cssClass = newTask.done ? 'task-title task-title--done' : 'task-title'
 	//формируем разметку для новой задачи
@@ -38,7 +37,13 @@ function addTask(event) {
 function deleteTask(event) {
 	if (event.target.dataset.action === 'delete') {
 		const parentNode = event.target.closest('.list-group-item');
+		const id = Number(parentNode.id);
+		// находим индекс задачи в массиве
+		const index = tasks.findIndex((task) => task.id === id);
+		// удаляем задачу из разметки
 		parentNode.remove();
+		// удаляем задачу из массива
+		tasks.splice(index, 1)
 	}
 }
 
