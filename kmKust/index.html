@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>#55 Погода: верстка</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="weatherBox">
+		<div class="weatherBoxBody">
+			<form class="search">
+				<input id="inputOne" type="text" class="searchInput" placeholder="Aktobe">
+				<button class="btnSearch" type="submit"></button>
+			</form>
+			<div class="bodyBox">
+				<div class="content">
+
+					<div class="tabs">
+
+						<div id="tab_01" class="mainScreen tabs__block">
+							<div class="degreesСelsius">14&#176;</div>
+							<img class="imgСloud" src="./img/cloud.png" alt="">
+							<div class="city">Aktobe</div>
+							<button class="btnHeart" type="submit"></button>
+						</div>
+						<div id="tab_02" class="mainScreen tabs__block">
+							<div class="citiesDetails">&nbsp &nbsp &nbsp &nbspAktobe</div>
+							<ul class="ulCities">
+								<li class="liCityInfo">Temperature: 14&#176;</li>
+								<li class="liCityInfo">Feels like: 10</li>
+								<li class="liCityInfo">Weather: Clouds</li>
+								<li class="liCityInfo">Sunrise: 03:21</li>
+								<li class="liCityInfo">Sunset: 18:54</li>
+							</ul>
+
+						</div>
+						<div id="tab_03" class="mainScreen tabs__block">
+							Третья вкладка
+						</div>
+						<nav class="tabs__items">
+							<a href="#tab_01" class="tabs__item"><span>Now</span></a>
+							<a href="#tab_02" class="tabs__item"><span>Details</span></a>
+							<a href="#tab_03" class="tabs__item"><span>Forecast</span></a>
+						</nav>
+					</div>
+				</div>
+
+
+
+
+				<!--<button id="btn" class="btnNow btnActive" type="submit">Now</button>
+				<button id="btn" class="btnDetails" type="submit">Details</button>
+				<button id="btn" class="btnForecast" type="submit">Forecast</button>-->
+				<div class="cityScreen">
+					<div class="citiesList">&nbsp &nbsp &nbsp Added Locations:</div>
+					<ul class="ulCities">
+						<li class="liCity">Amur</li>
+						<li class="liCity">Samara</li>
+						<li class="liCity">Bali</li>
+						<li class="liCity">Dane</li>
+						<li class="liCity">Kilo</li>
+						<li class="liCity">Nur-Sultan</li>
+					</ul>
+				</div>
+
+			</div>
+
+
+		</div>
+
+
+	</div>
+
+
+</body>
+
+</html>
