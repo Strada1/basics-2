@@ -17,13 +17,14 @@ function addTask(event) {
 		done: false,
 	};
 	tasks.push(newTask)
+	console.log(tasks);
 // формируем CSS класс
-	// const cssClass = newTask.done ? 'task-title task-title--done' : 'task-title'
+	const cssClass = newTask.done ? 'task-title task-title--done' : 'task-title'
 	//формируем разметку для новой задачи
 	const taskHTML = `
 		<div class="task list-group-item" id="${newTask.id}">
 			<input type="checkbox" class="task__checkbox" data-action="done">
-			<label for="task__checkbox1" class="task-title">${newTask.text}</label>
+			<label for="task__checkbox1" class="${cssClass}">${newTask.text}</label>
 			<button class="task__close-btn btn-action" data-action="delete">+</button>
 		</div>
 	`;
@@ -45,7 +46,6 @@ function doneTask(event) {
 	if (event.target.dataset.action === 'done') {
 		const parentNode = event.target.closest('.list-group-item')
 		const taskTitle = parentNode.querySelector('.task-title');
-		console.log(taskTitle);
 		taskTitle.classList.toggle('task-title--done')
 	}
 };
