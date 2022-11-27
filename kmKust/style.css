@@ -1,0 +1,270 @@
+.content{
+	width: 297px;
+
+}
+
+.tabs{
+	margin: 0px 0px 0px 0px;
+}
+.tabs__items{
+	display: flex;
+	position: relative;
+	border-radius: 1px solid #000;
+	
+}
+.tabs__item{
+	flex: 0 1 33.333%;
+	height: 47px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	text-decoration: none;
+
+}
+.tabs__item span{
+	position: relative;
+	z-index: 2;
+	color: rgb(141, 141, 141);
+}
+
+
+
+.tabs__block{
+	
+	display: none;
+	
+}
+
+.tabs__block:nth-child(1){
+	background-color: #fff;
+	
+	
+}
+
+.tabs__block:nth-child(1):before{
+	background: #000000;
+	left:0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.tabs__block:nth-child(2){
+	background-color: rgb(255, 255, 255);
+}
+
+.tabs__block:nth-child(2):before{
+	background: #000000;
+	left:33.333%;
+}
+.tabs__block:nth-child(3){
+	background-color: rgb(255, 255, 255);
+}
+
+.tabs__block:nth-child(3):before{
+	background: #000000;
+	right:0;
+}
+
+.weatherBox{
+	margin:225px auto;
+	width: 621px;
+	height: 462px;
+	border: 1px solid #000000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Roboto';
+}
+
+.weatherBoxBody{
+	box-sizing: border-box;
+	width: 600px;
+	height: 435px;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+}
+
+.searchInput{
+	box-sizing: border-box;
+	width: 600px;
+	height: 45px;
+	position: relative;
+	border: 1px solid #000000;
+	border-bottom: none;
+	padding-left: 16px;
+}
+
+.btnSearch{
+	position: absolute;
+	width: 21.86px;
+	height: 21.86px;
+	background-image: url(./img/search.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-top: 13px;
+	margin-left: -33px;
+	background-color: transparent;
+	border: medium none;
+}
+	
+.bodyBox{
+	box-sizing: border-box;
+	width: 600px;
+	height: 390px;
+	position: relative;
+	border: 1px solid #000000;
+	display: flex;
+	
+}
+.mainScreen{
+	box-sizing: border-box;
+	width: 297px;
+	height: 345px;
+	position: relative;
+	display: flex;
+	border: 1px solid #000000;
+	flex-direction: row;
+	border-top: none;
+	border-left: none;
+	display: none;
+}
+
+.mainScreen:target{
+	display: block;
+}
+
+.mainScreen:before{
+	content: "";
+	height: 47px;
+	width: 33.333%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 100%;
+}
+
+.cityScreen{
+	box-sizing: border-box;
+	width:49%;
+	height: 389px;
+	position: relative;
+	border: 1px solid #000000;
+	border-top: none;
+	border-bottom: none;
+	border-right: none;
+	margin-left: -1px;
+	
+
+}
+
+.degreesСelsius{
+	position: absolute;
+	width: 95px;
+	height: 83px;
+	font-size: 70px;
+	font-family: 'Roboto';
+	font-style: normal;
+	margin-left: 23px;
+	margin-top: 20px;
+}
+
+.imgСloud{
+	position: absolute;
+	width: 78px;
+height: 59px;
+margin: 122px 97px;
+
+}
+
+#btn{
+	margin-top: 345px;
+	margin-left: 0px;
+	width: 99px;
+	height: 44px;
+	justify-content: space-around;
+	align-items: flex-end;
+	cursor: pointer;
+	border-bottom: 1px;
+	background-color: transparent;
+	border-left: none;
+}
+
+
+.btnNow{
+	border-bottom: none;
+}
+.btnForecast{
+	border-right: none;
+}
+
+.city{
+	position: absolute;
+	margin-top: 307px;
+	margin-left: 12px;
+	font-family: 'Roboto';
+	font-size: 24px;
+	line-height: 28px;
+	padding-left: 16px;
+
+}
+.btnHeart{
+	position: absolute;
+	display: block;
+	width: 22px;
+	height: 22px;
+	background-image: url(./img/imgHeart.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-top: 305px;
+	margin-left: 260px;
+	background-color: transparent;
+	border: medium none;
+}
+
+.citiesList{
+	width: 301px;
+	height: 68px;
+	font-size: 24px;
+	line-height: 28px;
+	border: 1px solid #000000;
+	display: flex;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	align-items: center;
+}
+
+.citiesDetails{
+	width: 301px;
+	height: 68px;
+	font-size: 24px;
+	line-height: 28px;
+	border: 1px solid #000000;
+	display: flex;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: none;
+	align-items: center;
+}
+
+
+lu{
+	margin-top: 35px
+}
+
+
+li {
+	font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 28px;
+	list-style:none;
+	margin-bottom: 14px;
+  }
+
