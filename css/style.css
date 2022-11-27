@@ -48,7 +48,7 @@ body {
   display: block;
   width: 21px;
   height: 21px;
-  top: 7px;
+  top: 13px;
   right: 17px;
   font-size: 0;
   border: none;
@@ -128,9 +128,17 @@ body {
   /* overflow-y: hidden; */
 }
 
+.now__container {
+  height: 302px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .now__icon {
   display: block;
   margin-bottom: 50px;
+  object-fit: none;
 }
 
 .now__sities-block {
@@ -157,23 +165,28 @@ body {
   cursor: pointer;
 }
 
+.now__sities-btn--like {
+  background-image: url(../images/red-heart-icon.svg);
+}
+
 .now__temperature {
+  display: inline-block;
   position: relative;
   font-size: 70px;
   line-height: 82px;
 }
 
-.now__temperature::before {
+.now__temperature::after {
   position: absolute;
   content: '⭘';
-  top: -25px;
-  right: -12px;
-  font-size: 22px;
+  top: -32px;
+  font-size: 20px;
   font-weight: 900;
 }
 
 .details__title {
   margin-bottom: 25px;
+  margin-top: 15px;
 }
 
 .details__list {
@@ -183,11 +196,28 @@ body {
 }
 
 .details__item:not(:last-child) {
-  margin-bottom: 7px;
+  margin-bottom: 15px;
 }
 
 .weather__favorites {
   width: 50%;
+  max-height: 390px;
+  overflow-y: scroll;
+}
+
+
+.details__temp,
+.details__feels {
+  position: relative;
+}
+
+.details__temp::after,
+.details__feels::after {
+  position: absolute;
+  content: '⭘';
+  top: -13px;
+  font-size: 10px;
+  font-weight: 900;
 }
 
 .weather__favorites-title {
@@ -197,7 +227,7 @@ body {
   font-weight: 400;
   color: #000000;
   padding-left: 18px;
-  margin-top: 35px;
+  margin-top: 33px;
   border-bottom: 1px solid #000;
   padding-bottom: 7px;
   margin-bottom: 0;
@@ -209,6 +239,7 @@ body {
   padding-top: 30px;
   padding-left: 18px;
   list-style: none;
+
 }
 
 .weather__favorites-item:not(:last-child) {
@@ -243,6 +274,10 @@ body {
   font-size: 18px;
   line-height: 21px;
   margin-bottom: 9px;
+}
+
+.forecast__item:last-child {
+  margin-bottom: 20px;
 }
 
 .forecast__header {
