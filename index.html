@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Weather App</title>
+</head>
+
+<body>
+  <div class="weather">
+    <form class="weather__search-form" action="#" method="get">
+      <input class="weather__search-input" type="text" name="search" placeholder="Aktobe">
+      <button class="weather__search-btn" type="submit">Search</button>
+    </form>
+    <div class="weather__content">
+      <div class="weather__tabs tabs">
+        <div class="tabs__content">
+          <div id="now" class="tabs__block now tabs__block--now">
+            <div class="now__container">
+              <span class="now__temperature">14</span>
+              <img class="now__icon" src="images/now-icon.svg" alt="icon weather">
+              <div class="now__sities-block">
+                <p class="now__sities">Aktobe</p>
+                <button class="now__sities-btn" type="button">Like</button>
+              </div>
+            </div>
+          </div>
+          <div id="details" class="tabs__block details tabs__block--details">
+            <h2 class="details__title tabs__title">Aktobe</h2>
+            <ul class="details__list">
+              <li class="details__item details__temp">Temperature: <span class="details__temp-value">14</span></li>
+              <li class="details__item details__feels">Feels like: <span class="details__feels-value">10</span></li>
+              <li class="details__item details__weather">Weather: <span class="details__weather-value">Clouds</span>
+              </li>
+              <li class="details__item details__sunrise">Sunrise: <span class="details__sunrise-value">03:21</span></li>
+              <li class="details__item details__sunset">Sunset: <span class="details__sunset-value">18:54</span></li>
+            </ul>
+          </div>
+          <div id="forecast" class="tabs__block forecast tabs__block--forecast">
+            <h2 class="forecast__title tabs__title">Aktobe</h2>
+            <ul class="forecast__list">
+              <li class="forecast__item">
+                <header class="forecast__header">
+                  <span class="forecast__head-date">17 May</span>
+                  <span class="forecast__head-time">12:00</span>
+                </header>
+                <footer class="forecast__footer">
+                  <div class="forecast__footer-temp-box">
+                    <p class="forecast__temp">Temperature: <span class="forecast__temp--value">13</span></p>
+                    <p class="forecast__feels">Feels like: <span class="forecast__feels--value">10</span></p>
+                  </div>
+                  <div class="forecast__description">
+                    <p class="forecast__description--value">Rain</p>
+                    <img src="images/forecast-icon.svg" alt="description">
+                  </div>
+                </footer>
+              </li>
+              <li class="forecast__item">
+                <header class="forecast__header">
+                  <span class="forecast__head-date">17 May</span>
+                  <span class="forecast__head-time">15:00</span>
+                </header>
+                <footer class="forecast__footer">
+                  <div class="forecast__footer-temp-box">
+                    <p class="forecast__temp">Temperature: <span class="forecast__temp--value">13</span></p>
+                    <p class="forecast__feels">Feels like: <span class="forecast__feels--value">10</span></p>
+                  </div>
+                  <div class="forecast__description">
+                    <p class="forecast__description--value">Rain</p>
+                    <img src="images/forecast-icon.svg" alt="description">
+                  </div>
+                </footer>
+              </li>
+              <li class="forecast__item">
+                <header class="forecast__header">
+                  <span class="forecast__head-date">17 May</span>
+                  <span class="forecast__head-time">18:00</span>
+                </header>
+                <footer class="forecast__footer">
+                  <div class="forecast__footer-temp-box">
+                    <p class="forecast__temp">Temperature: <span class="forecast__temp--value">13</span></p>
+                    <p class="forecast__feels">Feels like: <span class="forecast__feels--value">10</span></p>
+                  </div>
+                  <div class="forecast__description">
+                    <p class="forecast__description--value">Rain</p>
+                    <img src="images/forecast-icon.svg" alt="description">
+                  </div>
+                </footer>
+              </li>
+              <li class="forecast__item">
+                <header class="forecast__header">
+                  <span class="forecast__head-date">17 May</span>
+                  <span class="forecast__head-time">21:00</span>
+                </header>
+                <footer class="forecast__footer">
+                  <div class="forecast__footer-temp-box">
+                    <p class="forecast__temp">Temperature: <span class="forecast__temp--value">13</span></p>
+                    <p class="forecast__feels">Feels like: <span class="forecast__feels--value">10</span></p>
+                  </div>
+                  <div class="forecast__description">
+                    <p class="forecast__description--value">Rain</p>
+                    <img src="images/forecast-icon.svg" alt="description">
+                  </div>
+                </footer>
+              </li>
+              <li class="forecast__item">
+                <header class="forecast__header">
+                  <span class="forecast__head-date">18 May</span>
+                  <span class="forecast__head-time">00:00</span>
+                </header>
+                <footer class="forecast__footer">
+                  <div class="forecast__footer-temp-box">
+                    <p class="forecast__temp">Temperature: <span class="forecast__temp--value">13</span></p>
+                    <p class="forecast__feels">Feels like: <span class="forecast__feels--value">10</span></p>
+                  </div>
+                  <div class="forecast__description">
+                    <p class="forecast__description--value">Rain</p>
+                    <img src="images/forecast-icon.svg" alt="description">
+                  </div>
+                </footer>
+              </li>
+              <li class="forecast__item">
+                <header class="forecast__header">
+                  <span class="forecast__head-date">18 May</span>
+                  <span class="forecast__head-time">03:00</span>
+                </header>
+                <footer class="forecast__footer">
+                  <div class="forecast__footer-temp-box">
+                    <p class="forecast__temp">Temperature: <span class="forecast__temp--value">13</span></p>
+                    <p class="forecast__feels">Feels like: <span class="forecast__feels--value">10</span></p>
+                  </div>
+                  <div class="forecast__description">
+                    <p class="forecast__description--value">Rain</p>
+                    <img src="images/forecast-icon.svg" alt="description">
+                  </div>
+                </footer>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="tabs-nav">
+          <a href="#now" class="tabs-item tabs-item--active">Now</a>
+          <a href="#details" class="tabs-item">Details</a>
+          <a href="#forecast" class="tabs-item">Forecast</a>
+        </nav>
+      </div>
+      <div class="weather__favorites">
+        <h2 class="weather__favorites-title">Added Locations:</h2>
+        <ul class="weather__favorites-list">
+          <li class="weather__favorites-item">Amur</li>
+          <li class="weather__favorites-item">Samara</li>
+          <li class="weather__favorites-item">Bali</li>
+          <li class="weather__favorites-item">Dane</li>
+          <li class="weather__favorites-item">Kilo</li>
+          <li class="weather__favorites-item">Nur-Sultan</li>
+          <li class="weather__favorites-item">Amur</li>
+          <li class="weather__favorites-item">Samara</li>
+          <li class="weather__favorites-item">Bali</li>
+          <li class="weather__favorites-item">Dane</li>
+          <li class="weather__favorites-item">Kilo</li>
+          <li class="weather__favorites-item">Nur-Sultan</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
