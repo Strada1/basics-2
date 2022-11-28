@@ -5,21 +5,10 @@ const TASKSLIST1 = document.querySelector('#tasksList1')
 let tasks = [];
 if (localStorage.getItem('tasks')) {
 	tasks = JSON.parse(localStorage.getItem('tasks'));
+	tasks.forEach((task) => renderTask(task));
 }
 
-tasks.forEach((task) => {
-	const cssClass = task.done ? 'task-title task-title--done' : 'task-title'
-	//формируем разметку для новой задачи
-	const taskHTML = `
-		<div class="task list-group-item" id="${task.id}">
-			<input type="checkbox" class="task__checkbox" data-action="done">
-			<label for="task__checkbox1" class="${cssClass}">${task.text}</label>
-			<button class="task__close-btn btn-action" data-action="delete">+</button>
-		</div>
-	`;
-	//добавляем задачу на страницу в разметку
-	TASKSLIST1.insertAdjacentHTML('beforeend',taskHTML)
-})
+
 
 FORM1.addEventListener('submit', addTask)
 TASKSLIST1.addEventListener('click', deleteTask)
@@ -36,18 +25,9 @@ function addTask(event) {
 	tasks.push(newTask)
 	// добавляем задачу в хранилище LocalStorage
 	saveToLocalStorage()
-// формируем CSS класс
-	const cssClass = newTask.done ? 'task-title task-title--done' : 'task-title'
-	//формируем разметку для новой задачи
-	const taskHTML = `
-		<div class="task list-group-item" id="${newTask.id}">
-			<input type="checkbox" class="task__checkbox" data-action="done">
-			<label for="task__checkbox1" class="${cssClass}">${newTask.text}</label>
-			<button class="task__close-btn btn-action" data-action="delete">+</button>
-		</div>
-	`;
-	//добавляем задачу на страницу в разметку
-	TASKSLIST1.insertAdjacentHTML('beforeend',taskHTML)
+
+	renderTask(newTask);
+
 	//очищаем поле ввода и возвращаем на него фокус
 	TASKINPUT1.value = ''
 	TASKINPUT1.focus()
@@ -83,4 +63,18 @@ function doneTask(event) {
 
 function saveToLocalStorage() {
 	localStorage.setItem('tasks', JSON.stringify(tasks))
+}
+
+function renderTask(task) {
+	const cssClass = task.done ? 'task-title task-title--done' : 'task-title'
+	//формируем разметку для новой задачи
+	const taskHTML = `
+		<div class="task list-group-item" id="${task.id}">
+			<input type="checkbox" class="task__checkbox" data-action="done">
+			<label for="task__checkbox1" class="${cssClass}">${task.text}</label>
+			<button class="task__close-btn btn-action" data-action="delete">+</button>
+		</div>
+	`;
+	//добавляем задачу на страницу в разметку
+	TASKSLIST1.insertAdjacentHTML('beforeend',taskHTML)
 }
