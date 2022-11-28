@@ -1,4 +1,5 @@
 export const UI_ELEMENTS = {
+  FORM: document.querySelector('.weather__search-form'),
   TABS: document.querySelectorAll('.tabs-item'),
   BTN_LIKE: document.querySelector('.now__sities-btn')
 }
