@@ -3,6 +3,23 @@ const TASKINPUT1 = document.querySelector('#taskInput1')
 const TASKSLIST1 = document.querySelector('#tasksList1')
 
 let tasks = [];
+if (localStorage.getItem('tasks')) {
+	tasks = JSON.parse(localStorage.getItem('tasks'));
+}
+
+tasks.forEach((task) => {
+	const cssClass = task.done ? 'task-title task-title--done' : 'task-title'
+	//формируем разметку для новой задачи
+	const taskHTML = `
+		<div class="task list-group-item" id="${task.id}">
+			<input type="checkbox" class="task__checkbox" data-action="done">
+			<label for="task__checkbox1" class="${cssClass}">${task.text}</label>
+			<button class="task__close-btn btn-action" data-action="delete">+</button>
+		</div>
+	`;
+	//добавляем задачу на страницу в разметку
+	TASKSLIST1.insertAdjacentHTML('beforeend',taskHTML)
+})
 
 FORM1.addEventListener('submit', addTask)
 TASKSLIST1.addEventListener('click', deleteTask)
@@ -17,6 +34,8 @@ function addTask(event) {
 		done: false,
 	};
 	tasks.push(newTask)
+	// добавляем задачу в хранилище LocalStorage
+	saveToLocalStorage()
 // формируем CSS класс
 	const cssClass = newTask.done ? 'task-title task-title--done' : 'task-title'
 	//формируем разметку для новой задачи
@@ -44,13 +63,24 @@ function deleteTask(event) {
 		parentNode.remove();
 		// удаляем задачу из массива
 		tasks.splice(index, 1)
+		saveToLocalStorage()
 	}
 }
 
 function doneTask(event) {
 	if (event.target.dataset.action === 'done') {
-		const parentNode = event.target.closest('.list-group-item')
+		const parentNode = event.target.closest('.list-group-item');
+		const id = Number(parentNode.id);
+		const task = tasks.find((task) => task.id === id);
+		// меняем у элемента значение done в массиве
+		task.done = !task.done;
+		saveToLocalStorage()
+		// console.log(tasks);
 		const taskTitle = parentNode.querySelector('.task-title');
-		taskTitle.classList.toggle('task-title--done')
+		taskTitle.classList.toggle('task-title--done');
 	}
 };
+
+function saveToLocalStorage() {
+	localStorage.setItem('tasks', JSON.stringify(tasks))
+}
