@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Weather </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="container__searchTown">
+        <input placeholder="Введите название города" type="text" class="container__searchTown__input">
+        <img src="files/Path_2.png" alt="" class="container__searchTown__searchButton">
+    </div>
+
+    <div class="container__info" >
+        <p class="container__info__temperature"> 14° </p>
+        <img src="files/cloud.svg" alt="" class="container__info__sign">
+        <img src="files/hearth2.svg" alt="" class="container__info__heath">
+        <p class="container__info__town"> Aktobe </p>
+    </div>
+
+    <div class="container__info__2" hidden>
+        <p class="container__info__town__2"> Aktobe </p>
+        <ul class="container__info__2__list">
+            <li>Temperature: 14°</li>
+            <li>Feels like: 10° </li>
+            <li>Weather: Clouds </li>
+            <li>Sunrise: 03:21</li>
+            <li>Sunset: 18:54</li>
+        </ul>
+    </div>
+
+
+    <div class="container__info__3" hidden>
+        <p class="container__info__town__3"> Aktobe </p>
+        <div class="container__info__3__card">
+            <p class="container__info__3__card__date"> 17 May </p>
+            <p class="container__info__3__card__temperature"> Temperature: 13° <br> Feels like: 10° </p>
+            <p class="container__info__3__card__time"> 12:00 </p>
+            <p class="container__info__3__card__weather"> Rain </p>
+            <img src="files/weather.svg" alt="" class="container__info__3__card__sign">
+        </div>
+        <br>
+        <div class="container__info__3__card">
+            <p class="container__info__3__card__date"> 17 May </p>
+            <p class="container__info__3__card__temperature"> Temperature: 13° <br> Feels like: 10° </p>
+            <p class="container__info__3__card__time"> 15:00 </p>
+            <p class="container__info__3__card__weather"> Rain </p>
+            <img src="files/weather.svg" alt="" class="container__info__3__card__sign">
+        </div>
+        <br>
+        <div class="container__info__3__card">
+            <p class="container__info__3__card__date"> 17 May </p>
+            <p class="container__info__3__card__temperature"> Temperature: 13° <br> Feels like: 10° </p>
+            <p class="container__info__3__card__time"> 18:00 </p>
+            <p class="container__info__3__card__weather"> Rain </p>
+            <img src="files/weather.svg" alt="" class="container__info__3__card__sign">
+        </div>
+        <br>
+        <div class="container__info__3__card">
+            <p class="container__info__3__card__date"> 17 May </p>
+            <p class="container__info__3__card__temperature"> Temperature: 13° <br> Feels like: 10° </p>
+            <p class="container__info__3__card__time"> 21:00 </p>
+            <p class="container__info__3__card__weather"> Rain </p>
+            <img src="files/weather.svg" alt="" class="container__info__3__card__sign">
+        </div>
+    </div>
+
+
+    <div class="container__add">
+        <p class="container__add__text"> Added Locations: </p>
+    </div>
+
+    <div class="container__list">
+        <ul class="container__listTown">
+            <li>Amur</li>
+            <li>Samara</li>
+            <li>Bali</li>
+            <li>Dane</li>
+            <li>Kilo</li>
+            <li>Nur-Sultan</li>
+        </ul>
+    </div>
+
+    <div class="container__now"> Now </div>
+    <div class="container__details"> Details </div>
+    <div class="container__forecast"> Forecast </div>
+</div>
+<script src="main.js"> </script>
+</body>
+</html>

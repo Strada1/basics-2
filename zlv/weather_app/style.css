@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    height: 435px;
+    width: 607px;
+    display: grid;
+    justify-content: center;
+
+}
+
+.container__add{
+    border: 1px solid;
+
+}
+
+.container__details{
+    border: 1px solid;
+
+    width: 99px;
+    height: 44px;
+
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+
+    font-size: 18px;
+    font-family: 'Roboto';
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.container__searchTown{
+    border: 1px solid;
+
+
+    width: 606px;
+    height: 45px;
+
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+
+}
+
+.container__info{
+    border: 1px solid;
+
+    /*width: 297px;*/
+    width: 301px;
+    height: 346px;
+
+    grid-column: 1 / 4;
+    grid-row: 2 / 4;
+}
+
+.container__info__2{
+    border: 1px solid;
+
+
+
+    /*width: 297px;*/
+    width: 301px;
+    height: 346px;
+
+    grid-column: 1 / 4;
+    grid-row: 2 / 4;
+}
+
+.container__info__3{
+    border: 1px solid;
+
+    overflow-y: auto;
+    /*width: 297px;*/
+    width: 301px;
+    height: 346px;
+
+    grid-column: 1 / 4;
+    grid-row: 2 / 4;
+}
+
+.container__info__3::-webkit-scrollbar{
+    width: 8px;
+    background-color: #757575;
+}
+
+.container__info__3::-webkit-scrollbar-thumb {
+    background-color: #000000;
+}
+
+
+
+.container__add{
+    border: 1px solid;
+
+
+    width: 303px;
+    height: 60px;
+
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+}
+
+.container__list{
+    border: 1px solid;
+
+
+    width: 303px;
+    height: 330px;
+
+    grid-column: 4 / 5;
+    grid-row: 3 / 5;
+}
+
+.container__now{
+    border: 1px solid #000000;
+
+    width: 99px;
+    height: 44px;
+
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+
+    font-size: 18px;
+    font-family: 'Roboto';
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    background: #000;
+    color: #fff;
+}
+
+.container__now:hover{
+    transform: scale(1.015);
+}
+
+.container__details:hover{
+    transform: scale(1.015);
+}
+
+.container__forecast:hover{
+    transform: scale(1.015);
+}
+
+.container__forecast{
+    border: 1px solid;
+
+    width: 99px;
+    height: 44px;
+
+    grid-column: 3 / 4;
+    grid-row: 4 / 5;
+
+    font-size: 18px;
+    font-family: 'Roboto';
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.container__searchTown__input{
+    border: 0px;
+    width: 540px;
+    height: 25px;
+    margin: 0px 0px 0px 5px;
+    font-size: 20px;
+
+}
+
+.container__searchTown__searchButton{
+    margin: 10px 0px 0px 5px;
+    height: 25px;
+    width: 25px;
+}
+
+.container__searchTown__searchButton:hover{
+    transform: scale(1.2);
+}
+
+.container__info__temperature{
+    font-size: 70px;
+    font-family: 'Roboto';
+    margin: 20px 0px 0px 20px;
+    padding: 0px 0px 0px 0px;
+}
+
+.container__info__town{
+    font-size: 24px;
+    font-family: 'Roboto';
+    margin-top: -25px;
+    margin-left: 10px;
+}
+
+
+.container__info__town__2{
+    font-size: 24px;
+    font-family: 'Roboto';
+    padding: 5px 0px 0px 10px;
+}
+
+.container__info__town__3{
+    font-size: 24px;
+    font-family: 'Roboto';
+    padding: 5px 0px 0px 10px;
+    list-style-type: none;
+}
+
+.container__add__text{
+    font-size: 24px;
+    font-family: 'Roboto';
+
+    padding: 3px 0px 0px 15px;
+
+}
+
+.container__listTown{
+    font-size: 24px;
+    font-family: 'Roboto';
+    list-style-type: none;
+    padding: 10px 0px 0px 15px;
+
+}
+
+li{
+    margin-bottom: 15px;
+}
+
+.container__info__sign{
+    /*margin: 30px 0px 0px 115px;*/
+    padding: 30px 0px 0px 115px;
+}
+
+.container__info__heath{
+    /*margin: 200px 0px 0px 0px;*/
+    display: grid;
+    padding: 105px 0px 0px 260px;
+}
+
+.container__info__2__list{
+    list-style-type: none;
+    font-size: 24px;
+    font-family: 'Roboto';
+    padding: 0px 0px 0px 10px;
+}
+
+.container__info__3__card{
+    border: 1px solid;
+    height: 120px;
+    width: 265px;
+    margin: 0px 0px 0px 10px;
+    padding: 0px 0px 0px 0px;
+    display: grid;
+}
+
+
+.container__info__3__card__date{
+    font-size: 18px;
+    font-family: 'Roboto';
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 0px 0px 0px 10px;
+    margin: 10px 0px 0px 0px;
+}
+.container__info__3__card__temperature{
+    font-size: 18px;
+    font-family: 'Roboto';
+    grid-column: 1/3;
+    grid-row: 2/3;
+    padding: 0px 0px 0px 10px;
+    margin: 15px 0px 0px 0px;
+}
+.container__info__3__card__time{
+    font-size: 18px;
+    font-family: 'Roboto';
+    grid-column: 3/4;
+    grid-row: 1/2;
+    margin-top: 10px;
+    margin-left: 40px;
+
+}
+.container__info__3__card__weather{
+    font-size: 18px;
+    font-family: 'Roboto';
+    grid-column: 3/4;
+    grid-row: 2/3;
+    padding: 0px 0px 0px 40px;
+    margin: 15px 0px 0px 0px;
+}
+.container__info__3__card__sign{
+    font-size: 18px;
+    font-family: 'Roboto';
+    grid-column: 3/4;
+    grid-row: 3/4;
+    margin-top: -30px;
+    margin-left: 41px;
+}
+
