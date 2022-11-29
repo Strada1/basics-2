@@ -1,18 +1,37 @@
 import { UI_ELEMENTS, showWeatherNow, showWeatherDetails } from "./ui.js";
+
 window.location.hash = "now";
 
-// const favoriteList = [];
+let favoriteCityList = [];
 
-// function addCityFavorite() {
-//   // функция добавления города в избранное
-//   console.log('test');
-// }
+UI_ELEMENTS.NOW_BTN_LIKE.addEventListener('click', () => {
+  const cityName = UI_ELEMENTS.NOW_BTN_LIKE.previousElementSibling.textContent;
+  addCityFavorite(cityName);
+});
 
-// UI_ELEMENTS.NOW_BTN_LIKE.addEventListener('click', addCityFavorite);
+export function addCityFavorite(cityName) {
+  UI_ELEMENTS.NOW_BTN_LIKE.classList.toggle('now__sities-btn--like');
+  const isValid = favoriteCityList.includes(cityName);
+  if (isValid) {
+    favoriteCityList = favoriteCityList.filter((item) => {
+      return item != cityName;
+    })
+  } else {
+    favoriteCityList.push(cityName)
 
-function showError(error) {
-  alert(error)
+  }
+  console.log(favoriteCityList);
 }
+
+function checkCityFavorite(cityName) {
+  const isValid = favoriteCityList.includes(cityName);
+  if (!isValid) {
+    UI_ELEMENTS.NOW_BTN_LIKE.classList.remove('now__sities-btn--like');
+  } else {
+    UI_ELEMENTS.NOW_BTN_LIKE.classList.add('now__sities-btn--like');
+  }
+}
+
 UI_ELEMENTS.FORM.addEventListener('submit', (event) => {
   event.preventDefault();
   const cityName = UI_ELEMENTS.INPUT_FORM.value;
@@ -27,14 +46,17 @@ async function getWeather(cityName) {
   try {
     const promise = await fetch(url);
     const data = await promise.json();
+    checkCityFavorite(data.name);
     showWeatherNow(data);
     showWeatherDetails(data);
   } catch (error) {
-    alert(error)
+    alert(error);
   }
 }
 
-const formatTime = (seconds) => format(new Date(seconds * 1000), 'kk mm');
-const formatDate = (date) => format(new Date(date), 'd MMM');
-
-console.log(formatTime(1669700017))
+export function convertTime(time) {
+  const hours = new Date(time * 1000).getHours();
+  const minutes = new Date(time * 1000).getMinutes();
+  const result = `${hours}:${minutes}`;
+  return result;
+}

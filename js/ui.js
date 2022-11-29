@@ -1,4 +1,8 @@
+import { convertTime } from "./main.js";
+import { addCityFavorite } from "./main.js";
+
 export const UI_ELEMENTS = {
+  FAVORITE_LIST: document.querySelector('.weather__favorites-list'),
   FORM: document.querySelector('.weather__search-form'),
   INPUT_FORM: document.querySelector('.weather__search-input'),
   TABS: document.querySelectorAll('.tabs-item'),
@@ -10,10 +14,9 @@ export const UI_ELEMENTS = {
   DETAILS_FEELS: document.querySelector('.details__feels-value'),
   DETAILS_WEATHER: document.querySelector('.details__weather-value'),
   DETAILS_SUNRISE: document.querySelector('.details__sunrise-value'),
-  DETAILS_SUNSET: document.querySelector('.details__sunset-value')
+  DETAILS_SUNSET: document.querySelector('.details__sunset-value'),
+  DETAILS_CITY: document.querySelector('.details__title'),
 }
-
-let favoriteList = [];
 
 UI_ELEMENTS.TABS.forEach((item) => {
   item.addEventListener('click', () => {
@@ -24,19 +27,7 @@ UI_ELEMENTS.TABS.forEach((item) => {
   })
 })
 
-UI_ELEMENTS.NOW_BTN_LIKE.addEventListener('click', () => {
-  const cityName = UI_ELEMENTS.NOW_BTN_LIKE.previousElementSibling.textContent;
-  UI_ELEMENTS.NOW_BTN_LIKE.classList.toggle('now__sities-btn--like');
-  if (UI_ELEMENTS.NOW_BTN_LIKE.className === 'now__sities-btn now__sities-btn--like') {
-    favoriteList.push(cityName)
-  } else {
-    favoriteList = favoriteList.filter((item) => {
-      return item != cityName;
-    })
-  }
 
-  console.log(favoriteList);
-});
 
 function checkFavoriteList() {
 
@@ -50,10 +41,11 @@ export function showWeatherNow(data) {
 }
 
 export function showWeatherDetails(data) {
+  UI_ELEMENTS.DETAILS_CITY.textContent = data.name;
   UI_ELEMENTS.DETAILS_TEMP.textContent = data.main.temp.toFixed(0);
   UI_ELEMENTS.DETAILS_FEELS.textContent = data.main.feels_like.toFixed(0);
   UI_ELEMENTS.DETAILS_WEATHER.textContent = data.weather[0].main;
-  // UI_ELEMENTS.DETAILS_SUNRISE.textContent = data.sys.sunrise;
-  // UI_ELEMENTS.DETAILS_SUNSET.textContent = data.sys.sunset;
+  UI_ELEMENTS.DETAILS_SUNRISE.textContent = convertTime(data.sys.sunrise);
+  UI_ELEMENTS.DETAILS_SUNSET.textContent = convertTime(data.sys.sunset);
 }
 
