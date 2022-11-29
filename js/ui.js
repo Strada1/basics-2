@@ -1,5 +1,4 @@
 import { convertTime } from "./main.js";
-import { addCityFavorite } from "./main.js";
 
 export const UI_ELEMENTS = {
   FAVORITE_LIST: document.querySelector('.weather__favorites-list'),
@@ -27,12 +26,6 @@ UI_ELEMENTS.TABS.forEach((item) => {
   })
 })
 
-
-
-function checkFavoriteList() {
-
-}
-
 export function showWeatherNow(data) {
   const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
   UI_ELEMENTS.NOW_TEMPERATURE.textContent = data.main.temp.toFixed(1);
@@ -48,4 +41,3 @@ export function showWeatherDetails(data) {
   UI_ELEMENTS.DETAILS_SUNRISE.textContent = convertTime(data.sys.sunrise);
   UI_ELEMENTS.DETAILS_SUNSET.textContent = convertTime(data.sys.sunset);
 }
-

@@ -1,7 +1,5 @@
 import { UI_ELEMENTS, showWeatherNow, showWeatherDetails } from "./ui.js";
-
 window.location.hash = "now";
-
 let favoriteCityList = [];
 
 UI_ELEMENTS.NOW_BTN_LIKE.addEventListener('click', () => {
@@ -9,7 +7,7 @@ UI_ELEMENTS.NOW_BTN_LIKE.addEventListener('click', () => {
   addCityFavorite(cityName);
 });
 
-export function addCityFavorite(cityName) {
+function addCityFavorite(cityName) {
   UI_ELEMENTS.NOW_BTN_LIKE.classList.toggle('now__sities-btn--like');
   const isValid = favoriteCityList.includes(cityName);
   if (isValid) {
@@ -18,7 +16,6 @@ export function addCityFavorite(cityName) {
     })
   } else {
     favoriteCityList.push(cityName)
-
   }
   console.log(favoriteCityList);
 }
