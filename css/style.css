@@ -125,7 +125,6 @@ body {
 .tabs__content {
   padding: 20px;
   max-height: 345px;
-  /* overflow-y: hidden; */
 }
 
 .now__container {
@@ -136,8 +135,10 @@ body {
 }
 
 .now__icon {
-  display: block;
-  object-fit: none;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  align-self: center;
 }
 
 .now__sities-block {
