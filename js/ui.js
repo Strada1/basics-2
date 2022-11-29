@@ -6,6 +6,11 @@ export const UI_ELEMENTS = {
   NOW_CITY: document.querySelector('.now__sities'),
   NOW_ICON: document.querySelector('.now__icon'),
   NOW_BTN_LIKE: document.querySelector('.now__sities-btn'),
+  DETAILS_TEMP: document.querySelector('.details__temp-value'),
+  DETAILS_FEELS: document.querySelector('.details__feels-value'),
+  DETAILS_WEATHER: document.querySelector('.details__weather-value'),
+  DETAILS_SUNRISE: document.querySelector('.details__sunrise-value'),
+  DETAILS_SUNSET: document.querySelector('.details__sunset-value')
 }
 
 let favoriteList = [];
@@ -42,5 +47,13 @@ export function showWeatherNow(data) {
   UI_ELEMENTS.NOW_TEMPERATURE.textContent = data.main.temp.toFixed(1);
   UI_ELEMENTS.NOW_CITY.textContent = data.name;
   UI_ELEMENTS.NOW_ICON.setAttribute('src', iconUrl)
+}
+
+export function showWeatherDetails(data) {
+  UI_ELEMENTS.DETAILS_TEMP.textContent = data.main.temp.toFixed(0);
+  UI_ELEMENTS.DETAILS_FEELS.textContent = data.main.feels_like.toFixed(0);
+  UI_ELEMENTS.DETAILS_WEATHER.textContent = data.weather[0].main;
+  // UI_ELEMENTS.DETAILS_SUNRISE.textContent = data.sys.sunrise;
+  // UI_ELEMENTS.DETAILS_SUNSET.textContent = data.sys.sunset;
 }
 
