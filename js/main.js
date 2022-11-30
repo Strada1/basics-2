@@ -1,6 +1,6 @@
 import { UI_ELEMENTS, showWeatherNow, showWeatherDetails } from "./ui.js";
-
 window.location.hash = "now";
+
 let favoriteCityList = [];
 
 UI_ELEMENTS.NOW_BTN_LIKE.addEventListener('click', () => {
@@ -14,29 +14,30 @@ function deleteFavoriteCity() {
   favoriteCityList = favoriteCityList.filter(item => {
     return item != cityName;
   })
-
 }
 
 function renderFavoriteCity() {
   UI_ELEMENTS.FAVORITE_LIST.textContent = '';
   favoriteCityList.forEach(element => {
+    const isValid = favoriteCityList.includes(element);
     const item = document.createElement('li');
     const button = document.createElement('button');
     item.classList.add('weather__favorites-item');
     button.classList.add('weather__favorites-delete');
     item.textContent = element;
     button.addEventListener('click', deleteFavoriteCity);
-
+    if (isValid) {
+      UI_ELEMENTS.NOW_BTN_LIKE.classList.add('now__sities-btn--like');
+    }
     item.append(button);
     UI_ELEMENTS.FAVORITE_LIST.append(item);
     item.addEventListener('click', () => {
-      getWeather(item.textContent)
+      getWeather(element);
     })
   });
 }
 
 function addCityFavorite(cityName) {
-  UI_ELEMENTS.NOW_BTN_LIKE.classList.toggle('now__sities-btn--like');
   const isValid = favoriteCityList.includes(cityName);
   if (isValid) {
     favoriteCityList = favoriteCityList.filter((item) => {
@@ -80,8 +81,9 @@ async function getWeather(cityName) {
 }
 
 export function convertTime(time) {
-  const hours = new Date(time * 1000).getHours();
-  const minutes = new Date(time * 1000).getMinutes();
+  const date = new Date(time * 1000);
+  const hours = date.getHours().toString().padStart(2, '0');
+  const minutes = date.getMinutes().toString().padStart(2, '0');
   const result = `${hours}:${minutes}`;
   return result;
 }
