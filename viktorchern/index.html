@@ -4,24 +4,160 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Genderize</title>
+  <title>Weather</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="todo-wrap">
-      <div id="todo-high" class="todo">
-        <form id="form" action="#" class="todo__form">
-          <div class="todo__title">Genderize</div>
-          <div class="todo__add">
-            <input type="text" id="user-name" class="todo__input todo-item" placeholder="Введите имя и узнайте пол">
-            <button type="submit" id="submit-button" class="todo__button todo__button_add"></button>
+  <div class="container container_mt">
+    <div class="weather weather_mt">
+      <form action="" class="weather__form">
+        <input type="text" id="weather-input" class="weather__input" placeholder="Search location">
+        <button type="submit" id="weather-search" class="weather__search"></button>
+      </form>
+      <div class="row no-gutters">
+        <div class="col col-50 col_border-right">
+          <div id="tab" class="tab">
+            <div class="tab__body">
+              <div class="tab__item tab__item_now" data-tab="tab-1">
+                <div class="tab__title">14&#176;</div>
+                <div class="tab__img-wrap">
+                  <img src="img/weather-1.png" class="tab__img" alt="1">
+                </div>
+                <div class="tab__add">
+                  <div class="tab__location">Aktobe</div>
+                  <button class="tab__add-location"></button>
+                </div>
+              </div>
+              <div class="tab__item" data-tab="tab-2" style="display: none;">
+                <div class="details">
+                  <div class="details__title">Aktobe</div>
+                  <div class="details__items">
+                    <div class="details__item">Temperature: 14</div>
+                    <div class="details__item">Feels like: 10</div>
+                    <div class="details__item">Weather: Clouds</div>
+                    <div class="details__item">Sunrise: 03:21</div>
+                    <div class="details__item">Sunset: 18:54</div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab__item" data-tab="tab-3" style="display: none;">
+                <div class="forecast">
+                  <div class="forecast__title">Aktobe</div>
+                  <div class="forecast__items">
+                    <div class="forecast__item">
+                      <div class="row forecast__row">
+                        <div class="col">
+                          <div class="forecast__date">17 May</div>
+                        </div>
+                        <div class="col">
+                          <div class="forecast__time">12:00</div>
+                        </div>
+                      </div>
+                      <div class="row forecast__row">
+                        <div class="col">
+                          <div class="forecast__temperature">Temperature: 13</div>
+                          <div class="forecast__like">Feels like: 10</div>
+                        </div>
+                        <div class="col">
+                          <div class="forecast__precipitation">Rain</div>
+                          <img src="img/rain.png" class="forecast__img" alt="1">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="forecast__item">
+                      <div class="row forecast__row">
+                        <div class="col">
+                          <div class="forecast__date">17 May</div>
+                        </div>
+                        <div class="col">
+                          <div class="forecast__time">12:00</div>
+                        </div>
+                      </div>
+                      <div class="row forecast__row">
+                        <div class="col">
+                          <div class="forecast__temperature">Temperature: 13</div>
+                          <div class="forecast__like">Feels like: 10</div>
+                        </div>
+                        <div class="col">
+                          <div class="forecast__precipitation">Rain</div>
+                          <img src="img/rain.png" class="forecast__img" alt="1">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="forecast__item">
+                      <div class="row forecast__row">
+                        <div class="col">
+                          <div class="forecast__date">17 May</div>
+                        </div>
+                        <div class="col">
+                          <div class="forecast__time">12:00</div>
+                        </div>
+                      </div>
+                      <div class="row forecast__row">
+                        <div class="col">
+                          <div class="forecast__temperature">Temperature: 13</div>
+                          <div class="forecast__like">Feels like: 10</div>
+                        </div>
+                        <div class="col">
+                          <div class="forecast__precipitation">Rain</div>
+                          <img src="img/rain.png" class="forecast__img" alt="1">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="forecast__item">
+                      <div class="row forecast__row">
+                        <div class="col">
+                          <div class="forecast__date">17 May</div>
+                        </div>
+                        <div class="col">
+                          <div class="forecast__time">12:00</div>
+                        </div>
+                      </div>
+                      <div class="row forecast__row">
+                        <div class="col">
+                          <div class="forecast__temperature">Temperature: 13</div>
+                          <div class="forecast__like">Feels like: 10</div>
+                        </div>
+                        <div class="col">
+                          <div class="forecast__precipitation">Rain</div>
+                          <img src="img/rain.png" class="forecast__img" alt="1">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab__header">
+              <div class="tab__button tab__button_active" data-tab="tab-1">Now</div>
+              <div class="tab__button" data-tab="tab-2">Details</div>
+              <div class="tab__button" data-tab="tab-3">Forecast</div>
+            </div>
           </div>
-        </form>
+        </div>
+        <div class="col col-50">
+          <div class="location">
+            <div class="location__title">Added Locations:</div>
+            <ul class="location__items">
+              <li>Amur</li>
+              <li>Samara</li>
+              <li>Bali</li>
+              <li>Dane</li>
+              <li>Kilo</li>
+              <li>Nur-Sultan</li>
+              <li>Amur</li>
+              <li>Samara</li>
+              <li>Bali</li>
+              <li>Dane</li>
+              <li>Kilo</li>
+              <li>Nur-Sultan</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <script src="main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

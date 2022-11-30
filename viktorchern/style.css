@@ -1,5 +1,6 @@
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 button, hr, input {
 	overflow: visible
 }
@@ -119,109 +120,206 @@ summary {
 }
 body {
   background: #E5E5E5;
-  font-family: 'Arial', 'sans-serif';
-  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  color: #202020;
+  font-size: 18px;
+  line-height: 1.16;
+}
+.location::-webkit-scrollbar,
+.tab__body::-webkit-scrollbar {
+  width: 8px;
+}
+.location::-webkit-scrollbar-track,
+.tab__body::-webkit-scrollbar-track {
+  background: #efeded;
+}
+.location::-webkit-scrollbar-thumb,
+.tab__body::-webkit-scrollbar-track {
+  background-color: #000;
 }
 .container {
-  max-width: 475px;
+  max-width: 621px;
   margin: 0 auto;
-}
-.todo-wrap {
   background: #fff;
-  padding: 60px 10px 195px;
-  border-radius: 2px;
+  padding: 14px;
 }
-.todo_mt {
+.container_mt {
   margin-top: 50px;
 }
-.todo-item {
-  padding: 12px;
-  border: 1px solid #989898;
-  border-radius: 6px;
-  display: block;
-  width: 100%;
-  list-style-type: none;
+.weather {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #000;
 }
-.todo__title {
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  color: #000;
-}
-.todo__title_mt {
-  margin-top: 12px;
-}
-.todo__add {
-  position: relative;
-}
-.todo__button {
-  width: 44px;
-  background: none;
-  height: 100%;
-  border: none;
-  cursor: pointer;
-}
-.todo__button_add {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 42px;
-}
-.todo__button:before,
-.todo__button:after {
-  content: '';
-  position: absolute;
-}
-.todo__button:before {
-  top: 50%;
-  right: 13px;
-  width: 18px;
-  height: 1px;
-  background: #998899;
-}
-.todo__button_delete:before {
-  right: 13px;
-}
-.todo__button_delete:after {
-  top: 13px;
-}
-.todo__button:after {
-  top: 13px;
-  right: 50%;
-  width: 1px;
-  height: 18px;
-  background: #998899;
-}
-.todo__list {
-  margin: 0;
-  padding: 0;
-}
-.todo__item {
-  margin-top: 8px;
-}
-.todo__button_delete {
-  position: relative;
-  width: 18px;
-  height: 18px;
-}
-.todo__button_delete:before,
-.todo__button_delete:after {
-  transform: rotate(45deg);
-}
-.todo__button_delete:before {
-  right: 0;
-}
-.todo__button_delete:after {
-  top: 0;
-}
-.todo__row {
+.row {
   display: flex;
   margin: 0 -6px;
   justify-content: center;
   justify-content: space-between;
 }
-.todo__col {
+.no-gutters {
+  margin: 0;
+}
+.no-gutters > .col {
+  padding: 0;
+}
+.col {
   padding: 0 6px;
+  position: relative;
+}
+.col-50 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.col_border-right {
+  border-right: 1px solid #000;
+}
+.weather__form {
+  display: flex;
+  border-bottom: 1px solid #000;
+}
+.weather__input {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 11px 0 11px 16px;
+  color: #000;
+  outline: none;
+  flex: 0 0 calc(100% - 45px);
+}
+.weather__search {
+  width: 45px;
+  flex: 0 0 45px;
+  border: none;
+  border-radius: 0;
+  background: url('img/search.png') no-repeat 50%;
+  background-color: none;
+  cursor: pointer;
+}
+.location {
+  height: 390px;
+  overflow: auto;
+}
+.tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.tab__body {
+  height: 390px;
+  overflow: auto;
+}
+.tab__item {
+  height: 100%;
+  padding: 20px 12px 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tab__item_now {
+  max-height: 350px;
+}
+.tab__title {
+  font-size: 70px;
+}
+.tab__img-wrap {
+  text-align: center;
+}
+.tab__add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tab__location {
+  font-size: 24px;
+}
+.tab__add-location {
+  width: 22px;
+  height: 22px;
+  background: url('img/heart.png') no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  border: none;
+}
+.tab__header {
+  display: flex;
+  border-top: 1px solid #000;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: calc(100%);
+}
+.tab__button {
+  flex: 0 0 33.3333%;
+  padding: 12px;
+  text-align: center;
+  border-right: 1px solid #000;
+  cursor: pointer;
+  background: #fff;
+}
+.tab__button:last-child {
+  border-right: none;
+}
+.tab__button_active {
+  background: #000;
+  color: #fff;
+}
+.tab__button:not(.tab__button_active):hover {
+  background: #efeded;
+  transition: 0.3s;
+}
+.location__items {
+  padding: 35px 18px 0;
+  margin: 0;
+  height: auto;
+}
+.location__title {
+  font-size: 24px;
+  padding: 33px 18px 7px;
+  border-bottom: 1px solid #000;
+}
+.location__items li {
+  padding: 0;
+  margin: 0 0 0.5em;
+  font-size: 24px;
+  list-style-type: none;
+}
+.details__title {
+  font-size: 24px;
+  padding: 13px 0 7px;
+}
+.details__items {
+  margin-top: 35px;
+}
+.details__item {
+  font-size: 24px;
+  margin-bottom: 0.5em;
+}
+.details__item:last-child {
+  margin-bottom: 0;
+}
+.forecast__title {
+  font-size: 24px;
+  margin-bottom: 7px;
+  padding-top: 13px;
+}
+.forecast__item {
+  height: 120px;
+  border: 1px solid #000;
+  padding: 6px 8px 9px;
+  margin-bottom: 9px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.forecast__img {
+  margin-top: 2px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.forecast__row {
+  justify-content: space-between;
 }
