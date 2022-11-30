@@ -1,10 +1,12 @@
-import { addTask } from "../MODEL/list.js";
-import { STATUS } from "../MODEL/list.js";
-import { list } from "../MODEL/list.js";
+import {
+  addTask,
+  STATUS,
+  list,
+  changeStatus,
+  removeTask,
+  sortedListByStatus,
+} from "../MODEL/list.js";
 import { render } from "../VIEW/render.js";
-import { changeStatus } from "../MODEL/list.js";
-import { removeTask } from "../MODEL/list.js";
-import { sortedListByStatus } from "../MODEL/list.js";
 
 export const formHandler = (event) => {
   event.preventDefault();

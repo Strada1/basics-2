@@ -1,8 +1,9 @@
-import { PRIORITY } from "../MODEL/list.js";
-import { checkBoxHandle } from "../CONTROLLER/formHandler.js";
-import { STATUS } from "../MODEL/list.js";
-import { removeHandler } from "../CONTROLLER/formHandler.js";
-import { formHandler } from "../CONTROLLER/formHandler.js";
+import {
+  checkBoxHandle,
+  removeHandler,
+  formHandler,
+} from "../CONTROLLER/formHandler.js";
+import { STATUS, PRIORITY } from "../MODEL/list.js";
 
 const createElementWithClass = (element, className) => {
   const el = document.createElement(element);
@@ -12,9 +13,7 @@ const createElementWithClass = (element, className) => {
 
 export const render = (taskList) => {
   const mainTodo = document.querySelector(".todo-main");
-  while (mainTodo.firstChild) {
-    mainTodo.removeChild(mainTodo.firstChild);
-  }
+  mainTodo.replaceChildren();
   for (let priority in PRIORITY) {
     const todoMainElements = createElementWithClass(
       "div",
@@ -44,7 +43,7 @@ export const render = (taskList) => {
         ? "Добавить важных дел"
         : PRIORITY[priority] === PRIORITY.LOW
         ? "Добавить дел"
-        : null;
+        : "Добавить дел";
     addTaskInput.setAttribute("placeholder", placeholder);
     addTaskInput.setAttribute("autocomplete", "off");
 

@@ -1,3 +1,4 @@
+import data from "./data.json" assert { type: "json" };
 export const STATUS = {
   IN_PROGRESS: "In Progress",
   DONE: "Done",
@@ -7,35 +8,20 @@ export const PRIORITY = {
   LOW: "low",
 };
 
-export let list = [
-  {
-    name: `Вот вам и супер интересная тема.Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи куда-то за пределы основной программы.`,
-    priority: PRIORITY.HIGH,
-    status: STATUS.IN_PROGRESS,
-    id: 0,
-  },
-  {
-    name: "Сверстать этот TODO list",
-    priority: PRIORITY.HIGH,
-    status: STATUS.IN_PROGRESS,
-    id: 1,
-  },
-  {
-    name: "Начать делать задачу",
-    priority: PRIORITY.HIGH,
-    status: STATUS.DONE,
-    id: 2,
-  },
-  {
-    name: "Посмотреть ютубчик",
-    priority: PRIORITY.LOW,
-    status: STATUS.IN_PROGRESS,
-    id: 3,
-  },
-];
+export let list;
+if (
+  localStorage.getItem("data") === "[]" ||
+  localStorage.getItem("data") === null
+) {
+  localStorage.setItem("data", JSON.stringify(data));
+  list = JSON.parse(localStorage.getItem("data"));
+} else {
+  list = JSON.parse(localStorage.getItem("data"));
+}
 
 export const addTask = (task) => {
-  list = [...list, task];
+  localStorage.setItem("data", JSON.stringify([...list, task]));
+  list = JSON.parse(localStorage.getItem("data"));
 };
 
 export const changeStatus = (taskId) => {
@@ -46,10 +32,15 @@ export const changeStatus = (taskId) => {
       : result.status === STATUS.DONE
       ? STATUS.IN_PROGRESS
       : null;
+  localStorage.setItem("data", JSON.stringify(list));
 };
 
 export const removeTask = (taskId) => {
-  list = list.filter((el) => !(el.id === taskId));
+  localStorage.setItem(
+    "data",
+    JSON.stringify(list.filter((el) => !(el.id === taskId)))
+  );
+  list = JSON.parse(localStorage.getItem("data"));
 };
 
 export const sortedListByStatus = () => {

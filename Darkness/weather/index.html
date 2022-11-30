@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="VIEW/styles.css">
+    <link rel="stylesheet" href="VIEW/notification/notification.css">
+    <title>Weather</title>
+</head>
+<body>
+    <main class = 'main'>
+        <form class="main__city-search">
+            <input type="text" id="searchInput" class="main__city-search__input" placeholder="Aktobe" autocomplete="off">
+            <button type="submit" class="main__city-search__image"></button>
+        </form>
+        <section class="main_info-section">
+            <section class="main_info-section_left-side">
+                <section class="main_info-section_left-side_card">
+                    <section class="main_info-section_left-side_card-first">
+                        <section class="main_info-section_left-side_card-first_digit">14&deg;</section>        
+                        <section class="main_info-section_left-side_card-first_icon"></section>
+                        <section class="main_info-section_left-side_card-first_title">
+                            <section class="main_info-section_left-side_card-first_title-city">Aktobe</section>
+                            <button type="button"class="main_info-section_left-side_card-first_title-like"></button>
+                        </section>
+                    </section>
+                    <section class="main_info-section_left-side_card-second">
+                        <section class="main_info-section_left-side_card-second-title">Aktobe</section>
+                        <section class="main_info-section_left-side_card-second-details">
+                            <p>Temperature:14&deg;</p>
+                            <p>Feels like:</p>
+                            <p>Weather:Clouds</p>
+                            <p>Sunrise:03:21</p>
+                            <p>Sunset:18:54</p>
+                        </section>
+                    </section>
+                    <section class="main_info-section_left-side_card-third">
+                        <section class="main_info-section_left-side_card-third-title">Aktobe</section>
+                        <section class="main_info-section_left-side_card-third-minicard">
+                            <section class="main_info-section_left-side_card-third-minicard__head">
+                                <section class="main_info-section_left-side_card-third-minicard__head-date">17 May</section>
+                                <section class="main_info-section_left-side_card-third-minicard__head-time">12:00</section>
+                            </section>
+                            <section class="main_info-section_left-side_card-third-minicard__footer">
+                                <section class="main_info-section_left-side_card-third-minicard__footer-details">
+                                    <p>Temperature:13&deg;</p>
+                                    <p>Feels like:10&deg;</p>
+                                </section>
+                                <section class="main_info-section_left-side_card-third-minicard__footer-weather">
+                                    <p>Rain</p>
+                                    <img src="./images/rain.png" alt="">
+                                </section>
+                            </section>
+                        </section>
+                        <section class="main_info-section_left-side_card-third-minicard">
+                            <section class="main_info-section_left-side_card-third-minicard__head">
+                                <section class="main_info-section_left-side_card-third-minicard__head-date">17 May</section>
+                                <section class="main_info-section_left-side_card-third-minicard__head-time">15:00</section>
+                            </section>
+                            <section class="main_info-section_left-side_card-third-minicard__footer">
+                                <section class="main_info-section_left-side_card-third-minicard__footer-details">
+                                    <p>Temperature:13&deg;</p>
+                                    <p>Feels like:10&deg;</p>
+                                </section>
+                                <section class="main_info-section_left-side_card-third-minicard__footer-weather">
+                                    <p>Rain</p>
+                                    <img src="./images/rain.png" alt="">
+                                </section>
+                            </section>
+                        </section>
+                        <section class="main_info-section_left-side_card-third-minicard">
+                            <section class="main_info-section_left-side_card-third-minicard__head">
+                                <section class="main_info-section_left-side_card-third-minicard__head-date">17 May</section>
+                                <section class="main_info-section_left-side_card-third-minicard__head-time">18:00</section>
+                            </section>
+                            <section class="main_info-section_left-side_card-third-minicard__footer">
+                                <section class="main_info-section_left-side_card-third-minicard__footer-details">
+                                    <p>Temperature:13&deg;</p>
+                                    <p>Feels like:10&deg;</p>
+                                </section>
+                                <section class="main_info-section_left-side_card-third-minicard__footer-weather">
+                                    <p>Rain</p>
+                                    <img src="./images/rain.png" alt="">
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                    
+                </section>
+                <nav class="main_info-section_left-side_tabs">
+                    <section class="main_info-section_left-side_tabs-now"><a href="#" id="now" class="active">Now</a></section>
+                    <section class="main_info-section_left-side_tabs-details"><a href="#" id="details">Details</a></section>
+                    <section class="main_info-section_left-side_tabs-forecast"><a href="#" id="forecast">Forecast</a></section>
+                </nav>
+            </section>
+            <section class="main_info-section_locations">
+                <section class="main_info-section_locations-title">
+                    <p>Added Locations:</p></section>
+                <section class="main_info-section_locations-cities">
+                    <p>Please add some location</p>
+                </section>
+            </section>
+        </section>
+        
+    </main>
+    <script src="connector.js" type="module"></script>
+</body>
+</html>
