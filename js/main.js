@@ -1,4 +1,5 @@
 import { UI_ELEMENTS, showWeatherNow, showWeatherDetails } from "./ui.js";
+
 window.location.hash = "now";
 let favoriteCityList = [];
 
@@ -6,6 +7,33 @@ UI_ELEMENTS.NOW_BTN_LIKE.addEventListener('click', () => {
   const cityName = UI_ELEMENTS.NOW_BTN_LIKE.previousElementSibling.textContent;
   addCityFavorite(cityName);
 });
+
+function deleteFavoriteCity() {
+  const cityName = this.parentNode.textContent
+  this.parentNode.remove();
+  favoriteCityList = favoriteCityList.filter(item => {
+    return item != cityName;
+  })
+
+}
+
+function renderFavoriteCity() {
+  UI_ELEMENTS.FAVORITE_LIST.textContent = '';
+  favoriteCityList.forEach(element => {
+    const item = document.createElement('li');
+    const button = document.createElement('button');
+    item.classList.add('weather__favorites-item');
+    button.classList.add('weather__favorites-delete');
+    item.textContent = element;
+    button.addEventListener('click', deleteFavoriteCity);
+
+    item.append(button);
+    UI_ELEMENTS.FAVORITE_LIST.append(item);
+    item.addEventListener('click', () => {
+      getWeather(item.textContent)
+    })
+  });
+}
 
 function addCityFavorite(cityName) {
   UI_ELEMENTS.NOW_BTN_LIKE.classList.toggle('now__sities-btn--like');
@@ -15,9 +43,9 @@ function addCityFavorite(cityName) {
       return item != cityName;
     })
   } else {
-    favoriteCityList.push(cityName)
+    favoriteCityList.push(cityName);
+    renderFavoriteCity()
   }
-  console.log(favoriteCityList);
 }
 
 function checkCityFavorite(cityName) {
