@@ -1,0 +1,1 @@
+export const LIST = [1, 2, 3];

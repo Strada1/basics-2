@@ -238,10 +238,15 @@ body {
 .tab__add-location {
   width: 22px;
   height: 22px;
-  background: url('img/heart.png') no-repeat;
+  /* background: url('img/heart.png') no-repeat; */
   background-size: contain;
   cursor: pointer;
   border: none;
+  background: none;
+  padding: 0;
+}
+.tab__add-location svg {
+  fill: #000;
 }
 .tab__header {
   display: flex;
@@ -285,6 +290,7 @@ body {
   margin: 0 0 0.5em;
   font-size: 24px;
   list-style-type: none;
+  cursor: pointer;
 }
 .details__title {
   font-size: 24px;

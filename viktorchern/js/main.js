@@ -1,5 +1,6 @@
 import { UI_ELEMENTS } from './ui.js';
-import { ERRORS } from './errors.js';
+import { ERRORS } from './ERRORS.js';
+import { addCity } from './add.js';
 
 // Tabs
 function tab(event){
@@ -28,25 +29,18 @@ function showWeather(event){
   const url = `${serverUrl}?q=${cityName}&appid=${apiKey}&units=metric`;
   
   try {
-
     if( cityName === '' ) {
       throw new SyntaxError(ERRORS.INPUT_EMPTY);
     } else if ( !cityName ) {
       throw new SyntaxError(ERRORS.INPUT_ERROR);
     }
-
     fetch(url)
       .then(
         response => {
-          try {
-            if ( !response.ok ) {
-              throw new SyntaxError(ERRORS.FETCH_ERROR);
-            }
-            return response.json();
-            
-          } catch( err ) {
-            alert(err.message);
+          if ( !response.ok ) {
+            throw new SyntaxError(ERRORS.FETCH_ERROR);
           }
+          return response.json();
         }
       )
       .then( data => {
@@ -54,15 +48,20 @@ function showWeather(event){
         const IMG_ICON = data.weather[0].icon;
 
         console.log(data);
-        UI_ELEMENTS.TAB_NOW_LOCATION.textContent = data.name;
+        UI_ELEMENTS.TAB_NOW_CITY.textContent = data.name;
         UI_ELEMENTS.TAB_NOW_TEMP.textContent = `${Math.floor(data.main.temp)}°`;
 
-        UI_ELEMENTS.TAB_NOW_IMG.replaceWith(createWeatherImg(IMG_ICON, IMG_ALT))
-      } );
-
-
+        UI_ELEMENTS.TAB_NOW_IMG.replaceWith(createWeatherImg(IMG_ICON, IMG_ALT));
+      } )
+      .catch( err => alert(err.message));
   } catch(err) {
     alert(err.message);
   }
 }
 UI_ELEMENTS.FORM_BUTTON.addEventListener('click', showWeather);
+
+//Add city
+UI_ELEMENTS.TAB_NOW_ADD.addEventListener( 'click', function(){
+  addCity(UI_ELEMENTS.TAB_NOW_CITY.textContent);
+  // console.log( LIST );
+} );
