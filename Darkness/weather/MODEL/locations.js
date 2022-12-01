@@ -1,20 +1,22 @@
-export let locations = localStorage.getItem("cities")
-  ? JSON.parse(localStorage.getItem("cities"))
-  : [];
+import { Storage } from "./localstorage.js";
+export const cities = Storage;
+
 export const addLocation = (city) => {
-  if (locations.length < 6) {
-    locations = [city, ...locations.filter((loc) => loc !== city)];
-    localStorage.setItem("cities", JSON.stringify(locations));
+  let locs = cities.favoriteCities;
+  if (locs.length < 6) {
+    locs = [city, ...locs.filter((loc) => loc !== city)];
+    cities.favoriteCities = locs;
   } else {
-    locations = [
+    locs = [
       city,
-      ...locations.filter((loc, index) => !(index === 5) && loc !== city),
+      ...locs.filter((loc, index) => !(index === 5) && loc !== city),
     ];
-    localStorage.setItem("cities", JSON.stringify(locations));
+    cities.favoriteCities = locs;
   }
 };
 
 export const removeLocation = (city) => {
-  locations = locations.filter((loc) => !(loc === city));
-  localStorage.setItem("cities", JSON.stringify(locations));
+  let locs = cities.favoriteCities;
+  locs = locs.filter((loc) => !(loc === city));
+  cities.favoriteCities = locs;
 };

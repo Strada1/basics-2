@@ -3,6 +3,7 @@ import { giveTabs } from "./tabs.js";
 import { nowCard } from "./cards/nowcard.js";
 import { detailsCard } from "./cards/detailscard.js";
 import { forecastCard } from "./cards/forecastcard.js";
+import { cities } from "../MODEL/locations.js";
 export const render = async (array) => {
   const [cityWeather, forecast] = await array;
   const leftSide = document.querySelector(".main_info-section_left-side_card");
@@ -11,6 +12,7 @@ export const render = async (array) => {
   leftSide.append(detailsCard(cityWeather));
   leftSide.append(forecastCard(cityWeather, forecast));
   giveTabs();
+  cities.currentCity = cityWeather.name;
 };
 
 export const cityRender = (array) => {

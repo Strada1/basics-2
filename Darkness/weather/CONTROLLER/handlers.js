@@ -1,6 +1,6 @@
 import { getCityInfo } from "../MODEL/getcity.js";
 import { render, cityRender } from "../VIEW/render.js";
-import { addLocation, locations, removeLocation } from "../MODEL/locations.js";
+import { addLocation, cities, removeLocation } from "../MODEL/locations.js";
 
 export const search = (event) => {
   event.preventDefault();
@@ -23,7 +23,7 @@ export const addCity = (event) => {
   } else {
     removeLocation(city);
   }
-  cityRender(locations);
+  cityRender(cities.favoriteCities);
 };
 
 export const locationHandle = (event) => {

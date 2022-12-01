@@ -2,7 +2,7 @@ import {
   createElementWithClassname,
   getImageURL,
 } from "../../CONTROLLER/helpers.js";
-import { locations } from "../../MODEL/locations.js";
+import { cities } from "../../MODEL/locations.js";
 import { addCity } from "../../CONTROLLER/handlers.js";
 
 export const nowCard = ({ name, icon, temp }) => {
@@ -32,7 +32,7 @@ export const nowCard = ({ name, icon, temp }) => {
   firstTitleCityName.textContent = name;
   firstTitleCityName.setAttribute("data-name", name);
   const likeButton = document.createElement("button");
-  likeButton.className = locations.includes(name)
+  likeButton.className = cities.favoriteCities.includes(name)
     ? "like"
     : "main_info-section_left-side_card-first_title-like";
   likeButton.setAttribute("type", "button");
