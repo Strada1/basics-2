@@ -245,7 +245,7 @@ body {
   background: none;
   padding: 0;
 }
-.tab__add-location svg {
+.tab__add-location.tab__add-location_active svg {
   fill: #000;
 }
 .tab__header {

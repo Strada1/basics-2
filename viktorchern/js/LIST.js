@@ -1,1 +1,2 @@
-export const LIST = [1, 2, 3];
+export const LIST = [
+'Amur','Samara','Bali','Dane','Kilo','Nur-Sultan','Amur','Samara','Bali','Dane','Kilo','Nur-Sultan',];
