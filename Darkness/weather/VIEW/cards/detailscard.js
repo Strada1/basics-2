@@ -1,16 +1,8 @@
-import { TIMEMETHOD } from "../../MODEL/timemethods.js";
-import {
-  createElementWithClassname,
-  getTimeFrom,
-} from "../../CONTROLLER/helpers.js";
-export const detailsCard = ({
-  name,
-  temp,
-  feelsLike,
-  weatherMain,
-  sunrise,
-  sunset,
-}) => {
+import { createElementWithClassname } from "../../CONTROLLER/helpers.js";
+export const detailsCard = (
+  { name, temp, feelsLike, WeatherDescription, sunrise, sunset },
+  langObj
+) => {
   const secondCard = createElementWithClassname(
     "section",
     "main_info-section_left-side_card-second"
@@ -25,17 +17,15 @@ export const detailsCard = ({
     "main_info-section_left-side_card-second-details"
   );
   const secondCardTemp = document.createElement("p");
-  secondCardTemp.textContent = `Temperature:` + temp + "°";
+  secondCardTemp.textContent = langObj.TEMPERATURE + ": " + temp + "°";
   const secondCardFeelsLike = document.createElement("p");
-  secondCardFeelsLike.textContent = `Feels like:` + feelsLike + "°";
+  secondCardFeelsLike.textContent = langObj.FEELS_LIKE + ": " + feelsLike + "°";
   const secondCardWeather = document.createElement("p");
-  secondCardWeather.textContent = `Weather:` + weatherMain;
+  secondCardWeather.textContent = langObj.WEATHER + ": " + WeatherDescription;
   const secondCardSunrise = document.createElement("p");
-  secondCardSunrise.textContent =
-    `Sunrise:` + getTimeFrom(TIMEMETHOD.TIMESTAMP_TO_HOURS_MINUTES, sunrise);
+  secondCardSunrise.textContent = langObj.SUNRISE + ": " + sunrise;
   const secondCardSunset = document.createElement("p");
-  secondCardSunset.textContent =
-    `Sunset:` + getTimeFrom(TIMEMETHOD.TIMESTAMP_TO_HOURS_MINUTES, sunset);
+  secondCardSunset.textContent = langObj.SUNSET + ": " + sunset;
   secondCardDetails.append(secondCardTemp);
   secondCardDetails.append(secondCardFeelsLike);
   secondCardDetails.append(secondCardWeather);

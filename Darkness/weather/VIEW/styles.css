@@ -25,6 +25,13 @@ li {
 .active {
   background-color: black;
   color: white;
+  transition: 0.5s;
+}
+
+.lang-active {
+  background: black;
+  color: white;
+  transition: 0.5s;
 }
 
 .like {
@@ -34,6 +41,18 @@ li {
   height: 25px;
   margin-right: 26px;
   cursor: pointer;
+}
+
+.day-card {
+  background: url("./images/day-sunny-icon.svg") no-repeat;
+  background-size: 40px 40px;
+  background-position: 120px 10px;
+}
+
+.night-card {
+  background: url("./images/night-icon.svg") no-repeat;
+  background-size: 40px 40px;
+  background-position: 120px 10px;
 }
 
 .main {
@@ -136,7 +155,7 @@ li {
 }
 .main_info-section_left-side_card-third-title {
   padding-top: 33px;
-  margin-left: 18px;
+  margin-left: 17px;
 }
 .main_info-section_left-side_card-third-minicard {
   box-sizing: border-box;
@@ -169,6 +188,10 @@ li {
   flex-direction: column;
   margin-left: 10px;
 }
+.main_info-section_left-side_card-third-minicard__footer-details p {
+  max-width: 140px;
+  font-size: 16px;
+}
 .main_info-section_left-side_card-third-minicard__footer-weather {
   margin-right: 10px;
   word-wrap: break-word;
@@ -177,9 +200,10 @@ li {
 }
 .main_info-section_left-side_card-third-minicard__footer-weather p {
   max-width: 115px;
+  text-align: right;
 }
 .main_info-section_left-side_card-third-minicard__footer-weather img {
-  align-self: center;
+  align-self: end;
   width: 35px;
   height: 35px;
 }
@@ -228,6 +252,16 @@ li {
   width: 302px;
   height: 390px;
   box-sizing: border-box;
+}
+.main_info-section_locations-lang {
+  display: flex;
+  justify-content: flex-end;
+}
+.main_info-section_locations-lang p {
+  text-transform: uppercase;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  cursor: pointer;
 }
 .main_info-section_locations-title {
   height: 68px;

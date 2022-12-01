@@ -1,11 +1,11 @@
 import { getCityInfo } from "../MODEL/getcity.js";
 import { render, cityRender } from "../VIEW/render.js";
 import { addLocation, cities, removeLocation } from "../MODEL/locations.js";
-
+import { languageHelper } from "./helpers.js";
 export const search = (event) => {
   event.preventDefault();
   const cityName = event.target.searchInput.value.trim();
-  render(getCityInfo(cityName));
+  render(getCityInfo(cityName, cities.lang));
 };
 
 export const addCity = (event) => {
@@ -29,9 +29,18 @@ export const addCity = (event) => {
 export const locationHandle = (event) => {
   const cityName = event.target.dataset.cityname;
   if (cityName) {
-    render(getCityInfo(cityName));
+    render(getCityInfo(cityName, cities.lang));
   } else if (event.target.tagName === "SPAN") {
     removeLocation(event.target.closest("p").dataset.cityname);
     cityRender(locations);
+  }
+};
+export const langHandler = (event) => {
+  const lang = event.target.dataset.lang;
+
+  if (lang && lang !== cities.lang) {
+    cities.lang = lang;
+    languageHelper(lang);
+    render(getCityInfo(cities.currentCity, cities.lang));
   }
 };
