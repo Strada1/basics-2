@@ -1,0 +1,171 @@
+body{
+    background: #E5E5E5;
+}
+.wrapper {
+    max-width: 100%;
+}
+.contener {
+    max-width: 621px;
+    max-height: 462px;
+    margin: 0 auto ;
+    background: #FFFFFF;
+    padding: 10px;
+}
+.wiather {
+    width: 600px;
+    height: 435px;
+    border: 1px solid #000000;
+}
+.form{
+    border-bottom: 1px solid #000000;
+}
+.search__input {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    height: 45px;
+    width: 100%;
+    padding-left: 10px;
+    
+}
+.search__btn {
+	position: absolute;
+	width: 21.86px;
+	height: 21.86px;
+	font-size: 18px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-top: 13px;
+	margin-left: -33px;
+    color: #000000;
+}
+.search{
+    
+}
+.block__display {
+    display: flex;
+    justify-content: space-between;
+}
+.display{
+    height: 344px;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+.display:target{
+    display: block;
+}
+.btn {
+    width: 94px;
+    height: 44px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    border: 1px solid #000000;
+    flex: 0 1 33.333%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn:hover{
+    color: white;
+    background-color: #000000;
+}
+
+.tabs {
+    display: flex;
+}
+
+.display__right {
+    width: 307px;
+    border: 1px solid #000000;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;  
+    color: #000000;
+}
+.location__title {
+    border-bottom: 1px solid #000000;
+}
+.title{
+    margin: 33px 0 7px 18px;
+}
+
+.city__list {
+    margin: 35px 0 39px 18px;
+}
+.city {
+    margin-bottom: 15px;
+}
+.now {
+   overflow: hidden;
+   padding: 20px;
+}
+.now__temp {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 82px;
+}
+.now__img {
+text-align: center;
+margin: 40px 0 98px 0;
+}
+.now__city {
+    display: flex;
+    justify-content: space-between;
+}
+.city__name{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}
+.month {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.details {
+    overflow: hidden;
+}
+
+.details_list {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    margin: 42px 0 46px 15px;
+}
+.details__item {
+    display:block;
+    margin-bottom: 20px;
+}
+.forecast{
+    padding: 33px 17px 0;
+    overflow: auto;
+}
+.forecast__elem {
+    display: flex;
+    justify-content: space-between;
+    width: 265px;
+    height: 120px;
+    border: 1px solid #000000;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    padding: 8px;
+    margin: 7px 0;
+}
+
+.elem{
+    display: block;
+}
+.elem-date {
+    margin-bottom: 38px;
+}
+.elem-time {
+    margin-bottom: 38px;
+}
