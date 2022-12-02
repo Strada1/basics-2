@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- <header class="header"></header> -->
+		<main class="page">
+			<div class="weather">
+				<div class="weather__block">
+					<div class="weather__search">
+						<form action="#" class="weather__form">
+							<input type="text" class="weather__input" placeholder="Aktobe">
+							<button class="weather__submit" type="submit">
+								<img src="img/search.png" alt="поиск">
+							</button>
+						</form>
+					</div>
+					<div class="weather__body">
+						<div class="weather__tabs">
+							<div class="weather__screen">
+								<div class="now weather__tab -active">
+									<div class="now__block">
+										<div class="now__temperature"><span>14</span>&deg</div>
+										<div class="now__pic">
+											<img class="now__img" src="img/10d.png" alt="">
+										</div>
+										<div class="now__footer">
+											<div class="now__city -text -city">Aktobe</div>
+											<button type="button" class="now__like">
+												<img src="img/Shape.png" alt="добавить в избранное">
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="details weather__tab">
+									<div class="details__block">
+										<div class="details__city -text -city">Aktober</div>
+										<ul class="details__info -text">
+											<li>Temperature: <span class="details__temperature">14</span>&deg</li>
+											<li>Feels like: <span class="details__feels-like">10</span>&deg</li>
+											<li>Weather: <span class="details__weather">Clouds</span></li>
+											<li>Sunrise: <span class="details__sunrise">03:21</span></li>
+											<li>Sunset: <span class="details__sunset">18:54</span></li>
+										</ul>
+									</div>
+								</div>
+								<div class="forecast weather__tab">
+									<div class="forecast__block">
+										<div class="forecast__city -text -city">Aktober</div>
+										<div class="forecast__cards">
+											<div class="forecast__card">
+												<div class="forecast__date">17 may</div>
+												<div class="forecast__time">12:00</div>
+												<div class="forecast__temperature">Temperature: 13&deg</div>
+												<div class="forecast__conditions">Rain</div>
+												<div class="forecast__feels-like">Feels like: 10&deg</div>
+												<div class="forecast__pic">
+													<img src="img/10d.png" alt="">
+												</div>
+											</div>
+											<div class="forecast__card">
+												<div class="forecast__date">17 may</div>
+												<div class="forecast__time">12:00</div>
+												<div class="forecast__temperature">Temperature: 13&deg</div>
+												<div class="forecast__conditions">Rain</div>
+												<div class="forecast__feels-like">Feels like: 10&deg</div>
+												<div class="forecast__pic">
+													<img src="img/10d.png" alt="">
+												</div>
+											</div>
+											<div class="forecast__card">
+												<div class="forecast__date">17 may</div>
+												<div class="forecast__time">15:00</div>
+												<div class="forecast__temperature">Temperature: 13&deg</div>
+												<div class="forecast__conditions">Rain</div>
+												<div class="forecast__feels-like">Feels like: 10&deg</div>
+												<div class="forecast__pic">
+													<img src="img/10d.png" alt="">
+												</div>
+											</div>
+											<div class="forecast__card">
+												<div class="forecast__date">17 may</div>
+												<div class="forecast__time">18:00</div>
+												<div class="forecast__temperature">Temperature: 13&deg</div>
+												<div class="forecast__conditions"></div>
+												<div class="forecast__feels-like">Feels like: 10&deg</div>
+												<div class="forecast__pic">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="weather__buttons">
+								<div class="weather__button -active">Now</div>
+								<div class="weather__button">Details</div>
+								<div class="weather__button">Forecast</div>
+							</div>
+						</div>
+						<div class="weather__locations">
+							<div class="weather__title -text">Added Locations:</div>
+							<div class="weather__favorites">
+								<ul class="weather__cities -text">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<!-- <footer class="footer"></footer> -->
+	</div>
+	<script src="main.js"></script>
+</body>
+
+</html>
