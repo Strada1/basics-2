@@ -1,0 +1,574 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #e6e6e6;
+  font-size: 24px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  width: 100%;
+  height: 455px;
+  padding: 10px;
+  margin: auto;
+}
+
+.container {
+  width: 600px;
+  height: 435px;
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/*================ SEARCH ==============*/
+.section-search {
+  height: 45px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 1px solid #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.section-search:focus-within {
+  -webkit-box-shadow: inset 0px 0px 0px 4px #999;
+          box-shadow: inset 0px 0px 0px 4px #999;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.section-search input {
+  font-size: 18px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.form-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.input-search {
+  line-height: 36px;
+}
+
+.input-search:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.input-search:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.input-search:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.input-search:focus::placeholder {
+  color: transparent;
+}
+
+.button-search {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  opacity: 0.54;
+}
+
+.button-search:hover {
+  opacity: 0.8;
+  -webkit-transition: opacity 0.5s ease 0s;
+  transition: opacity 0.5s ease 0s;
+}
+
+/*================  ==============*/
+.section-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+/*================ LEFT SIDE ==============*/
+.section-tabs {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-right: 1px solid #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.block-tabs {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 1px solid #000000;
+  cursor: default;
+}
+
+.tab-content {
+  height: 100%;
+}
+
+/*================ TAB - NOW ==============*/
+.tab-now {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+.now-temperature {
+  display: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 33.333%;
+          flex: 1 1 33.333%;
+  font-size: 70px;
+  padding-left: 23px;
+  padding-top: 23px;
+}
+
+.now-sky {
+  margin: 0 auto 0 auto;
+}
+
+.picture-weather {
+  display: none;
+  width: 160px;
+  height: 160px;
+}
+
+.now-city {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 33.333%;
+          flex: 1 1 33.333%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-left: 12px;
+  padding-bottom: 17px;
+  padding-right: 26px;
+}
+
+.favorite-button {
+  opacity: 0.54;
+  fill: none;
+  cursor: pointer;
+}
+
+.favorite-button:hover {
+  opacity: 0.8;
+}
+
+.favorite-button:active {
+  opacity: 0.8;
+}
+
+.favorite-button.checked {
+  fill: #000;
+  opacity: 0.8;
+}
+
+/*================ TAB - DETAILS ==============*/
+.details-city-name {
+  height: 68px;
+  padding-left: 18px;
+  padding-bottom: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.details-list {
+  padding-left: 18px;
+  padding-top: 30px;
+  overflow: scroll;
+  height: 274px;
+}
+
+.details-item {
+  margin-bottom: 20px;
+}
+
+/*================ TAB - FORECAST ==============*/
+.forecast-city-name {
+  height: 68px;
+  padding-left: 18px;
+  padding-bottom: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.forecast-list {
+  padding-left: 18px;
+  padding-right: 18px;
+  font-size: 18px;
+  height: 274px;
+  overflow: scroll;
+}
+
+.forecast-item {
+  margin-bottom: 8px;
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #000000;
+}
+
+.date-time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.weather {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.temper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sky {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.sky-pic {
+  width: 31px;
+  height: 31px;
+  background: url(images/icon-rain.svg) 0 0/100% no-repeat;
+}
+
+/*================ LINKS FOR TABS ==============*/
+.block-links {
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  line-height: 45px;
+}
+
+.tab-links {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.333%;
+          flex: 0 0 33.333%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tab-links:nth-child(1) {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-right: 1px solid #000000;
+}
+
+.tab-links:nth-child(2) {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-right: 1px solid #000000;
+}
+
+.tab-links:hover {
+  background-color: #dfdfdf;
+  -webkit-transition: background-color 0.5s ease 0s;
+  transition: background-color 0.5s ease 0s;
+}
+
+.tab-links.active {
+  background-color: #000;
+  -webkit-transition: none;
+  transition: none;
+  color: #fff;
+}
+
+/*================ RIGHT SIDE - FAVORITE ==============*/
+.section-favorite {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+  cursor: default;
+  position: relative;
+}
+
+.favorite-title-block {
+  height: 68px;
+  border-bottom: 1px solid #000000;
+  padding-left: 18px;
+  padding-bottom: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.favorite-list-block {
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 30px;
+  overflow: scroll;
+  height: 320px;
+}
+
+.list-item {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.list-item:hover {
+  color: #4f1685;
+  cursor: pointer;
+}
+
+.list-item_btn {
+  line-height: 24px;
+  font-size: 16px;
+}
+
+.list-item_btn:hover {
+  color: red;
+}
+
+/*================ ERROR ==============*/
+.error-block {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  background: #848484;
+  padding: 5px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.error-message {
+  display: inline-block;
+}
+
+.error-close {
+  font-size: 16px;
+  display: inline-block;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.button-clear {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100px;
+  font-size: 12px;
+  height: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #999;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.button-clear:hover {
+  background-color: #dfdddd;
+}
+
+.button-clear:active {
+  background-color: #c4c3c3;
+}
+/*# sourceMappingURL=style.css.map */
