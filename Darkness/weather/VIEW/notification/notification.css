@@ -1,0 +1,12 @@
+.notification {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    min-height: 5%;
+    width: 100%;
+    text-align: center;
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 15px;
+    background-color: RGBA(255, 0, 0, 0.3);
+  }/*# sourceMappingURL=styles.css.map */

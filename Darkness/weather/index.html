@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="VIEW/styles.css">
+    <link rel="stylesheet" href="VIEW/notification/notification.css">
+    <title>Weather</title>
+</head>
+<body>
+    <main class = 'main'>
+        <form class="main__city-search">
+            <input type="text" id="searchInput" class="main__city-search__input" placeholder="Aktobe" autocomplete="off">
+            <button type="submit" class="main__city-search__image"></button>
+        </form>
+        <section class="main_info-section">
+            <section class="main_info-section_left-side">
+                <section class="main_info-section_left-side_card"></section>
+                <nav class="main_info-section_left-side_tabs">
+                    <section class="main_info-section_left-side_tabs-now"><a href="#" id="now"></a></section>
+                    <section class="main_info-section_left-side_tabs-details"><a href="#" id="details"></a></section>
+                    <section class="main_info-section_left-side_tabs-forecast"><a href="#" id="forecast"></a></section>
+                </nav>
+            </section>
+            <section class="main_info-section_locations">
+                <section class="main_info-section_locations-lang">
+                    <p class="main_info-section_locations-lang-en" data-lang="en">en</p><p class="main_info-section_locations-lang-ru" data-lang="ru">ru</p>
+                </section>
+                <section class="main_info-section_locations-title">
+                    </section>
+                    
+                <section class="main_info-section_locations-cities">
+                </section>
+            </section>
+        </section>
+        
+    </main>
+    <script src="connector.js" type="module"></script>
+</body>
+</html>
