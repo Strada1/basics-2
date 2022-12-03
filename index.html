@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="main">
+        <div class="main__error"></div>
+        <div class="container">
+            <div class="weather">
+                <form class="search-form">
+                    <input type="text" class="search-form__input">
+                    <button type="submit" class="search-form__button">
+                        <img src="src/img/glass.svg" alt="search"></button>
+                </form>
+                <div class="content-block">
+                    <div class="tabs">
+                        <div class="info-window">
+                        </div>
+                        <div class="tablinks">
+                            <div class="tablinks__button -active" data-tab="Now">Сейчас</div>
+                            <div class="tablinks__button" data-tab="Details">Детали</div>
+                            <div class="tablinks__button" data-tab="Forecast">Прогноз</div>
+                        </div>
+                    </div>
+                    <div class="favourites">
+                        <div class="favourites__title">
+                            Добавленные города:
+                        </div>
+                        <ul class="favourites__cities">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
