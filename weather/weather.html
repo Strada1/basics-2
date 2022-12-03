@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="/weather.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="weather__body">
+        <form class="search-form" action="#">
+            <input class="search-input" placeholder="Tilimilitriamdia" type="text">
+            <button class="search-btn"></button>
+        </form>
+        <div class="weather__inner">
+            <div class="weather__info">
+                <div class="now-info target-info" id="tab_1">
+                    <div class="now-temp"></div>
+                    <div class="now-img"></div>
+                    <h2 class="now-city city"></h2>
+                    <button class="now-favorites-btn">
+                        <svg width="24" height="25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.54" fill-rule="evenodd" clip-rule="evenodd" d="M17.5 1C15.0556 1 12.8556 2.7875 12 5.125C11.1444 2.7875 8.94444 1 6.5 1C3.44444 1 1 3.6125 1 7.1875C1 12 5.27778 16.125 12 23C18.7222 16.125 23 12 23 7.1875C23 3.6125 20.5556 1 17.5 1Z" stroke="black" stroke-width="2"/></svg>
+                    </button>
+                </div>
+                <div class="details-info target-info" id="tab_2">
+                    <h2 class="details-city city"></h2>
+                    <ul class="details-items">
+                        <li class="details-temp"></li>
+                        <li class="details-feels"></li>
+                        <li class="details-weather"></li>
+                        <li class="details-sunrise"></li>
+                        <li class="details-sunset"></li>
+                    </ul>
+                </div>
+                <div class="forecast-info target-info" id="tab_3">
+                    <h2 class="forecast-city">Actobe</h2>
+                    <div class="forecast-card">
+                        <div class="forecast-card-data">17 may</div>
+                        <div class="forecast-card-time">12:00</div>
+                        <div class="forecast-card-temp">
+                            <div class="card-temp-degree">Temperature:13˚</div>
+                            <div class="card-temp-feels">Feels like: 10˚</div>
+                        </div>
+                        <div class="forecast-card-precipitation">
+                            <div class="card-precipitation-data">Rain</div>
+                            <div class="card-precipitation-img"></div>
+                        </div>
+                    </div>
+                    <div class="forecast-card">
+                        <div class="forecast-card-data">17 may</div>
+                        <div class="forecast-card-time">12:00</div>
+                        <div class="forecast-card-temp">
+                            <div class="card-temp-degree">Temperature:13</div>
+                            <div class="card-temp-feels">Feels like: 10</div>
+                        </div>
+                        <div class="forecast-card-precipitation">
+                            <div class="card-precipitation-data">Rain</div>
+                            <div class="card-precipitation-img"></div>
+                        </div>
+                    </div>
+                    <div class="forecast-card">
+                        <div class="forecast-card-data">17 may</div>
+                        <div class="forecast-card-time">12:00</div>
+                        <div class="forecast-card-temp">
+                            <div class="card-temp-degree">Temperature:13</div>
+                            <div class="card-temp-feels">Feels like: 10</div>
+                        </div>
+                        <div class="forecast-card-precipitation">
+                            <div class="card-precipitation-data">Rain</div>
+                            <div class="card-precipitation-img"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-tabs">
+                    <button class="weather-tab" data-tab="#tab_1">Now</button>
+                    <button class="weather-tab" data-tab="#tab_2">Details</button>
+                    <button class="weather-tab" data-tab="#tab_3">Forecast</button>
+                </div>
+            </div>
+            <div class="weather__location">
+                <h2 class="location-select">Added Locations:</h2>
+                <ul class="location-list">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="/dop.js"></script> -->
+    <script type="module" src="/weather.js"></script>
+</body>
+</html>

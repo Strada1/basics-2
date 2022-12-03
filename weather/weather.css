@@ -1,0 +1,207 @@
+/*Обнуление*/
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+/*--------------------*/
+
+::-webkit-scrollbar{
+    width: 2px;
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(10, 10, 10);
+}
+.weather__body{
+    width: 600px;
+    height: 435px;
+    border: 1px solid black;
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 28px;
+    margin: 0 auto;
+}
+/* SEARCH */
+.search-form{
+    border-bottom: 1px solid black;
+    padding-right: 15px;
+    position: relative;
+}
+.search-input{
+    font-size: 20px;
+    width:92%;
+    margin: 10px 15px;
+}
+.search-btn{
+    width: 30px;
+    height: 30px;
+    background-image: url(/img/search.svg);
+    background-color: inherit;
+    position: absolute;
+    top:7px;
+    right: 8px;
+}
+/* INFO */
+.weather__inner{
+    display: flex;
+}
+.weather__info .active{
+    display: block;
+}
+.weather__info{
+    flex: 0 1 50%;
+    position: relative;
+    height: 390px;
+}
+.target-info{
+    display: none;
+}
+
+.now-info{
+    padding: 20px 26px 17px 12px;
+    position: relative;
+    height: 345px;
+}
+.now-info div{
+    font-size: 70px;
+    line-height: 82px;
+}
+.now-img{
+    width: 180px;
+    height: 165px;
+    background-size: 100%;
+    position:absolute;
+    bottom: 30%;
+    left: 17%;
+}
+.now-info h2{
+    position: absolute;
+    bottom: 10px;
+}
+.now-info button{
+    width: 24px;
+    height: 24px;
+    background-color: inherit;
+    background-size: 100%;
+    position: absolute;
+    bottom: 15px;
+    right: 16px;
+}
+.now-favorites-img{
+    fill:red;
+}
+
+.details-info{
+    padding: 33px 0 0 15px;
+    height: 345px;
+}
+.details-info h2{
+    margin-bottom: 42px;
+}
+.details-items li:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.forecast-info{
+    padding: 33px 16px 0 16px;
+    height: 345px;
+    overflow: auto;
+}
+.forecast-card{
+    font-size: 18px;
+    line-height: 21.09px;
+    margin-bottom: 9px;
+    padding: 7px 10px 0px 10px;
+    width: 265px;
+    height: 120px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.forecast-city{
+    margin-bottom:7px;
+}
+.forecast-card-time{
+    text-align: right;
+}
+.forecast-card-precipitation{
+    text-align: right;
+}
+.card-precipitation-img{
+    width: 30px;
+    height: 30px;
+    background: url(/img/icons8-rain-96\ 1.svg) no-repeat;
+    background-size: 100%;
+    float: right;
+}
+/* TABS */
+.weather-tabs{
+    display: flex;
+    position: absolute;
+    bottom: 1px;
+    width: 300px;
+}
+.weather-tab{
+    height: 45px;
+    display: inline-block;
+    background-color: inherit;
+    flex-basis: 33.333%;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+.weather-tabs .active{
+    background-color: black;
+    color: white;
+}
+
+/* LOCATION */
+.weather__location{
+    flex:0 1 50%;
+    border-left: 1px solid black;
+    height: 389px;
+}
+.weather__location h2{
+    border-bottom: 1px solid black;
+    padding: 33px 90px 7px 18px;
+}
+.location-list{
+    padding: 35px 10px 0 18px;
+    height: 319px;
+    overflow: auto;
+
+}
+.location-list li{
+    margin-bottom: 20px;
+    position: relative;
+}
+.location-list div{
+    cursor: pointer;
+}
+.location-list button{
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    font-size: 35px;
+    bottom: -6px;
+    right: 4px;
+    background-color: inherit;
+    rotate: 45deg;
+}
+.location-list button:hover{
+    transition: all 1s ease 0s;
+    transform: scale(-1,1);
+    color: red;
+}
