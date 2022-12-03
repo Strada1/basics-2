@@ -22,7 +22,6 @@ function addCityFavorite(cityName) {
     favoriteCityList.push(cityName);
     addStorageFavoriteCities(favoriteCityList)
     renderFavoriteCity();
-    console.log(favoriteCityList);
   }
 }
 
