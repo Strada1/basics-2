@@ -1,0 +1,315 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: rgb(117, 113, 199);
+  background: linear-gradient(90deg, rgba(117, 113, 199, 1) 0%, rgba(31, 128, 79, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+.weather {
+  width: 600px;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+.weather__search-form {
+  position: relative;
+  border-bottom: 1px solid #000;
+}
+
+.weather__search-input {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 12px 16px;
+  outline: none;
+
+}
+
+.weather__search-btn {
+  position: absolute;
+  display: block;
+  width: 21px;
+  height: 21px;
+  top: 13px;
+  right: 17px;
+  font-size: 0;
+  border: none;
+  background-color: transparent;
+  background-image: url(../images/search.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.weather__content {
+  display: flex;
+}
+
+.weather__tabs {
+  width: 50%;
+  border-right: 1px solid #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tabs {
+  height: 390px;
+}
+
+.tabs-nav {
+  border-top: 1px solid #000;
+  display: flex;
+  justify-content: flex-start;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  z-index: 1000;
+  margin-top: -1px;
+}
+
+.tabs-item {
+  width: 33.333%;
+  padding: 12px 20px;
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.tabs-item:not(:last-child) {
+  border-right: 1px solid #000;
+}
+
+.tabs-item--active {
+  background-color: #000;
+  color: #fff;
+  border-right: none;
+}
+
+.tabs__block {
+  display: none;
+}
+
+.tabs__block:target {
+  display: block;
+}
+
+.tabs__title {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+.tabs__content {
+  padding: 20px;
+  max-height: 345px;
+}
+
+.now__container {
+  height: 302px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.now__icon {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  align-self: center;
+}
+
+.now__sities-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.now__sities {
+  margin: 0;
+}
+
+.now__sities-btn {
+  font-size: 0;
+  background-color: transparent;
+  border: none;
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-image: url(../images/like.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.now__sities-btn--like {
+  background-image: url(../images/red-heart-icon.svg);
+}
+
+.now__temperature {
+  display: inline-block;
+  position: relative;
+  font-size: 70px;
+  line-height: 82px;
+}
+
+.now__temperature::after {
+  position: absolute;
+  content: '⭘';
+  top: -32px;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.details__title {
+  margin-bottom: 25px;
+  margin-top: 15px;
+}
+
+.details__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.details__item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.weather__favorites {
+  width: 50%;
+  max-height: 390px;
+  overflow-y: scroll;
+}
+
+
+.details__temp,
+.details__feels {
+  position: relative;
+}
+
+.details__temp::after,
+.details__feels::after {
+  position: absolute;
+  content: '⭘';
+  top: -13px;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.weather__favorites-title {
+  display: block;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #000000;
+  padding-left: 18px;
+  margin-top: 33px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 7px;
+  margin-bottom: 0;
+}
+
+.weather__favorites-list {
+  margin: 0;
+  padding: 0;
+  padding-top: 30px;
+  padding-left: 18px;
+  list-style: none;
+}
+
+.weather__favorites-item {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.weather__favorites-delete {
+  position: absolute;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: 2px;
+  margin-top: 4px;
+  background-color: transparent;
+  background-image: url(../images/cross_icon-icons.com_72347.png);
+  background-position: center center;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+}
+
+.weather__favorites-item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.forecast__title {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.forecast__list {
+  max-height: 287px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: scroll;
+}
+
+.forecast__list::-webkit-scrollbar {
+  width: 0;
+}
+
+.forecast__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 258px;
+  height: 120px;
+  border: 1px solid #000;
+  padding: 6px 8px;
+  font-size: 18px;
+  line-height: 21px;
+  margin-bottom: 9px;
+}
+
+.forecast__item:last-child {
+  margin-bottom: 20px;
+}
+
+.forecast__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.forecast__footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.forecast__footer p {
+  margin: 0;
+}
