@@ -1,0 +1,33 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: inherit;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+input,
+button {
+  background: transparent;
+}
+
+input:focus {
+  outline: 0;
+}
+
+input:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+li {
+  list-style-type: none;
+}

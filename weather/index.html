@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <div class="vrapper search-wrapper">
+          <form name="search" class="search-form">
+            <label class="search-label">
+              <input
+                type="text"
+                class="search"
+                name="city"
+                placeholder="Search city"
+                autocomplete="off" />
+            </label>
+            <label class="search-btn-label">
+              <button type="submit" class="btn search-btn">
+                <img
+                  src="./assets/img/search.svg"
+                  alt="search"
+                  class="search-img" />
+              </button>
+            </label>
+          </form>
+        </div>
+        <div class="vrapper weather-wrapper">
+          <div class="tab now-tab active-tab" data-tab="now">
+            <p class="temperature temperature-main"></p>
+            <img
+              src="./assets/img/weather-state/clouds.svg"
+              alt="icon"
+              class="icon" />
+            <div class="city-wrapper">
+              <p class="active-city"></p>
+              <img src="./assets/img/heart-shape.svg" alt="like" class="like" />
+            </div>
+          </div>
+          <div class="tab details-tab inactive-tab" data-tab="details">
+            <p class="active-city-details"></p>
+            <ul class="tab-list-details">
+              <li class="detail">
+                Temperature: <span class="temperature"></span>
+              </li>
+              <li class="detail">
+                Feels like: <span class="feels-like"></span>
+              </li>
+              <li class="detail">
+                Weather: <span class="current-state"></span>
+              </li>
+              <li class="detail">
+                Sunrise: <span class="time-sunrise"></span>
+              </li>
+              <li class="detail">Sunset: <span class="time-sunset"></span></li>
+            </ul>
+          </div>
+          <div class="tab forecast-tab inactive-tab" data-tab="forecast">
+            <p class="active-city-forecast"></p>
+            <div class="tab-list-forecast"></div>
+          </div>
+          <div class="tab-wrapper-btn">
+            <button class="btn tab-btn now-btn active-btn" data-tab="now">
+              Now
+            </button>
+            <button class="btn tab-btn details-btn" data-tab="details">
+              Details
+            </button>
+            <button class="btn tab-btn forecast-btn" data-tab="forecast">
+              Forecast
+            </button>
+          </div>
+        </div>
+        <div class="vrapper location-wrapper">
+          <p class="locations">Added Locations:</p>
+          <ul class="city-list-wrapper"></ul>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="./js/weather.js"></script>
+  </body>
+</html>
