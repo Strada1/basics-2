@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="weather.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="now">
+        <table>
+            <tr>
+                <th colspan="2" class="forSearch">
+                <form>
+                    <input id="inpCity" type="text" class="search">
+                    <button id='searchCity' type="submit">&#128269</button>
+                </form>
+                </th>
+            </tr>
+            <tr>
+                <td class="about">
+                    <div class="aboutS">
+                    <div class="temperature" id="temp">
+                        14° 
+                    </div>
+                    <div class="imageTemp">
+                        <img src="./png/icons8-cloud-96 1.png" alt="">
+                    </div>
+                    <div class="city" id="city">
+                        <h2 id="cityCurrentName">Aktobe</h2>
+                        <!-- <button class="like" >+</button> -->
+                        
+                        <svg class="like" id="like" width="640" height="480" viewbox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <title>Layer 1</title>
+                            <g id="layer1">
+                             <path id="svg_2" d="m219.28949,21.827393c-66.240005,0 -119.999954,53.76001 -119.999954,120c0,134.755524 135.933151,170.08728 228.562454,303.308044c87.574219,-132.403381 228.5625,-172.854584 228.5625,-303.308044c0,-66.23999 -53.759888,-120 -120,-120c-48.047913,0 -89.401611,28.370422 -108.5625,69.1875c-19.160797,-40.817078 -60.514496,-69.1875 -108.5625,-69.1875z"/>
+                            </g>
+                           </g>                    
+                        </svg>
+                        
+                        </div>
+                    <div class="screens1">
+                        <button class="nowBtn" id="nowBtn">Now</button>
+                        <button id="detailsBtn">Details</button>
+                        <button id="forecastBtn">Forecast</button>
+                    </div>
+                </div>
+                </td>
+
+                <td class="locations">
+                       <div>
+                            <h2>Added locations</h2>
+                            <hr>
+                       </div>
+                       <div class="listOfCities">
+                        
+                  
+                       </div>
+                
+                </td>
+            </tr>
+   
+        </table>
+    </div>
+
+    <div id="details" >
+        <table>
+            <tr>
+                <th colspan="2" class="forSearch">
+                    <form>
+                        <input id="inpCity2" type="text" class="search">
+                        <button id='searchCity2' type="submit">&#128269</button>
+                    </form>
+                </th>
+            </tr>
+            <tr>
+                <td class="about">
+                    <div class="aboutS">
+                    <div class="chosenCity">
+                        Aktobe
+                    </div>
+                    <div class="list_details">
+                        <li>Temperature: 14&#176</li>
+                        <li>Feels like: 10&#176</li>
+                        <li>Weahter: clouds</li>
+                        <li>Sunrise: 03.21</li>
+                        <li>Sunset: 18.54</li>
+                    </div>
+                    <div class="screens1">
+                        <button id="nowBtn2">Now</button>
+                        <button id="detailsBtn2">Details</button>
+                        <button id="forecastBtn2">Forecast</button>
+                    </div>
+                </div>
+                </td>
+
+                <td class="locations">
+                       <div>
+                            <h2>Added locations</h2>
+                            <hr>
+                       </div>
+                       <div class="listOfCities2">
+                        <li>Amur</li>
+                        <li>Samara</li>
+                        <li>Bali</li>
+                        <li>Dane</li>
+                        <li>Kilo</li>
+                        <li>Nur-Sultan</li>
+                       </div>
+                
+                </td>
+            </tr>
+   
+        </table>
+    </div>
+
+    <div id="forecast">
+        <table>
+            <tr>
+                <th colspan="2" class="forSearch">
+                <input type="text" class="search">
+                <button type="submit">&#128269</button>
+                </th>
+            </tr>
+            <tr>
+                <td class="about">
+                    <div class="table-scroll">
+                    <div class="chosenCity">
+                        Aktobe
+                    </div>
+                    <div class="weatherOnTime">
+                        <div class="dateNtime">
+                        <p>17 May</p>
+                        <p class="time">12:00</p>
+                    </div>
+                    <div class="tempNfeels">
+                        <div>
+                        <p>Temperature: 13&#176 <br> Feels like: 10&#176</p>
+                        </div>
+                        <div>
+                        <p>Rain</p>
+                        <img  class='iconWeather'src="./png/icons8-rain-96 1.png" alt="">
+                    </div>
+                    </div>
+                    </div>
+                  
+                    <div class="weatherOnTime">
+                        <div class="dateNtime">
+                        <p>17 May</p>
+                        <p class="time">12:00</p>
+                    </div>
+                    <div class="tempNfeels">
+                        <div>
+                        <p>Temperature: 13&#176 <br> Feels like: 10&#176</p>
+                        </div>
+                        <div>
+                        <p>Rain</p>
+                        <img class='iconWeather' src="./png/icons8-rain-96 1.png" alt="">
+                    </div>
+                    </div>
+                    </div>
+                    <div class="weatherOnTime">
+                        <div class="dateNtime">
+                        <p>17 May</p>
+                        <p class="time">12:00</p>
+                    </div>
+                    <div class="tempNfeels">
+                        <div>
+                        <p>Temperature: 13&#176 <br> Feels like: 10&#176</p>
+                        </div>
+                        <div>
+                        <p>Rain</p>
+                        <img class='iconWeather' src="./png/icons8-rain-96 1.png" alt="">
+                    </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="screens1">
+                    <button id="nowBtn3">Now</button>
+                    <button id="detailsBtn3">Details</button>
+                    <button>Forecast</button>
+                </div>
+                </td>
+
+                <td class="locations">
+                       <div>
+                            <h2>Added locations</h2>
+                            <hr>
+                       </div>
+                       <div>
+                        <li>Amur</li>
+                        <li>Samara</li>
+                        <li>Bali</li>
+                        <li>Dane</li>
+                        <li>Kilo</li>
+                        <li>Nur-Sultan</li>
+                       </div>
+                
+                </td>
+            </tr>
+   
+        </table>
+    </div>
+</body>
+<script type="module" src="weather.js"></script>
+</html>

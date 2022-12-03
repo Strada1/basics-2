@@ -1,0 +1,246 @@
+table {
+  border-collapse: collapse; 
+  width: 450px;
+  height: 370px;
+}
+
+body{
+ display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: aqua;
+  font-family: 'Roboto', sans-serif;
+
+}
+#now{
+  display: block;
+  margin-top: 30px;
+}
+#forecast{
+  margin-top: 30px;
+  display: none;
+ 
+}
+#details{
+  margin-top: 30px;
+  display: none;
+}
+
+th {
+    padding: 10px; 
+    border: 2px solid black;
+  }
+
+  td {
+    padding: 5px 7px;
+    border: 2px solid black;
+    width: 310px;
+  }
+.search{
+  width: 95%;
+  justify-content: center;
+  box-sizing: border-box;
+  outline: none;
+  border: 2px solid aqua;
+  background-color: aqua;
+
+}
+.forSearch{
+  position: relative;
+}
+.forSearch button[type="submit"] {
+  position: absolute;
+  top: 8px;
+  bottom: 13px;
+  right: 18px;
+  color: #666;
+  border: 0;
+  padding: 0 10px;
+  border-radius: 50%;
+  background-color: aqua;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  
+}
+.temperature{
+  font-size: 50px;
+}
+  img{
+    justify-content: center;
+    text-align: center;
+    margin: 0 35%;
+    margin-top: 20px;
+    width: 78px;
+    height: 79px;
+  }
+
+.city{
+  position: relative;
+  margin-top: 55px;
+}
+
+.like{
+  position: absolute;
+  right: 20px;
+  bottom: -7px;
+}
+
+.locations{
+  padding: 0;
+}
+hr{
+  width: 100%;
+  border-width: 1px;
+  border-color: black;
+}
+.locations li{
+
+ list-style: none;
+ padding: 5px;
+}
+.locations h2{
+  padding: 5px;
+  line-height: 1%;
+ }
+
+
+ .screens1{
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  bottom: -18px;
+  margin-left: -4%;
+  margin-right: -4%;
+  align-items: flex-end;
+  align-content: flex-end;
+ }
+ .screens1 button{
+  display: inline-flex;
+  flex: 0 0 33.33%;
+  border-radius: 0%;
+  cursor: pointer;
+  background-color: aqua;
+  color: black;
+  align-items: flex-end;
+  align-content: flex-end;
+
+ }
+.screens1 button:hover {
+  color: white;
+  background-color: black;
+}
+
+
+
+
+.list_details {
+  list-style: none;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+.about .chosenCity{
+  margin-bottom: 66px;
+  font-size: 25px;
+}
+
+
+
+.screens1 button:hover {
+  color: white;
+  background-color: black;
+}
+
+
+.weatherOnTime{
+  border: 1px solid white;
+  margin: 10px;
+}
+
+.dateNtime{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.tempNfeels{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.table-scroll{
+  overflow-x: auto;
+  height: 250px;
+  margin-bottom: 16px;
+
+}
+.iconWeather {
+  margin-top: -20px;
+  margin-left: -3%;
+  height: 31px;
+  width: 31px;
+}
+
+
+#details.active{
+  display: block;
+}
+
+
+#forecast.active{
+  display: block;
+}
+
+#now.active{
+  display: block;
+}
+#now.none{
+  display: none;
+}
+
+#details.none{
+  display: none;
+}
+
+#forecast.none{
+  display: none;
+}
+
+
+.pop_up_close{
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  color: black;
+  background-color: aqua;
+  
+}
+
+li{
+  position: relative;
+}
+
+svg {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+#svg_2{
+  fill:transparent; 
+  stroke:black;
+  stroke-width:6px;
+  cursor:pointer;
+  transition:fill .3s;
+}
+#svg_2.filled{
+  fill:red;
+}
+
+#svg_2.none{
+  fill:transparent;
+}
