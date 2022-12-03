@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="weather-app">
+                <form class="search-form">
+                    <input class="search-text" type="text" placeholder="Введите название города">
+                    <button class="search-button">SEARCH</button>
+                </form>
+                <div class="info-block">
+                    <div class="left-sidebar">
+                        <div id="now" class="tabs_block">
+                            <div class="now-temperature"><h2 class="temp"></h2></div>
+                            <div class="now-ico"><img class="weather-icon" src="https://openweathermap.org/img/wn/01d@4x.png" alt="weather icon" hidden></div>
+                            <div class="now-cityname">
+                                <h3 class="city-name"></h3>
+                                <button class="city-like">HEART</button>
+                            </div>
+                        </div>
+
+                        <div id="details" class="tabs_block">
+                            <div class="details-header">
+                                <h3 class="city-name"></h3>
+                            </div>
+                            <div class="details-list">
+                                <ul>
+                                    <li>
+                                        <p>Temperature: </p>
+                                        <span class="temp-details">14</span>
+                                    </li>
+                                    <li>
+                                        <p>Feels like:</p>
+                                        <span class="feel-details">10</span>
+                                    </li>
+                                    <li>
+                                        <p>Weather:</p>
+                                        <span class="weather-details">Clouds</span>
+                                    </li>
+                                    <li>
+                                        <p>Sunrise:</p>
+                                        <span class="sunrise-details">03:21</span>
+                                    </li>
+                                    <li>
+                                        <p>Sunset:</p>
+                                        <span class="sunset-details">18:54</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="options">
+                                <a href="#now" class="option_item">Now</a>
+                                <a href="#details" class="option_item">Details</a>
+                                <a href="#forecast" class="option_item">Forecast</a>
+                        </div> 
+                    </div>
+                    <div class="right-sidebar">
+                        <div class="locations-header">
+                            <h3>Added locations</h3>
+                        </div>
+                        <div class="locations-list">
+                            <ul class="location-list-ul">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="save_cities.js"></script>
+</body>
+</html>
