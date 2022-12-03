@@ -108,7 +108,6 @@ function render() {
         });
         place.prepend(newLi)
     })
-
 }
 
 function SaveToStorage() {
