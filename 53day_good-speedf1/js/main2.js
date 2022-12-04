@@ -24,4 +24,5 @@ form.addEventListener('submit', (e) => {
             city__name.textContent =  `${data.name}`
             now__temp.textContent = Math.round(`${data.main.temp}`)+` C°`
     })
+		.catch(error => alert(`Server not answered ${error}`));
 })
