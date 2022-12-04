@@ -1,0 +1,159 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: burlywood;
+}
+
+.container{
+    margin: 0 auto;
+    width: 621px;
+}
+
+.wrapper{
+    border: 1px solid black;
+}
+
+.city-input{
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    width: -webkit-fill-available;
+    height: 30px;
+    
+}
+.main-display{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-forecast{
+    width: 50%;
+    border-right: 1px solid black;
+}
+
+
+.main-picture{
+    font-size: 70px;
+    margin: 0;
+}
+
+.main-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0px 26px 0px 14px;
+}
+.like{
+    background-image: url(/img/Shape.svg);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+.heart {
+    background-image: url(/img/heartBalck.png);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+.divImg{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px 50px 0px;
+}
+.main-forecast-city{
+    margin: 0;
+    font-size: 18px;
+}
+
+.buttons {
+    display: flex;
+    margin-top: 17px;
+}
+.buttons .btn{
+    flex: 0 0 33.3333%;
+    height: 44px;
+    background: none;
+    border: none;
+    border-top: 1px solid #000000;
+    font-size: 18px;
+}
+.buttons button:not(:last-child) {
+    border-right: 1px solid #000000;
+}
+
+.buttons button:hover{
+    background-color: black;
+    color: white;
+}
+.buttons button:active{
+    background-color: black;
+    color: white;
+}
+
+.main-locations {
+    width: 50%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+.added-locations{
+    border-bottom: 1px solid black;
+    padding: 10px 10px 0px 10px;
+    font-size: 20px;
+}
+
+.main-location-cities{
+    font-size: 20px;
+    padding: 10px 10px 0px 10px;
+}
+
+.tabs_block{
+    display: none;
+}
+
+.tabs_block:target{
+    display: block;
+}
+
+.tab_active {
+    background-color: #000000;
+    flex: 0 0 33.3333%;
+    height: 44px;
+    border: none;
+    font-size: 18px;
+}
+
+.cityList{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cross{
+    transform: rotate(50deg);
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+}
+
