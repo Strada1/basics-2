@@ -1,0 +1,15 @@
+export const form=document.querySelector('.form')
+export const input=document.querySelector('.search-input')
+export const like=document.querySelector('.like')
+export const name=document.querySelector('.name')
+export const listLocation=document.querySelector('.list-location')
+export const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
+export const arrLocation=[]
+export let cityName={name:'Aktobe'}
+export const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
+export const details=document.querySelector('.detail')
+export const buttonContainer=document.querySelector('.button-container')
+export const weather=document.querySelector('.weather')
+export const detailContainer=document.createElement('div')
+export const containerNow=document.querySelector('.containerNow')
+export const now=document.querySelector('.now')
