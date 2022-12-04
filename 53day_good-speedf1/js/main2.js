@@ -1,28 +1,27 @@
-// const FORM1 = document.querySelector('#form1');
-// const TASKINPUT1 = document.querySelector('#taskInput1')
-// const TASKSLIST1 = document.querySelector('#tasksList1')
-// const serverUrl = 'https://api.genderize.io';
-
 import { UI_ELEMENTS } from "./UI.js";
 
-UI_ELEMENTS.FORM1.addEventListener('submit', getResponse)
+window.location.hash = "now";
 
-async function getResponse() {
-	let firstName = UI_ELEMENTS.TASKINPUT1.value;
-	const url = `${UI_ELEMENTS.serverUrl}?name=${firstName}`;
-	// console.log(firstName);
-	// console.log(url);
-	let response = await fetch(`${url}`)
-	let content = await response.json();
-	// console.log(content);
-	// console.log(firstName + ' is ' + content.gender);
 
-	const taskHTML = `
-		<div class="task list-group-item">
-			<label for="task__checkbox1" class="task-title">${firstName} is ${content.gender}</label>
-		</div>
-	`;
-	UI_ELEMENTS.TASKSLIST1.insertAdjacentHTML('beforeend', taskHTML)
-	UI_ELEMENTS.TASKINPUT1.value = '';
-	UI_ELEMENTS.TASKINPUT1.focus();
-}
+const form = document.querySelector('.form');
+const city__name = document.querySelector('.city__name');
+const now__temp = document.querySelector('.now__temp');
+const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
+// const cityName = 'boston';
+const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f'; 
+let degrees;
+const cityName = document.querySelector('.search__input'); 
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log(apiKey)
+    const url = `${serverUrl}?q=${e.target[0].value}&appid=${apiKey}&units=metric`;
+
+     fetch(url)
+        .then((res) => res.json())
+        .then((data) => { 
+            console.log(data)
+            city__name.textContent =  `${data.name}`
+            now__temp.textContent = Math.round(`${data.main.temp}`)+` C°`
+    })
+})
