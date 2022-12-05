@@ -1,50 +1,50 @@
-import { ELEMENT, CREATE_ELEMENT, CLASS } from './ui.js';
 import { EXTRA_VARIABLE, WEATHER_STATE, SRC_IMG } from './data.js';
-import { getForecastData, getWeatherData } from './weather.js';
+import { ELEMENT, CREATE_ELEMENT, CLASS } from './ui.js';
+import { repeatRequest } from './weather.js';
 import { favoritesList } from './favorites.js';
 
 const render = () => {
   ELEMENT.FAVORITES_LIST.replaceChildren();
-  ELEMENT.TAB_LIST_FORECAST.replaceChildren();
-  favoritesList.forEach((city) => createFavoriteCity(city));
+  favoritesList.forEach((cityName) => createFavoriteCity(cityName));
 };
 
-const createFavoriteCity = (city) => {
+const clearForecastList = () => ELEMENT.TAB_LIST_FORECAST.replaceChildren();
+
+const createFavoriteCity = (cityName) => {
   const cityWrapper = CREATE_ELEMENT.LI();
-  cityWrapper.textContent = city;
+  cityWrapper.textContent = cityName;
   cityWrapper.className = CLASS.CITY;
   ELEMENT.FAVORITES_LIST.append(cityWrapper);
-  cityWrapper.addEventListener('click', () => {
-    getWeatherData(city);
-    getForecastData(city);
-  });
+  cityWrapper.addEventListener('click', () => repeatRequest(cityName));
 };
 
 const updateCityName = (cityName) => {
   ELEMENT.ACTIVE_CITY_LIST.forEach((element) => {
     element.textContent = cityName;
   });
-  if (favoritesList.includes(cityName)) {
-    ELEMENT.LIKE.src = SRC_IMG.BLACK_HEART;
-  } else {
-    ELEMENT.LIKE.src = SRC_IMG.HEART;
-  }
+  checkLikeDisplay(cityName);
+  clearForecastList();
+};
+
+const checkLikeDisplay = (cityName) => {
+  favoritesList.includes(cityName)
+    ? (ELEMENT.LIKE.src = SRC_IMG.BLACK_HEART)
+    : (ELEMENT.LIKE.src = SRC_IMG.HEART);
 };
 
 const updateTemperature = (temperature, feelsLike) => {
   ELEMENT.TEMPERATURE.forEach((element) => {
-    element.textContent = temperature + EXTRA_VARIABLE.DEGREE_SYMBOL;
+    element.textContent = `${temperature}${EXTRA_VARIABLE.DEGREE_SYMBOL}`;
   });
-  ELEMENT.FEELS_LIKE.textContent = feelsLike + EXTRA_VARIABLE.DEGREE_SYMBOL;
+  ELEMENT.FEELS_LIKE.textContent = `${feelsLike}${EXTRA_VARIABLE.DEGREE_SYMBOL}`;
 };
 
 const updateWeatherState = (state) => {
   WEATHER_STATE.forEach((object) => {
-    object.state.forEach((element) => {
-      if (element === state) {
-        ELEMENT.ICON.src = object.src;
-        ELEMENT.CURRENT_STATE.textContent = state;
-      }
+    object.state.forEach((value) => {
+      value === state
+        ? (ELEMENT.ICON.src = object.src)
+        : (ELEMENT.CURRENT_STATE.textContent = state);
     });
   });
 };
@@ -70,25 +70,23 @@ const createItemsForecast = ({
   const imgIcon = CREATE_ELEMENT.IMG();
 
   divBlock.className = CLASS.FORECAST_BLOCK;
-  spanDate.className = `${CLASS.FORECAST_ITEM} ${CLASS.FORECAST_DATE}`;
-  spanTime.className = `${CLASS.FORECAST_ITEM} ${CLASS.FORECAST_TIME}`;
-  spanState.className = `${CLASS.FORECAST_ITEM} ${CLASS.FORECAST_STATE}`;
-  spanTemperature.className = `${CLASS.FORECAST_ITEM} ${CLASS.FORECAST_TEMPERATURE}`;
-  spanFeelsLike.className = `${CLASS.FORECAST_ITEM} ${CLASS.FORECAST_FEELS_LIKE}`;
+  spanDate.className = CLASS.FORECAST_DATE;
+  spanTime.className = CLASS.FORECAST_TIME;
+  spanState.className = CLASS.FORECAST_STATE;
+  spanTemperature.className = CLASS.FORECAST_TEMPERATURE;
+  spanFeelsLike.className = CLASS.FORECAST_FEELS_LIKE;
   imgIcon.className = CLASS.ICON_ITEM;
+  imgIcon.alt = CLASS.ICON_ITEM;
 
   spanDate.textContent = date;
   spanTime.textContent = time;
   spanState.textContent = state;
   spanTemperature.textContent = `Temperature: ${temperature}${EXTRA_VARIABLE.DEGREE_SYMBOL}`;
   spanFeelsLike.textContent = `Feels like: ${feels_like}${EXTRA_VARIABLE.DEGREE_SYMBOL}`;
-  imgIcon.alt = CLASS.ICON_ITEM;
 
   WEATHER_STATE.forEach((object) => {
-    object.state.forEach((element) => {
-      if (element === state) {
-        imgIcon.src = object.src;
-      }
+    object.state.forEach((value) => {
+      value !== state || (imgIcon.src = object.src);
     });
   });
 

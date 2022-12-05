@@ -1,5 +1,5 @@
-import { API, SRC_IMG } from './data.js';
 import { ELEMENT, CLASS } from './ui.js';
+import { API, SRC_IMG } from './data.js';
 import { render } from './render.js';
 
 const storage = {

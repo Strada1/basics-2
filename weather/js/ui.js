@@ -16,13 +16,12 @@ const ELEMENT = {
 };
 
 const CLASS = {
-  ACTIVE_BTN: 'active-btn',
+  ACTIVE_BUTTON: 'active-btn',
   ACTIVE_TAB: 'active-tab',
   INACTIVE_TAB: 'inactive-tab',
   ACTIVE_LIKE: 'active-like',
   CITY: 'city',
   FORECAST_BLOCK: 'forecast-block',
-  FORECAST_ITEM: 'forecast-item',
   FORECAST_DATE: 'forecast-date',
   FORECAST_TIME: 'forecast-time',
   FORECAST_TEMPERATURE: 'forecast-temperature',

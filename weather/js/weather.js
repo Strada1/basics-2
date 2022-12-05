@@ -1,7 +1,7 @@
 import { ELEMENT, CLASS } from './ui.js';
-import { parseWeather, parseForecast } from './conversion.js';
 import { API, ERROR } from './data.js';
 import { render } from './render.js';
+import { parseWeather, parseForecast } from './conversion.js';
 import {
   changeFavoritesList,
   favoritesList,
@@ -10,22 +10,27 @@ import {
 
 ELEMENT.FORM.addEventListener('submit', handleSendingData);
 ELEMENT.LIKE.addEventListener('click', changeFavoritesList);
-document.addEventListener('DOMContentLoaded', () => {
-  getWeatherData(currentCity);
-  getForecastData(currentCity);
+document.addEventListener('DOMContentLoaded', handleContentLoaded);
+for (let button of ELEMENT.BUTTONS) {
+  button.addEventListener('click', changeActiveButton);
+}
+
+function handleContentLoaded() {
+  repeatRequest(currentCity);
   favoritesList === ERROR.EMPTY_VALUE || render();
-});
-for (let btn of ELEMENT.BUTTONS) {
-  btn.addEventListener('click', changeActiveBtn);
 }
 
 function handleSendingData(event) {
   event.preventDefault();
   const cityName = event.target.city.value;
-  cityName === ERROR.EMPTY_VALUE ||
-    getWeatherData(cityName) + getForecastData(cityName);
+  cityName === ERROR.EMPTY_VALUE || repeatRequest(cityName);
   this.reset();
 }
+
+const repeatRequest = (cityName) => {
+  getWeatherData(cityName);
+  getForecastData(cityName);
+};
 
 function getWeatherData(cityName) {
   const url = `${API.URL_WEATHER}?q=${cityName}&appid=${API.KEY}`;
@@ -36,7 +41,6 @@ function getWeatherData(cityName) {
         throw new Error(ERROR.INCORRECT_CITY);
       }
       parseWeather(data);
-      render();
     })
     .catch((error) => {
       switch (error.message) {
@@ -59,23 +63,27 @@ function getForecastData(cityName) {
     .catch((error) => console.log(`${error}`));
 }
 
-function changeActiveBtn(event) {
-  const btnClicked = event.target;
-  ELEMENT.BUTTONS.forEach((btn) => {
-    if (btnClicked !== btn && btn.classList.contains(CLASS.ACTIVE_BTN)) {
-      btn.classList.remove(CLASS.ACTIVE_BTN);
+function changeActiveButton(event) {
+  const buttonClicked = event.target;
+  ELEMENT.BUTTONS.forEach((button) => {
+    if (
+      buttonClicked !== button &&
+      button.classList.contains(CLASS.ACTIVE_BUTTON)
+    ) {
+      button.classList.remove(CLASS.ACTIVE_BUTTON);
     }
   });
-  btnClicked.classList.contains(CLASS.ACTIVE_BTN) ||
-    btnClicked.classList.add(CLASS.ACTIVE_BTN) + changeTabView(btnClicked);
+  buttonClicked.classList.contains(CLASS.ACTIVE_BUTTON) ||
+    buttonClicked.classList.add(CLASS.ACTIVE_BUTTON) +
+      changeTabView(buttonClicked);
 }
 
-const changeTabView = (btnClicked) => {
-  const tabBtn = btnClicked.dataset.tab;
+const changeTabView = (buttonClicked) => {
+  const tabButton = buttonClicked.dataset.tab;
   ELEMENT.TABS_WEATHER.forEach((element) => {
     const tab = element.dataset.tab;
     switch (tab) {
-      case tabBtn:
+      case tabButton:
         element.classList.contains(CLASS.ACTIVE_TAB) ||
           element.classList.add(CLASS.ACTIVE_TAB) +
             element.classList.remove(CLASS.INACTIVE_TAB);
@@ -89,4 +97,4 @@ const changeTabView = (btnClicked) => {
   });
 };
 
-export { favoritesList, getWeatherData, getForecastData };
+export { repeatRequest };

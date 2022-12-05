@@ -188,6 +188,7 @@ body {
 .tab-list-forecast {
   padding: 0;
   overflow: auto;
+  font-size: var(--font2);
 }
 
 .tab-list-forecast::-webkit-scrollbar {
@@ -208,10 +209,6 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-
-.forecast-item {
-  font-size: var(--font2);
 }
 
 .forecast-date,
