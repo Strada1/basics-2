@@ -2,11 +2,7 @@ import { ELEMENT, CLASS } from './ui.js';
 import { API, ERROR } from './data.js';
 import { render } from './render.js';
 import { parseWeather, parseForecast } from './conversion.js';
-import {
-  changeFavoritesList,
-  favoritesList,
-  currentCity,
-} from './favorites.js';
+import { changeFavoritesList, currentCity } from './favorites.js';
 
 ELEMENT.FORM.addEventListener('submit', handleSendingData);
 ELEMENT.LIKE.addEventListener('click', changeFavoritesList);
@@ -17,7 +13,7 @@ for (let button of ELEMENT.BUTTONS) {
 
 function handleContentLoaded() {
   repeatRequest(currentCity);
-  favoritesList === ERROR.EMPTY_VALUE || render();
+  render();
 }
 
 function handleSendingData(event) {

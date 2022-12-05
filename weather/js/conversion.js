@@ -24,14 +24,14 @@ const parseWeather = ({ name, main, weather, sys }) => {
 
 const parseForecast = ({ list }) => {
   for (let element of list) {
-    const dateForecast = {
+    const forecastData = {
       date: convertUnixToDate(element.dt),
       time: convertUnixToTime(element.dt),
       temperature: convertKelvinToCelsius(element.main.temp),
       feels_like: convertKelvinToCelsius(element.main.feels_like),
       state: element.weather[0].main,
     };
-    createItemsForecast(dateForecast);
+    createItemsForecast(forecastData);
   }
 };
 
