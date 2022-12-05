@@ -1,7 +1,7 @@
 import { EXTRA_VARIABLE, WEATHER_STATE, SRC_IMG } from './data.js';
 import { ELEMENT, CREATE_ELEMENT, CLASS } from './ui.js';
-import { repeatRequest } from './weather.js';
 import { favoritesList } from './favorites.js';
+import { repeatRequest } from './main.js';
 
 const render = () => {
   ELEMENT.FAVORITES_LIST.replaceChildren();
