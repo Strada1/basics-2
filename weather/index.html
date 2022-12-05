@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>weather</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="weather">
+        <form class="weather__form">
+          <input class="form__input" placeholder="Aktobe" type="text" />
+          <button class="form__btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        <div class="main">
+          <div class="header__tabs">
+            <div class="tab">
+              <button class="tablinks active" value="Now">Now</button>
+              <button class="tablinks" value="Details">Details</button>
+              <button class="tablinks" value="Forecast">Forecast</button>
+            </div>
+
+            <div class="main-tab-content">
+              <div id="Now" class="tabcontent active">
+                <div class="header">
+                  <div class="header__temperature">14°</div>
+                  <div class="header__weather-mood">
+                    <img
+                      class="icon"
+                      src="https://openweathermap.org/img/wn/04n@4x.png"
+                      alt="no image"
+                    />
+                  </div>
+                  <div class="header__current-city">
+                    <div class="current-city__name">Aktobe</div>
+                    <button class="current-city__btn-like">
+                      <i class="fa-regular fa-heart"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div id="Details" class="tabcontent">
+                <div class="details__city">Aktobe</div>
+                <div class="details__city-data">
+                  <div class="details__city-temp data-child">
+                    Temperature: 14°
+                  </div>
+                  <div class="details__city-feels data-child">
+                    Feels like: 10°
+                  </div>
+                  <div class="details__city-mood data-child">
+                    Weather: Clouds
+                  </div>
+                  <div class="details__city-sunrise data-child">
+                    Sunrise: 03:21
+                  </div>
+                  <div class="details__city-sunset data-child">
+                    Sunset: 18:54
+                  </div>
+                </div>
+              </div>
+
+              <div id="Forecast" class="tabcontent">
+                <h3>Forecast</h3>
+                <p>Tokyo is the capital of Japan.</p>
+              </div>
+            </div>
+          </div>
+          <div class="list-city">
+            <div class="list-сity__title">Added Locations:</div>
+            <ul class="list__favorite-cities">
+              <!-- <li class="added_city">
+                Amur<span class="added_city-remove">+</span>
+              </li>
+               -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
