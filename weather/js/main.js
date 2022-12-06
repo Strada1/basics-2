@@ -4,12 +4,10 @@ import { render } from './render.js';
 import { parseWeather, parseForecast } from './conversion.js';
 import { changeFavoritesList, currentCity } from './favorites.js';
 
-ELEMENT.FORM.addEventListener('submit', handleSendingData);
-ELEMENT.LIKE.addEventListener('click', changeFavoritesList);
 document.addEventListener('DOMContentLoaded', handleContentLoaded);
-for (let button of ELEMENT.BUTTONS) {
-  button.addEventListener('click', changeActiveButton);
-}
+ELEMENT.WRAPPER_BUTTONS.addEventListener('click', changeActiveButton);
+ELEMENT.LIKE.addEventListener('click', changeFavoritesList);
+ELEMENT.FORM.addEventListener('submit', handleSendingData);
 
 function handleContentLoaded() {
   repeatRequest(currentCity);
@@ -61,17 +59,15 @@ function getForecastData(cityName) {
 
 function changeActiveButton(event) {
   const buttonClicked = event.target;
+  const active = CLASS.ACTIVE_BUTTON;
   ELEMENT.BUTTONS.forEach((button) => {
-    if (
-      buttonClicked !== button &&
-      button.classList.contains(CLASS.ACTIVE_BUTTON)
-    ) {
-      button.classList.remove(CLASS.ACTIVE_BUTTON);
+    if (buttonClicked !== button && button.classList.contains(active)) {
+      button.classList.remove(active);
     }
   });
-  buttonClicked.classList.contains(CLASS.ACTIVE_BUTTON) ||
-    buttonClicked.classList.add(CLASS.ACTIVE_BUTTON) +
-      changeTabView(buttonClicked);
+  buttonClicked.classList.contains(active) ||
+    buttonClicked.classList.add(active) + 
+    changeTabView(buttonClicked);
 }
 
 const changeTabView = (buttonClicked) => {

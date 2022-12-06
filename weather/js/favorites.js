@@ -1,6 +1,6 @@
-import { ELEMENT, CLASS } from './ui.js';
-import { API, SRC_IMG } from './data.js';
-import { render } from './render.js';
+import { ELEMENT } from './ui.js';
+import { API } from './data.js';
+import { render, updateLike } from './render.js';
 
 const storage = {
   saveFavoritesList: function (favoritesList) {
@@ -22,18 +22,11 @@ let currentCity = storage.getCurrentCity() || API.START_CITY;
 
 function changeFavoritesList() {
   const cityName = ELEMENT.ACTIVE_CITY.textContent;
-  if (!favoritesList.includes(cityName)) {
-    favoritesList = favoritesList.concat(cityName);
-    ELEMENT.LIKE.src = SRC_IMG.BLACK_HEART;
-    ELEMENT.LIKE.classList.add(CLASS.ACTIVE_LIKE);
-  } else {
-    favoritesList = favoritesList.filter((city) => {
-      ELEMENT.LIKE.src = SRC_IMG.HEART;
-      ELEMENT.LIKE.classList.remove(CLASS.ACTIVE_LIKE);
-      return city !== cityName;
-    });
-  }
+  favoritesList.includes(cityName)
+    ? (favoritesList = favoritesList.filter((city) => city !== cityName))
+    : (favoritesList = favoritesList.concat(cityName));
   storage.saveFavoritesList(favoritesList);
+  updateLike(cityName);
   render();
 }
 

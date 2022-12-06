@@ -21,15 +21,23 @@ const createFavoriteCity = (cityName) => {
 const updateCityName = (cityName) => {
   ELEMENT.ACTIVE_CITY_LIST.forEach((element) => {
     element.textContent = cityName;
+    updateLike(cityName);
   });
-  checkLikeDisplay(cityName);
   clearForecastList();
 };
-
-const checkLikeDisplay = (cityName) => {
+const updateLike = (cityName) => {
   favoritesList.includes(cityName)
-    ? (ELEMENT.LIKE.src = SRC_IMG.BLACK_HEART)
-    : (ELEMENT.LIKE.src = SRC_IMG.HEART);
+    ? (ELEMENT.LIKE.src = SRC_IMG.BLACK_HEART) +
+      ELEMENT.LIKE.classList.add(CLASS.ACTIVE_LIKE)
+    : (ELEMENT.LIKE.src = SRC_IMG.HEART) +
+      ELEMENT.LIKE.classList.remove(CLASS.ACTIVE_LIKE);
+};
+
+const findImageForState = (state) => {
+  const coincidence = WEATHER_STATE.find((object) => {
+    return object.state.includes(state);
+  });
+  return coincidence.src;
 };
 
 const updateTemperature = (temperature, feelsLike) => {
@@ -40,13 +48,10 @@ const updateTemperature = (temperature, feelsLike) => {
 };
 
 const updateWeatherState = (state) => {
-  WEATHER_STATE.forEach((object) => {
-    object.state.forEach((value) => {
-      value === state
-        ? (ELEMENT.ICON.src = object.src)
-        : (ELEMENT.CURRENT_STATE.textContent = state);
-    });
-  });
+  ELEMENT.CURRENT_STATE.textContent === state ||
+    (ELEMENT.CURRENT_STATE.textContent = state);
+  ELEMENT.ICON.src === findImageForState(state) ||
+    (ELEMENT.ICON.src = findImageForState(state));
 };
 
 const updateTimeDetails = (sunriseTime, sunsetTime) => {
@@ -84,11 +89,7 @@ const createItemsForecast = ({
   spanTemperature.textContent = `Temperature: ${temperature}${EXTRA_VARIABLE.DEGREE_SYMBOL}`;
   spanFeelsLike.textContent = `Feels like: ${feels_like}${EXTRA_VARIABLE.DEGREE_SYMBOL}`;
 
-  WEATHER_STATE.forEach((object) => {
-    object.state.forEach((value) => {
-      value !== state || (imgIcon.src = object.src);
-    });
-  });
+  imgIcon.src = findImageForState(state);
 
   ELEMENT.TAB_LIST_FORECAST.append(divBlock);
   divBlock.append(spanDate);
@@ -104,6 +105,7 @@ export {
   updateWeatherState,
   updateCityName,
   updateTimeDetails,
+  updateLike,
   createItemsForecast,
   render,
 };
