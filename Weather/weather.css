@@ -29,17 +29,27 @@ a{
 .main-display{
     display: flex;
     justify-content: space-between;
+    height: 415.2px;
 }
 
 .main-forecast{
     width: 50%;
     border-right: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
+.main-forecast-img{
+    width: 200px;
+    height: 200px;
+}
 
-.main-picture{
-    font-size: 70px;
+.main-number{
+    font-size: 30px;
     margin: 0;
+    margin-left: 10px;
 }
 
 .main-bottom{
@@ -82,7 +92,7 @@ a{
     display: flex;
     margin-top: 17px;
 }
-.buttons .btn{
+.buttons .btn-nav{
     flex: 0 0 33.3333%;
     height: 44px;
     background: none;
@@ -90,6 +100,12 @@ a{
     border-top: 1px solid #000000;
     font-size: 18px;
 }
+
+.btn-nav.active{
+    background-color: #000000;
+    color: white;
+}
+
 .buttons button:not(:last-child) {
     border-right: 1px solid #000000;
 }
@@ -127,6 +143,9 @@ li{
 .main-location-cities{
     font-size: 20px;
     padding: 10px 10px 0px 10px;
+}
+.tabs_block.active{
+    display: block;
 }
 
 .tabs_block{

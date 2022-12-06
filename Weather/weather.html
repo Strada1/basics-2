@@ -17,17 +17,17 @@
                 <div class="main-display">
                     <div class="main-forecast">
                         <div class="all-blocks">
-                            <div class="now tabs_block" id="tab_01">
-                                <p class="main-number">Degrees</p>
+                            <div class="now tabs_block active" id="tab_1">
+                                <p class="main-number">0</p>
                                 <div class="divImg">
-                                    <img src="img/icons8-cloud-96 1.png" alt="cloud" class="main-forecast-img">
+                                    <img src="/basics-2/Weather/img/icons8-cloud-96 1.svg" alt="cloud" class="main-forecast-img">
                                 </div>
                                 <div class="main-bottom"> 
                                 <p class="main-forecast-city">Moscow</p>
                                 <button class="like" type="button"></button>
                             </div>
                             </div>
-                            <div class="details tabs_block" id="tab_02">
+                            <div class="details tabs_block" id="tab_2">
                                 <ul class="main-location-list">
                                     <p class="main-location-cities">City</p>
                                     <li>Temperature:<span class="det-temp"></span></li>
@@ -37,12 +37,12 @@
                                     <li>Sunset: <span class="det-sunset"></span> </li>
                                 </ul>
                             </div>
-                            <div class="forecast tabs_block" id="tab_03"></div>
+                            <div class="forecast tabs_block" id="tab_3"></div>
                         </div>
                         <div class="buttons">
-                            <button class="btn-nobw btn"><a href="#tab_01">Now</a></button>
-                            <button class="btn-details btn"><a href="#tab_02">Details</a></button>
-                            <button class="btn-forecast btn"><a href="#tab_03">Forecast</a></button>
+                            <button class="btn-nav active" data-tab="#tab_1">Now</button>
+                            <button class="btn-nav" data-tab="#tab_2">Details</button>
+                            <button class="btn-nav" data-tab="#tab_3">Forecast</button>
                         </div>
                     </div>
                     <div class="main-locations">
