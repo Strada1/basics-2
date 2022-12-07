@@ -1,5 +1,6 @@
-import { EXTRA_VARIABLE, WEATHER_STATE, SRC_IMG } from './data.js';
 import { ELEMENT, CREATE_ELEMENT, CLASS } from './ui.js';
+import { EXTRA_VARIABLE, SRC_IMG } from './data.js';
+import { findImageForState } from './conversion.js';
 import { favoritesList } from './favorites.js';
 import { repeatRequest } from './main.js';
 
@@ -10,14 +11,6 @@ const render = () => {
 
 const clearForecastList = () => ELEMENT.TAB_LIST_FORECAST.replaceChildren();
 
-const createFavoriteCity = (cityName) => {
-  const cityWrapper = CREATE_ELEMENT.LI();
-  cityWrapper.textContent = cityName;
-  cityWrapper.className = CLASS.CITY;
-  ELEMENT.FAVORITES_LIST.append(cityWrapper);
-  cityWrapper.addEventListener('click', () => repeatRequest(cityName));
-};
-
 const updateCityName = (cityName) => {
   ELEMENT.ACTIVE_CITY_LIST.forEach((element) => {
     element.textContent = cityName;
@@ -25,19 +18,13 @@ const updateCityName = (cityName) => {
   });
   clearForecastList();
 };
+
 const updateLike = (cityName) => {
   favoritesList.includes(cityName)
     ? (ELEMENT.LIKE.src = SRC_IMG.BLACK_HEART) +
       ELEMENT.LIKE.classList.add(CLASS.ACTIVE_LIKE)
     : (ELEMENT.LIKE.src = SRC_IMG.HEART) +
       ELEMENT.LIKE.classList.remove(CLASS.ACTIVE_LIKE);
-};
-
-const findImageForState = (state) => {
-  const coincidence = WEATHER_STATE.find((object) => {
-    return object.state.includes(state);
-  });
-  return coincidence.src;
 };
 
 const updateTemperature = (temperature, feelsLike) => {
@@ -59,12 +46,21 @@ const updateTimeDetails = (sunriseTime, sunsetTime) => {
   ELEMENT.SUNSET.textContent = sunsetTime;
 };
 
+const createFavoriteCity = (cityName) => {
+  const cityWrapper = CREATE_ELEMENT.LI();
+  cityWrapper.textContent = cityName;
+  cityWrapper.className = CLASS.CITY;
+  ELEMENT.FAVORITES_LIST.prepend(cityWrapper);
+  cityWrapper.addEventListener('click', () => repeatRequest(cityName));
+};
+
 const createItemsForecast = ({
   date,
   time,
   temperature,
   feels_like,
   state,
+  image,
 }) => {
   const divBlock = CREATE_ELEMENT.DIV();
   const spanDate = CREATE_ELEMENT.SPAN();
@@ -83,13 +79,13 @@ const createItemsForecast = ({
   imgIcon.className = CLASS.ICON_ITEM;
   imgIcon.alt = CLASS.ICON_ITEM;
 
+  imgIcon.src = image;
+
   spanDate.textContent = date;
   spanTime.textContent = time;
   spanState.textContent = state;
   spanTemperature.textContent = `Temperature: ${temperature}${EXTRA_VARIABLE.DEGREE_SYMBOL}`;
   spanFeelsLike.textContent = `Feels like: ${feels_like}${EXTRA_VARIABLE.DEGREE_SYMBOL}`;
-
-  imgIcon.src = findImageForState(state);
 
   ELEMENT.TAB_LIST_FORECAST.append(divBlock);
   divBlock.append(spanDate);

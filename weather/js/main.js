@@ -61,9 +61,8 @@ function changeActiveButton(event) {
   const buttonClicked = event.target;
   const active = CLASS.ACTIVE_BUTTON;
   ELEMENT.BUTTONS.forEach((button) => {
-    if (buttonClicked !== button && button.classList.contains(active)) {
+    (buttonClicked === button && !button.classList.contains(active)) ||
       button.classList.remove(active);
-    }
   });
   buttonClicked.classList.contains(active) ||
     buttonClicked.classList.add(active) + 
@@ -72,18 +71,20 @@ function changeActiveButton(event) {
 
 const changeTabView = (buttonClicked) => {
   const tabButton = buttonClicked.dataset.tab;
+  const active = CLASS.ACTIVE_TAB;
+  const inactive = CLASS.INACTIVE_TAB;
   ELEMENT.TABS_WEATHER.forEach((element) => {
     const tab = element.dataset.tab;
     switch (tab) {
       case tabButton:
-        element.classList.contains(CLASS.ACTIVE_TAB) ||
-          element.classList.add(CLASS.ACTIVE_TAB) +
-            element.classList.remove(CLASS.INACTIVE_TAB);
+        element.classList.contains(active) ||
+          element.classList.add(active) + 
+          element.classList.remove(inactive);
         break;
       default:
-        element.classList.contains(CLASS.INACTIVE_TAB) ||
-          element.classList.add(CLASS.INACTIVE_TAB) +
-            element.classList.remove(CLASS.ACTIVE_TAB);
+        element.classList.contains(inactive) ||
+          element.classList.add(inactive) + 
+          element.classList.remove(active);
         break;
     }
   });
