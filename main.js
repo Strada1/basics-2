@@ -1,36 +1,7 @@
-import {storage} from './module.js';
-
-// tabs
-const weatherBattons = document.querySelector('.weather__buttons');
-const weatherBattonAll = Array.from( document.querySelectorAll('.weather__button'));
-const weatherTabs = document.querySelector('.weather__tabs')
-const weatherTabAll = document.querySelectorAll('.weather__tab')
-weatherBattons.addEventListener("click", function (event) {
-	const clickButton = event.target
-	if (checkClickTabs(clickButton)){
-		changeTabs(clickButton)
-	}
-});
-
-function checkClickTabs(clickButton) {
-	const clickButtonParent = clickButton.closest(".weather__button")
-	const activeClickElementParent = clickButtonParent.classList.contains("-active")
-	return clickButtonParent && !activeClickElementParent
-}
-
-
-function changeTabs(clickButton) {
-	const activeButton = weatherBattons.querySelector('.weather__button.-active');
-	activeButton.classList.remove("-active")
-	clickButton.classList.add("-active")
-	const indexClickButton = weatherBattonAll.findIndex(item => item === clickButton)
-	const activeTab = weatherTabs.querySelector('.weather__tab.-active');
-	activeTab.classList.remove("-active")
-	const newActiveTab = weatherTabAll[indexClickButton]
-	newActiveTab.classList.add("-active")
-}
-
-
+import { storage } from './module.js';
+import { WEATHER_TABS } from './tabs.js';
+import { checkClickTabs } from './tabs.js';
+import { changeTabs } from './tabs.js';
 /*
 Ваша задача:
 1. вводим что-то в строку поиска, по нажатию на Enter - берем имя города из этой строки
@@ -42,6 +13,7 @@ function changeTabs(clickButton) {
 6. По клику на иконку с сердцем добавляйте города в список справа, по клику на крестик рядом с именем города в этом списке - удаляйте его навсегда 
 7. По клику на сам город - добавляйте его данные в окно 'Now'
 */
+
 const UI_ELEMENTS = {
 	FORM: document.querySelector('.weather__form'),
 	INPUT: document.querySelector('.weather__input'),
@@ -65,6 +37,12 @@ const WEATHER_DETAILS = {
 let citiesList = storage.getFavoriteCities();
 render();
 
+WEATHER_TABS.addEventListener("click", function (event) {
+	const clickButton = event.target
+	if (checkClickTabs(clickButton)){
+		changeTabs(clickButton)
+	}
+});
 UI_ELEMENTS.LIKE_BUTTON.addEventListener('click', addCity);
 
 UI_ELEMENTS.FORM.addEventListener('submit', function (event) {
@@ -82,17 +60,14 @@ function addCity(e) {
 
 	if (citiesList.length > 0) {
 		if (citiesList.includes(currenCity)) {
-			
 			deleteFavoriteCity(currenCity);
-			//alert('This city is already at list');
+			
 		} else {
 			citiesList.push(currenCity);
-			console.log(citiesList);
 			storage.saveFavoriteCities(citiesList);
 		}
 	} else if (citiesList.length === 0) {
 		citiesList.push(currenCity);
-		console.log(citiesList);
 		storage.saveFavoriteCities(citiesList);
 	}
 
@@ -102,6 +77,7 @@ function deleteFavoriteCity(currenCity) {
 	citiesList = citiesList.filter((city) => {
 		return city !== currenCity;				
 	});
+
 	storage.saveFavoriteCities(citiesList);
 	render();
 }
@@ -109,11 +85,11 @@ function deleteFavoriteCity(currenCity) {
 
 //функция удаления, 
 function deleteCity() {
-	
 	citiesList = citiesList.filter((cityName) => {
 		let currenCity = this.parentNode.textContent;
 		return cityName !== currenCity;
 	})
+
 	storage.saveFavoriteCities(citiesList);
 	render();
 }
@@ -121,7 +97,7 @@ function deleteCity() {
 
 //функция добавления в ui
 function render(){
-	let favoritesCitiesList = UI_ELEMENTS.FAVORITES_CITIES_LIST;
+	const favoritesCitiesList = UI_ELEMENTS.FAVORITES_CITIES_LIST;
 	favoritesCitiesList.textContent = '';
 
 	citiesList = storage.getFavoriteCities();
@@ -134,13 +110,17 @@ function render(){
 	console.log(citiesList);
 }
 
+//функция вывода города на экран из списка избранных
 function replace(currenCity) {
 	let cities = UI_ELEMENTS.CURRENT__CITIES;
+
 	for (let city of cities) {
 		city.textContent = currenCity;
 	}
+
 	storage.addLastCityName(currenCity);
 }
+
 
 function openFavoritCity(e) {
 	let currenCity = e.target;
@@ -152,6 +132,7 @@ function openFavoritCity(e) {
 	UI_ELEMENTS.INPUT.placeholder = currenCity.textContent;
 }
 
+//функция создания узла для DOM
 function createNewListNode(city) {
     let newFavoritCity = document.createElement('li');
 	newFavoritCity.classList.add('weather__city');
@@ -167,6 +148,38 @@ function createNewListNode(city) {
     return newFavoritCity
 }
 
+//функция смены ui для страницы деталей погоды
+function changeDetails(data) {
+	WEATHER_DETAILS.TEMPERATURE.textContent = data.main.temp.toFixed(0);
+	WEATHER_DETAILS.FEELS__LIKE.textContent = data.main.feels_like.toFixed(0);
+	WEATHER_DETAILS.WEATHER.textContent = data.weather[0].main;
+	WEATHER_DETAILS.SUNRISE.textContent = getTime(1000 * data.sys.sunrise);
+	WEATHER_DETAILS.SUNSET.textContent = getTime(1000 * data.sys.sunset);
+}
+
+//функция получения иконки погоды
+function getTime(data) {
+	let time = new Date(data);
+	let hours = time.getHours();
+	let minutes = time.getMinutes();
+	if (hours < 10) {
+		hours = `0${(hours)}`;
+	}
+	if (minutes < 10) {
+		minutes = `0${(minutes)}`;
+	}
+	
+	return `${hours}:${minutes}`
+}
+
+function getIconWeather(data) {
+	const icon = data.weather[0].icon;
+	const apiIcon = `http://openweathermap.org/img/wn/${icon}@4x.png`;
+	UI_ELEMENTS.ICON__WEATHER.src = apiIcon;
+    
+}
+
+//функция отправления запроса на сервер
 function sendRequest(text) {
 	let cityName = text;
 	const serverUrl = 'https://api.openweathermap.org/data/2.5/weather';
@@ -188,36 +201,6 @@ function sendRequest(text) {
 				
 			})
 			.catch(error => alert(`Error!: ${error.message}`));
-}
-
-
-function changeDetails(data) {
-	WEATHER_DETAILS.TEMPERATURE.textContent = data.main.temp.toFixed(0);
-	WEATHER_DETAILS.FEELS__LIKE.textContent = data.main.feels_like.toFixed(0);
-	WEATHER_DETAILS.WEATHER.textContent = data.weather[0].main;
-	WEATHER_DETAILS.SUNRISE.textContent = getTime(1000 * data.sys.sunrise);
-	WEATHER_DETAILS.SUNSET.textContent = getTime(1000 * data.sys.sunset);
-}
-
-function getTime(data) {
-	let time = new Date(data);
-	let hours = time.getHours();
-	let minutes = time.getMinutes();
-	if (hours < 10) {
-		hours = `0${(hours)}`;
-	}
-	if (minutes < 10) {
-		minutes = `0${(minutes)}`;
-	}
-	
-	return `${hours}:${minutes}`
-}
-
-function getIconWeather(data) {
-	const icon = data.weather[0].icon;
-	const apiIcon = `http://openweathermap.org/img/wn/${icon}@4x.png`;
-	UI_ELEMENTS.ICON__WEATHER.src = apiIcon;
-    
 }
 /* object after fetch request
 base: "stations"
