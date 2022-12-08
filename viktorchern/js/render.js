@@ -4,9 +4,22 @@ import { createElement } from './add-city.js';
 import { deleteCity } from './delete-city.js';
 import { storage } from './local-storage.js';
 
-export function renderTabNow(currentCity) {
+export let list = [];
+let favoriteCity;
+if( storage.getCurrentCity() ) {
+  favoriteCity = storage.getCurrentCity();
+} else {
+  favoriteCity = 'Moscow';
+}
+
+// console.log(storage.getFavoriteCities());
+
+if( storage.getFavoriteCities() ) {
+  storage.getFavoriteCities().forEach( item => list.push(item) );
+}
+
+export function renderTabNow(currentCity = favoriteCity) {
   const serverUrl = 'http://api.openweathermap.org/';
-  // const cityName = currentCity;
   const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
   const url = `${serverUrl}data/2.5/weather?q=${currentCity}&appid=${apiKey}&units=metric`;
 
@@ -30,8 +43,11 @@ export function renderTabNow(currentCity) {
         const IMG_ALT = data.weather[0].description;
         const IMG_ICON = data.weather[0].icon;
 
-        // console.log(data);
         UI_ELEMENTS.TAB_NOW_CITY.textContent = data.name;
+        favoriteCity = data.name;
+        
+        storage.setCurrentCity(favoriteCity);
+
         UI_ELEMENTS.TAB_NOW_TEMP.textContent = `${Math.floor(data.main.temp)}°`;
 
         UI_ELEMENTS.TAB_NOW_IMG.src = `https://openweathermap.org/img/wn/${IMG_ICON}@2x.png`;
@@ -43,7 +59,7 @@ export function renderTabNow(currentCity) {
   }
 }
 
-export function renderFavoriteCities(favoriteCities){
+export function renderFavoriteCities(favoriteCities = list){
   UI_ELEMENTS.LOCATIONS.textContent = '';
 
   favoriteCities.forEach(item => {
