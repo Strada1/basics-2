@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Weather</title>
+</head>
+
+<body>
+
+    <div class="weather_container">
+        <div class="container__search_city">
+
+            <form class='input_form'>
+
+                <input value='' placeholder="Find City" type="text" class="container__search_city__input">
+                <img src="img/find.svg" alt="" class="container__search_city__search_button">
+
+            </form>
+
+        </div>
+
+
+        <div class="container__now"> Now </div>
+        <div class="container__details"> Detail </div>
+        <div class="container__forecast"> Forecast </div>
+
+
+        <div class="left_menu__page_one">
+            <p class="page_one__info__temperature"> 14° </p>
+            <div class="weatcher_animation">
+                <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" class="page_one__info__sign">
+            </div>
+            <div class="heart_animation">
+                <div class="page_one__info__heart">❤</div>
+            </div>
+            <p class="page_one__info__city"> Aktobe </p>
+        </div>
+
+
+        <div class="left_menu__page_two" hidden>
+            <p class="page_two__info__city"> Aktobe </p>
+            <ul class="page_two__info__list">
+                <li class="detail_list_temp">Temperature: 14°</li>
+                <li class="detail_list_feels">Feels like: 10° </li>
+                <li class="detail_list_weather">Weather: Clouds </li>
+                <li class="detail_list_sunrise">Sunrise: 03:21</li>
+                <li class="detail_list_sunset">Sunset: 18:54</li>
+            </ul>
+        </div>
+
+
+        <div class="left_menu__page_three" hidden>
+
+            <p class="page_three__info__city"> Aktobe </p>
+
+            <div class="forecast__card_list"></div>
+
+        </div>
+
+
+        <div class="right_menu__add_locations">
+            <p class="right_menu__add__text"> Added Locations: </p>
+        </div>
+
+        <div class="right_menu__city_list">
+            <ul class="city_list">
+
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
