@@ -43,7 +43,7 @@ body {
   height: var(--entire);
 }
 
-.search-btn-label {
+.search-button-label {
   position: absolute;
   margin: 7px 0 0 -46px;
 }
@@ -54,7 +54,7 @@ body {
   padding-left: 16px;
 }
 
-.search-btn {
+.search-button {
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -235,7 +235,7 @@ body {
   margin-right: 6%;
 }
 
-.inactive-tab {
+.tab:not(.active-tab) {
   display: none;
 }
 
@@ -251,15 +251,15 @@ body {
   align-items: baseline;
 }
 
-/* TABS-BTN */
+/* BUTTONS */
 
-.tab-wrapper-btn {
+.tab-buttons-wrapper {
   display: flex;
   border-top: var(--border);
   height: 10%;
 }
 
-.tab-btn {
+.tab-button {
   flex: 0 0 33.333333%;
   height: 101%;
   font-size: var(--font2);
@@ -269,21 +269,21 @@ body {
   overflow: hidden;
 }
 
-.now-btn,
-.details-btn {
+.now-button,
+.details-button {
   border-right: var(--border);
 }
 
-.active-btn {
+.active-button {
   color: var(--color-white);
   background-color: #000;
 }
 
-.tab-btn:hover {
+.tab-button:hover {
   color: var(--color-white);
 }
 
-.tab-btn::after {
+.tab-button::after {
   content: '';
   background: #000;
   position: absolute;
@@ -298,10 +298,12 @@ body {
   transform: skewX(45deg) scale(0, 1);
 }
 
-.tab-btn:hover::after {
+.tab-button:hover::after {
   transition: all 0.4s ease-out;
   transform: skewX(45deg) scale(1, 1);
 }
+
+/* MEDIA */
 
 @media (max-width: 550px) {
   .forecast-block {

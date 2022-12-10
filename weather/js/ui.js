@@ -4,8 +4,8 @@ const ELEMENT = {
   FAVORITES_LIST: document.querySelector('.city-list-wrapper'),
   TABS_WEATHER: document.querySelectorAll('.tab'),
   TAB_LIST_FORECAST: document.querySelector('.tab-list-forecast'),
-  WRAPPER_BUTTONS: document.querySelector('.tab-wrapper-btn'),
-  BUTTONS: document.querySelectorAll('.tab-btn'),
+  BUTTONS_WRAPPER: document.querySelector('.tab-buttons-wrapper'),
+  BUTTONS: document.querySelectorAll('.tab-button'),
   FORM: document.querySelector('form'),
   LIKE: document.querySelector('.like'),
   CURRENT_STATE: document.querySelector('.current-state'),
@@ -17,10 +17,8 @@ const ELEMENT = {
 };
 
 const CLASS = {
-  ACTIVE_BUTTON: 'active-btn',
+  ACTIVE_BUTTON: 'active-button',
   ACTIVE_TAB: 'active-tab',
-  INACTIVE_TAB: 'inactive-tab',
-  ACTIVE_LIKE: 'active-like',
   CITY: 'city',
   FORECAST_BLOCK: 'forecast-block',
   FORECAST_DATE: 'forecast-date',

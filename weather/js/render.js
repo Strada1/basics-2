@@ -21,10 +21,8 @@ const updateCityName = (cityName) => {
 
 const updateLike = (cityName) => {
   favoritesList.includes(cityName)
-    ? (ELEMENT.LIKE.src = SRC_IMG.BLACK_HEART) +
-      ELEMENT.LIKE.classList.add(CLASS.ACTIVE_LIKE)
-    : (ELEMENT.LIKE.src = SRC_IMG.HEART) +
-      ELEMENT.LIKE.classList.remove(CLASS.ACTIVE_LIKE);
+    ? (ELEMENT.LIKE.src = SRC_IMG.BLACK_HEART)
+    : (ELEMENT.LIKE.src = SRC_IMG.HEART);
 };
 
 const updateTemperature = (temperature, feelsLike) => {

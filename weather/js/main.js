@@ -5,7 +5,7 @@ import { parseWeather, parseForecast } from './conversion.js';
 import { changeFavoritesList, currentCity } from './favorites.js';
 
 document.addEventListener('DOMContentLoaded', handleContentLoaded);
-ELEMENT.WRAPPER_BUTTONS.addEventListener('click', changeActiveButton);
+ELEMENT.BUTTONS_WRAPPER.addEventListener('click', changeActiveButton);
 ELEMENT.LIKE.addEventListener('click', changeFavoritesList);
 ELEMENT.FORM.addEventListener('submit', handleSendingData);
 
@@ -72,19 +72,14 @@ function changeActiveButton(event) {
 const changeTabView = (buttonClicked) => {
   const tabButton = buttonClicked.dataset.tab;
   const active = CLASS.ACTIVE_TAB;
-  const inactive = CLASS.INACTIVE_TAB;
   ELEMENT.TABS_WEATHER.forEach((element) => {
     const tab = element.dataset.tab;
     switch (tab) {
       case tabButton:
-        element.classList.contains(active) ||
-          element.classList.add(active) + 
-          element.classList.remove(inactive);
+        element.classList.contains(active) || element.classList.add(active);
         break;
       default:
-        element.classList.contains(inactive) ||
-          element.classList.add(inactive) + 
-          element.classList.remove(active);
+        !element.classList.contains(active) || element.classList.remove(active);
         break;
     }
   });

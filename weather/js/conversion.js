@@ -37,10 +37,10 @@ const parseForecast = ({ list }) => {
 };
 
 const findImageForState = (state) => {
-  const coincidence = WEATHER_STATE.find((object) => {
+  const objectForState = WEATHER_STATE.find((object) => {
     return object.state.includes(state);
   });
-  return coincidence.src;
+  return objectForState.src;
 };
 
 const convertKelvinToCelsius = (temperature) => {
