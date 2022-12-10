@@ -1,6 +1,6 @@
 import { storage } from './storageMethods.js';
-/*import { changeDivNow } from './changeUI.js';
-import { changeDivDetails } from './changeUI.js';
+import { changeDivNow } from './changeUI.js';
+/*import { changeDivDetails } from './changeUI.js';
 import { changeColorHeart } from './changeUI.js';
 import { displayAddedLocations } from './changeUI.js';*/
 
@@ -93,11 +93,11 @@ function checkTime(getHoursSunrise, getMinutesSunrise) {
 
 }
 
-function changeDivNow(cityName, degreesCelsius, imgLocation) {
+/*function changeDivNow(cityName, degreesCelsius, imgLocation) {
 	CITY_DIV.textContent = cityName;
 	CELSIUS_DIV.textContent = degreesCelsius;
 	IMG_WEATHER.src = imgLocation;
-}
+}*/
 
 function changeDivDetails(
 	cityName,
