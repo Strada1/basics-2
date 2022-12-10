@@ -29,7 +29,7 @@ a{
 .main-display{
     display: flex;
     justify-content: space-between;
-    height: 415.2px;
+    height: 450px;
 }
 
 .main-forecast{
@@ -38,7 +38,10 @@ a{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    flex-wrap: wrap;
+}
+
+.now{
+    padding: 10px 5px 0px 5px;
 }
 
 .main-forecast-img{
@@ -56,7 +59,7 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 0px 26px 0px 14px;
+    padding: 20px 26px 0px 14px;
 }
 .like{
     background-image: url(/basics-2/Weather/img/Shape.svg);
@@ -90,7 +93,6 @@ a{
 
 .buttons {
     display: flex;
-    margin-top: 17px;
 }
 .buttons .btn-nav{
     flex: 0 0 33.3333%;
@@ -140,7 +142,8 @@ li{
     font-size: 20px;
 }
 
-.main-location-cities{
+.main-location-cities,
+.main-forecast-cities{
     font-size: 20px;
     padding: 10px 10px 0px 10px;
 }
@@ -175,4 +178,48 @@ li{
     border: none;
     font-size: 20px;
 }
+
+/*Forecast*/
+.forecast{
+    height: 100%;
+}
+
+.for{
+    overflow-y: auto;
+    height: 300px;
+}
+
+.forecast-block{
+    height: 120px;
+    width: 265px;
+    border: 1px solid black;
+    margin: 5px 10px 7px 5px;
+    font-size: 15px;
+}
+
+.forecast_date_time,
+.forecast_temp_condition,
+.forecast_feel_pict{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.forecast_temp,
+.forecast_cond,
+.forecast_date,
+.forecast_time,
+.forecast_feel{
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
 
