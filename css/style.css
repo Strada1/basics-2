@@ -105,6 +105,7 @@ ul li {
     padding: 5px 0;
 }
 .details__list-details li{
+    /* list-style: none; */
     padding-top: 16px;
 }
 .forecast{
@@ -131,7 +132,7 @@ ul li {
     border: 1px solid black;
     font-size: 18px;
     display: grid;
-    grid-template: 2fr 1fr 1fr/1.2fr 0.8fr
+    grid-template: 2fr 1fr 1fr/1.05fr 0.95fr
 }
 .card-weather div:nth-child(even){
     justify-self: end;
