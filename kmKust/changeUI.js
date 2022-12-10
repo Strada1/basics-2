@@ -4,7 +4,7 @@ export function changeDivNow(cityName, degreesCelsius, imgLocation) {
 	IMG_WEATHER.src = imgLocation;
 }
 
-/*export function changeDivDetails(
+export function changeDivDetails(
 	cityName,
 	degreesCelsius,
 	feelsLike,
@@ -51,4 +51,4 @@ export function displayAddedLocations(city) {
 	createLi.className = "liCity";
 	createLi.innerHTML = city;
 	UL_CITIES.append(createLi);
-}*/
+}

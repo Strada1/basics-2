@@ -1,8 +1,8 @@
 import { storage } from './storageMethods.js';
 import { changeDivNow } from './changeUI.js';
-/*import { changeDivDetails } from './changeUI.js';
+import { changeDivDetails } from './changeUI.js';
 import { changeColorHeart } from './changeUI.js';
-import { displayAddedLocations } from './changeUI.js';*/
+import { displayAddedLocations } from './changeUI.js';
 
 const CURRENT_TAB_TEXT = {
 	NOW: 'Now',
@@ -99,7 +99,7 @@ function checkTime(getHoursSunrise, getMinutesSunrise) {
 	IMG_WEATHER.src = imgLocation;
 }*/
 
-function changeDivDetails(
+/*function changeDivDetails(
 	cityName,
 	degreesCelsius,
 	feelsLike,
@@ -124,7 +124,7 @@ function changeDivDetails(
 
 	let liSunset = document.querySelectorAll('.liCityInfo')[4];
 	liSunset.textContent = `Sunset: ${timeSunset}`;
-}
+}*/
 
 function render() {
 	UL_CITIES.replaceChildren();
@@ -141,7 +141,7 @@ function render() {
 	changeColorHeart();
 }
 
-function changeColorHeart() {
+/*function changeColorHeart() {
 	let imgHeartRed = "url(./img/imgHeartRed.png)";
 	let imgHeart = "url(./img/imgHeart.png)";
 
@@ -154,19 +154,19 @@ function changeColorHeart() {
 	} else if (cityInArray) {
 		BTN_SAVE_CITY.style.backgroundImage = imgHeartRed;
 	}
-}
+}*/
 
 function listIncludesСity(jsonParseLs, cityDivText) {
 	let cityInArray = jsonParseLs.includes(cityDivText, 0);
 	return cityInArray;
 }
 
-function displayAddedLocations(city) {
+/*function displayAddedLocations(city) {
 	let createLi = document.createElement('li');
 	createLi.className = "liCity";
 	createLi.innerHTML = city;
 	UL_CITIES.append(createLi);
-}
+}*/
 
 function changLocalStorage() {
 	let cityDivText = CITY_DIV.textContent;
