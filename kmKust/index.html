@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>#55 Погода: верстка</title>
+	<title>Погода</title>
 	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
@@ -15,7 +15,7 @@
 	<div class="weatherBox">
 		<div class="weatherBoxBody">
 			<form class="search">
-				<input id="inputOne" type="text" class="searchInput" placeholder="Aktobe">
+				<input id="inputOne" type="text" class="searchInput" placeholder="Enter city">
 				<button class="btnSearch" type="submit"></button>
 			</form>
 			<div class="bodyBox">
@@ -23,16 +23,16 @@
 
 					<div class="tabs">
 
-						<div id="tab_01" class="mainScreen tabs__block">
-							<div class="degreesСelsius">14&#176;</div>
+						<div id="tab_01" class="mainScreen tabs__block block__top">
+							<div class="degreesСelsius">14°</div>
 							<img class="imgСloud" src="./img/cloud.png" alt="">
 							<div class="city">Aktobe</div>
-							<button class="btnHeart" type="submit"></button>
+							<button class="btnHeart" type="submit" style="background-image: url(./img/imgHeart.png)"></button>
 						</div>
 						<div id="tab_02" class="mainScreen tabs__block">
-							<div class="citiesDetails">&nbsp &nbsp &nbsp &nbspAktobe</div>
-							<ul class="ulCities">
-								<li class="liCityInfo">Temperature: 14&#176;</li>
+							<div class="citiesDetails">Aktobe</div>
+							<ul class="ulCitiesDetails">
+								<li class="liCityInfo">Temperature: 14°</li>
 								<li class="liCityInfo">Feels like: 10</li>
 								<li class="liCityInfo">Weather: Clouds</li>
 								<li class="liCityInfo">Sunrise: 03:21</li>
@@ -50,33 +50,22 @@
 						</nav>
 					</div>
 				</div>
-
-
-
-
-				<!--<button id="btn" class="btnNow btnActive" type="submit">Now</button>
-				<button id="btn" class="btnDetails" type="submit">Details</button>
-				<button id="btn" class="btnForecast" type="submit">Forecast</button>-->
 				<div class="cityScreen">
 					<div class="citiesList">&nbsp &nbsp &nbsp Added Locations:</div>
 					<ul class="ulCities">
-						<li class="liCity">Amur</li>
+						<!--<li class="liCity">Amur</li>
 						<li class="liCity">Samara</li>
 						<li class="liCity">Bali</li>
 						<li class="liCity">Dane</li>
 						<li class="liCity">Kilo</li>
-						<li class="liCity">Nur-Sultan</li>
+						<li class="liCity">Nur-Sultan</li>-->
 					</ul>
 				</div>
 
 			</div>
-
-
 		</div>
-
-
 	</div>
-
+	<script type="module" src="main.js"></script>
 
 </body>
 

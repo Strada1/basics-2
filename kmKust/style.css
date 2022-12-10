@@ -28,6 +28,9 @@
 	color: rgb(141, 141, 141);
 }
 
+.block__top{
+	display: block;
+}
 
 
 .tabs__block{
@@ -35,6 +38,7 @@
 	display: none;
 	
 }
+
 
 .tabs__block:nth-child(1){
 	background-color: #fff;
@@ -157,9 +161,7 @@
 	border-bottom: none;
 	border-right: none;
 	margin-left: -1px;
-	
-
-}
+	}
 
 .degreesСelsius{
 	position: absolute;
@@ -174,9 +176,9 @@
 
 .imgСloud{
 	position: absolute;
-	width: 78px;
-height: 59px;
-margin: 122px 97px;
+	width: 200px;
+	height: 200px;
+	margin: 67px 49px;
 
 }
 
@@ -216,13 +218,14 @@ margin: 122px 97px;
 	display: block;
 	width: 22px;
 	height: 22px;
-	background-image: url(./img/imgHeart.png);
+	
 	background-size: cover;
 	background-repeat: no-repeat;
 	margin-top: 305px;
 	margin-left: 260px;
 	background-color: transparent;
 	border: medium none;
+	
 }
 
 .citiesList{
@@ -244,6 +247,7 @@ margin: 122px 97px;
 	font-size: 24px;
 	line-height: 28px;
 	border: 1px solid #000000;
+	margin-left: 40px;
 	display: flex;
 	border-top: none;
 	border-right: none;
