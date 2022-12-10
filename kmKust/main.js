@@ -1,8 +1,22 @@
 import { storage } from './storageMethods.js';
-import { changeDivNow } from './changeUI.js';
-import { changeDivDetails } from './changeUI.js';
-import { changeColorHeart } from './changeUI.js';
-import { displayAddedLocations } from './changeUI.js';
+import {
+	changeDivNow,
+	changeDivDetails,
+	listIncludesСity,
+	changeColorHeart,
+	displayAddedLocations
+} from './changeUI.js';
+
+import {
+	CURRENT_TAB,
+	BTN_SAVE_CITY,
+	SEARCH__INPUT,
+	FORM,
+	UL_CITIES,
+	CITY_DIV,
+	CELSIUS_DIV,
+	IMG_WEATHER,
+} from './view.js';
 
 const CURRENT_TAB_TEXT = {
 	NOW: 'Now',
@@ -33,7 +47,7 @@ const CURRENT_TAB_TEXT = {
 	cityDataSearch(cityName);
 })()
 
-const CURRENT_TAB = document.querySelector('.tabs__items')
+/*const CURRENT_TAB = document.querySelector('.tabs__items')
 const BTN_SAVE_CITY = document.querySelector('.btnHeart');
 const SEARCH__INPUT = document.querySelector('.searchInput');
 const FORM = document.querySelector('.search');
@@ -41,7 +55,7 @@ const UL_CITIES = document.querySelector('.ulCities');
 
 const CITY_DIV = document.querySelector('.city');
 const CELSIUS_DIV = document.querySelector('.degreesСelsius');
-const IMG_WEATHER = document.querySelector('.imgСloud');
+const IMG_WEATHER = document.querySelector('.imgСloud');*/
 
 function cityDataSearch(cityName) {
 	const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
@@ -156,10 +170,10 @@ function render() {
 	}
 }*/
 
-function listIncludesСity(jsonParseLs, cityDivText) {
+/*function listIncludesСity(jsonParseLs, cityDivText) {
 	let cityInArray = jsonParseLs.includes(cityDivText, 0);
 	return cityInArray;
-}
+}*/
 
 /*function displayAddedLocations(city) {
 	let createLi = document.createElement('li');

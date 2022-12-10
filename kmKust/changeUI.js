@@ -1,3 +1,16 @@
+import { storage } from './storageMethods.js';
+
+import {
+	CURRENT_TAB,
+	BTN_SAVE_CITY,
+	SEARCH__INPUT,
+	FORM,
+	UL_CITIES,
+	CITY_DIV,
+	CELSIUS_DIV,
+	IMG_WEATHER,
+} from './view.js';
+
 export function changeDivNow(cityName, degreesCelsius, imgLocation) {
 	CITY_DIV.textContent = cityName;
 	CELSIUS_DIV.textContent = degreesCelsius;
@@ -44,6 +57,11 @@ export function changeColorHeart() {
 	} else if (cityInArray) {
 		BTN_SAVE_CITY.style.backgroundImage = imgHeartRed;
 	}
+}
+
+export function listIncludesСity(jsonParseLs, cityDivText) {
+	let cityInArray = jsonParseLs.includes(cityDivText, 0);
+	return cityInArray;
 }
 
 export function displayAddedLocations(city) {
