@@ -4,7 +4,8 @@ import {
 	changeDivDetails,
 	listIncludesСity,
 	changeColorHeart,
-	displayAddedLocations
+	displayAddedLocations,
+	checkTime
 } from './changeUI.js';
 
 import {
@@ -47,16 +48,6 @@ const CURRENT_TAB_TEXT = {
 	cityDataSearch(cityName);
 })()
 
-/*const CURRENT_TAB = document.querySelector('.tabs__items')
-const BTN_SAVE_CITY = document.querySelector('.btnHeart');
-const SEARCH__INPUT = document.querySelector('.searchInput');
-const FORM = document.querySelector('.search');
-const UL_CITIES = document.querySelector('.ulCities');
-
-const CITY_DIV = document.querySelector('.city');
-const CELSIUS_DIV = document.querySelector('.degreesСelsius');
-const IMG_WEATHER = document.querySelector('.imgСloud');*/
-
 function cityDataSearch(cityName) {
 	const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
 	const apiKey = "3bfb7384f048b8e78896a10d694dd618";
@@ -95,50 +86,6 @@ const CityData = (data) => {
 	render()
 }
 
-function checkTime(getHoursSunrise, getMinutesSunrise) {
-	(getHoursSunrise < 10) ?
-		getHoursSunrise = (`0${getHoursSunrise}`) : getHoursSunrise;
-
-	(getMinutesSunrise < 10) ?
-		getMinutesSunrise = (`0${getMinutesSunrise}`) : getMinutesSunrise;
-
-	let time = `${getHoursSunrise}:${getMinutesSunrise}`;
-	return time
-
-}
-
-/*function changeDivNow(cityName, degreesCelsius, imgLocation) {
-	CITY_DIV.textContent = cityName;
-	CELSIUS_DIV.textContent = degreesCelsius;
-	IMG_WEATHER.src = imgLocation;
-}*/
-
-/*function changeDivDetails(
-	cityName,
-	degreesCelsius,
-	feelsLike,
-	weatherData,
-	timeSunrise,
-	timeSunset) {
-
-	let city = document.querySelector('.citiesDetails');
-	city.textContent = cityName;
-
-	let liTemp = document.querySelectorAll('.liCityInfo')[0];
-	liTemp.textContent = `Temperature: ${degreesCelsius}`;
-
-	let liFeelsLike = document.querySelectorAll('.liCityInfo')[1];
-	liFeelsLike.textContent = `Feels like: ${feelsLike}`;
-
-	let liWeather = document.querySelectorAll('.liCityInfo')[2];
-	liWeather.textContent = weatherData;
-
-	let liSunrise = document.querySelectorAll('.liCityInfo')[3];
-	liSunrise.textContent = `Sunrise: ${timeSunrise}`;
-
-	let liSunset = document.querySelectorAll('.liCityInfo')[4];
-	liSunset.textContent = `Sunset: ${timeSunset}`;
-}*/
 
 function render() {
 	UL_CITIES.replaceChildren();
@@ -154,33 +101,6 @@ function render() {
 	storage.saveCurrentCity(cityDivText);
 	changeColorHeart();
 }
-
-/*function changeColorHeart() {
-	let imgHeartRed = "url(./img/imgHeartRed.png)";
-	let imgHeart = "url(./img/imgHeart.png)";
-
-	let cityDivText = CITY_DIV.textContent;
-	let jsonParseLs = storage.getFavoriteCities();
-	let cityInArray = listIncludesСity(jsonParseLs, cityDivText);
-
-	if (!cityInArray) {
-		BTN_SAVE_CITY.style.backgroundImage = imgHeart;
-	} else if (cityInArray) {
-		BTN_SAVE_CITY.style.backgroundImage = imgHeartRed;
-	}
-}*/
-
-/*function listIncludesСity(jsonParseLs, cityDivText) {
-	let cityInArray = jsonParseLs.includes(cityDivText, 0);
-	return cityInArray;
-}*/
-
-/*function displayAddedLocations(city) {
-	let createLi = document.createElement('li');
-	createLi.className = "liCity";
-	createLi.innerHTML = city;
-	UL_CITIES.append(createLi);
-}*/
 
 function changLocalStorage() {
 	let cityDivText = CITY_DIV.textContent;

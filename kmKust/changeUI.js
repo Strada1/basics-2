@@ -70,3 +70,15 @@ export function displayAddedLocations(city) {
 	createLi.innerHTML = city;
 	UL_CITIES.append(createLi);
 }
+
+export function checkTime(getHoursSunrise, getMinutesSunrise) {
+	(getHoursSunrise < 10) ?
+		getHoursSunrise = (`0${getHoursSunrise}`) : getHoursSunrise;
+
+	(getMinutesSunrise < 10) ?
+		getMinutesSunrise = (`0${getMinutesSunrise}`) : getMinutesSunrise;
+
+	let time = `${getHoursSunrise}:${getMinutesSunrise}`;
+	return time
+
+}
