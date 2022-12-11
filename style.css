@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #E5E5E5;
+}
+.weather__body {
+    width: 621px;
+    height: 462px;
+    transform: translate(50%, 50%);
+    background: #FFFFFF;
+}
+.weather__border__box {
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    width: 600px;
+    height: 435px;
+    background: #FFFFFF;
+    transform: translate(2%, 3%);
+}
+.weather__head {
+    border-bottom: 1px solid #000000;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+}
+input[placeholder] {
+    border: none;
+    font-size: 18px;
+}
+.weather__search {
+    cursor: pointer;
+}
+.weather__search:hover {
+    transform: scale(2,2);
+}
+.weather__other {
+    display: flex;
+    height: 78%;
+}
+.weather__description {
+    border-right: 1px solid #000000;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 79px;
+}
+.weather__description:target {
+    display: block;
+}
+.weather__degree {
+    font-size: 70px;
+    padding: 10px 0 0 10px;
+}
+.weather__cloud {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 70px 0;
+}
+.weather__town_and_like {
+    display: flex;
+    justify-content: space-around;
+}
+.town {
+    font-size: 24px;
+}
+.like:hover {
+    transform: scale(2,2);
+    cursor: pointer;
+}
+.tabs__items {
+    font-size: 18px;
+}
+.weather__tabs__item {
+    border-top: 1px solid #000000;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 50%;
+    border-right: 1px solid #000000;
+}
+.tabs__items {
+    text-decoration: none;
+    color: #000000;
+    padding: 10px;
+    width: 100%;
+}
+.tabs__items:hover {
+    cursor: pointer;
+    background-color: #000000;
+    color: #E5E5E5;
+}
+.tabs__items:nth-child(1){
+    border-right: 1px solid #000000;
+}
+.tabs__items:nth-child(2){
+    border-right: 1px solid #000000;
+}
+.tabs__block {
+    display: none;
+}
+.weather__location {
+    width: 50%;
+}
+.weather__add__location {
+    font-size: 24px;
+    padding: 33px 0 7px 18px;
+    border-bottom: 1px solid #000000;
+}
+.weather__list_location {
+    padding: 42px 0 0 18px;
+}
+.weather__list_location ul {
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.weather__list_location ul li {
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.weather__town {
+    font-size: 24px;
+    padding: 33px 0 42px 29px;
+}
+.weather__temperature ul {
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.weather__temperature ul li {
+    margin-bottom: 15px;
+}
+.weather__temperature {
+    padding-left: 29px;
+}
+.weather__list_location ul li:hover {
+    color: tomato;
+}
