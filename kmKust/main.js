@@ -27,19 +27,18 @@ const CURRENT_TAB_TEXT = {
 
 !(function chooseTab() {
 	let currentTab = storage.getCurrentTab();
-	let [tab1, tab2, tab3] = document.querySelectorAll('.tabs__item');
 
 	switch (currentTab) {
 		case CURRENT_TAB_TEXT.NOW:
-			tab1.click();
+			document.querySelector('.tabs__item:nth-child(1)').click();
 			return;
 
 		case CURRENT_TAB_TEXT.DETAILS:
-			tab2.click();
+			document.querySelector('.tabs__item:nth-child(2)').click();
 			return;
 
 		case CURRENT_TAB_TEXT.FORECAST:
-			tab3.click();
+			document.querySelector('.tabs__item:nth-child(3)').click();
 			return;
 	}
 })()
@@ -60,21 +59,19 @@ function cityDataSearch(cityName) {
 		.catch(error => alert(`Неизвестная ошибка ${error}`))
 }
 
-const CityData = (data) => {
-	console.log(data)
+const CityData = ({ name, main, weather, sys }) => {
+	let cityName = name;
+	let degreesCelsius = Math.round(main.temp - 273, 15) + "°";
+	let imgLocation = `http://openweathermap.org/img/wn/${weather[0].icon}@4x.png`;
+	let feelsLike = Math.round(main.feels_like - 273, 15) + "°";
+	let weatherData = (weather[0].main);
 
-	let cityName = data.name;
-	let degreesCelsius = Math.round(data.main.temp - 273, 15) + "°";
-	let imgLocation = `http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
-	let feelsLike = Math.round(data.main.feels_like - 273, 15) + "°";
-	let weatherData = (data.weather[0].main);
-
-	let sunriseDate = new Date(data.sys.sunrise * 1000);
+	let sunriseDate = new Date(sys.sunrise * 1000);
 	let getHoursSunrise = sunriseDate.getHours();
 	let getMinutesSunrise = sunriseDate.getMinutes();
 	let timeSunrise = checkTime(getHoursSunrise, getMinutesSunrise);
 
-	let sunsetDate = (new Date(data.sys.sunset * 1000));
+	let sunsetDate = (new Date(sys.sunset * 1000));
 	let getHoursSunset = sunsetDate.getHours();
 	let getMinutesSunset = sunsetDate.getMinutes();
 	let timeSunset = checkTime(getHoursSunset, getMinutesSunset);
@@ -137,6 +134,7 @@ UL_CITIES.addEventListener('click', event => {
 
 	if (clickCity) {
 		cityDataSearch(cityName);
+	} else if (!clickCity) {
 	}
 })
 
@@ -144,8 +142,4 @@ CURRENT_TAB.addEventListener('click', event => {
 	let clickCurrentTab = event.target.closest('.tabs__item');
 	storage.saveCurrentTab(clickCurrentTab);
 })
-
-//localStorage.clear('listStoraje')
-//localStorage.setItem('favoriteCities', JSON.stringify([]))
-
 render()
