@@ -25,22 +25,28 @@ export function changeDivDetails(
 	timeSunrise,
 	timeSunset) {
 
+	let [liTemp,
+		liFeelsLike,
+		liWeather,
+		liSunrise,
+		liSunset] = document.querySelectorAll('.liCityInfo')
+
 	let city = document.querySelector('.citiesDetails');
 	city.textContent = cityName;
 
-	let liTemp = document.querySelectorAll('.liCityInfo')[0];
+	//let liTemp = document.querySelectorAll('.liCityInfo')[0];
 	liTemp.textContent = `Temperature: ${degreesCelsius}`;
 
-	let liFeelsLike = document.querySelectorAll('.liCityInfo')[1];
+	//let liFeelsLike = document.querySelectorAll('.liCityInfo')[1];
 	liFeelsLike.textContent = `Feels like: ${feelsLike}`;
 
-	let liWeather = document.querySelectorAll('.liCityInfo')[2];
+	//let liWeather = document.querySelectorAll('.liCityInfo')[2];
 	liWeather.textContent = weatherData;
 
-	let liSunrise = document.querySelectorAll('.liCityInfo')[3];
+	//let liSunrise = document.querySelectorAll('.liCityInfo')[3];
 	liSunrise.textContent = `Sunrise: ${timeSunrise}`;
 
-	let liSunset = document.querySelectorAll('.liCityInfo')[4];
+	//let liSunset = document.querySelectorAll('.liCityInfo')[4];
 	liSunset.textContent = `Sunset: ${timeSunset}`;
 }
 
@@ -80,5 +86,4 @@ export function checkTime(getHoursSunrise, getMinutesSunrise) {
 
 	let time = `${getHoursSunrise}:${getMinutesSunrise}`;
 	return time
-
 }

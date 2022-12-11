@@ -27,18 +27,22 @@ const CURRENT_TAB_TEXT = {
 
 !(function chooseTab() {
 	let currentTab = storage.getCurrentTab();
+	let [tab1, tab2, tab3] = document.querySelector('.tabs__item');
 
 	switch (currentTab) {
 		case CURRENT_TAB_TEXT.NOW:
-			document.querySelector('.tabs__item:nth-child(1)').click();
+			tab1.click();
+			//document.querySelector('.tabs__item:nth-child(1)').click();
 			return;
 
 		case CURRENT_TAB_TEXT.DETAILS:
-			document.querySelector('.tabs__item:nth-child(2)').click();
+			tab2.click();
+			//document.querySelector('.tabs__item:nth-child(2)').click();
 			return;
 
 		case CURRENT_TAB_TEXT.FORECAST:
-			document.querySelector('.tabs__item:nth-child(3)').click();
+			tab3.click();
+			//document.querySelector('.tabs__item:nth-child(3)').click();
 			return;
 	}
 })()
