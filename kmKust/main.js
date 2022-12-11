@@ -27,22 +27,19 @@ const CURRENT_TAB_TEXT = {
 
 !(function chooseTab() {
 	let currentTab = storage.getCurrentTab();
-	let [tab1, tab2, tab3] = document.querySelector('.tabs__item');
+	let [tab1, tab2, tab3] = document.querySelectorAll('.tabs__item');
 
 	switch (currentTab) {
 		case CURRENT_TAB_TEXT.NOW:
 			tab1.click();
-			//document.querySelector('.tabs__item:nth-child(1)').click();
 			return;
 
 		case CURRENT_TAB_TEXT.DETAILS:
 			tab2.click();
-			//document.querySelector('.tabs__item:nth-child(2)').click();
 			return;
 
 		case CURRENT_TAB_TEXT.FORECAST:
 			tab3.click();
-			//document.querySelector('.tabs__item:nth-child(3)').click();
 			return;
 	}
 })()
@@ -64,6 +61,8 @@ function cityDataSearch(cityName) {
 }
 
 const CityData = (data) => {
+	console.log(data)
+
 	let cityName = data.name;
 	let degreesCelsius = Math.round(data.main.temp - 273, 15) + "°";
 	let imgLocation = `http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
@@ -89,7 +88,6 @@ const CityData = (data) => {
 		timeSunset);
 	render()
 }
-
 
 function render() {
 	UL_CITIES.replaceChildren();
