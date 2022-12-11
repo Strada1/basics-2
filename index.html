@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="weather__body">
+    <div class="weather__border__box">
+        <div class="weather__head">
+            <div class="weather__input_wrap">
+                <form class="weather__form">
+                    <label for="weather__input">
+                        <input type="text" class="weather__input" id="weather__input" placeholder="Aktobe">
+                    </label>
+                </form>
+            </div>
+            <div class="weather__search"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.54" fill-rule="evenodd" clip-rule="evenodd" d="M19.3775 17.5H18.385L18.04 17.1575C19.2588 15.7363 20 13.8938 20 11.875C20 7.38752 16.3625 3.75002 11.875 3.75002C7.3875 3.75002 3.75 7.38752 3.75 11.875C3.75 16.3625 7.3875 20 11.875 20C13.8938 20 15.735 19.26 17.1563 18.0425L17.5013 18.385V19.375L23.7488 25.6138L25.6125 23.75L19.3775 17.5ZM11.875 17.5C8.76751 17.5 6.25001 14.9825 6.25001 11.875C6.25001 8.76877 8.76751 6.25002 11.875 6.25002C14.9813 6.25002 17.5 8.76877 17.5 11.875C17.5 14.9825 14.9813 17.5 11.875 17.5Z" fill="black"/>
+            </svg></div>
+        </div>
+        <div class="weather__other">
+            <div id="tabs01" class="weather__description tabs__block">
+                <div class="weather__degree">14</div>
+                <div class="weather__cloud">
+                    <img src="./img/icons8-cloud-96%201.svg" alt="cloud">
+                </div>
+                <div class="weather__town_and_like">
+                    <div class="town">Aktobe</div>
+                    <div class="like"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.54" fill-rule="evenodd" clip-rule="evenodd" d="M17.5 1C15.0556 1 12.8556 2.7875 12 5.125C11.1444 2.7875 8.94444 1 6.5 1C3.44444 1 1 3.6125 1 7.1875C1 12 5.27778 16.125 12 23C18.7222 16.125 23 12 23 7.1875C23 3.6125 20.5556 1 17.5 1Z" stroke="black" stroke-width="2"/>
+                    </svg></div>
+                </div>
+            </div>
+            <div id="tabs02" class="weather__description tabs__block">
+                <div class="weather__town">Aktobe</div>
+                <div class="weather__temperature">
+                    <ul>
+                        <li>Temperature: <span class="weather__details__degree">14</span></li>
+                        <li>Feels like: <span class="weather__feels__like">10</span></li>
+                        <li>Weather: <span class="weather__details__clouds">Clouds</span></li>
+                        <li>Sunrise: <span class="weather__sunrise">03:21</span></li>
+                        <li>Sunset: <span class="weather__sunset">18:54</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="tabs03" class="weather__description tabs__block">
+                <div class="weather__degree">12</div>
+                <div class="weather__cloud"><img src="./img/icons8-cloud-96%201.svg" alt="cloud"></div>
+                <div class="weather__town_and_like">
+                    <div class="town">Aktobe</div>
+                    <div class="like"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.54" fill-rule="evenodd" clip-rule="evenodd" d="M17.5 1C15.0556 1 12.8556 2.7875 12 5.125C11.1444 2.7875 8.94444 1 6.5 1C3.44444 1 1 3.6125 1 7.1875C1 12 5.27778 16.125 12 23C18.7222 16.125 23 12 23 7.1875C23 3.6125 20.5556 1 17.5 1Z" stroke="black" stroke-width="2"/>
+                    </svg></div>
+                </div>
+            </div>
+            <div class="weather__location">
+                <div class="weather__add__location">Added Locations:</div>
+                <div class="weather__list_location">
+                    <ul class="weather__list_location_ul" id="weather__list">
+                        <li id="weather__li"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="weather__tabs__item">
+            <a href="#tabs01" class="tabs__items">Now</a>
+            <a href="#tabs02" class="tabs__items">Details</a>
+            <a href="#tabs03" class="tabs__items">Forecast</a>
+        </div>
+    </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
