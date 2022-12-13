@@ -1,56 +1,31 @@
-const tabs = {
-    allBtn: document.querySelectorAll('.btn-nav'),
-    allTabs: document.querySelectorAll('.tabs_block'),
-}
+import {tabs, formElements, serverUrl, apiKey, forecastUrl, nowBlockEl, detailsBlockEl, forecastBlockEl, divList} from './modules/variables.js';
+import storage from './modules/local.js';
+import { getCelsius, getHumanHours, dateTimeToHuman} from './modules/countDateTime.js';
+import { renderData, renderDetails } from './modules/renderData.js';
 
-const formElements = {
-    mainForm: document.querySelector('.main-form'),
-    cityInput: document.querySelector('.city-input'),
-};
+let listArr = ['Kazan'];
+let currentCity;
 
-const serverUrl= 'http://api.openweathermap.org/data/2.5/weather';
-const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
-const forecastUrl = 'http://api.openweathermap.org/data/2.5/forecast';
-
-const nowBlockEl = {
-    nowDegrees: document.querySelector('.main-number'),
-    nowCity: document.querySelector('.main-forecast-city'),
-    nowHeart: document.querySelector('.like'),
-    nowIcon: document.querySelector('.main-forecast-img'),
-};
-
-const detailsBlockEl = {
-    detailsCity: document.querySelector('.main-location-cities'),
-    detailsTemp: document.querySelector('.det-temp'),
-    detailsFeel: document.querySelector('.det-feel'),
-    detailsWeather: document.querySelector('.det-weather'),
-    detailsSunrise: document.querySelector('.det-sunrise'),
-    detailsSunset: document.querySelector('.det-sunset'),
-}
-
-const forecastBlockEl = {
-    forecastCity: document.querySelector('.main-forecast-cities'),
-    forecastDate: document.querySelector('.forecast_date'),
-    forecastTime: document.querySelector('.forecast_time'),
-    forecastTemp: document.querySelector('.forecast_temper'),
-    forecastCondition: document.querySelector('.forecast_cond'),
-    forecastFeel: document.querySelector('.forecast_feelLike'),
-    forecastPict: document.querySelector('.forecast_pict'),
-    forecastBlock: document.querySelector('.for'),
-
-}
-let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-
-let divList = document.querySelector('.div-list');
-let listArr = ['Moscow', 'Kazan',];
-
-if(localStorage.getItem('listArr')) {
-    listArr = JSON.parse(localStorage.getItem('listArr'));
+if(storage.getFavCities() !== null) {
+    listArr = storage.getFavCities();
     showList();
+} else {
+    listArr = [];
+};
+
+if(storage.getCurrentCity()) {
+    currentCity = storage.getCurrentCity();
+} else {
+    currentCity = 'Moscow';
+};
+
+if(localStorage.getItem('heart')) {
+    nowBlockEl.heart.classList.add(localStorage.getItem('heart'));
 }
 
 function showList() {
     divList.innerHTML = '';
+    storage.setFavCities(listArr);
     listArr.forEach((item)=> {
         createCityEl(item);
     });
@@ -58,23 +33,30 @@ function showList() {
 
 formElements.mainForm.addEventListener('submit', (event) =>{
     event.preventDefault();
+    formHandler();
+});
+
+nowBlockEl.heart.addEventListener('click', () =>{
+    heartHandler();
+});
+
+function formHandler() {
     toggleLike(formElements.cityInput.value);
     getRequest(serverUrl, formElements.cityInput.value);
     getForecastRequest(forecastUrl, formElements.cityInput.value);
     formElements.cityInput.value = '';
-});
+}
 
-nowBlockEl.nowHeart.addEventListener('click', () =>{
-    addToarr(nowBlockEl.nowCity.textContent);
-    localStorage.setItem('listArr', JSON.stringify(listArr));
+function heartHandler() {
+    addToarr(nowBlockEl.city.textContent);
     showList();
-});
+}
 
 tabs.allBtn.forEach(function(item) {
     item.addEventListener('click', function() {
         let currentBtn = item;
         let tabId = currentBtn.getAttribute('data-tab');
-        let currentTab = document.querySelector(tabId)
+        let currentTab = document.querySelector(tabId);
         tabs.allBtn.forEach(function(item) {
             item.classList.remove('active');
         });
@@ -91,12 +73,16 @@ function addToarr(name) {
         let newCity = name;
         if(listArr.find(item => item === newCity)) {
             deleteFromArr(newCity);
-            nowBlockEl.nowHeart.classList.remove('heart');
-            nowBlockEl.nowHeart.classList.add('like');
+            nowBlockEl.heart.classList.remove('heart');
+            nowBlockEl.heart.classList.add('like');
+            //storage.setHeart('like');
+            localStorage.setItem('heart', 'like')
         } else {
             listArr.push(newCity);
-            nowBlockEl.nowHeart.classList.add('heart');
-            nowBlockEl.nowHeart.classList.remove('like');
+            nowBlockEl.heart.classList.add('heart');
+            nowBlockEl.heart.classList.remove('like');
+            //storage.setHeart('heart');
+            localStorage.setItem('heart', 'heart')
         }
     } catch(err) {
         console.log('Ошибка');
@@ -105,9 +91,13 @@ function addToarr(name) {
 
 function toggleLike(name) {
     if(listArr.includes(name)) {
-        nowBlockEl.nowHeart.className = 'heart';
+        nowBlockEl.heart.className = 'heart';
+        localStorage.setItem('heart', 'heart')
+        //storage.setHeart('heart')
     } else {
-        nowBlockEl.nowHeart.className = 'like';
+        nowBlockEl.heart.className = 'like';
+        localStorage.setItem('heart', 'like')
+        //storage.setHeart('like')
     }
 };
 
@@ -116,7 +106,6 @@ function deleteFromArr(cityName) {
         return cityName == item;
     })
     listArr.splice(res, 1);
-    localStorage.setItem('listArr', JSON.stringify(listArr))
     showList()
 };
 
@@ -131,7 +120,9 @@ function getRequest(link, cityName) {
         response.json()})
     .then(data => {
         renderData(data);
-        renderDetails(data)
+        renderDetails(data);
+        currentCity = data.name;
+        storage.setCurrentCity(currentCity);
     });
 };
 
@@ -141,54 +132,18 @@ function getForecastRequest(link, cityName) {
     .then(result => {
         let list = result.list;
         let spliceList = list.splice(0, 5);
-        console.log(spliceList)
-        forecastBlockEl.forecastCity.textContent = result.city.name;
-        forecastBlockEl.forecastBlock.innerHTML = '';
+        forecastBlockEl.city.textContent = result.city.name;
+        forecastBlockEl.block.innerHTML = '';
         spliceList.forEach(function(item) {
             createForecastEl(item);
         });
     });
 };
 
-function renderData(value) {
-    nowBlockEl.nowDegrees.textContent = getCelsius(value.main.temp) + '℃';
-    nowBlockEl.nowCity.textContent = value.name;
-    nowBlockEl.nowIcon.src = `http://openweathermap.org/img/wn/${value.weather[0].icon}@4x.png`;
-};
-
-function renderDetails(value) {
-    detailsBlockEl.detailsCity.textContent = value.name;
-    detailsBlockEl.detailsTemp.textContent = getCelsius(value.main.temp) + '℃';
-    detailsBlockEl.detailsFeel.textContent = getCelsius(value.main.feels_like) + '℃';
-    detailsBlockEl.detailsWeather.textContent = value.weather[0].main;
-    detailsBlockEl.detailsSunrise.textContent = getHumanHours(new Date(value.sys.sunrise * 1000));
-    detailsBlockEl.detailsSunset.textContent = getHumanHours(new Date(value.sys.sunset * 1000));
-};
-
-function getCelsius(num) {
-    try{
-        if(isNaN(num)) throw new SyntaxError('Ошибка');
-        let res = Math.floor(num - 273.15);
-        return res;
-    } catch(err) {
-        console.log('Ошибка');
-    }
-};
-
-function getHumanHours(date) {
-    let H = addZeroToNumber(date.getHours());
-    let M = addZeroToNumber(date.getMinutes());
-    return `${H}:${M}`
-};
-
-function dateTimeToHuman(value) {
-    let day = value.getDate();
-    let month = months[value.getMonth()];
-    return `${day} ${month}`
-}
-
-function addZeroToNumber(value) {
-    return (value < 10) ? '0' + value : value
+if(storage.getNewCity('newCity') !== null) {
+    nowBlockEl.city.textContent = storage.getNewCity('newCity');
+} else {
+    nowBlockEl.city.textContent = 'Moscow';
 }
 
 function createCityEl(name) {
@@ -222,8 +177,7 @@ function createForecastEl(value) {
     forecastTime.className = 'forecast_time';
     forecastTime.textContent = `${getHumanHours(new Date(value.dt_txt))}`;
     
-    forecastDateTime.prepend(forecastTime);
-    forecastDateTime.prepend(forecastDate);
+    forecastDateTime.prepend(forecastDate, forecastTime);
 
     let forecastTempCondition = document.createElement('div');
     forecastTempCondition.className = 'forecast_temp_condition';
@@ -234,8 +188,7 @@ function createForecastEl(value) {
     forecastCond.className = 'forecast_cond';
     forecastCond.textContent = `${value.weather[0].description}`;
 
-    forecastTempCondition.prepend(forecastCond);
-    forecastTempCondition.prepend(forecastTemp);
+    forecastTempCondition.prepend( forecastTemp, forecastCond);
 
     let forecastFeelPict = document.createElement('div');
     forecastFeelPict.className = 'forecast_feel_pict';
@@ -244,14 +197,10 @@ function createForecastEl(value) {
     forecastFeel.textContent = `Feels like: ${getCelsius(value.main.feels_like)}`
     let forecastPict = document.createElement('img');
     forecastPict.className = 'forecast_pict';
-    forecastPict.src = `http://openweathermap.org/img/wn/${value.weather[0].icon}@2x.png;`
-    //forecastPict.src = `img/forecast_img.svg`;
-    forecastFeelPict.prepend(forecastPict);
-    forecastFeelPict.prepend(forecastFeel);
+    forecastPict.src = `http://openweathermap.org/img/wn/${value.weather[0].icon}@2x.png`;
+    forecastFeelPict.prepend(forecastFeel, forecastPict);
 
-    forecastBlock.prepend(forecastFeelPict);
-    forecastBlock.prepend(forecastTempCondition);
-    forecastBlock.prepend(forecastDateTime);
+    forecastBlock.prepend(forecastDateTime, forecastTempCondition, forecastFeelPict,);
 
-    forecastBlockEl.forecastBlock.append(forecastBlock)
+    forecastBlockEl.block.append(forecastBlock)
 }
