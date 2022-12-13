@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now</title>
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+    <main class="main">
+        <div class="container">
+            <div class="wrapper">
+                <form class="main-form">
+                    <input type="text" placeholder="City" class="city-input">
+                </form>
+                <div class="main-display">
+                    <div class="main-forecast">
+                        <div class="all-blocks">
+                            <div class="now tabs_block active" id="tab_1">
+                                <p class="main-number">0℃</p>
+                                <div class="divImg">
+                                    <img src="/basics-2/Weather/img/icons8-cloud-96 1.svg" alt="cloud" class="main-forecast-img">
+                                </div>
+                                <div class="main-bottom"> 
+                                <p class="main-forecast-city">Moscow</p>
+                                <button class="like" type="button"></button>
+                            </div>
+                            </div>
+                            <div class="details tabs_block" id="tab_2">
+                                <ul class="main-location-list">
+                                    <p class="main-location-cities">City</p>
+                                    <li>Temperature:<span class="det-temp"></span></li>
+                                    <li>Feels like: <span class="det-feel"></span> </li>
+                                    <li>Weather: <span class="det-weather"></span></li>
+                                    <li>Sunrise: <span class="det-sunrise"></span></li>
+                                    <li>Sunset: <span class="det-sunset"></span> </li>
+                                </ul>
+                            </div>
+                            <div class="forecast tabs_block" id="tab_3">
+                                <p class="main-forecast-cities">City</p>
+                                <div class="forecast-wrapper">
+                                    <div class="for">
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <button class="btn-nav active" data-tab="#tab_1">Now</button>
+                            <button class="btn-nav" data-tab="#tab_2">Details</button>
+                            <button class="btn-nav" data-tab="#tab_3">Forecast</button>
+                        </div>
+                    </div>
+                    <div class="main-locations">
+                        <ul class="main-location-list">
+                            <p class="added-locations">Added Locations:</p>
+                            <div class="div-list"></div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="main.js" type="module"></script>
+</body>
+</html>
