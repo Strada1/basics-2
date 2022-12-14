@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Погода</title>
+  </head>
+  <body>
+    <section class="container">
+      <div class="main-border">
+        <form id="form">
+          <input
+            type="text"
+            class="search"
+            id="search"
+            placeholder="Введите название города"
+          />
+          <button id="button" class="button">
+            <img
+              src="/basics-2/weather/img/zoom-svg.png"
+              width="20px"
+              height="20px"
+              alt="zoom"
+            />
+          </button>
+        </form>
+        <div class="main-flex-wrapper">
+          <div class="flex-wrapper flex-wrapper-right-border">
+            <div id="tab_01" class="tabs_block">
+              <div class="tempr" id="mainTemperature">°C</div>
+              <img
+                src="/basics-2/weather/img/icons8-cloud-96 1.png"
+                class="main-img"
+                id="icon-now"
+                alt=""
+              />
+              <div class="shape-wrap">
+                <div class="main-city" id="main-city">-</div>
+                <img
+                  src="/basics-2/weather/img/Shape.png"
+                  width="24px"
+                  height="25px"
+                  alt="Shape"
+                  class="shape"
+                  id="shape"
+                />
+              </div>
+            </div>
+            <div id="tab_02" class="tabs_block">
+              <div class="city-name-detail" id="city-name-detail">-</div>
+              <img src="/basics-2/weather/" alt="" />
+              <div class="description">
+                <div id="temperature">Температура:</div>
+                <div id="feels-like">Ощущается как:</div>
+                <div id="weather">Погода:</div>
+                <div id="sunrise">Восход:</div>
+                <div id="sunset">Закат:</div>
+              </div>
+            </div>
+            <nav class="tabs_items" id="tabs_items">
+              <a href="#tab_01" class="tab-elem tab-elem-now" id="now"
+                >Сейчас</a
+              >
+              <a href="#tab_02" class="tab-elem tab-elem-detail">Детально</a>
+              <a href="#tab_03" class="tab-elem tab-elem-forecast">Прогноз</a>
+            </nav>
+          </div>
+          <div class="flex-wrapper-added-locations">
+            <div class="added-location">Избранные:</div>
+            <ul class="elect-locations" id="elect-locations"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>
