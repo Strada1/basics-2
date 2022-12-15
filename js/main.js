@@ -9,28 +9,27 @@ let list = [
   { name: 'create a post', status: 'Done', priority: 'low' },
 ];
 
+function CreateElementInList(taskName, taskPriority) {
+  this.name = taskName;
+  this.status = TODO_STATUS.TODO;
+  this.priority = taskPriority;
+  alert(new.target)
+}
 
 UI_ELEMENTS.HIGH_FORM.addEventListener('submit', (event) => {
   event.preventDefault();
   const name = UI_ELEMENTS.INPUT_HIGH.value;
-  list.push({
-    name,
-    status: TODO_STATUS.TODO,
-    priority: TODO_PRIORITY.HIGHT,
-  });
+  list.push(new CreateElementInList(name, TODO_PRIORITY.HIGHT));
   createStorageList();
   renderDocument();
   event.target.reset();
+  console.log(list);
 });
 
 UI_ELEMENTS.LOW_FORM.addEventListener('submit', (event) => {
   event.preventDefault();
   const name = UI_ELEMENTS.INPUT_LOW.value;
-  list.push({
-    name,
-    status: TODO_STATUS.TODO,
-    priority: TODO_PRIORITY.LOW,
-  });
+  list.push(new CreateElementInList(name, TODO_PRIORITY.LOW));
   createStorageList();
   renderDocument();
   event.target.reset();
