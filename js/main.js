@@ -13,23 +13,23 @@ function CreateElementInList(taskName, taskPriority) {
   this.name = taskName;
   this.status = TODO_STATUS.TODO;
   this.priority = taskPriority;
-  alert(new.target)
 }
 
 UI_ELEMENTS.HIGH_FORM.addEventListener('submit', (event) => {
   event.preventDefault();
   const name = UI_ELEMENTS.INPUT_HIGH.value;
-  list.push(new CreateElementInList(name, TODO_PRIORITY.HIGHT));
+  const itemList = new CreateElementInList(name, TODO_PRIORITY.HIGHT);
+  list.push(itemList);
   createStorageList();
   renderDocument();
   event.target.reset();
-  console.log(list);
 });
 
 UI_ELEMENTS.LOW_FORM.addEventListener('submit', (event) => {
   event.preventDefault();
   const name = UI_ELEMENTS.INPUT_LOW.value;
-  list.push(new CreateElementInList(name, TODO_PRIORITY.LOW));
+  const itemList = new CreateElementInList(name, TODO_PRIORITY.LOW);
+  list.push(itemList);
   createStorageList();
   renderDocument();
   event.target.reset();
