@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <title>Weather </title>
+</head>
+<body>
+   <div class="wrapper">
+    <div class="contener">
+        <div class="weather">
+            <form class="form">
+                <input type="text" class="search__input" placeholder="Добавьте город">
+                <button type="submit" class="search__btn"></button>
+            </form>
+            
+            <div class="block__display">
+                <div class="display__left">
+                    <div class="display">
+                        <div id="now" class="now">
+                            <div class="now__temp temp">14°</div>
+                            <div class="now__img"><img class="now__icon" src="https://openweathermap.org/img/wn/04n@4x.png"alt=""></div>
+                            <div class="now__city">
+                                <span class="city__name"></span>
+                                <img src="./image/heart.png" alt="" class="heart">
+                            </div>
+                       </div>
+                       <div id="details" class="details">
+                            <span class="details__city"></span>
+                            <ul class="details_list">
+                                <ii class="details__item">Temperature: <span class="details__temp"> 14°</span></ii>
+                                <ii class="details__item">Feels like: <span class="details__feelsLike"> 10°</span></ii>
+                                <ii class="details__item">Weather: <span class="details__weather"> Clouds</span></ii>
+                                <ii class="details__item">Sunrise: <span class="details__sunrise"> 03:21</span></ii>
+                                <ii class="details__item">Sunset: <span class="details__sunset"> 18:54</span></ii>
+                            </ul>
+                       </div>
+                       <div id="forecast" class="forecast">
+                        <div class="forecast__city">City</div>
+                        <div class="forecast__block">
+                            <div class="forecast__elem">
+                                <div class="elem__left">
+                                    <span class="elem-date elem">17 May</span>
+                                    <span class="elem-temp elem">Temperature: 13 </span>
+                                    <span class="elem-feels elem">Feels like: 10</span>
+                                </div>
+                                <div class="elem__right">
+                                    <span class="elem-time elem">12:00</span>
+                                    <span class="elem-rain elem">Rain</span>
+                                    <span class="elem-img elem"><img src="./image/icons8-rain.png" alt=""></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="forecast__block">
+                            <div class="forecast__elem">
+                                <div class="elem__left">
+                                    <span class="elem-date elem">17 May</span>
+                                    <span class="elem-temp elem">Temperature: 13 </span>
+                                    <span class="elem-feels elem">Feels like: 10</span>
+                                </div>
+                                <div class="elem__right">
+                                    <span class="elem-time elem">15:00</span>
+                                    <span class="elem-rain elem">Rain</span>
+                                    <span class="elem-img elem"><img src="./image/icons8-rain.png" alt=""></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="forecast__block">
+                            <div class="forecast__elem">
+                                <div class="elem__left">
+                                    <span class="elem-date elem">17 May</span>
+                                    <span class="elem-temp elem">Temperature: 13 </span>
+                                    <span class="elem-feels elem">Feels like: 10</span>
+                                </div>
+                                <div class="elem__right">
+                                    <span class="elem-time elem">18:00</span>
+                                    <span class="elem-rain elem">Rain</span>
+                                    <span class="elem-img elem"><img src="./image/icons8-rain.png" alt=""></span>
+                                </div>
+                            </div>
+                        </div>
+                       </div>
+                    </div>
+                    <nav class="tabs">
+                        <a href="#now" class="btn btn--active">Now</a>
+                        <a href="#details" class="btn">Details</a>
+                        <a href="#forecast" class="btn">Forecast</a>
+                    </nav>
+                </div>
+                <div class="display__right">
+                    <div class="location__title">
+                        <p class="title"> Added Locations:</p>
+                    </div>
+                    <div class="location__city">
+                        <div class="city__list">
+                            <div class="city__item">
+                                <div class="city"></div>
+                                <div class="btn__delete"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+    <script src="main.js"></script>
+</body>
+</html>
+
+
+
+
+
