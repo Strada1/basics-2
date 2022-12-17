@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="lastToDo.css">
+</head>
+<body>
+    <main class="main">
+        <div class="container">
+            <div class="task_box">
+                <form class="formHigh">
+                    <h1>High</h1>
+                    <div class="task_input task_input_label">
+                        <input type="text" class="text_input" placeholder="Add important tasks to do">
+                        <button class="btn_input" type="submit">+</button>
+                    </div>
+                    <div id="high"></div>
+                </form>
+                
+
+                <form class="formLow">
+                    <h1>Low</h1>
+                    <div class="task_input task_input_label">
+                        <input type="text" class="text_input_low" placeholder="Add tasks to do">
+                        <button class="btn_input" type="submit">+</button>
+                    </div>
+                    <div id="low"></div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="lastToDo.js" type="module"></script>
+</body>
+</html>
