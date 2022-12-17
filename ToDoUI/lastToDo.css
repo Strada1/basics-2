@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-size: cover;
+}
+
+.container {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.formHigh,
+.formLow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 400;
+
+}
+
+.task_input,
+.task_input_high, 
+.task_input_low {
+    width: 450px;
+    border: 0.5px solid grey;
+    min-height: 30px;
+    overflow: hidden;
+}
+
+.text_input, 
+.text_input_low {
+    border: none;
+    outline: none;
+    width: 400px;
+    vertical-align: middle;
+    display: flex;
+    align-items: baseline;
+}
+
+.btn_input, 
+.btn_input_low {
+    border: none;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.btn_input:hover {
+    color: grey;
+}
+
+.task_input_label, 
+.task_input_label_low {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+label{
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.btn{
+    border: 1px black solid;
+    background-color: transparent;
+    transform: rotate(50deg);
+    border: none;
+    font-size: 20px;
+    width: 30px;
+}
+
+.dateDiv{
+    font-size: 11px;
+    color: cornflowerblue;
+    display: flex;
+    align-items: center;
+}
+
