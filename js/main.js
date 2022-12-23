@@ -64,15 +64,22 @@ function renderDocument() {
   list = getStorageList();
   UI_ELEMENTS.HIGH_LIST.textContent = '';
   UI_ELEMENTS.LOW_LIST.textContent = '';
-  list.forEach((item) => {
-    if (item.priority === TODO_PRIORITY.HIGHT) {
-      const taskHigh = createTaskDom(item.name, item.status);
-      createItemInHigh(taskHigh);
-    } else {
-      const taskLow = createTaskDom(item.name, item.status);
-      createItemInLow(taskLow);
-    }
-  })
+  recursionRenderDocument(list);
+}
+
+function recursionRenderDocument(array, i = 0) {
+  console.log(i);
+  if (i >= array.length) {
+    return;
+  }
+  if (array[i].priority === TODO_PRIORITY.HIGHT) {
+    const taskHigh = createTaskDom(list[i].name, list[i].status);
+    createItemInHigh(taskHigh)
+  } else {
+    const taskLow = createTaskDom(list[i].name, list[i].status);
+    createItemInLow(taskLow);
+  }
+  recursionRenderDocument(array, i + 1);
 }
 
 function createStorageList() {
