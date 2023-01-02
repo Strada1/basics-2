@@ -17,6 +17,11 @@ document.getElementById('res').onclick = function calc() {
     const out = document.querySelector(".result p");
     if (num1 == '' || num2 == '') {
         alert('Введите число!');
+        return;
+    }
+    if (num2 === '0') {
+        alert(errors.zero);
+        return;
     }
 
     switch(operator) {
@@ -33,6 +38,13 @@ document.getElementById('res').onclick = function calc() {
             out.textContent = +num1 / +num2;
             break;
     }
+
+    let out_res = document.createElement('div');
+    out_res.className = 'out_r';
+    out_res.innerHTML = out.textContent;
+
+    document.body.children[0].append(out_res);
+    out_res.onclick = out_res.remove;
 };
 // function calc(operator, a, b) {
 
