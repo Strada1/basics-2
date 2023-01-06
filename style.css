@@ -1,0 +1,32 @@
+body {
+    padding: 250px;
+    justify-content: center;
+}
+form {
+    display: contents;
+}
+.calculator {
+    width: 450px;
+    height: 50px;
+    margin: auto;
+    background-color: beige;
+    padding: 50px 10px 50px 10px;
+    border: 2px solid black;
+}
+.num1, .num2 {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.res {
+    margin-left: 5px;
+}
+.result {
+    display: inline-block;
+    width: 10px;
+    margin-left: 10px;
+}
+
+.result p {
+    height: 5px;
+}
